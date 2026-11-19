@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Pop ➔ IELTS 7.5+ · 美劇金句與西洋歌詞雅思實戰站</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #fafaf9;
+      color: #1c1917;
+    }
+    .font-serif-academy {
+      font-family: 'Merriweather', Georgia, serif;
+    }
+    .nav-pill-active {
+      background-color: #3730a3;
+      color: #ffffff;
+      box-shadow: 0 4px 12px -2px rgba(55, 48, 163, 0.28);
+    }
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.45); }
+      70% { box-shadow: 0 0 0 10px rgba(225, 29, 72, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+    }
+    .recording-pulse {
+      animation: pulseRing 1.4s infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- ==================== 頂部學院風導覽與儀表板 ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <a href="./index.html" class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 border border-stone-300 text-xs font-bold transition">
+          ← 返回雅思 4-Part 主站
+        </a>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-serif-academy font-bold text-base sm:text-lg text-stone-900 tracking-tight">Lumina Pop ➔ IELTS 7.5+ Studio</h1>
+            <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold">美劇 × 歌詞語域轉換</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 主題篩選器與控制列 -->
+      <div class="flex flex-wrap items-center gap-2">
+        <select id="globalTopicFilter" onchange="onTopicFilterChange()"
+                class="px-3 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs sm:text-sm font-bold text-stone-800 focus:outline-none focus:border-indigo-700">
+          <option value="ALL">🌟 全部 4 部美劇 ＋ 9 位歌手</option>
+          <optgroup label="🎬 4 大經典美劇">
+            <option value="破產姊妹">破產姊妹 (2 Broke Girls)</option>
+            <option value="同路人">同路人 (Fellow Travelers)</option>
+            <option value="六人行">六人行 (Friends)</option>
+            <option value="摩登家庭">摩登家庭 (Modern Family)</option>
+          </optgroup>
+          <optgroup label="🎵 9 大西洋歌手">
+            <option value="Taylor Swift">Taylor Swift</option>
+            <option value="Ariana Grande">Ariana Grande</option>
+            <option value="Sam Smith">Sam Smith</option>
+            <option value="Charlie Puth">Charlie Puth</option>
+            <option value="Shawn Mendes">Shawn Mendes</option>
+            <option value="Lauv">Lauv</option>
+            <option value="Christopher">Christopher</option>
+            <option value="Lady Gaga">Lady Gaga</option>
+            <option value="Billie Eilish">Billie Eilish</option>
+          </optgroup>
+        </select>
+
+        <button onclick="syncRemoteBank()" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition">
+          🔄 同步題庫
+        </button>
+        <button onclick="stopAllAudio()" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-semibold transition">
+          ⏹ 停止音訊
+        </button>
+      </div>
+    </div>
+
+    <!-- 學習戰績儀表板 -->
+    <div class="bg-stone-50 border-t border-stone-200/80 px-4 py-2.5">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 items-center text-xs">
+        <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
+          <span class="text-base">🎧</span>
+          <div>
+            <div class="text-stone-400 text-[11px]">聽力挖空正確數</div>
+            <div id="dashListenStat" class="font-bold text-indigo-800 text-sm">0 / 0 題</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
+          <span class="text-base">✍️</span>
+          <div>
+            <div class="text-stone-400 text-[11px]">語域替換 (Task 2)</div>
+            <div id="dashRegisterStat" class="font-bold text-emerald-700 text-sm">0 / 0 題</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
+          <span class="text-base">🎙️</span>
+          <div>
+            <div class="text-stone-400 text-[11px]">Shadowing 最高匹配</div>
+            <div id="dashShadowStat" class="font-bold text-amber-700 text-sm">尚未錄音</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
+          <span class="text-base">📒</span>
+          <div>
+            <div class="text-stone-400 text-[11px]">跨站共用單字本</div>
+            <div id="dashNotebookStat" class="font-bold text-stone-800 text-sm">0 筆雙語域詞卡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 4 大核心訓練分頁 ==================== -->
+  <nav class="max-w-7xl mx-auto w-full px-4 pt-5">
+    <div class="flex flex-wrap gap-2 bg-white p-2 rounded-2xl border border-stone-200 shadow-sm text-xs sm:text-sm">
+      <button onclick="switchModeTab('listening')" id="tab-listening" class="px-4 py-2.5 rounded-xl font-bold nav-pill-active transition">
+        🎧 1. 聽力挖空測驗 (5–8秒片段 & 連音拼寫)
+      </button>
+      <button onclick="switchModeTab('register')" id="tab-register" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
+        ✍️ 2. 「劇中口語 ➔ 雅思高分」替換選擇題
+      </button>
+      <button onclick="switchModeTab('shadowing')" id="tab-shadowing" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
+        🎙️ 3. 情境造句與口說跟讀 (Shadowing)
+      </button>
+      <button onclick="switchModeTab('reference')" id="tab-reference" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
+        📚 4. 口語 vs. 雅思學術對照表 & 共用單字本
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== 主要內容區 ==================== -->
+  <main class="max-w-7xl mx-auto w-full px-4 py-6 flex-1 space-y-6">
+
+    <!-- ==================== 題型 1：聽力挖空測驗 ==================== -->
+    <section id="panel-listening" class="space-y-5">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-5 bg-white rounded-2xl p-5 border border-stone-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-stone-200 pb-3">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold">IELTS Listening 填空實戰</span>
+              <h2 id="lisSourceTitle" class="font-serif-academy font-bold text-base text-stone-900 mt-1"></h2>
+            </div>
+            <button onclick="nextListeningItem()" class="px-3 py-1.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold">
+              🔄 下一題片段
+            </button>
+          </div>
+
+          <!-- YouTube 嵌入式 5-8 秒片段播放器（若版權限制自動切換原聲語音） -->
+          <div class="rounded-xl overflow-hidden bg-stone-900 aspect-video relative border border-stone-300">
+            <div id="ytPlayerContainer" class="w-full h-full"></div>
+            <div id="ytFallbackOverlay" class="hidden absolute inset-0 bg-stone-900/95 text-white p-4 flex flex-col items-center justify-center text-center space-y-2 text-xs">
+              <div class="text-amber-400 font-bold text-sm">🎧 已啟用高清晰度原聲模擬音軌</div>
+              <p id="ytFallbackMsg" class="text-stone-300">點擊下方「▶️ 播放考題片段 (1.0x)」或「🐢 慢速連音拆解 (0.75x)」聆聽後作答！</p>
+            </div>
+          </div>
+
+          <!-- 播放控制列 -->
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button onclick="playCurrentYtClip()" class="py-2.5 px-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold shadow-sm">
+              ▶️ 播放考題片段 (<span id="lisClipDuration">6</span>秒)
+            </button>
+            <button onclick="playListeningTtsFallback(1.0)" class="py-2.5 px-3 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white font-bold shadow-sm">
+              🔊 美式原速朗讀 (1.0x)
+            </button>
+            <button onclick="playListeningTtsFallback(0.75)" class="py-2.5 px-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold col-span-2">
+              🐢 慢速連音拆解朗讀 (0.75x — 聽清弱讀與連音)
+            </button>
+          </div>
+
+          <details class="text-xs bg-stone-50 p-3 rounded-xl border border-stone-200">
+            <summary class="cursor-pointer font-bold text-stone-600">⚙️ 自訂測試其他 YouTube 影片秒數區間</summary>
+            <div class="mt-2.5 space-y-2">
+              <input id="customYtIdInput" type="text" placeholder="輸入 YouTube Video ID (例如 nfWlot6h_JM)"
+                     class="w-full p-2 rounded-lg bg-white border border-stone-300" />
+              <div class="flex gap-2">
+                <input id="customYtStart" type="number" value="42" placeholder="開始秒數" class="w-1/2 p-2 rounded-lg bg-white border border-stone-300" />
+                <input id="customYtEnd" type="number" value="49" placeholder="結束秒數" class="w-1/2 p-2 rounded-lg bg-white border border-stone-300" />
+              </div>
+              <button onclick="applyCustomYtClip()" class="w-full py-1.5 rounded-lg bg-stone-800 text-white font-bold">套用自訂片段</button>
+            </div>
+          </details>
+        </div>
+
+        <!-- 右側：挖空字幕拼寫作答區 -->
+        <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-bold text-indigo-800">📝 模擬 IELTS Listening 填空題（Write NO MORE THAN THREE WORDS）</span>
+              <span id="lisProgressBadge" class="text-xs font-semibold text-stone-500">題號 1 / 14</span>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-stone-50 border-2 border-indigo-100 space-y-3">
+              <div class="text-xs text-stone-500 font-semibold">請聆聽左側片段，將字幕中缺少的關鍵字填入空格（注意單複數與拼字）：</div>
+              <div id="lisClozeSentenceBox" class="font-serif-academy text-base sm:text-lg leading-loose text-stone-900"></div>
+              <div id="lisClozeInputsRow" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2"></div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-950 space-y-1">
+              <div class="font-bold">👂 連音與弱讀聽力提示 (Connected Speech Tip)：</div>
+              <div id="lisPronunciationTip"></div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-2">
+              <button onclick="checkListeningCloze()" class="px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold shadow-sm">
+                ✓ 送出拼寫檢查
+              </button>
+              <button onclick="revealListeningAnswer()" class="px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold">
+                👁️ 顯示完整字幕與中文
+              </button>
+              <button onclick="saveCurrentItemToNotebook('listening')" class="px-4 py-2.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold ml-auto">
+                + 收藏雙語域單字卡
+              </button>
+            </div>
+
+            <div id="lisFeedbackBox" class="hidden p-4 rounded-xl text-xs space-y-1.5"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 題型 2：「劇中口語 ➔ 雅思高分」替換選擇題 ==================== -->
+    <section id="panel-register" class="hidden space-y-5">
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
+          <div>
+            <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold">Register Awareness · Band 7.5+ 核心能力</span>
+            <h2 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900 mt-1">✍️ 「劇中口語 / 歌詞 ➔ 雅思寫作 Task 2 學術高分」替換測驗</h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="regProgressBadge" class="text-xs font-bold text-stone-500">第 1 題</span>
+            <button onclick="nextRegisterItem()" class="px-4 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm">
+              🔄 下一題語域轉換
+            </button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-2.5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span id="regSourceTag" class="px-2.5 py-0.5 rounded-full bg-white border border-amber-300 text-amber-900 text-xs font-bold"></span>
+            <div class="flex gap-1.5 text-xs">
+              <button onclick="speakCurrentRegisterQuote(1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-800 text-white font-bold">🔊 朗讀原句 1.0x</button>
+              <button onclick="speakCurrentRegisterQuote(0.75)" class="px-2.5 py-1 rounded-lg bg-amber-600 text-white font-bold">🐢 慢速 0.75x</button>
+            </div>
+          </div>
+          <div id="regOriginalQuote" class="font-serif-academy text-base sm:text-lg text-stone-900 leading-relaxed"></div>
+          <div id="regQuoteZh" class="text-xs text-stone-600"></div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 space-y-1.5">
+            <div class="text-xs font-bold text-indigo-800">🎯 考官情境題問：</div>
+            <div id="regQuestionPrompt" class="text-xs sm:text-sm font-bold text-stone-900 leading-relaxed"></div>
+          </div>
+
+          <div id="regOptionsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm"></div>
+        </div>
+
+        <div id="regExplanationBox" class="hidden p-5 rounded-2xl bg-emerald-50/80 border border-emerald-200 space-y-3 text-xs sm:text-sm"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 題型 3：情境造句與口說跟讀 (Shadowing) ==================== -->
+    <section id="panel-shadowing" class="hidden space-y-5">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-6 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-stone-200 pb-3">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-800 border border-purple-200 text-xs font-bold">Shadowing 影子跟讀訓練</span>
+              <h2 id="shdSourceTitle" class="font-serif-academy font-bold text-base text-stone-900 mt-1"></h2>
+            </div>
+            <button onclick="nextShadowingItem()" class="px-3 py-1.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold">
+              🔄 換一句跟讀
+            </button>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-2">
+            <div class="text-[11px] font-bold text-stone-500">📢 跟讀目標原句（大寫為重音節，‿ 為母語連音處）：</div>
+            <div id="shdTargetSentence" class="font-serif-academy text-base sm:text-lg text-stone-900 leading-relaxed"></div>
+            <div id="shdStressGuide" class="text-xs font-mono text-indigo-800 bg-indigo-50/80 p-2 rounded-lg"></div>
+            <div id="shdSentenceZh" class="text-xs text-stone-500"></div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button onclick="speakCurrentShadowing(1.0)" class="px-3.5 py-2.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white font-bold">
+              🔊 聽母語示範 (1.0x)
+            </button>
+            <button onclick="speakCurrentShadowing(0.75)" class="px-3.5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold">
+              🐢 慢速跟讀示範 (0.75x)
+            </button>
+            <button id="btnStartShadowRecord" onclick="toggleShadowRecording()" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold shadow-sm">
+              🎙️ 開始跟讀錄音比對
+            </button>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-stone-700">📊 發音與單字還原度分析：</span>
+              <span id="shdAccuracyScore" class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold">等待錄音...</span>
+            </div>
+            <div id="shdRecognizedText" class="p-2.5 rounded-xl bg-white border border-stone-200 min-h-[44px] text-stone-600 italic">
+              按下「🎙️ 開始跟讀錄音比對」並對著麥克風朗讀上方句子，系統會自動標出讀對（綠色）與漏讀（紅色）的單字。
+            </div>
+            <div id="shdWordDiffBox" class="flex flex-wrap gap-1.5 pt-1"></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="space-y-4">
+            <div class="border-b border-stone-200 pb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">IELTS Speaking 實戰遷移</span>
+              <h3 class="font-serif-academy font-bold text-base text-stone-900 mt-1">💬 雅思口說真題套用練習（融入劇中片語 / 學術升級詞）</h3>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-2">
+              <div class="flex items-center justify-between">
+                <span id="shdIeltsPartTag" class="text-xs font-bold text-indigo-900"></span>
+                <button onclick="speakCurrentIeltsSpeakingQ()" class="px-2.5 py-1 rounded-lg bg-indigo-800 text-white text-xs font-bold">🔊 聽考官提問</button>
+              </div>
+              <div id="shdIeltsQuestion" class="font-serif-academy font-bold text-sm sm:text-base text-stone-900"></div>
+              <div id="shdTargetBadgeRow" class="flex flex-wrap gap-1.5 pt-1 text-xs"></div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-stone-700">⌨️ 請用電腦輸入（或語音聽寫）你的雅思口說回答：</span>
+                <button onclick="dictateSpeakingAnswer()" class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200 font-bold">
+                  🎙️ 語音輸入回答
+                </button>
+              </div>
+              <textarea id="shdUserSpeakingInput" rows="4" oninput="evaluateSpeakingApplication()"
+                        placeholder="試著在回答中套用上方的「劇中片語」或「Band 7.5+ 學術升級詞」..."
+                        class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 text-sm focus:outline-none focus:border-indigo-700 focus:bg-white"></textarea>
+              <div id="shdAppliedFeedback" class="text-xs text-stone-500">尚未偵測到目標表達，試著造句運用看看！</div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-2">
+              <button onclick="document.getElementById('shdModelAnswerBox').classList.toggle('hidden')" class="px-4 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold">
+                ✨ 查看 Band 8.0 考官高分示範回答
+              </button>
+              <button onclick="saveCurrentItemToNotebook('shadowing')" class="px-4 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold ml-auto">
+                + 收藏雙語域單字卡
+              </button>
+            </div>
+            <div id="shdModelAnswerBox" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-stone-800 leading-relaxed"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 分頁 4：口語 vs. 雅思學術對照總表 & 共用單字本 ==================== -->
+    <section id="panel-reference" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
+          <div>
+            <h2 class="font-serif-academy font-bold text-lg text-stone-900">📚 4 大美劇 & 9 位歌手 ➔ 雅思 Band 7.5+ 語域對照總表</h2>
+            <p class="text-xs text-stone-500 mt-0.5">點擊任一列可直接跳轉至對應題目練習，或一鍵存入跨站共用單字本</p>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-stone-200">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="bg-stone-100 border-b border-stone-200 text-stone-600">
+                <th class="py-3 px-3">出處（美劇 / 歌手）</th>
+                <th class="py-3 px-3">劇中口語 / 歌詞表達</th>
+                <th class="py-3 px-3">中文意思</th>
+                <th class="py-3 px-3 bg-emerald-50/70 text-emerald-900">🎓 雅思 Task 2 學術替換詞</th>
+                <th class="py-3 px-3 text-right">操作</th>
+              </tr>
+            </thead>
+            <tbody id="registerTableBody" class="divide-y divide-stone-200 bg-white"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-3">
+        <h3 class="font-serif-academy font-bold text-base text-stone-900">📒 我的跨站共用單字本 (與 Lumina IELTS 主站即時同步)</h3>
+        <div id="sharedNotebookList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // ==================== 1. 4 大美劇 × 9 大歌手 ➔ 雅思三合一題庫 ====================
+    const POP_TO_IELTS_BANK = [
+      {
+        id: '2bg_1',
+        work: '破產姊妹', workEn: '2 Broke Girls', category: 'drama',
+        ytId: '', startSec: 0, endSec: 6,
+        fullSentence: 'We are not just broke, we are flat broke, and we cannot afford to cut corners on our cupcake business.',
+        clozedTemplate: 'We are not just broke, we are [1], and we cannot afford to [2] on our cupcake business.',
+        blanks: ['flat broke', 'cut corners'],
+        listeningTip: '注意 flat broke 中的 t 在美式口語常做無聲除阻（stop t），聽起來像 fla-broke；cut corners 的 t 也會弱化。',
+        sentenceZh: '我們不只是手頭緊，我們是徹底破產了，而且我們的杯子蛋糕生意絕不能偷工減料。',
+        casualPhrase: 'cut corners',
+        casualExplain: '偷工減料、圖省事省略必要步驟',
+        registerQuestion: '《破產姊妹》中 Max 強調創業絕不 "cut corners"。若要在【雅思寫作 Task 2】論述「企業不應為了降低成本而犧牲產品安全標準」，哪個學術替換最精準？',
+        registerOptions: [
+          'compromise quality and safety standards',
+          'slice the geometric edges of production',
+          'make cheap shortcuts in the shop',
+          'reduce the corner budget quickly'
+        ],
+        academicAnswer: 'compromise quality and safety standards',
+        academicSentence: 'Corporations must never compromise quality and safety standards merely to maximize short-term profit margins.',
+        stressGuide: 'We are NOT just BROKE, we are FLAT BROKE, and we CANnot afFORD to CUT CORners.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 3 · Entrepreneurship & Work Ethic',
+        ieltsSpeakingQ: 'Why do some small businesses fail during their first few years of operation?',
+        ieltsSpeakingModel: 'Off the top of my head, many startups fail because they either run out of capital—becoming completely flat broke—or they try to cut corners to save money, which ultimately compromises quality standards and alienates loyal customers.'
+      },
+      {
+        id: 'ft_1',
+        work: '同路人', workEn: 'Fellow Travelers', category: 'drama',
+        ytId: '', startSec: 0, endSec: 7,
+        fullSentence: 'In Washington, survival depends on your ability to keep a low profile and read between the lines.',
+        clozedTemplate: 'In Washington, survival depends on your ability to keep a [1] and read [2].',
+        blanks: ['low profile', 'between the lines'],
+        listeningTip: '注意 "keep a" 連讀成 /kiː-pə/；"between the" 在快速美語中 the 弱讀為 /ðə/。',
+        sentenceZh: '在華盛頓政壇，生存取決於你保持低調以及體會言外之意的能力。',
+        casualPhrase: 'read between the lines',
+        casualExplain: '體會言外之意、聽出弦外之音',
+        registerQuestion: '《同路人》角色在政治高壓下必須學會 "read between the lines"。若要在【雅思寫作 Task 2】表達「現代公民應具備判讀媒體隱含立場的能力」，哪個替換最道地？',
+        registerOptions: [
+          'discern implicit bias and underlying subtext',
+          'read every single line in the newspaper',
+          'guess the secret sentences between paragraphs',
+          'look closely at printed lines'
+        ],
+        academicAnswer: 'discern implicit bias and underlying subtext',
+        academicSentence: 'Critical media literacy enables citizens to discern implicit bias and underlying subtext rather than accepting headlines at face value.',
+        stressGuide: 'In WASHington, surVIval dePENDS on your aBILity to KEEP a LOW PROfile and READ beTWEEN the LINES.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 3 · Communication & Society',
+        ieltsSpeakingQ: 'Do you think people today are more cautious about expressing their true opinions in public?',
+        ieltsSpeakingModel: 'Yes, particularly in professional or politically sensitive environments, individuals often prefer to keep a low profile and expect colleagues to read between the lines rather than stating controversial views explicitly.'
+      },
+      {
+        id: 'fr_1',
+        work: '六人行', workEn: 'Friends', category: 'drama',
+        ytId: '', startSec: 0, endSec: 6,
+        fullSentence: 'Before we jump to conclusions, let us talk it over and get everyone on the same page.',
+        clozedTemplate: 'Before we [1] to conclusions, let us talk it over and get everyone [2].',
+        blanks: ['jump', 'on the same page'],
+        listeningTip: '注意 "talk it over" 連音成 /tɔː-kɪ-toʊvɚ/；"on the" 連讀順滑。',
+        sentenceZh: '在我們草率下定論之前，大家先好好溝通並達成共識吧。',
+        casualPhrase: 'get everyone on the same page',
+        casualExplain: '讓所有人達成共識、想法一致',
+        registerQuestion: '《六人行》好友常說要 "get everyone on the same page"。若在【雅思寫作 Task 2】論述「跨國團隊或政府部門應建立共同政策共識」，哪個學術表達最精準？',
+        registerOptions: [
+          'establish mutual consensus among all stakeholders',
+          'put every worker on an identical sheet of paper',
+          'make people read the same page together',
+          'agree on the book page number'
+        ],
+        academicAnswer: 'establish mutual consensus among all stakeholders',
+        academicSentence: 'To tackle transboundary climate challenges effectively, governments must establish mutual consensus among all stakeholders.',
+        stressGuide: 'BeFORE we JUMP to conCLUsions, LET us TALK‿it‿Over and GET EVeryone on the SAME PAGE.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 1 / Part 3 · Teamwork & Resolution',
+        ieltsSpeakingQ: 'How do you usually resolve disagreements when working in a team?',
+        ieltsSpeakingModel: 'Instead of letting people jump to conclusions, I always schedule a brief discussion to clarify expectations and establish mutual consensus—or as they say in Friends, get everyone on the same page.'
+      },
+      {
+        id: 'mf_1',
+        work: '摩登家庭', workEn: 'Modern Family', category: 'drama',
+        ytId: '', startSec: 0, endSec: 6,
+        fullSentence: 'I am a cool dad who understands peer pressure in this dog-eat-dog world.',
+        clozedTemplate: 'I am a cool dad who understands [1] in this [2] world.',
+        blanks: ['peer pressure', 'dog-eat-dog'],
+        listeningTip: '《摩登家庭》Gloria 曾把 dog-eat-dog 聽成 doggy-dog！注意中間 eat 的短母音 /iː/ 與連音 /dɔː-ɡiːt-dɔːɡ/。',
+        sentenceZh: '我是個懂青少年同儕壓力的酷老爸，完全理解這個弱肉強食的競爭世界。',
+        casualPhrase: 'dog-eat-dog world',
+        casualExplain: '弱肉強食、競爭極度殘酷的社會',
+        registerQuestion: '《摩登家庭》Phil 提到現代社會是個 "dog-eat-dog world"。若要在【雅思寫作 Task 2】描述「高度競爭的現代職場與教育環境」，哪個學術詞彙最得體？',
+        registerOptions: [
+          'a hyper-competitive socioeconomic landscape',
+          'a world where animals fight for food',
+          'a very scary dog-eating society',
+          'an unfriendly pet environment'
+        ],
+        academicAnswer: 'a hyper-competitive socioeconomic landscape',
+        academicSentence: 'Young graduates today are entering a hyper-competitive socioeconomic landscape where continuous upskilling is indispensable.',
+        stressGuide: 'I am a COOL DAD who underSTANDS PEER PRESsure in this DOG-EAT-DOG WORLD.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 3 · Youth & Competition',
+        ieltsSpeakingQ: 'Do young people today face more pressure than previous generations?',
+        ieltsSpeakingModel: 'Undoubtedly. Between intense social media comparison, peer pressure, and a hyper-competitive job market, young adults face unprecedented psychological strain.'
+      },
+      {
+        id: 'ts_1',
+        work: 'Taylor Swift', workEn: 'Shake It Off', category: 'singer',
+        ytId: 'nfWlot6h_JM', startSec: 42, endSec: 49,
+        fullSentence: 'Cause the players gonna play, play, play, and the haters gonna hate, I am just gonna shake it off.',
+        clozedTemplate: 'Cause the players [1] play, play, play, and the haters gonna hate, I am just gonna [2].',
+        blanks: ['gonna', 'shake it off'],
+        listeningTip: '歌詞中 "gonna" 是 going to 的美式高頻縮讀；"shake it off" 連音成 /ʃeɪ-kɪ-tɔːf/。',
+        sentenceZh: '因為愛玩的人照樣玩，酸民照樣酸，我只要把這些負能量通通甩掉就好。',
+        casualPhrase: 'shake it off',
+        casualExplain: '擺脫負面情緒、不把外界批評放在心上',
+        registerQuestion: 'Taylor Swift 在《Shake It Off》唱道面對酸民要 "shake it off"。若要在【雅思寫作 Task 2】論述「公眾人物或青少年應培養對網路批評的心理韌性」，哪個替換最精準？',
+        registerOptions: [
+          'cultivate emotional resilience against unfounded criticism',
+          'shake dust off their shoulders physically',
+          'dance away from all school examinations',
+          'ignore every constructive academic feedback'
+        ],
+        academicAnswer: 'cultivate emotional resilience against unfounded criticism',
+        academicSentence: 'Adolescents must cultivate emotional resilience against unfounded criticism on social media platforms.',
+        stressGuide: 'Cause the PLAYers gonna PLAY, and the HATers gonna HATE, I am JUST gonna SHAKE‿it‿OFF.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 1 / Part 2 · Handling Stress & Criticism',
+        ieltsSpeakingQ: 'How do you usually deal with negative feedback or stress in your daily life?',
+        ieltsSpeakingModel: 'Whenever I encounter unfair criticism, I try to maintain emotional resilience and simply shake it off rather than letting negativity undermine my focus.'
+      },
+      {
+        id: 'ag_1',
+        work: 'Ariana Grande', workEn: 'thank u, next', category: 'singer',
+        ytId: 'gl1aHhXnN1k', startSec: 52, endSec: 59,
+        fullSentence: 'One taught me love, one taught me patience, and one taught me pain, showing that every setback has a silver lining.',
+        clozedTemplate: 'One taught me love, one taught me [1], and one taught me pain, showing that every setback has a [2].',
+        blanks: ['patience', 'silver lining'],
+        listeningTip: '注意 "taught me" 的 t 弱化；"silver lining" 指烏雲背後的銀邊（逆境中的轉機）。',
+        sentenceZh: '一段教會我愛，一段教會我耐心，一段教會我痛苦，證明每次挫折背後都有一線曙光。',
+        casualPhrase: 'silver lining',
+        casualExplain: '黑暗中的一線希望、逆境中的正面收穫',
+        registerQuestion: 'Ariana Grande 的《thank u, next》傳達失戀也有 "silver lining"。若在【雅思寫作 Task 2】表達「經濟衰退或科技變革往往伴隨著結構轉型的正面契機」，哪個學術詞最合適？',
+        registerOptions: [
+          'a constructive catalyst amidst adversity',
+          'a shiny metallic border in the sky',
+          'a silver decoration on rainy clouds',
+          'an expensive jewelry investment'
+        ],
+        academicAnswer: 'a constructive catalyst amidst adversity',
+        academicSentence: 'While automation disrupts traditional sectors, it also serves as a constructive catalyst amidst adversity by creating higher-value roles.',
+        stressGuide: 'ONE taught me LOVE, ONE taught me PAtience, showing that EVery SETback has a SILver LINing.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 2 · A Difficult Experience That Taught You Something',
+        ieltsSpeakingQ: 'Describe a setback or failure that eventually turned into a positive experience.',
+        ieltsSpeakingModel: 'Failing my first technical certification was disheartening, yet the silver lining was that it exposed my weak spots and forced me to build a far more disciplined study routine.'
+      },
+      {
+        id: 'ss_1',
+        work: 'Sam Smith', workEn: 'Stay With Me', category: 'singer',
+        ytId: 'pB-5XG-DbAA', startSec: 44, endSec: 51,
+        fullSentence: 'Guess it is true, I am not good at a one-night stand, so I constantly second-guess myself.',
+        clozedTemplate: 'Guess it is true, I am not good at a one-night stand, so I constantly [1] [2].',
+        blanks: ['second-guess', 'myself'],
+        listeningTip: '注意 "good at a" 美式閃音連讀成 /ɡʊ-dæ-ɾə/；second-guess 中間可加連字號。',
+        sentenceZh: '我想這是真的，我不擅長短暫的露水情緣，因此總是不斷事後懷疑自己。',
+        casualPhrase: 'second-guess',
+        casualExplain: '事後懷疑、猶豫不決、自我懷疑',
+        registerQuestion: 'Sam Smith 唱出情感中的 "second-guess"。若在【雅思寫作 Task 2】描述「資訊過載導致消費者與決策者產生嚴重的決策猶豫與自我懷疑」，哪個替換最學術？',
+        registerOptions: [
+          'experience persistent decision paralysis and self-doubt',
+          'guess the second answer on a test',
+          'count numbers twice before speaking',
+          'make a second lucky guess'
+        ],
+        academicAnswer: 'experience persistent decision paralysis and self-doubt',
+        academicSentence: 'An overwhelming abundance of conflicting online reviews causes consumers to experience persistent decision paralysis and self-doubt.',
+        stressGuide: 'GUESS it is TRUE, I am NOT GOOD‿at‿a ONE-NIGHT STAND, so I CONstantly SEC-ond-GUESS mySELF.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 3 · Making Important Decisions',
+        ieltsSpeakingQ: 'Why do some people find it hard to make decisions quickly?',
+        ieltsSpeakingModel: 'People often fear making suboptimal choices, so they overanalyze every variable and constantly second-guess themselves even after committing to a plan.'
+      },
+      {
+        id: 'cp_1',
+        work: 'Charlie Puth', workEn: 'Attention', category: 'singer',
+        ytId: 'nfs8NYg7yQM', startSec: 53, endSec: 60,
+        fullSentence: 'You have been running round throwing that dirt all on my name, just stringing me along for attention.',
+        clozedTemplate: 'You have been running round throwing that dirt all on my name, just [1] me [2] for attention.',
+        blanks: ['stringing', 'along'],
+        listeningTip: '注意 "running round" 省略了 around 的 a；"stringing me along" 指「吊著某人胃口、給予虛假期待」。',
+        sentenceZh: '你到處散播謠言抹黑我的名聲，只是為了博取關注而一直吊著我。',
+        casualPhrase: 'stringing me along',
+        casualExplain: '吊著某人胃口、給人虛假希望卻不給承諾',
+        registerQuestion: 'Charlie Puth 在《Attention》控訴對方 "stringing me along"。若在【雅思寫作 Task 2】論述「部分企業以不實廣告給予消費者虛假承諾」，哪個正式表達最精準？',
+        registerOptions: [
+          'foster false expectations through deceptive practices',
+          'tie strings along the customer queue',
+          'pull people with long ropes',
+          'ask for attention loudly'
+        ],
+        academicAnswer: 'foster false expectations through deceptive practices',
+        academicSentence: 'Unethical advertisers frequently foster false expectations through deceptive practices to artificially inflate demand.',
+        stressGuide: 'You have been RUNning ROUND THROWing that DIRT all on my NAME, just STRINGing me‿aLONG for atTENtion.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 3 · Honesty & Interpersonal Relationships',
+        ieltsSpeakingQ: 'Is it better to tell someone a harsh truth immediately or avoid hurting their feelings?',
+        ieltsSpeakingModel: 'I believe transparent honesty is far kinder in the long run, because ambiguity only fosters false expectations—or strings the other person along unnecessarily.'
+      },
+      {
+        id: 'sm_1',
+        work: 'Shawn Mendes', workEn: "There's Nothing Holdin' Me Back", category: 'singer',
+        ytId: 'dT2owtxkU8k', startSec: 46, endSec: 53,
+        fullSentence: 'She pulls me in enough to keep me guessing, and there is nothing holding me back.',
+        clozedTemplate: 'She pulls me in enough to keep me [1], and there is nothing [2] me back.',
+        blanks: ['guessing', 'holding'],
+        listeningTip: '歌曲原唱常把 holding 唱成 "holdin\'"（省略 g 音），但雅思聽力填空必須拼出完整標準拼法 holding！',
+        sentenceZh: '她將我拉近到足以讓我猜不透，而此刻沒有任何事物能阻擋我前進。',
+        casualPhrase: 'holding me back',
+        casualExplain: '阻礙某人前進、使有所顧忌或自我設限',
+        registerQuestion: 'Shawn Mendes 唱出 "there’s nothing holding me back"。若要在【雅思寫作 Task 2】論述「缺乏數位基礎建設正嚴重阻礙偏鄉地區的經濟發展」，哪個動詞最學術？',
+        registerOptions: [
+          'impede socioeconomic advancement',
+          'hold people backward by the shoulders',
+          'stop walking backwards slowly',
+          'keep everyone guessing the economy'
+        ],
+        academicAnswer: 'impede socioeconomic advancement',
+        academicSentence: 'Inadequate broadband infrastructure continues to impede socioeconomic advancement in remote rural communities.',
+        stressGuide: 'She PULLS me‿IN eNOUGH to KEEP me GUESSing, and there is NOTHing HOLDing me BACK.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 2 / Part 3 · Ambition & Personal Growth',
+        ieltsSpeakingQ: 'What factors often prevent young people from achieving their career goals?',
+        ieltsSpeakingModel: 'Aside from financial constraints, fear of failure is often the primary psychological barrier holding individuals back from pursuing ambitious career transitions.'
+      },
+      {
+        id: 'lv_1',
+        work: 'Lauv', workEn: 'I Like Me Better', category: 'singer',
+        ytId: 'BcqxlcAsEf8', startSec: 38, endSec: 45,
+        fullSentence: 'To be young and in love in New York City, trying not to overthink every single word.',
+        clozedTemplate: 'To be young and in love in New York City, trying not to [1] every [2] word.',
+        blanks: ['overthink', 'single'],
+        listeningTip: '注意 "young and in" 連讀成 /jʌŋ-ən-ɪn/；overthink 為單一複合動詞，中間無空格。',
+        sentenceZh: '年少輕狂地在紐約墜入愛河，努力不去對每一個字眼過度胡思亂想。',
+        casualPhrase: 'overthink',
+        casualExplain: '過度胡思亂想、鑽牛角尖',
+        registerQuestion: 'Lauv 歌詞中常見 "overthink"。若在【雅思寫作 Task 2】分析「過度反芻負面細節對現代人心理健康的危害」，哪個學術名詞最專業？',
+        registerOptions: [
+          'engage in excessive cognitive rumination',
+          'think above the ceiling height',
+          'use too many dictionary words',
+          'study overnight without sleeping'
+        ],
+        academicAnswer: 'engage in excessive cognitive rumination',
+        academicSentence: 'Constant exposure to idealized online lifestyles prompts young adults to engage in excessive cognitive rumination.',
+        stressGuide: 'To be YOUNG and in LOVE in New YORK CITy, TRYing NOT to O-ver-THINK EVery SINgle WORD.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 1 / Part 3 · Mental Well-being & Relaxation',
+        ieltsSpeakingQ: 'Do you think modern life makes people worry more than in the past?',
+        ieltsSpeakingModel: 'Yes, instant messaging and constant connectivity make it far too easy to overthink trivial interactions instead of unwinding properly at the end of the day.'
+      },
+      {
+        id: 'ch_1',
+        work: 'Christopher', workEn: 'Bad', category: 'singer',
+        ytId: '', startSec: 0, endSec: 6,
+        fullSentence: 'You know you are bad for me, yet you play hard to get every time I walk away.',
+        clozedTemplate: 'You know you are bad for me, yet you [1] hard to [2] every time I walk away.',
+        blanks: ['play', 'get'],
+        listeningTip: '注意 "walk away" 連音成 /wɔː-kə-weɪ/；play hard to get 為固定四字口語片語。',
+        sentenceZh: '你明知道你對我而言是個危險誘惑，卻在我每次轉身離開時欲擒故縱。',
+        casualPhrase: 'play hard to get',
+        casualExplain: '欲擒故縱、故意裝作冷淡難以親近',
+        registerQuestion: 'Christopher 歌詞中提到 "play hard to get"。若在【雅思寫作 Task 2】或心理學討論中表達「在談判或社交互動中故意保持距離以提升稀缺價值」，哪個學術表達最貼切？',
+        registerOptions: [
+          'feign indifference to project perceived scarcity',
+          'play difficult video games to win prizes',
+          'work very hard to get a job offer',
+          'refuse to play sports with friends'
+        ],
+        academicAnswer: 'feign indifference to project perceived scarcity',
+        academicSentence: 'In commercial negotiations, seasoned representatives occasionally feign indifference to project perceived scarcity and strengthen leverage.',
+        stressGuide: 'You KNOW you are BAD for me, YET you PLAY HARD to GET EVery TIME I WALK‿aWAY.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 3 · Social Behaviour & Communication',
+        ieltsSpeakingQ: 'Why do people sometimes hide their true feelings when meeting someone new?',
+        ieltsSpeakingModel: 'Out of fear of vulnerability, people often feign indifference—or play hard to get—until they feel certain their interest is reciprocated.'
+      },
+      {
+        id: 'lg_1',
+        work: 'Lady Gaga', workEn: 'Shallow', category: 'singer',
+        ytId: 'bo_efYhYU2A', startSec: 128, endSec: 135,
+        fullSentence: 'I am off the deep end, watch as I dive in, I will never meet the ground.',
+        clozedTemplate: 'I am off the [1], watch as I [2], I will never meet the ground.',
+        blanks: ['deep end', 'dive in'],
+        listeningTip: '注意 "watch as I" 連音成 /wɑː-tʃæ-zaɪ/；"dive in" 連音成 /daɪ-vɪn/。',
+        sentenceZh: '我已縱身躍入未知的深水區，看我全心投入，再也不會退回原地。',
+        casualPhrase: 'off the deep end / dive in',
+        casualExplain: '徹底豁出去、全心投入未知領域',
+        registerQuestion: 'Lady Gaga 在《Shallow》高潮唱出 "I’m off the deep end, watch as I dive in"。若在【雅思寫作 Task 2】表達「企業應大膽投入顛覆性創新而非墨守成規」，哪個學術替換最精準？',
+        registerOptions: [
+          'commit wholeheartedly to transformative innovation',
+          'jump into a deep swimming pool without lessons',
+          'fall off the edge of a tall building',
+          'swim underwater during working hours'
+        ],
+        academicAnswer: 'commit wholeheartedly to transformative innovation',
+        academicSentence: 'To remain viable in an era of rapid disruption, legacy enterprises must commit wholeheartedly to transformative innovation.',
+        stressGuide: 'I am OFF the DEEP END, WATCH‿as‿I DIVE‿IN, I will NEVer MEET the GROUND.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 2 · Taking a Risk or Trying Something New',
+        ieltsSpeakingQ: 'Describe a time when you decided to take a big risk in your studies or career.',
+        ieltsSpeakingModel: 'When I decided to automate our entire workflow from scratch, I felt like I was diving off the deep end, yet committing wholeheartedly to that challenge paid off tremendously.'
+      },
+      {
+        id: 'be_1',
+        work: 'Billie Eilish', workEn: 'Birds of a Feather', category: 'singer',
+        ytId: '', startSec: 0, endSec: 6,
+        fullSentence: 'Birds of a feather, we should stick together, because shared values sustain lasting solidarity.',
+        clozedTemplate: '[1] of a feather, we should [2], because shared values sustain lasting solidarity.',
+        blanks: ['Birds', 'stick together'],
+        listeningTip: '注意 "Birds of a" 連音成 /bɜːrd-zə-və/；"stick together" 的 k 與 t 形成無聲停頓連音。',
+        sentenceZh: '我們是志趣相投的同類，應該緊密團結在一起，因為共同的價值觀能維繫長久的凝聚力。',
+        casualPhrase: 'Birds of a feather / stick together',
+        casualExplain: '物以類聚、志同道合的人緊密團結',
+        registerQuestion: 'Billie Eilish 的《Birds of a Feather》化用經典諺語。若要在【雅思寫作 Task 2】論述「具有相似文化與價值觀的群體自然傾向於形成緊密的社群凝聚力」，哪個表達最學術？',
+        registerOptions: [
+          'individuals with shared affinities naturally foster strong social cohesion',
+          'wild birds with identical feathers fly in circles',
+          'people glue their clothes together in winter',
+          'similar animals live inside the same cage'
+        ],
+        academicAnswer: 'individuals with shared affinities naturally foster strong social cohesion',
+        academicSentence: 'In multicultural cities, individuals with shared affinities naturally foster strong social cohesion through community associations.',
+        stressGuide: 'BIRDS‿of‿a FEATHer, we should STICK toGETHer, because SHARED VALues susTAIN LASTing soliDARity.',
+        ieltsSpeakingPart: 'IELTS Speaking Part 1 / Part 3 · Friendship & Community',
+        ieltsSpeakingQ: 'Do you think people tend to make friends with those who are similar to them or completely different?',
+        ieltsSpeakingModel: 'While diversity is enriching, I think the old idiom "birds of a feather flock together" holds true—people with shared core values tend to stick together and build deeper trust.'
+      }
+    ];
+
+    // ==================== 2. 狀態管理與跨站共用單字本 ====================
+    let BANK = [...POP_TO_IELTS_BANK];
+    let sharedNotebook = JSON.parse(localStorage.getItem('LUMINA_NOTEBOOK_V2') || '[]');
+    let stats = JSON.parse(localStorage.getItem('LUMINA_POP_IELTS_STATS_V1') || '{"lisOk":0,"lisTotal":0,"regOk":0,"regTotal":0,"bestShadow":0}');
+
+    let lisIdx = 0, regIdx = 0, shdIdx = 0;
+    let regAnswered = false;
+
+    let ytPlayer = null;
+    let ytReady = false;
+    let ytBlockedOrError = false;
+    let ytStopTimer = null;
+
+    let recognition = null;
+    let isRecordingShadow = false;
+
+    function getFilteredBank() {
+      const f = document.getElementById('globalTopicFilter').value;
+      if (f === 'ALL') return BANK;
+      const sub = BANK.filter(item => item.work === f);
+      return sub.length > 0 ? sub : BANK;
+    }
+
+    function onTopicFilterChange() {
+      lisIdx = 0;
+      regIdx = 0;
+      shdIdx = 0;
+      regAnswered = false;
+      renderListeningExercise();
+      renderRegisterExercise();
+      renderShadowingExercise();
+      renderReferenceTable();
+    }
+
+    async function syncRemoteBank() {
+      try {
+        const res = await fetch('./pop_ielts_bank.json', { cache: 'no-store' });
+        if (res.ok) {
+          const remote = await res.json();
+          if (Array.isArray(remote) && remote.length > 0) {
+            const map = new Map();
+            POP_TO_IELTS_BANK.forEach(x => map.set(x.id, x));
+            remote.forEach(x => { if (x.clozedTemplate && x.blanks) map.set(x.id, x); });
+            BANK = Array.from(map.values());
+          }
+        }
+      } catch (_) {}
+      onTopicFilterChange();
+      updateTopDashboard();
+    }
+
+    function saveStats() {
+      localStorage.setItem('LUMINA_POP_IELTS_STATS_V1', JSON.stringify(stats));
+      updateTopDashboard();
+    }
+
+    function updateTopDashboard() {
+      document.getElementById('dashListenStat').textContent = `${stats.lisOk} / ${stats.lisTotal} 題`;
+      document.getElementById('dashRegisterStat').textContent = `${stats.regOk} / ${stats.regTotal} 題`;
+      document.getElementById('dashShadowStat').textContent = stats.bestShadow > 0 ? `${stats.bestShadow}% 匹配` : '尚未錄音';
+      document.getElementById('dashNotebookStat').textContent = `${sharedNotebook.length} 筆雙語域詞卡`;
+    }
+
+    // ==================== 3. 音訊與 YouTube 5-8 秒片段控制引擎 ====================
+    function loadYouTubeApi() {
+      if (window.YT && window.YT.Player) return;
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    }
+
+    window.onYouTubeIframeAPIReady = function() {
+      ytPlayer = new YT.Player('ytPlayerContainer', {
+        height: '100%',
+        width: '100%',
+        videoId: 'nfWlot6h_JM',
+        playerVars: { rel: 0, modestbranding: 1, controls: 1 },
+        events: {
+          onReady: () => { ytReady = true; syncYtPlayerToCurrentItem(false); },
+          onError: () => {
+            ytBlockedOrError = true;
+            document.getElementById('ytFallbackOverlay').classList.remove('hidden');
+          }
+        }
+      });
+    };
+
+    function syncYtPlayerToCurrentItem(autoplay = false) {
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      if (ytStopTimer) clearInterval(ytStopTimer);
+
+      if (!item.ytId) {
+        ytBlockedOrError = true;
+        document.getElementById('ytFallbackOverlay').classList.remove('hidden');
+        return;
+      }
+
+      ytBlockedOrError = false;
+      document.getElementById('ytFallbackOverlay').classList.add('hidden');
+      if (ytReady && ytPlayer && typeof ytPlayer.loadVideoById === 'function') {
+        if (autoplay) {
+          ytPlayer.loadVideoById({ videoId: item.ytId, startSeconds: item.startSec, endSeconds: item.endSec });
+          ytStopTimer = setInterval(() => {
+            if (ytPlayer && typeof ytPlayer.getCurrentTime === 'function') {
+              if (ytPlayer.getCurrentTime() >= item.endSec) {
+                ytPlayer.pauseVideo();
+                clearInterval(ytStopTimer);
+              }
+            }
+          }, 250);
+        } else {
+          ytPlayer.cueVideoById({ videoId: item.ytId, startSeconds: item.startSec, endSeconds: item.endSec });
+        }
+      }
+    }
+
+    function playCurrentYtClip() {
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      if (!item.ytId || !ytReady || ytBlockedOrError) {
+        playListeningTtsFallback(1.0);
+        return;
+      }
+      syncYtPlayerToCurrentItem(true);
+    }
+
+    function applyCustomYtClip() {
+      const vid = document.getElementById('customYtIdInput').value.trim();
+      const s = Number(document.getElementById('customYtStart').value) || 0;
+      const e = Number(document.getElementById('customYtEnd').value) || (s + 6);
+      if (!vid) return;
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      item.ytId = vid;
+      item.startSec = s;
+      item.endSec = e;
+      document.getElementById('lisClipDuration').textContent = Math.max(1, e - s);
+      syncYtPlayerToCurrentItem(true);
+    }
+
+    function speakText(text, rate = 1.0) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      u.rate = rate;
+      window.speechSynthesis.speak(u);
+    }
+
+    function stopAllAudio() {
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      if (ytReady && ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
+        try { ytPlayer.pauseVideo(); } catch (_) {}
+      }
+    }
+
+    function playListeningTtsFallback(rate) {
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      speakText(item.fullSentence, rate);
+    }
+
+    // ==================== 4. 題型 1：聽力挖空測驗渲染與批改 ====================
+    function renderListeningExercise() {
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      document.getElementById('lisSourceTitle').textContent = `${item.category === 'drama' ? '🎬' : '🎵'} ${item.work} (${item.workEn})`;
+      document.getElementById('lisClipDuration').textContent = Math.max(5, (item.endSec - item.startSec) || 6);
+      document.getElementById('lisProgressBadge').textContent = `題號 ${(lisIdx % list.length) + 1} / ${list.length}`;
+      document.getElementById('lisPronunciationTip').textContent = item.listeningTip;
+
+      const formattedCloze = item.clozedTemplate
+        .replace('[1]', '<span class="px-2.5 py-0.5 mx-1 rounded bg-indigo-100 text-indigo-900 font-sans font-bold text-sm border-b-2 border-indigo-700">( 1 ) ________</span>')
+        .replace('[2]', '<span class="px-2.5 py-0.5 mx-1 rounded bg-amber-100 text-amber-900 font-sans font-bold text-sm border-b-2 border-amber-600">( 2 ) ________</span>');
+      document.getElementById('lisClozeSentenceBox').innerHTML = `"${formattedCloze}"`;
+
+      document.getElementById('lisClozeInputsRow').innerHTML = item.blanks.map((ans, idx) => `
+        <div>
+          <label class="block text-xs font-bold text-stone-600 mb-1">空格 (${idx + 1}) 聽寫拼字：</label>
+          <input id="lisBlankInput_${idx}" type="text"
+                 onkeydown="if(event.key==='Enter') checkListeningCloze()"
+                 placeholder="輸入聽到的第 ${idx + 1} 個關鍵詞..."
+                 class="w-full px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-sm font-bold text-stone-900 focus:outline-none focus:border-indigo-700" />
+        </div>
+      `).join('');
+
+      document.getElementById('lisFeedbackBox').classList.add('hidden');
+      syncYtPlayerToCurrentItem(false);
+    }
+
+    function nextListeningItem() {
+      lisIdx++;
+      renderListeningExercise();
+    }
+
+    function checkListeningCloze() {
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      let allCorrect = true;
+      const lines = item.blanks.map((ans, idx) => {
+        const userVal = (document.getElementById(`lisBlankInput_${idx}`)?.value || '').trim();
+        const isOk = userVal.toLowerCase() === ans.toLowerCase();
+        if (!isOk) allCorrect = false;
+        return `<div>${isOk ? '✅' : '❌'} 空格 (${idx + 1})：你的拼寫「<b>${userVal || '未填'}</b>」｜標準拼寫：<b>${ans}</b></div>`;
+      });
+
+      stats.lisTotal++;
+      if (allCorrect) stats.lisOk++;
+      saveStats();
+
+      const fb = document.getElementById('lisFeedbackBox');
+      fb.classList.remove('hidden');
+      fb.className = `p-4 rounded-xl text-xs space-y-1.5 border ${allCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-950' : 'bg-rose-50 border-rose-200 text-rose-950'}`;
+      fb.innerHTML = `
+        <div class="font-bold text-sm">${allCorrect ? '🎉 完全正確！連音辨識與拼字過關！' : '💡 差一點點，請對照下方連音與完整字幕：'}</div>
+        ${lines.join('')}
+        <div class="pt-1.5 border-t border-stone-300/60"><b>完整字幕：</b>"${item.fullSentence}"<br><b>中文翻譯：</b>${item.sentenceZh}</div>
+      `;
+    }
+
+    function revealListeningAnswer() {
+      const list = getFilteredBank();
+      const item = list[lisIdx % list.length];
+      const fb = document.getElementById('lisFeedbackBox');
+      fb.classList.remove('hidden');
+      fb.className = 'p-4 rounded-xl text-xs space-y-1.5 border bg-indigo-50 border-indigo-200 text-indigo-950';
+      fb.innerHTML = `
+        <div class="font-bold">👁️ 完整字幕與解答：</div>
+        <div><b>答案：</b>(1) ${item.blanks[0]} ｜ (2) ${item.blanks[1]}</div>
+        <div><b>原文：</b>"${item.fullSentence}"</div>
+        <div><b>翻譯：</b>${item.sentenceZh}</div>
+      `;
+    }
+
+    // ==================== 5. 題型 2：「劇中口語 ➔ 雅思高分」替換選擇題 ====================
+    function renderRegisterExercise() {
+      const list = getFilteredBank();
+      const item = list[regIdx % list.length];
+      regAnswered = false;
+
+      document.getElementById('regProgressBadge').textContent = `第 ${(regIdx % list.length) + 1} / ${list.length} 題`;
+      document.getElementById('regSourceTag').textContent = `${item.category === 'drama' ? '🎬 美劇原句' : '🎵 歌詞原句'} · ${item.work} (${item.workEn})`;
+
+      const escaped = item.casualPhrase.split('/')[0].trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const highlighted = item.fullSentence.replace(
+        new RegExp(`(${escaped})`, 'i'),
+        '<mark class="bg-amber-300/80 px-1.5 py-0.5 rounded font-bold text-stone-950">$1</mark>'
+      );
+      document.getElementById('regOriginalQuote').innerHTML = `"${highlighted}"`;
+      document.getElementById('regQuoteZh').textContent = `中文語意：${item.sentenceZh}（核心口語表達：${item.casualPhrase} ＝ ${item.casualExplain}）`;
+      document.getElementById('regQuestionPrompt').textContent = item.registerQuestion;
+
+      const shuffledOpts = [...item.registerOptions].sort(() => Math.random() - 0.5);
+      document.getElementById('regOptionsGrid').innerHTML = shuffledOpts.map((opt, i) => `
+        <button onclick="submitRegisterOption(this, '${opt.replace(/'/g, "\\'")}')"
+                class="reg-opt-btn p-4 rounded-xl bg-stone-50 hover:bg-indigo-50/60 border border-stone-300 hover:border-indigo-700 text-left font-semibold text-stone-800 transition">
+          <span class="inline-block w-6 h-6 rounded-full bg-white border border-stone-300 text-center text-xs leading-6 mr-2 font-bold">${String.fromCharCode(65 + i)}</span>
+          ${opt}
+        </button>
+      `).join('');
+
+      document.getElementById('regExplanationBox').classList.add('hidden');
+    }
+
+    function nextRegisterItem() {
+      regIdx++;
+      renderRegisterExercise();
+    }
+
+    function speakCurrentRegisterQuote(rate) {
+      const list = getFilteredBank();
+      const item = list[regIdx % list.length];
+      speakText(item.fullSentence, rate);
+    }
+
+    function submitRegisterOption(btnEl, chosen) {
+      if (regAnswered) return;
+      regAnswered = true;
+
+      const list = getFilteredBank();
+      const item = list[regIdx % list.length];
+      const isOk = chosen === item.academicAnswer;
+
+      stats.regTotal++;
+      if (isOk) stats.regOk++;
+      saveStats();
+
+      document.querySelectorAll('.reg-opt-btn').forEach(b => {
+        b.disabled = true;
+        const txt = b.textContent.trim().slice(1).trim();
+        if (txt === item.academicAnswer) {
+          b.className = 'reg-opt-btn p-4 rounded-xl bg-emerald-100 border-2 border-emerald-600 text-left font-bold text-emerald-950';
+        } else if (b === btnEl && !isOk) {
+          b.className = 'reg-opt-btn p-4 rounded-xl bg-rose-100 border-2 border-rose-500 text-left font-semibold text-rose-950';
+        } else {
+          b.className = 'reg-opt-btn p-4 rounded-xl bg-stone-50 border border-stone-200 text-left text-stone-400';
+        }
+      });
+
+      const expBox = document.getElementById('regExplanationBox');
+      expBox.classList.remove('hidden');
+      expBox.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="font-bold text-base ${isOk ? 'text-emerald-800' : 'text-rose-700'}">
+            ${isOk ? '✅ 語域轉換精準！這正是考官想看到的 Band 8.0 學術表達' : `❌ 這題要選正式學術語體：${item.academicAnswer}`}
+          </span>
+          <button onclick="saveCurrentItemToNotebook('register')" class="px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-950 text-xs font-bold">
+            + 收藏「口語 vs 學術」雙語域詞卡
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+          <div class="p-3 rounded-xl bg-white border border-amber-200">
+            <div class="text-[11px] font-bold text-amber-800">🎬 劇中口語 / Speaking 自然表達：</div>
+            <div class="font-serif-academy text-stone-800 mt-1">"${item.fullSentence}"</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-emerald-300">
+            <div class="text-[11px] font-bold text-emerald-800">🎓 雅思 Writing Task 2 學術高分句：</div>
+            <div class="font-serif-academy text-stone-900 font-semibold mt-1">"${item.academicSentence}"</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ==================== 6. 題型 3：Shadowing 口說跟讀與雅思情境造句 ====================
+    function renderShadowingExercise() {
+      const list = getFilteredBank();
+      const item = list[shdIdx % list.length];
+
+      document.getElementById('shdSourceTitle').textContent = `${item.category === 'drama' ? '🎬' : '🎵'} ${item.work} (${item.workEn})`;
+      document.getElementById('shdTargetSentence').textContent = `"${item.fullSentence}"`;
+      document.getElementById('shdStressGuide').textContent = `重音節奏：${item.stressGuide}`;
+      document.getElementById('shdSentenceZh').textContent = item.sentenceZh;
+
+      document.getElementById('shdRecognizedText').textContent = '按下「🎙️ 開始跟讀錄音比對」並對著麥克風朗讀上方句子...';
+      document.getElementById('shdAccuracyScore').textContent = '等待錄音...';
+      document.getElementById('shdWordDiffBox').innerHTML = '';
+
+      document.getElementById('shdIeltsPartTag').textContent = item.ieltsSpeakingPart;
+      document.getElementById('shdIeltsQuestion').textContent = item.ieltsSpeakingQ;
+      document.getElementById('shdTargetBadgeRow').innerHTML = `
+        <span class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 font-bold">口語片語：${item.casualPhrase}</span>
+        <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 font-bold">學術升級：${item.academicAnswer}</span>
+      `;
+      document.getElementById('shdUserSpeakingInput').value = '';
+      document.getElementById('shdAppliedFeedback').textContent = '尚未偵測到目標表達，試著在回答中造句運用看看！';
+      document.getElementById('shdModelAnswerBox').classList.add('hidden');
+      document.getElementById('shdModelAnswerBox').innerHTML = `
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-bold text-emerald-900">🌟 Band 8.0 考官示範回答（自然融合劇中片語與學術詞）：</span>
+          <button onclick="speakText(getFilteredBank()[shdIdx % getFilteredBank().length].ieltsSpeakingModel, 1.0)" class="px-2.5 py-0.5 rounded bg-emerald-700 text-white text-xs font-bold">🔊 聆聽示範</button>
+        </div>
+        <div class="font-serif-academy text-stone-800">"${item.ieltsSpeakingModel}"</div>
+      `;
+    }
+
+    function nextShadowingItem() {
+      shdIdx++;
+      renderShadowingExercise();
+    }
+
+    function speakCurrentShadowing(rate) {
+      const list = getFilteredBank();
+      const item = list[shdIdx % list.length];
+      speakText(item.fullSentence, rate);
+    }
+
+    function speakCurrentIeltsSpeakingQ() {
+      const list = getFilteredBank();
+      const item = list[shdIdx % list.length];
+      speakText(item.ieltsSpeakingQ, 1.0);
+    }
+
+    function toggleShadowRecording() {
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRec) {
+        alert('您的瀏覽器不支援 Web Speech API 麥克風語音辨識，建議使用最新版 Chrome 或 Edge 瀏覽器！');
+        return;
+      }
+
+      const btn = document.getElementById('btnStartShadowRecord');
+      if (isRecordingShadow && recognition) {
+        recognition.stop();
+        return;
+      }
+
+      recognition = new SpeechRec();
+      recognition.lang = 'en-US';
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        isRecordingShadow = true;
+        btn.textContent = '⏹ 正在聆聽中... 點擊停止';
+        btn.classList.add('recording-pulse');
+        document.getElementById('shdRecognizedText').textContent = '🎙️ 請對著麥克風朗讀上方英文句子...';
+      };
+
+      recognition.onresult = (event) => {
+        let transcript = '';
+        for (let i = 0; i < event.results.length; i++) {
+          transcript += event.results[i][0].transcript;
+        }
+        document.getElementById('shdRecognizedText').textContent = `你的跟讀辨識結果："${transcript}"`;
+        scoreShadowingTranscript(transcript);
+      };
+
+      recognition.onerror = (e) => {
+        document.getElementById('shdRecognizedText').textContent = `⚠️ 麥克風擷取失敗 (${e.error})，請確認瀏覽器已允許麥克風權限。`;
+      };
+
+      recognition.onend = () => {
+        isRecordingShadow = false;
+        btn.textContent = '🎙️ 開始跟讀錄音比對';
+        btn.classList.remove('recording-pulse');
+      };
+
+      recognition.start();
+    }
+
+    function scoreShadowingTranscript(spokenText) {
+      const list = getFilteredBank();
+      const item = list[shdIdx % list.length];
+      const clean = str => str.toLowerCase().replace(/[^a-z0-9\s']/g, '').split(/\s+/).filter(Boolean);
+
+      const targetWords = clean(item.fullSentence);
+      const spokenSet = new Set(clean(spokenText));
+
+      let matched = 0;
+      const badges = targetWords.map(w => {
+        const hit = spokenSet.has(w);
+        if (hit) matched++;
+        return `<span class="px-2 py-0.5 rounded font-semibold ${hit ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-rose-100 text-rose-700 border border-rose-200'}">${w}</span>`;
+      });
+
+      const pct = targetWords.length > 0 ? Math.round((matched / targetWords.length) * 100) : 0;
+      document.getElementById('shdAccuracyScore').textContent = `單字還原匹配率：${pct}% (${matched}/${targetWords.length})`;
+      document.getElementById('shdWordDiffBox').innerHTML = badges.join('');
+
+      if (pct > stats.bestShadow) {
+        stats.bestShadow = pct;
+        saveStats();
+      }
+    }
+
+    function dictateSpeakingAnswer() {
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRec) {
+        alert('您的瀏覽器不支援語音輸入，請直接用電腦鍵盤打字作答！');
+        return;
+      }
+      const rec = new SpeechRec();
+      rec.lang = 'en-US';
+      rec.onresult = (e) => {
+        const text = e.results[0][0].transcript;
+        const box = document.getElementById('shdUserSpeakingInput');
+        box.value = (box.value ? box.value + ' ' : '') + text;
+        evaluateSpeakingApplication();
+      };
+      rec.start();
+    }
+
+    function evaluateSpeakingApplication() {
+      const list = getFilteredBank();
+      const item = list[shdIdx % list.length];
+      const userTxt = (document.getElementById('shdUserSpeakingInput').value || '').toLowerCase();
+
+      const casualKey = item.casualPhrase.split('/')[0].trim().toLowerCase();
+      const acadKeywords = item.academicAnswer.toLowerCase().split(/\s+/).filter(w => w.length >= 6);
+
+      const hitCasual = userTxt.includes(casualKey);
+      const hitAcad = acadKeywords.some(k => userTxt.includes(k));
+
+      const fb = document.getElementById('shdAppliedFeedback');
+      if (hitCasual && hitAcad) {
+        fb.innerHTML = `<span class="text-emerald-700 font-bold">🌟 太強了！你同時成功運用了口語表達「${casualKey}」與雅思高分學術詞彙！</span>`;
+      } else if (hitCasual || hitAcad) {
+        fb.innerHTML = `<span class="text-indigo-800 font-bold">✅ 已成功套用目標表達！試著再把另一組語域詞彙也融入句子中。</span>`;
+      } else {
+        fb.textContent = `提示：試著在回答中加入「${casualKey}」或「${item.academicAnswer}」`;
+      }
+    }
+
+    // ==================== 7. 跨站共用單字本與對照表 ====================
+    function saveCurrentItemToNotebook(mode) {
+      const list = getFilteredBank();
+      const idx = mode === 'listening' ? lisIdx : (mode === 'register' ? regIdx : shdIdx);
+      const item = list[idx % list.length];
+      saveItemObjToSharedNotebook(item);
+    }
+
+    function saveItemObjToSharedNotebook(item) {
+      const exists = sharedNotebook.some(c => c.word.toLowerCase().includes(item.casualPhrase.toLowerCase()));
+      if (!exists) {
+        sharedNotebook.unshift({
+          id: 'reg_' + Date.now(),
+          word: `${item.casualPhrase} ➔ ${item.academicAnswer}`,
+          ipa: '',
+          pos: 'Register Pair',
+          zh: item.casualExplain,
+          collocations: `Task 2 學術替換：${item.academicAnswer}`,
+          example: item.academicSentence,
+          source: `${item.work} ➔ IELTS 7.5+`,
+          part: 'Writing & Speaking',
+          freq: true
+        });
+        localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(sharedNotebook));
+      }
+      updateTopDashboard();
+      renderSharedNotebookList();
+      alert(`✅ 已將「${item.casualPhrase} ➔ ${item.academicAnswer}」雙語域詞卡存入共用單字本！`);
+    }
+
+    function removeNotebookItem(idx) {
+      sharedNotebook.splice(idx, 1);
+      localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(sharedNotebook));
+      updateTopDashboard();
+      renderSharedNotebookList();
+    }
+
+    function renderReferenceTable() {
+      const list = getFilteredBank();
+      document.getElementById('registerTableBody').innerHTML = list.map((item, i) => `
+        <tr class="hover:bg-stone-50 transition">
+          <td class="py-3 px-3 font-bold text-indigo-900">${item.category === 'drama' ? '🎬' : '🎵'} ${item.work}</td>
+          <td class="py-3 px-3 font-serif-academy font-bold text-amber-800">${item.casualPhrase}</td>
+          <td class="py-3 px-3 text-stone-700">${item.casualExplain}</td>
+          <td class="py-3 px-3 bg-emerald-50/40 font-bold text-emerald-800">${item.academicAnswer}</td>
+          <td class="py-3 px-3 text-right whitespace-nowrap space-x-1">
+            <button onclick="jumpToItem(${i})" class="px-2.5 py-1 rounded-lg bg-indigo-800 text-white font-bold">練習此題</button>
+            <button onclick="saveItemObjToSharedNotebook(getFilteredBank()[${i}])" class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 font-bold">+ 收藏</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function jumpToItem(idx) {
+      lisIdx = idx;
+      regIdx = idx;
+      shdIdx = idx;
+      renderListeningExercise();
+      renderRegisterExercise();
+      renderShadowingExercise();
+      switchModeTab('listening');
+    }
+
+    function renderSharedNotebookList() {
+      const box = document.getElementById('sharedNotebookList');
+      if (sharedNotebook.length === 0) {
+        box.innerHTML = `<div class="text-stone-400 col-span-full">目前單字本尚無雙語域詞卡，在任一題型點擊「+ 收藏雙語域單字卡」即可加入！</div>`;
+        return;
+      }
+      box.innerHTML = sharedNotebook.map((c, idx) => {
+        const safeEx = (c.example || '').replace(/'/g, "\\'");
+        return `
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="flex items-center justify-between gap-1">
+                <span class="font-serif-academy font-bold text-sm text-indigo-900">${c.word}</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold whitespace-nowrap">${c.source}</span>
+              </div>
+              <div class="font-semibold text-stone-800 mt-1">${c.zh}</div>
+              <div class="text-[11px] italic text-stone-600 mt-1">"${c.example}"</div>
+            </div>
+            <div class="flex justify-between pt-2 border-t border-stone-200">
+              <div class="flex gap-1">
+                <button onclick="speakText('${safeEx}', 1.0)" class="px-2 py-0.5 rounded bg-indigo-800 text-white font-bold">🔊 1.0x</button>
+                <button onclick="speakText('${safeEx}', 0.75)" class="px-2 py-0.5 rounded bg-amber-600 text-white font-bold">🐢 0.75x</button>
+              </div>
+              <button onclick="removeNotebookItem(${idx})" class="text-rose-600 hover:underline font-semibold">刪除</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==================== 8. 分頁切換與啟動 ====================
+    function switchModeTab(tabKey) {
+      ['listening', 'register', 'shadowing', 'reference'].forEach(k => {
+        document.getElementById(`panel-${k}`).classList.toggle('hidden', k !== tabKey);
+        document.getElementById(`tab-${k}`).className = k === tabKey
+          ? 'px-4 py-2.5 rounded-xl font-bold nav-pill-active transition'
+          : 'px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition';
+      });
+      if (tabKey === 'reference') {
+        renderReferenceTable();
+        renderSharedNotebookList();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      loadYouTubeApi();
+      await syncRemoteBank();
+    });
+  </script>
+</body>
+</html>
