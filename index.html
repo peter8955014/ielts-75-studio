@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lumina IELTS 7.5+ Studio · 雅思全科真題 & 美劇萬字詞庫</title>
+  <title>Lumina Pop English · 美劇金句 × 西洋金曲英文實戰題庫</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,12 +22,11 @@
       color: #ffffff;
       box-shadow: 0 4px 12px -2px rgba(55, 48, 163, 0.28);
     }
-    .part-tab-active {
-      border-bottom: 3px solid #3730a3;
-      color: #3730a3;
-      font-weight: 700;
+    .filter-chip-active {
+      background-color: #3730a3;
+      color: #ffffff;
+      border-color: #3730a3;
     }
-    /* 3D 單字記憶卡翻轉動畫 */
     .perspective-1000 { perspective: 1000px; }
     .preserve-3d { transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1); }
     .rotate-y-180 { transform: rotateY(180deg); }
@@ -36,39 +35,33 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <!-- ==================== 頂部學院風導覽與即時查字列 ==================== -->
+  <!-- ==================== 頂部學院風導覽與進度儀表板 ==================== -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
-      <!-- 品牌識別 -->
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-indigo-800 text-amber-300 flex items-center justify-center font-serif-academy font-bold text-lg shadow-sm">
-          L
+          ♪
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900 tracking-tight">Lumina IELTS 7.5+ Studio</h1>
-            <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold">10,000+ 萬字版</span>
+            <h1 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900 tracking-tight">Lumina Pop Culture English</h1>
+            <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[11px] font-bold">美劇 × 西洋金曲題庫</span>
           </div>
-          <p class="text-xs text-stone-500">雅思 4-Part 真題模擬 · 美劇母語高頻片語 · 每日自動更新詞庫</p>
+          <p class="text-xs text-stone-500">破產姊妹 · 同路人 · 六人行 · 摩登家庭 × Taylor Swift 等 9 大歌手精選</p>
         </div>
       </div>
 
-      <!-- 即時查字與遠端同步 -->
+      <!-- 搜尋與控制按鈕 -->
       <div class="flex flex-wrap items-center gap-2">
         <div class="flex items-center bg-stone-100 rounded-xl px-2.5 py-1 border border-stone-300 focus-within:border-indigo-700 focus-within:bg-white transition">
           <span class="text-xs text-stone-400 mr-1.5">🔍</span>
-          <input id="globalWordInput" type="text" list="vocabDatalist"
-                 placeholder="查詢或輸入英文單字..."
-                 onkeydown="if(event.key==='Enter') lookupGlobalWord()"
+          <input id="globalSearchInput" type="text" placeholder="搜尋片語、劇名或歌手..."
+                 oninput="onGlobalSearchInput()"
                  class="bg-transparent text-xs sm:text-sm font-medium w-44 sm:w-52 focus:outline-none text-stone-800" />
-          <datalist id="vocabDatalist"></datalist>
-          <button onclick="lookupGlobalWord()" class="ml-1 px-2.5 py-1 rounded-lg bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-semibold transition">
-            查字
-          </button>
         </div>
 
-        <button onclick="forceSyncRemoteData()" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition">
-          🔄 同步最新詞庫
+        <button onclick="syncRemotePopBank()" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition">
+          🔄 同步最新題庫
         </button>
         <button onclick="stopSpeech()" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-semibold transition">
           ⏹ 停止朗讀
@@ -76,73 +69,60 @@
       </div>
     </div>
 
-    <!-- 頂部學習進度儀表板條（還原 Lumina English 經典進度條設計） -->
+    <!-- 頂部學習統計儀表板條 -->
     <div class="bg-stone-50 border-t border-stone-200/80 px-4 py-2.5">
       <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 items-center text-xs">
         <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
-          <span class="text-base">📚</span>
+          <span class="text-base">🎬</span>
           <div>
-            <div class="text-stone-400 text-[11px]">雲端總詞庫量</div>
-            <div id="dashTotalVocab" class="font-bold text-indigo-800 text-sm">載入中...</div>
+            <div class="text-stone-400 text-[11px]">美劇金句語料</div>
+            <div id="statDramaCount" class="font-bold text-indigo-800 text-sm">0 則</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
+          <span class="text-base">🎵</span>
+          <div>
+            <div class="text-stone-400 text-[11px]">9 大歌手金曲語料</div>
+            <div id="statMusicCount" class="font-bold text-amber-700 text-sm">0 則</div>
           </div>
         </div>
 
         <div class="bg-white px-3 py-1.5 rounded-xl border border-stone-200">
           <div class="flex justify-between text-[11px] mb-1">
-            <span class="text-stone-500 font-medium">已熟記進度</span>
-            <span id="dashMasteredText" class="font-bold text-emerald-700">0 單 (0%)</span>
+            <span class="text-stone-500 font-medium">累計刷題正確率</span>
+            <span id="statQuizAcc" class="font-bold text-emerald-700">0% (0/0)</span>
           </div>
           <div class="w-full h-1.5 bg-stone-200 rounded-full overflow-hidden">
-            <div id="dashMasteredBar" class="h-full bg-emerald-600 transition-all duration-300" style="width: 0%"></div>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
-          <span class="text-base">🎯</span>
-          <div>
-            <div class="text-stone-400 text-[11px]">隨堂刷題正確率</div>
-            <div id="dashQuizAcc" class="font-bold text-amber-700 text-sm">尚未測驗</div>
+            <div id="statQuizBar" class="h-full bg-emerald-600 transition-all duration-300" style="width: 0%"></div>
           </div>
         </div>
 
         <div class="flex items-center gap-2.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200">
           <span class="text-base">📒</span>
           <div>
-            <div class="text-stone-400 text-[11px]">我的自訂單字本</div>
-            <div id="dashCustomCount" class="font-bold text-stone-800 text-sm">0 筆收藏</div>
+            <div class="text-stone-400 text-[11px]">跨站共用單字本</div>
+            <div id="statNotebookCount" class="font-bold text-stone-800 text-sm">0 筆收藏</div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 即時查字浮動結果卡片 -->
-    <div id="quickLookupBanner" class="hidden max-w-7xl mx-auto my-2 px-4">
-      <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 flex flex-wrap items-center justify-between gap-3 text-xs shadow-sm">
-        <div id="quickLookupContent" class="space-y-0.5"></div>
-        <div class="flex items-center gap-2">
-          <button id="quickLookupSpeakNormal" class="px-2.5 py-1.5 rounded-lg bg-indigo-800 text-white font-semibold">🔊 正常 1.0x</button>
-          <button id="quickLookupSpeakSlow" class="px-2.5 py-1.5 rounded-lg bg-amber-600 text-white font-semibold">🐢 慢速 0.75x</button>
-          <button id="quickLookupSaveBtn" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold">+ 存入單字本</button>
-          <button onclick="document.getElementById('quickLookupBanner').classList.add('hidden')" class="px-2 py-1 text-stone-400 hover:text-stone-700 font-bold">✕</button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ==================== 4 大核心功能導覽列 ==================== -->
+  <!-- ==================== 4 大功能分頁選單 ==================== -->
   <nav class="max-w-7xl mx-auto w-full px-4 pt-5">
     <div class="flex flex-wrap gap-2 bg-white p-2 rounded-2xl border border-stone-200 shadow-sm text-xs sm:text-sm">
-      <button onclick="switchMainTab('ielts4')" id="nav-ielts4" class="px-4 py-2.5 rounded-xl font-bold nav-pill-active transition">
-        🎓 IELTS 4-Part 真題實戰（聽·說·讀·寫）
+      <button onclick="switchMainTab('quiz')" id="nav-quiz" class="px-4 py-2.5 rounded-xl font-bold nav-pill-active transition">
+        🎯 多元情境刷題測驗（填空 / 猜中文 / 盲聽 / 猜出處）
       </button>
-      <button onclick="switchMainTab('vocab')" id="nav-vocab" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
-        📖 萬字高頻詞庫（IELTS 7.5+ & 美劇片語）
+      <button onclick="switchMainTab('dramas')" id="nav-dramas" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
+        🎬 4 大美劇金句庫（破產姊妹·同路人·六人行·摩登家庭）
       </button>
-      <button onclick="switchMainTab('quiz')" id="nav-quiz" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
-        🔄 無限動態刷題 & 歷屆雅思題庫
+      <button onclick="switchMainTab('singers')" id="nav-singers" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
+        🎵 9 大西洋歌手金曲英文庫
       </button>
       <button onclick="switchMainTab('notebook')" id="nav-notebook" class="px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition">
-        🃏 自訂單字本 & 3D 翻轉記憶卡
+        🃏 3D 翻轉記憶卡 & 共用單字本
       </button>
     </div>
   </nav>
@@ -150,1330 +130,462 @@
   <!-- ==================== 主要內容區 ==================== -->
   <main class="max-w-7xl mx-auto w-full px-4 py-6 flex-1 space-y-6">
 
-    <!-- ==================== 分頁 1：IELTS 4-Part 真題實戰 ==================== -->
-    <section id="panel-ielts4" class="space-y-5">
-      <!-- 4 Part 子選單 -->
-      <div class="bg-white rounded-2xl border border-stone-200 px-4 pt-3 flex space-x-6 overflow-x-auto text-xs sm:text-sm shadow-sm">
-        <button onclick="switchIeltsPart('listening')" id="part-listening" class="pb-3 whitespace-nowrap part-tab-active">
-          🎧 Part 1: Listening 聽力真題（正常 & 慢速雙欄）
-        </button>
-        <button onclick="switchIeltsPart('reading')" id="part-reading" class="pb-3 whitespace-nowrap text-stone-500 hover:text-indigo-800">
-          📖 Part 2: Reading 學術閱讀真題
-        </button>
-        <button onclick="switchIeltsPart('writing')" id="part-writing" class="pb-3 whitespace-nowrap text-stone-500 hover:text-indigo-800">
-          ✍️ Part 3: Writing 大小作文真題
-        </button>
-        <button onclick="switchIeltsPart('speaking')" id="part-speaking" class="pb-3 whitespace-nowrap text-stone-500 hover:text-indigo-800">
-          💬 Part 4: Speaking 電腦打字模擬作答
-        </button>
-      </div>
-
-      <!-- ===== PART 1: LISTENING (完整 4 Sections 聽力真題 + 正常 1.0x & 慢速 0.75x 獨立欄位) ===== -->
-      <div id="view-listening" class="space-y-5">
-        <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-5">
-          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
-            <div>
-              <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold">IELTS Listening Sections 1–4 & 美劇原聲對話</span>
-              <h2 id="listenTitle" class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900 mt-1.5"></h2>
-            </div>
-            <div class="flex flex-wrap items-center gap-2">
-              <select id="listenSelect" onchange="renderListeningView()" class="px-3 py-2 rounded-xl bg-stone-50 border border-stone-300 text-xs font-bold text-stone-800"></select>
-              <button onclick="cycleListeningTopic()" class="px-3.5 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold transition">
-                🔄 切換下一篇聽力真題
-              </button>
-            </div>
-          </div>
-
-          <!-- 整篇雙語速播放控制欄（獨立正常與慢速欄位） -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex items-center justify-between">
-              <div>
-                <div class="font-bold text-sm text-indigo-900">🔊 正常語速播放欄 (Normal 1.0x)</div>
-                <div class="text-xs text-stone-600 mt-0.5">模擬 IELTS 考場真實連讀與母語人士自然語速</div>
-              </div>
-              <button onclick="playFullListening(1.0)" class="px-4 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm">
-                ▶ 整篇正常 1.0x
-              </button>
-            </div>
-            <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200 flex items-center justify-between">
-              <div>
-                <div class="font-bold text-sm text-amber-900">🐢 慢速精聽播放欄 (Slow 0.75x)</div>
-                <div class="text-xs text-stone-600 mt-0.5">放慢 25% 語速，專攻連音拆解與高頻關鍵字辨識</div>
-              </div>
-              <button onclick="playFullListening(0.75)" class="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold shadow-sm">
-                ▶ 整篇慢速 0.75x
-              </button>
-            </div>
-          </div>
-
-          <!-- 逐句雙語速對照表 -->
-          <div class="overflow-x-auto rounded-xl border border-stone-200">
-            <table class="w-full text-left border-collapse text-xs sm:text-sm">
-              <thead>
-                <tr class="bg-stone-100 border-b border-stone-200 text-stone-600 text-xs">
-                  <th class="py-3 px-3 w-32 text-center bg-indigo-50/70 text-indigo-900">🔊 正常播放 (1.0x)</th>
-                  <th class="py-3 px-3 w-32 text-center bg-amber-50/70 text-amber-900">🐢 慢速播放 (0.75x)</th>
-                  <th class="py-3 px-4 flex items-center justify-between">
-                    <span>聽力原文逐字稿與中文翻譯</span>
-                    <button onclick="toggleListenScript()" class="px-2.5 py-1 rounded-lg bg-white border border-stone-300 text-stone-700 text-xs font-semibold hover:bg-stone-50">
-                      👁️ 隱藏/顯示原文（盲聽訓練）
-                    </button>
-                  </th>
-                </tr>
-              </thead>
-              <tbody id="listenLinesBody" class="divide-y divide-stone-200 bg-white"></tbody>
-            </table>
-          </div>
-
-          <!-- 雅思聽力真題考題作答區（確保題目永遠完整顯示！） -->
-          <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <div>
-                <h3 class="font-serif-academy font-bold text-base text-stone-900">📝 雅思聽力真題隨堂測驗 (IELTS Listening Questions)</h3>
-                <p class="text-xs text-stone-500">請根據上方聽力內容完成填空與選擇題，完成後點擊「送出批改」：</p>
-              </div>
-              <button onclick="gradeListeningQuiz()" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold shadow-sm">
-                ✓ 送出批改並查看解析
-              </button>
-            </div>
-            <div id="listenQuizContainer" class="space-y-3 text-xs sm:text-sm"></div>
-            <div id="listenQuizFeedback" class="hidden p-4 rounded-xl text-xs space-y-1.5"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== PART 2: READING (劍橋雅思學術閱讀真題 + 點字收藏 + TFNG/摘要填空) ===== -->
-      <div id="view-reading" class="hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
-              <div>
-                <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 text-xs font-bold">IELTS Academic Reading 真題長文</span>
-                <h2 id="readTitle" class="font-serif-academy font-bold text-lg text-stone-900 mt-1"></h2>
-              </div>
-              <div class="flex items-center gap-2">
-                <select id="readSelect" onchange="renderReadingView()" class="px-3 py-1.5 rounded-xl bg-stone-50 border border-stone-300 text-xs font-bold"></select>
-                <button onclick="cycleReadingPassage()" class="px-3 py-1.5 rounded-xl bg-indigo-800 text-white text-xs font-bold">🔄 下一篇</button>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap items-center justify-between gap-2 text-xs bg-amber-50 border border-amber-200 px-3 py-2 rounded-xl text-amber-900">
-              <span>💡 點擊文中 <mark class="bg-amber-200/80 px-1 rounded font-semibold">黃底高頻學術詞</mark> 可開啟右側解析並一鍵收藏</span>
-              <div class="flex gap-1.5">
-                <button onclick="speakText(document.getElementById('readPassageBox').innerText, 1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-800 text-white font-semibold">🔊 1.0x</button>
-                <button onclick="speakText(document.getElementById('readPassageBox').innerText, 0.75)" class="px-2.5 py-1 rounded-lg bg-amber-600 text-white font-semibold">🐢 0.75x</button>
-              </div>
-            </div>
-
-            <div id="readPassageBox" class="font-serif-academy text-[15px] leading-8 space-y-4 text-stone-800"></div>
-          </div>
-
-          <div class="lg:col-span-5 space-y-5">
-            <div class="bg-white rounded-2xl p-4 border border-amber-300 shadow-sm space-y-2">
-              <div class="text-xs font-bold text-amber-800">🔎 閱讀高頻詞彙即時精析卡</div>
-              <div id="readWordInspectorBody" class="text-xs text-stone-500">
-                點擊左側文章中的黃底單字，即可查看音標、高分搭配詞並一鍵加入自訂單字本。
-              </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm space-y-4">
-              <div class="flex items-center justify-between">
-                <h3 class="font-serif-academy font-bold text-base text-stone-900">📋 雅思閱讀真題測驗</h3>
-                <button onclick="gradeReadingQuestions()" class="px-3.5 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold">
-                  ✓ 批改並看解析
-                </button>
-              </div>
-              <div id="readQuestionsContainer" class="space-y-3 text-xs"></div>
-              <div id="readScoreBanner" class="hidden p-3 rounded-xl text-xs font-bold"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== PART 3: WRITING (真題題庫 + 鍵盤實戰寫作 + Band 8.5 範文) ===== -->
-      <div id="view-writing" class="hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
-              <div>
-                <span id="writeTaskTag" class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold"></span>
-                <h2 id="writeTitle" class="font-serif-academy font-bold text-lg text-stone-900 mt-1"></h2>
-              </div>
-              <div class="flex items-center gap-2">
-                <select id="writeSelect" onchange="renderWritingView()" class="px-3 py-1.5 rounded-xl bg-stone-50 border border-stone-300 text-xs font-bold"></select>
-                <button onclick="cycleWritingPrompt()" class="px-3 py-1.5 rounded-xl bg-indigo-800 text-white text-xs font-bold">🔄 換一題</button>
-              </div>
-            </div>
-
-            <div id="writePromptBox" class="p-4 rounded-xl bg-stone-50 border border-stone-200 text-sm leading-relaxed text-stone-800 font-medium"></div>
-
-            <div class="space-y-2">
-              <div class="flex flex-wrap items-center justify-between text-xs">
-                <span class="font-bold text-stone-700">⌨️ 電腦模擬寫作作答區（即時偵測 Band 7.5+ 高分詞彙）：</span>
-                <span id="writeWordStats" class="font-bold text-indigo-800">字數: 0 字 | 高分詞命中: 0 個</span>
-              </div>
-              <textarea id="writeUserTextarea" rows="9" oninput="analyzeWritingLive()"
-                        placeholder="請在此輸入英文作文... 系統會即時計算字數並偵測你運用的 Band 7.5+ 學術字與轉折表達..."
-                        class="w-full p-4 rounded-xl bg-stone-50 border border-stone-300 text-sm focus:outline-none focus:border-indigo-700 focus:bg-white"></textarea>
-              <div id="writeDetectedBadges" class="flex flex-wrap gap-1.5 min-h-[24px]"></div>
-            </div>
-
-            <div class="pt-2 border-t border-stone-200">
-              <button onclick="document.getElementById('writeModelEssayBox').classList.toggle('hidden')" class="px-4 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold">
-                ✨ 顯示 / 隱藏 Band 8.5 考官滿分示範範文
-              </button>
-              <div id="writeModelEssayBox" class="hidden mt-3 p-4 rounded-xl bg-indigo-50/70 border border-indigo-200 text-sm leading-relaxed space-y-2"></div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 bg-white rounded-2xl p-5 border border-stone-200 shadow-sm space-y-3">
-            <h3 class="font-serif-academy font-bold text-base text-amber-800">🔥 Band 6.0 → Band 7.5+ 寫作高頻升級詞庫</h3>
-            <p class="text-xs text-stone-500">點擊可直接聆聽雙語速發音或收藏至自訂單字本：</p>
-            <div id="writingUpgradeList" class="space-y-2.5 max-h-[560px] overflow-y-auto pr-1 text-xs"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== PART 4: SPEAKING (真題題庫 + 電腦鍵盤輸入作答 + 美劇道地片語偵測) ===== -->
-      <div id="view-speaking" class="hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-span-5 bg-white rounded-2xl p-5 border border-stone-200 shadow-sm space-y-4">
-            <div class="flex items-center justify-between border-b border-stone-200 pb-3">
-              <div>
-                <span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold">2026 雅思口說真題題庫</span>
-                <h2 class="font-serif-academy font-bold text-base text-stone-900 mt-1">💬 考官提問與 Part 2 提示卡</h2>
-              </div>
-              <button onclick="cycleSpeakingSet()" class="px-3 py-1.5 rounded-xl bg-indigo-800 text-white text-xs font-bold">🔄 刷新題組</button>
-            </div>
-
-            <div class="flex gap-1.5 text-xs">
-              <button onclick="selectSpeakingStage('p1')" id="spk-stage-p1" class="flex-1 py-2 rounded-xl bg-indigo-800 text-white font-bold">Part 1 問答</button>
-              <button onclick="selectSpeakingStage('p2')" id="spk-stage-p2" class="flex-1 py-2 rounded-xl bg-stone-100 text-stone-600 font-bold">Part 2 獨白卡</button>
-              <button onclick="selectSpeakingStage('p3')" id="spk-stage-p3" class="flex-1 py-2 rounded-xl bg-stone-100 text-stone-600 font-bold">Part 3 深度討論</button>
-            </div>
-
-            <div id="speakingQuestionCard" class="p-4 rounded-xl bg-stone-50 border border-stone-200 space-y-3"></div>
-
-            <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-between text-xs">
-              <div>
-                <div class="font-bold text-amber-900">⏱️ 口說實戰倒數計時器</div>
-                <div id="spkTimerDisplay" class="text-lg font-mono font-bold text-stone-900 mt-0.5">02:00</div>
-              </div>
-              <div class="flex gap-1.5">
-                <button onclick="startSpeakingTimer(60)" class="px-2.5 py-1.5 rounded-lg bg-stone-700 text-white font-semibold">1分鐘準備</button>
-                <button onclick="startSpeakingTimer(120)" class="px-2.5 py-1.5 rounded-lg bg-indigo-800 text-white font-semibold">2分鐘作答</button>
-                <button onclick="stopSpeakingTimer()" class="px-2.5 py-1.5 rounded-lg bg-white border border-stone-300">重設</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <h3 class="font-serif-academy font-bold text-base text-stone-900">⌨️ 電腦鍵盤輸入作答（即時偵測美劇片語 & Band 7.5+ 詞彙）</h3>
-              <span id="spkLexicalScore" class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
-                命中高分表達: 0 個
-              </span>
-            </div>
-
-            <textarea id="spkUserAnswerInput" rows="6" oninput="analyzeSpeakingLive()"
-                      placeholder="請使用電腦鍵盤輸入你的英文口說回答... 試著融入美劇道地片語（如 off the top of my head, double-edged sword, cut corners）或 Band 7.5+ 學術字，下方會即時亮燈標註！"
-                      class="w-full p-4 rounded-xl bg-stone-50 border border-stone-300 text-sm focus:outline-none focus:border-indigo-700 focus:bg-white"></textarea>
-
-            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-1.5 text-xs">
-              <div class="font-bold text-stone-700">✨ 回答中成功運用的高分詞彙與美劇片語：</div>
-              <div id="spkDetectedList" class="flex flex-wrap gap-1.5 text-stone-400">尚未偵測到高分詞彙，試著在句子中加入美劇片語吧！</div>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-2">
-              <button onclick="saveSpeakingRecord()" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold">
-                💾 儲存本次口說作答紀錄
-              </button>
-              <button onclick="document.getElementById('spkSampleBox').classList.toggle('hidden')" class="px-4 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold">
-                🎙️ 查看 / 聆聽 Band 8.0 母語者示範回答
-              </button>
-            </div>
-
-            <div id="spkSampleBox" class="hidden p-4 rounded-xl bg-indigo-50/70 border border-indigo-200 space-y-2 text-sm"></div>
-
-            <div class="pt-3 border-t border-stone-200 space-y-2">
-              <div class="font-bold text-xs text-stone-500">📜 我的口說鍵盤練習歷史紀錄</div>
-              <div id="spkHistoryList" class="space-y-2 max-h-40 overflow-y-auto text-xs"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 分頁 2：萬字高頻詞庫雷達 (支援 10,000+ 單字高效分頁與篩選) ==================== -->
-    <section id="panel-vocab" class="hidden space-y-5">
-      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
-          <div>
-            <h2 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900">
-              📖 IELTS Band 7.5+ 核心學術詞 & 美劇母語萬字詞庫
-            </h2>
-            <p id="vocabFilterSummary" class="text-xs text-stone-500 mt-1">
-              標註 🔥 為高頻必考／美劇超高頻表達，可隨時一鍵加入「自訂單字本」或標記「已熟記」
-            </p>
-          </div>
-
-          <div class="flex flex-wrap items-center gap-2 text-xs">
-            <input id="vocabFilterSearch" type="text" placeholder="搜尋單字、中文或美劇名稱..." oninput="resetVocabPageAndRender()"
-                   class="px-3 py-2 rounded-xl bg-stone-50 border border-stone-300 focus:outline-none focus:border-indigo-700" />
-            <select id="vocabFilterFreq" onchange="resetVocabPageAndRender()"
-                    class="px-3 py-2 rounded-xl bg-rose-50 text-rose-800 border border-rose-200 font-bold">
-              <option value="all">📊 全部頻率等級</option>
-              <option value="freq">🔥 只看高頻必考 / 超高頻註記</option>
-            </select>
-            <select id="vocabFilterSource" onchange="resetVocabPageAndRender()"
-                    class="px-3 py-2 rounded-xl bg-stone-50 border border-stone-300 font-semibold">
-              <option value="all">全部來源分類</option>
-              <option value="ielts">🎓 IELTS 7.5+ 學術詞庫</option>
-              <option value="tv">🎬 美劇與影視口語高頻詞</option>
-              <option value="daily">🌐 每日新聞自動擴充</option>
-            </select>
-            <select id="vocabFilterPart" onchange="resetVocabPageAndRender()"
-                    class="px-3 py-2 rounded-xl bg-stone-50 border border-stone-300 font-semibold">
-              <option value="all">全部 4-Part 適用</option>
-              <option value="Listening">🎧 Listening</option>
-              <option value="Reading">📖 Reading</option>
-              <option value="Writing">✍️ Writing</option>
-              <option value="Speaking">💬 Speaking</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- 分頁控制列（支援 10,000+ 單字秒速切換） -->
-        <div class="flex flex-wrap items-center justify-between gap-2 bg-stone-50 px-4 py-2.5 rounded-xl border border-stone-200 text-xs">
-          <div id="vocabPageInfo" class="font-semibold text-stone-600">第 1 頁</div>
-          <div class="flex items-center gap-1.5">
-            <button onclick="changeVocabPage(-1)" class="px-3 py-1 rounded-lg bg-white border border-stone-300 hover:bg-stone-100 font-bold">← 上一頁</button>
-            <button onclick="changeVocabPage(1)" class="px-3 py-1 rounded-lg bg-white border border-stone-300 hover:bg-stone-100 font-bold">下一頁 →</button>
-          </div>
-        </div>
-
-        <div class="overflow-x-auto rounded-xl border border-stone-200">
-          <table class="w-full text-left border-collapse text-xs">
-            <thead>
-              <tr class="bg-stone-100 border-b border-stone-200 text-stone-600">
-                <th class="py-3 px-3">高頻註記</th>
-                <th class="py-3 px-3">單字 / 美劇片語</th>
-                <th class="py-3 px-3">雙語速發音</th>
-                <th class="py-3 px-3">來源 / 適用 Part</th>
-                <th class="py-3 px-3">核心釋義與高分搭配</th>
-                <th class="py-3 px-3">實戰例句</th>
-                <th class="py-3 px-3 text-right">操作</th>
-              </tr>
-            </thead>
-            <tbody id="vocabTableBody" class="divide-y divide-stone-200 bg-white"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 分頁 3：無限動態刷題 & 歷屆雅思題庫 ==================== -->
-    <section id="panel-quiz" class="hidden space-y-5">
+    <!-- ==================== 分頁 1：多元情境刷題測驗 ==================== -->
+    <section id="panel-quiz" class="space-y-5">
       <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
           <div>
-            <h2 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900">🔄 無限動態刷題引擎（歷屆雅思真題 ＋ 萬字詞庫動態出題）</h2>
+            <h2 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900">🎯 美劇台詞 × 西洋歌詞沉浸式刷題引擎</h2>
             <p class="text-xs text-stone-500 mt-1">
-              每次點擊「刷新一組新題目」都會從歷屆真題庫與萬字單字庫（含自訂單字本）重新抽取並打亂選項順序
+              可自由指定「出題範圍（全部 / 指定美劇 / 指定歌手）」與「測驗題型（挖空選擇、鍵盤拼寫、猜道地中文、聽力盲聽、猜出處）」
             </p>
           </div>
 
-          <div class="flex flex-wrap items-center gap-2 text-xs">
-            <select id="quizModeSelect" class="px-3 py-2 rounded-xl bg-stone-50 border border-stone-300 font-bold">
-              <option value="mixed">🎯 綜合模擬（雅思真題 + 萬字動態出題）</option>
-              <option value="ielts_real">🏛️ 專攻歷屆雅思真題題庫</option>
-              <option value="freq_only">🔥 專攻高頻必考詞 & 美劇片語</option>
-              <option value="custom_only">📒 專攻我的自訂單字本</option>
+          <button onclick="generatePopQuiz(true)" class="px-4 py-2.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-sm transition">
+            🔄 刷新一組新題目 (8題)
+          </button>
+        </div>
+
+        <!-- 測驗條件組合器 -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-stone-50 p-4 rounded-2xl border border-stone-200 text-xs">
+          <div>
+            <label class="block text-stone-500 font-bold mb-1">1️⃣ 選擇測驗題型：</label>
+            <select id="quizTypeSelect" onchange="generatePopQuiz(true)" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 font-bold text-stone-800">
+              <option value="mixed">🎲 綜合全題型混合（推薦）</option>
+              <option value="cloze_mcq">✍️ 台詞/歌詞挖空填空（四選一）</option>
+              <option value="cloze_type">⌨️ 台詞/歌詞拼寫挑戰（電腦打字填空）</option>
+              <option value="guess_zh">🧠 看英文原句猜道地中文意思</option>
+              <option value="listening">🎧 盲聽發音辨識片語/單字</option>
+              <option value="guess_source">🎬 猜猜這句出自哪部美劇或歌手</option>
             </select>
-            <button onclick="generateFreshQuiz(true)" class="px-4 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white font-bold shadow-sm transition">
-              🔄 刷新一組新題目 (10題)
-            </button>
+          </div>
+
+          <div>
+            <label class="block text-stone-500 font-bold mb-1">2️⃣ 篩選美劇或歌手主題：</label>
+            <select id="quizSourceSelect" onchange="generatePopQuiz(true)" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 font-bold text-stone-800">
+              <option value="ALL">🌟 全部美劇 ＋ 9 位歌手大亂鬥</option>
+              <optgroup label="🎬 熱門美劇專區">
+                <option value="DRAMA_ALL">🎬 全部 4 部美劇（破產姊妹/同路人/六人行/摩登家庭）</option>
+                <option value="破產姊妹">破產姊妹 (2 Broke Girls)</option>
+                <option value="同路人">同路人 (Fellow Travelers)</option>
+                <option value="六人行">六人行 (Friends)</option>
+                <option value="摩登家庭">摩登家庭 (Modern Family)</option>
+              </optgroup>
+              <optgroup label="🎵 9 大西洋歌手專區">
+                <option value="SINGER_ALL">🎵 全部 9 位歌手金曲</option>
+                <option value="Taylor Swift">Taylor Swift</option>
+                <option value="Ariana Grande">Ariana Grande</option>
+                <option value="Sam Smith">Sam Smith</option>
+                <option value="Charlie Puth">Charlie Puth</option>
+                <option value="Shawn Mendes">Shawn Mendes</option>
+                <option value="Lauv">Lauv</option>
+                <option value="Christopher">Christopher</option>
+                <option value="Lady Gaga">Lady Gaga</option>
+                <option value="Billie Eilish">Billie Eilish</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-stone-500 font-bold mb-1">3️⃣ 本輪測驗即時戰績：</label>
+            <div class="p-2.5 rounded-xl bg-white border border-stone-200 flex items-center justify-between">
+              <span id="roundProgressTxt" class="font-bold text-indigo-800">進度：0 / 8 題</span>
+              <span id="roundScoreTxt" class="font-bold text-emerald-700">得分：0 分</span>
+            </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-3 text-xs">
-          <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200">
-            <div class="text-stone-500">本輪作答進度</div>
-            <div id="quizProgressStat" class="text-base font-bold text-indigo-800 mt-0.5">0 / 10 題</div>
-          </div>
-          <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200">
-            <div class="text-emerald-800">本輪即時正確率</div>
-            <div id="quizAccuracyStat" class="text-base font-bold text-emerald-700 mt-0.5">0%</div>
-          </div>
-          <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200">
-            <div class="text-amber-800">累計刷題總題數</div>
-            <div id="quizTotalSolvedStat" class="text-base font-bold text-amber-700 mt-0.5">0 題</div>
-          </div>
-        </div>
-
-        <div id="quizQuestionsList" class="space-y-4"></div>
+        <!-- 題目渲染區 -->
+        <div id="popQuizContainer" class="space-y-4"></div>
       </div>
     </section>
 
-    <!-- ==================== 分頁 4：自訂單字本 & 3D 翻轉記憶卡 ==================== -->
+    <!-- ==================== 分頁 2：4 大美劇金句庫 ==================== -->
+    <section id="panel-dramas" class="hidden space-y-5">
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
+          <div>
+            <h2 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900">🎬 4 大美劇道地口語與雙關金句庫</h2>
+            <p class="text-xs text-stone-500 mt-1">點擊劇名快速切換，支援 `1.0x` 原速與 `0.75x` 慢速發音，以及一鍵收藏至單字本</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 text-xs" id="dramaFilterChips">
+            <button onclick="setDramaFilter('ALL')" class="px-3 py-1.5 rounded-xl border font-bold filter-chip-active">全部美劇</button>
+            <button onclick="setDramaFilter('破產姊妹')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">破產姊妹 2 Broke Girls</button>
+            <button onclick="setDramaFilter('同路人')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">同路人 Fellow Travelers</button>
+            <button onclick="setDramaFilter('六人行')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">六人行 Friends</button>
+            <button onclick="setDramaFilter('摩登家庭')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">摩登家庭 Modern Family</button>
+          </div>
+        </div>
+
+        <div id="dramaCardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 分頁 3：9 大西洋歌手金曲英文庫 ==================== -->
+    <section id="panel-singers" class="hidden space-y-5">
+      <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
+          <div>
+            <h2 class="font-serif-academy font-bold text-lg sm:text-xl text-stone-900">🎵 西洋流行金曲口語與隱喻精析庫</h2>
+            <p class="text-xs text-stone-500 mt-1">從你喜愛的 9 位歌手代表作中提煉母語人士日常最常說的短語與情感表達</p>
+          </div>
+        </div>
+
+        <!-- 9 位歌手快速篩選按鈕列 -->
+        <div class="flex flex-wrap gap-1.5 text-xs" id="singerFilterChips">
+          <button onclick="setSingerFilter('ALL')" class="px-3 py-1.5 rounded-xl border font-bold filter-chip-active">全部 9 位歌手</button>
+          <button onclick="setSingerFilter('Taylor Swift')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Taylor Swift</button>
+          <button onclick="setSingerFilter('Ariana Grande')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Ariana Grande</button>
+          <button onclick="setSingerFilter('Sam Smith')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Sam Smith</button>
+          <button onclick="setSingerFilter('Charlie Puth')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Charlie Puth</button>
+          <button onclick="setSingerFilter('Shawn Mendes')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Shawn Mendes</button>
+          <button onclick="setSingerFilter('Lauv')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Lauv</button>
+          <button onclick="setSingerFilter('Christopher')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Christopher</button>
+          <button onclick="setSingerFilter('Lady Gaga')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Lady Gaga</button>
+          <button onclick="setSingerFilter('Billie Eilish')" class="px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100">Billie Eilish</button>
+        </div>
+
+        <div id="singerCardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 分頁 4：3D 翻轉記憶卡 & 跨站共用單字本 ==================== -->
     <section id="panel-notebook" class="hidden space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- 左側：手動新增美劇/歌詞筆記 (5欄) -->
         <div class="lg:col-span-5 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
           <div class="flex items-center justify-between">
-            <h2 class="font-serif-academy font-bold text-base text-stone-900">➕ 新增單字 / 美劇片語至自訂本</h2>
-            <div class="flex gap-1.5 text-xs">
-              <button onclick="exportCustomNotebook()" class="px-2.5 py-1 rounded-lg bg-stone-100 border border-stone-300 font-semibold">📤 匯出</button>
-              <label class="px-2.5 py-1 rounded-lg bg-stone-100 border border-stone-300 font-semibold cursor-pointer">
-                📥 匯入
-                <input type="file" accept=".json" onchange="importCustomNotebook(event)" class="hidden" />
-              </label>
-            </div>
+            <h2 class="font-serif-academy font-bold text-base text-stone-900">➕ 新增美劇 / 歌詞單字筆記</h2>
+            <button onclick="exportSharedNotebook()" class="px-2.5 py-1 rounded-lg bg-stone-100 border border-stone-300 text-xs font-semibold">📤 匯出 JSON</button>
           </div>
+          <p class="text-xs text-stone-500">本單字本與「Lumina IELTS 網站」自動共用儲存空間，收藏後兩邊皆可複習。</p>
 
           <div class="space-y-3 text-xs">
-            <div class="flex gap-2">
-              <div class="flex-1">
-                <label class="text-stone-500 font-medium">英文單字或美劇片語 *</label>
-                <input id="nbWord" type="text" placeholder="例如：ubiquitous 或 cut corners"
-                       class="w-full mt-1 p-2.5 rounded-xl bg-stone-50 border border-stone-300 font-bold" />
-              </div>
-              <div class="self-end">
-                <button onclick="autoFillFromDictionary()" class="px-3 py-2.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white font-bold">
-                  ✨ 自動抓音標釋義
-                </button>
-              </div>
+            <div>
+              <label class="text-stone-500 font-medium">英文單字或片語 *</label>
+              <input id="customWordInput" type="text" placeholder="例如：bad blood 或 read the room"
+                     class="w-full mt-1 p-2.5 rounded-xl bg-stone-50 border border-stone-300 font-bold" />
             </div>
-
             <div class="grid grid-cols-2 gap-2">
               <div>
-                <label class="text-stone-500 font-medium">中文釋義 *</label>
-                <input id="nbZh" type="text" placeholder="例如：無所不在的 / 偷工減料"
+                <label class="text-stone-500 font-medium">道地中文意思 *</label>
+                <input id="customZhInput" type="text" placeholder="例如：深仇大恨 / 察言觀色"
                        class="w-full mt-1 p-2.5 rounded-xl bg-stone-50 border border-stone-300" />
               </div>
               <div>
-                <label class="text-stone-500 font-medium">來源劇名 / 考試分類</label>
-                <input id="nbSource" type="text" value="自訂筆記 / Speaking"
+                <label class="text-stone-500 font-medium">劇名 / 歌手出處</label>
+                <input id="customSourceInput" type="text" value="Taylor Swift / 歌詞筆記"
                        class="w-full mt-1 p-2.5 rounded-xl bg-stone-50 border border-stone-300" />
               </div>
             </div>
-
             <div>
-              <label class="text-stone-500 font-medium">實戰例句</label>
-              <input id="nbExample" type="text" placeholder="輸入英文例句（留空將自動生成語境例句）"
+              <label class="text-stone-500 font-medium">台詞或歌詞原句</label>
+              <input id="customQuoteInput" type="text" placeholder="輸入包含該片語的英文句子..."
                      class="w-full mt-1 p-2.5 rounded-xl bg-stone-50 border border-stone-300" />
             </div>
-
-            <label class="flex items-center gap-2 cursor-pointer select-none pt-1">
-              <input id="nbFreq" type="checkbox" checked class="rounded text-indigo-800" />
-              <span class="font-bold text-rose-700">🔥 標註為高頻必考 / 重點複習詞彙</span>
-            </label>
-
-            <button onclick="addCustomWord()" class="w-full py-2.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition">
-              💾 加入自訂單字本（同步納入動態刷題庫）
+            <button onclick="addCustomPopWord()" class="w-full py-2.5 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white font-bold text-sm shadow-sm transition">
+              💾 加入共用單字本
             </button>
           </div>
         </div>
 
+        <!-- 右側：3D 翻轉記憶卡練習器 (7欄) -->
         <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-stone-200 shadow-sm flex flex-col justify-between space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <h3 class="font-serif-academy font-bold text-base text-stone-900">🃏 3D 翻轉記憶卡練習器</h3>
             <div class="flex gap-1.5 text-xs">
-              <button onclick="setFlashcardDeck('all')" id="deck-all" class="px-2.5 py-1 rounded-lg bg-indigo-800 text-white font-bold">全部高頻詞</button>
-              <button onclick="setFlashcardDeck('tv')" id="deck-tv" class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-bold">🎬 美劇高頻詞</button>
-              <button onclick="setFlashcardDeck('custom')" id="deck-custom" class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-bold">📒 我的自訂本</button>
+              <button onclick="setFcMode('all')" id="fcmode-all" class="px-2.5 py-1 rounded-lg bg-indigo-800 text-white font-bold">全部精選</button>
+              <button onclick="setFcMode('drama')" id="fcmode-drama" class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-bold">🎬 美劇專區</button>
+              <button onclick="setFcMode('singer')" id="fcmode-singer" class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-bold">🎵 歌手專區</button>
+              <button onclick="setFcMode('saved')" id="fcmode-saved" class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-bold">📒 我的收藏</button>
             </div>
           </div>
 
-          <div onclick="flipFlashcard()" class="perspective-1000 cursor-pointer select-none my-1">
-            <div id="flashcardInner" class="preserve-3d relative w-full h-56 rounded-2xl border-2 border-indigo-200 bg-stone-50 p-6 flex flex-col justify-center items-center text-center shadow-inner">
+          <div onclick="flipCard()" class="perspective-1000 cursor-pointer select-none my-1">
+            <div id="fcInner" class="preserve-3d relative w-full h-56 rounded-2xl border-2 border-indigo-200 bg-stone-50 p-6 flex flex-col justify-center items-center text-center shadow-inner">
               <div class="backface-hidden space-y-2">
-                <div id="fcBadges" class="flex justify-center gap-2 text-xs"></div>
-                <div id="fcWord" class="font-serif-academy text-2xl sm:text-3xl font-bold text-indigo-900"></div>
-                <div id="fcIpa" class="text-xs text-stone-400 font-mono"></div>
-                <div class="text-[11px] text-stone-400 pt-2">👆 點擊卡片翻面查看釋義與例句</div>
+                <div id="fcBadgeRow" class="flex justify-center gap-2 text-xs"></div>
+                <div id="fcFrontTerm" class="font-serif-academy text-2xl sm:text-3xl font-bold text-indigo-900"></div>
+                <div id="fcFrontSub" class="text-xs text-stone-500"></div>
+                <div class="text-[11px] text-stone-400 pt-2">👆 點擊卡片翻面查看中文解析與台詞/歌詞例句</div>
               </div>
               <div class="backface-hidden rotate-y-180 absolute inset-0 p-6 flex flex-col justify-center items-center text-center space-y-2 bg-white rounded-2xl">
-                <div id="fcZh" class="text-lg sm:text-xl font-bold text-emerald-700"></div>
-                <div id="fcColloc" class="text-xs text-indigo-700 font-semibold"></div>
-                <div id="fcExample" class="font-serif-academy text-xs sm:text-sm text-stone-600 italic max-w-lg"></div>
+                <div id="fcBackZh" class="text-lg sm:text-xl font-bold text-emerald-700"></div>
+                <div id="fcBackNuance" class="text-xs text-amber-800 font-semibold max-w-md"></div>
+                <div id="fcBackQuote" class="font-serif-academy text-xs sm:text-sm text-stone-700 italic max-w-lg"></div>
               </div>
             </div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
             <div class="flex gap-1.5">
-              <button onclick="prevFlashcard()" class="px-3 py-1.5 rounded-xl bg-stone-100 border border-stone-300 font-bold">← 上一張</button>
-              <button onclick="nextFlashcard()" class="px-3 py-1.5 rounded-xl bg-stone-100 border border-stone-300 font-bold">下一張 →</button>
+              <button onclick="moveCard(-1)" class="px-3 py-1.5 rounded-xl bg-stone-100 border border-stone-300 font-bold">← 上一張</button>
+              <button onclick="moveCard(1)" class="px-3 py-1.5 rounded-xl bg-stone-100 border border-stone-300 font-bold">下一張 →</button>
             </div>
-            <span id="fcCounter" class="font-bold text-stone-500">1 / 1</span>
+            <span id="fcIndexLabel" class="font-bold text-stone-500">1 / 1</span>
             <div class="flex gap-1.5">
-              <button onclick="speakCurrentFlashcard(1.0)" class="px-2.5 py-1.5 rounded-xl bg-indigo-800 text-white font-bold">🔊 1.0x</button>
-              <button onclick="speakCurrentFlashcard(0.75)" class="px-2.5 py-1.5 rounded-xl bg-amber-600 text-white font-bold">🐢 0.75x</button>
-              <button onclick="toggleCurrentFlashcardMastered()" class="px-2.5 py-1.5 rounded-xl bg-emerald-700 text-white font-bold">✓ 標記熟記</button>
+              <button onclick="speakCard(1.0)" class="px-2.5 py-1.5 rounded-xl bg-indigo-800 text-white font-bold">🔊 1.0x</button>
+              <button onclick="speakCard(0.75)" class="px-2.5 py-1.5 rounded-xl bg-amber-600 text-white font-bold">🐢 0.75x</button>
+              <button onclick="saveCurrentCard()" class="px-2.5 py-1.5 rounded-xl bg-emerald-700 text-white font-bold">+ 收藏</button>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 已收藏單字本卡片牆 -->
       <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-3">
-        <h3 class="font-serif-academy font-bold text-base text-stone-900">📒 我的自訂單字本清單</h3>
-        <div id="customNotebookList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs"></div>
+        <h3 class="font-serif-academy font-bold text-base text-stone-900">📒 我的跨站共用單字本清單</h3>
+        <div id="sharedNotebookGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs"></div>
       </div>
     </section>
 
   </main>
 
   <script>
-    // ==================== 1. 內建完整雅思 4-Part 真題與高頻保底資料庫 ====================
-    const FALLBACK_VOCAB = [
-      { id: 'v1', word: 'ubiquitous', ipa: '/juːˈbɪk.wɪ.təs/', pos: 'adj.', zh: '無所不在的、十分普遍的', collocations: 'ubiquitous presence / become ubiquitous', example: 'Smartphones have become ubiquitous in modern urban life, reshaping interpersonal communication.', source: 'IELTS Academic', part: 'Reading', freq: true },
-      { id: 'v2', word: 'mitigate', ipa: '/ˈmɪt.ɪ.ɡeɪt/', pos: 'v.', zh: '減輕、緩和（風險或負面影響）', collocations: 'mitigate the risk / mitigate climate change', example: 'Governments must implement stringent policies to mitigate the adverse effects of carbon emissions.', source: 'IELTS Academic', part: 'Writing', freq: true },
-      { id: 'v3', word: 'exacerbate', ipa: '/ɪɡˈzæs.ə.beɪt/', pos: 'v.', zh: '使惡化、加劇', collocations: 'exacerbate the problem / exacerbate inequality', example: 'Unplanned urban sprawl tends to exacerbate traffic congestion and air pollution.', source: 'IELTS Academic', part: 'Writing', freq: true },
-      { id: 'v4', word: 'detrimental', ipa: '/ˌdet.rɪˈmen.təl/', pos: 'adj.', zh: '有害的、不利的', collocations: 'detrimental effect / detrimental to health', example: 'Excessive screen time before bedtime has a detrimental impact on sleep architecture.', source: 'IELTS Academic', part: 'Writing', freq: true },
-      { id: 'v5', word: 'proliferate', ipa: '/prəˈlɪf.ə.reɪt/', pos: 'v.', zh: '激增、迅速擴散', collocations: 'rapidly proliferate / proliferate across', example: 'Micro-mobility scooters have proliferated across major metropolitan areas over the past decade.', source: 'IELTS Academic', part: 'Listening', freq: true },
-      { id: 'v6', word: 'unprecedented', ipa: '/ʌnˈpres.ɪ.den.tɪd/', pos: 'adj.', zh: '史無前例的、空前的', collocations: 'unprecedented scale / unprecedented growth', example: 'The global economy is undergoing structural transformation at an unprecedented pace.', source: 'IELTS Academic', part: 'Writing', freq: true },
-      { id: 'v7', word: 'feasible', ipa: '/ˈfiː.zə.bəl/', pos: 'adj.', zh: '可行的、行得通的', collocations: 'economically feasible / viable and feasible', example: 'Transitioning entirely to renewable energy is both technologically and economically feasible.', source: 'IELTS Academic', part: 'Speaking', freq: true },
-      { id: 'v8', word: 'scrutinize', ipa: '/ˈskruː.tɪ.naɪz/', pos: 'v.', zh: '仔細審查、嚴格檢視', collocations: 'scrutinize the data / closely scrutinize', example: 'Peer reviewers meticulously scrutinize experimental methodology before publication.', source: 'IELTS Academic', part: 'Reading', freq: true },
-      { id: 'v9', word: 'alleviate', ipa: '/əˈliː.vi.eɪt/', pos: 'v.', zh: '緩解、減輕（痛苦或擁塞）', collocations: 'alleviate poverty / alleviate congestion', example: 'Expanding dedicated bicycle lanes can significantly alleviate peak-hour gridlock.', source: 'IELTS Academic', part: 'Writing', freq: true },
-      { id: 'v10', word: 'cut corners', ipa: '/kʌt ˈkɔːr.nərz/', pos: 'idiom', zh: '偷工減料、圖省事走捷徑', collocations: 'refuse to cut corners / cut corners on safety', example: 'When building mission-critical network infrastructure, engineers can never afford to cut corners.', source: 'TV: Suits (無照律師)', part: 'Speaking', freq: true },
-      { id: 'v11', word: 'off the top of my head', ipa: '/ɔːf ðə tɑːp əv maɪ hed/', pos: 'idiom', zh: '憑直覺/不假思索地說', collocations: 'Speaking Part 1 & Part 3 開頭句', example: 'Off the top of my head, I would say public transport subsidies are the most effective measure.', source: 'TV: Friends (六人行)', part: 'Speaking', freq: true },
-      { id: 'v12', word: 'on the same page', ipa: '/ɑːn ðə seɪm peɪdʒ/', pos: 'idiom', zh: '達成共識、想法一致', collocations: 'get everyone on the same page', example: 'Before launching the rollout, let us make sure all stakeholders are on the same page.', source: 'TV: The Office (辦公室瘋雲)', part: 'Listening', freq: true },
-      { id: 'v13', word: 'a blessing in disguise', ipa: '/ə ˈbles.ɪŋ ɪn dɪsˈɡaɪz/', pos: 'idiom', zh: '塞翁失馬、因禍得福', collocations: 'turn out to be a blessing in disguise', example: 'Missing that flight turned out to be a blessing in disguise because I met my future business partner.', source: 'TV: Modern Family (摩登家庭)', part: 'Speaking', freq: true },
-      { id: 'v14', word: 'double-edged sword', ipa: '/ˌdʌb.əl ˈedʒd sɔːrd/', pos: 'idiom', zh: '雙面刃（有利亦有弊）', collocations: 'prove to be a double-edged sword', example: 'Artificial intelligence is a double-edged sword that boosts productivity while displacing routine jobs.', source: 'TV: Silicon Valley (矽谷群瞎傳)', part: 'Speaking', freq: true },
-      { id: 'v15', word: 'call it a day', ipa: '/kɔːl ɪt ə deɪ/', pos: 'idiom', zh: '今天就到此為止、收工', collocations: 'let us call it a day', example: 'We have been troubleshooting this routing table for six hours; let us call it a day.', source: 'TV: Brooklyn Nine-Nine', part: 'Listening', freq: false },
-      { id: 'v16', word: 'tread on thin ice', ipa: '/tred ɑːn θɪn aɪs/', pos: 'idiom', zh: '如履薄冰、冒極大風險', collocations: 'you are treading on thin ice', example: 'By withholding crucial audit disclosures, the executives were treading on thin ice.', source: 'TV: Breaking Bad (絕命毒師)', part: 'Speaking', freq: false }
+    // ==================== 1. 美劇與西洋金曲精選資料庫 ====================
+    const BUILTIN_POP_ITEMS = [
+      // --- 美劇 1：破產姊妹 (2 Broke Girls) ---
+      {
+        id: 'd_2bg_1', category: 'drama', work: '破產姊妹', workEn: '2 Broke Girls', subTitle: 'Max & Caroline 經典創業對話',
+        target: 'flat broke', zh: '身無分文、徹底破產',
+        quote: 'We are not just broke, we are flat broke with zero backup plan.',
+        nuance: 'flat 在口語中作為副詞有「完全地、徹底地」之意，flat broke 比單講 broke 更有戲劇張力，也是《破產姊妹》全劇核心精神。',
+        freq: true
+      },
+      {
+        id: 'd_2bg_2', category: 'drama', work: '破產姊妹', workEn: '2 Broke Girls', subTitle: '威廉斯堡餐廳日常吐槽',
+        target: 'sugarcoat', zh: '美化、粉飾太平（講好聽話）',
+        quote: 'Do not sugarcoat it—tell me straight if the cupcake batch tastes awful.',
+        nuance: '字面是「裹糖衣」，Max 最常說 "I don’t sugarcoat things"，代表「我講話很直接、不喜歡拐彎抹角」。',
+        freq: true
+      },
+      {
+        id: 'd_2bg_3', category: 'drama', work: '破產姊妹', workEn: '2 Broke Girls', subTitle: '職場生存哲學',
+        target: 'hustle', zh: '拚命打拚、積極找門路賺錢',
+        quote: 'In New York, if you do not hustle every single day, you get left behind.',
+        nuance: '在美式口語中，hustle 兼具「忙得不可開交」與「靠副業/努力拚搏賺錢」的意思（side hustle 即為副業）。',
+        freq: true
+      },
+
+      // --- 美劇 2：同路人 (Fellow Travelers) ---
+      {
+        id: 'd_ft_1', category: 'drama', work: '同路人', workEn: 'Fellow Travelers', subTitle: '1950s 華府政壇暗湧',
+        target: 'keep a low profile', zh: '保持低調、避免引人注目',
+        quote: 'With the Senate committee investigating everyone, you need to keep a low profile.',
+        nuance: '《同路人》劇中角色在麥卡錫主義高壓政治環境下最常互相提醒的生存法則，商務與日常溝通極度高頻。',
+        freq: true
+      },
+      {
+        id: 'd_ft_2', category: 'drama', work: '同路人', workEn: 'Fellow Travelers', subTitle: '外交官與國會幕僚對話',
+        target: 'read between the lines', zh: '體會言外之意、聽出弦外之音',
+        quote: 'In Washington, survival depends on your ability to read between the lines.',
+        nuance: '華府政治人物從不把話說死，懂得讀懂字裡行間未明說的暗示（read between the lines）是高階閱讀與口說必備片語。',
+        freq: true
+      },
+      {
+        id: 'd_ft_3', category: 'drama', work: '同路人', workEn: 'Fellow Travelers', subTitle: '跨越數十年的承諾與羈絆',
+        target: 'weather the storm', zh: '渡過難關、安然度過風暴',
+        quote: 'No matter how fierce the political backlash gets, we will weather the storm together.',
+        nuance: 'weather 在此當動詞用，意為「經受住、熬過（惡劣天氣或人生危機）」。',
+        freq: true
+      },
+
+      // --- 美劇 3：六人行 (Friends) ---
+      {
+        id: 'd_fr_1', category: 'drama', work: '六人行', workEn: 'Friends', subTitle: 'Central Perk 咖啡廳日常',
+        target: 'on a break', zh: '暫時分開冷靜一下（感情暫停期）',
+        quote: 'Ross insisted for ten seasons that they were on a break!',
+        nuance: '《六人行》全劇最經典梗！在感情關係中，be on a break 指雙方暫時分開冷靜，尚未正式分手（break up）。',
+        freq: true
+      },
+      {
+        id: 'd_fr_2', category: 'drama', work: '六人行', workEn: 'Friends', subTitle: 'Chandler 美式冷幽默',
+        target: 'could it be any more', zh: '難道還能更……嗎？（反諷強調語氣）',
+        quote: 'Could that outfit be any more obvious when you are trying to impress her?',
+        nuance: 'Chandler Bing 招牌句型：把 be 動詞或助動詞重讀拉長，用反問句表達「簡直不能再更明顯了」。',
+        freq: true
+      },
+      {
+        id: 'd_fr_3', category: 'drama', work: '六人行', workEn: 'Friends', subTitle: '好友互相吐槽',
+        target: 'moo point', zh: '毫無意義的觀點（Joey 經典誤用諧音梗）',
+        quote: 'It is like a cow’s opinion—it just does not matter, it is a moo point.',
+        nuance: '正確法律與學術單字是 "moot point"（無實際意義的爭論點），Joey 誤聽成牛叫聲 "moo"，反而成為母語者最愛玩的雙關梗！',
+        freq: true
+      },
+
+      // --- 美劇 4：摩登家庭 (Modern Family) ---
+      {
+        id: 'd_mf_1', category: 'drama', work: '摩登家庭', workEn: 'Modern Family', subTitle: 'Phil Dunphy 酷爸哲學',
+        target: 'peer pressure', zh: '同儕壓力',
+        quote: 'I am not just a dad; I am a cool dad who understands peer pressure.',
+        nuance: 'Phil 最常掛在嘴邊的教育詞彙，也是雅思口說與寫作討論青少年行為時的核心搭配詞。',
+        freq: true
+      },
+      {
+        id: 'd_mf_2', category: 'drama', work: '摩登家庭', workEn: 'Modern Family', subTitle: 'Gloria 文化衝擊金句',
+        target: 'dog-eat-dog world', zh: '弱肉強食、競爭極度殘酷的世界',
+        quote: 'Gloria misheard it as a doggy-dog world instead of a dog-eat-dog world.',
+        nuance: '《摩登家庭》經典聽力誤會梗！正確片語為 dog-eat-dog world（人吃人、競爭激烈的社會），Gloria 聽成了可愛的「狗狗世界」。',
+        freq: true
+      },
+      {
+        id: 'd_mf_3', category: 'drama', work: '摩登家庭', workEn: 'Modern Family', subTitle: 'Claire 完美主義日常',
+        target: 'control freak', zh: '控制狂（事事都要掌控的人）',
+        quote: 'Everyone calls me a control freak, yet nothing gets done unless I plan it.',
+        nuance: 'freak 在口語中常接在名詞後表示「對某事極度執著或瘋狂的人」，例如 health freak（養生狂）、neat freak（潔癖狂）。',
+        freq: true
+      },
+
+      // --- 歌手 1：Taylor Swift ---
+      {
+        id: 's_ts_1', category: 'singer', work: 'Taylor Swift', workEn: 'Cruel Summer / Bad Blood', subTitle: '代表作高頻口語與情感隱喻',
+        target: 'bad blood', zh: '積怨、深仇大恨、不和',
+        quote: 'After that public fallout, there was clearly bad blood between the two former allies.',
+        nuance: '源自 Taylor Swift 經典單曲《Bad Blood》，在新聞報導與日常對話中專門用來形容兩人或兩派之間「長期的敵意與心結」。',
+        freq: true
+      },
+      {
+        id: 's_ts_2', category: 'singer', work: 'Taylor Swift', workEn: 'Shake It Off / Blank Space', subTitle: '豁達面對批評的道地片語',
+        target: 'shake it off', zh: '擺脫負面情緒、不把批評放在心上',
+        quote: 'Whenever critics question your ambition, the best response is to just shake it off.',
+        nuance: '字面是「把身上的灰塵抖掉」，引申為「迅速走出低潮、不被流言蜚語影響」。',
+        freq: true
+      },
+
+      // --- 歌手 2：Ariana Grande ---
+      {
+        id: 's_ag_1', category: 'singer', work: 'Ariana Grande', workEn: 'thank u, next / 7 rings', subTitle: '美式自信口語表達',
+        target: 'silver lining', zh: '黑暗中的一線希望、因禍得福的正面收穫',
+        quote: 'Even a painful breakup carries a silver lining when it teaches you self-reliance.',
+        nuance: '源自諺語 "Every cloud has a silver lining"（烏雲背後總有銀邊），是母語者表達「逆境中的轉機」最常說的詞。',
+        freq: true
+      },
+
+      // --- 歌手 3：Sam Smith ---
+      {
+        id: 's_ss_1', category: 'singer', work: 'Sam Smith', workEn: 'Stay With Me / Unholy', subTitle: '深情抒情與情感張力詞彙',
+        target: 'second-guess', zh: '事後懷疑、猶豫不決、自我懷疑',
+        quote: 'Stop second-guessing every decision you make once you have already committed to it.',
+        nuance: '指在做出決定後「不斷回頭懷疑自己是否選錯」，在職場與心理健康討論中出現頻率極高。',
+        freq: true
+      },
+
+      // --- 歌手 4：Charlie Puth ---
+      {
+        id: 's_cp_1', category: 'singer', work: 'Charlie Puth', workEn: 'Attention / We Don’t Talk Anymore', subTitle: '流行 R&B 情感心理學',
+        target: 'string someone along', zh: '吊著某人胃口、給人虛假希望',
+        quote: 'She was never genuinely interested; she was just stringing him along for attention.',
+        nuance: '完美詮釋《Attention》歌詞核心情境！指「故意讓對方抱有期待卻不給承諾」，是非常道地的美式片語動詞。',
+        freq: true
+      },
+
+      // --- 歌手 5：Shawn Mendes ---
+      {
+        id: 's_sm_1', category: 'singer', work: 'Shawn Mendes', workEn: 'There’s Nothing Holdin’ Me Back / Stitches', subTitle: '熱血與情感掙脫表達',
+        target: 'hold someone back', zh: '阻礙某人前進、使有所顧忌',
+        quote: 'Fear of failure is the only thing holding you back from pursuing your dream.',
+        nuance: '源自《There’s Nothing Holdin’ Me Back》，用於正面鼓勵（沒有任何事能阻擋我）或分析自我設限都極為自然。',
+        freq: true
+      },
+
+      // --- 歌手 6：Lauv ---
+      {
+        id: 's_lv_1', category: 'singer', work: 'Lauv', workEn: 'I Like Me Better / Paris in the Rain', subTitle: '現代都會情感與內心獨白',
+        target: 'overthink', zh: '過度胡思亂想、鑽牛角尖',
+        quote: 'Late at night, it is all too easy to overthink every small conversation from the day.',
+        nuance: 'Lauv 歌曲中最具代表性的現代年輕世代心理狀態詞彙，over- 字首表示「過度」。',
+        freq: true
+      },
+
+      // --- 歌手 7：Christopher ---
+      {
+        id: 's_ch_1', category: 'singer', work: 'Christopher', workEn: 'Bad / Heartbeat', subTitle: '北歐流行天王動感旋律金句',
+        target: 'play hard to get', zh: '欲擒故縱、故意裝作冷淡難追',
+        quote: 'At first I thought she was playing hard to get, until I realized she meant every word.',
+        nuance: '在感情互動與社交場合極度常用的片語，形容「故意表現出難以親近以吸引對方注意」。',
+        freq: true
+      },
+
+      // --- 歌手 8：Lady Gaga ---
+      {
+        id: 's_lg_1', category: 'singer', work: 'Lady Gaga', workEn: 'Shallow / Born This Way', subTitle: '奧斯卡金曲與自我認同宣言',
+        target: 'off the deep end', zh: '情緒失控、陷入狂熱或徹底豁出去',
+        quote: 'Together they dove off the deep end, leaving their old comfort zones far behind.',
+        nuance: '源自泳池深水區（deep end）的意象，在《Shallow》副歌意境中象徵「無所畏懼地縱身躍入未知領域」。',
+        freq: true
+      },
+
+      // --- 歌手 9：Billie Eilish ---
+      {
+        id: 's_be_1', category: 'singer', work: 'Billie Eilish', workEn: 'bad guy / Birds of a Feather', subTitle: 'Z世代冷調美学與經典諺語',
+        target: 'birds of a feather', zh: '物以類聚、志趣相投的人',
+        quote: 'As the old saying goes, birds of a feather flock together through thick and thin.',
+        nuance: '源自 Billie Eilish 熱單《Birds of a Feather》，完整諺語為 "Birds of a feather flock together"，形容「性格或品味相同的人自然會聚在一起」。',
+        freq: true
+      }
     ];
 
-    const FALLBACK_IELTS_BANK = {
-      listening: [
-        {
-          id: 'L_PART1',
-          title: 'IELTS Listening Part 1 · Accommodation & Relocation Inquiry (生活租屋對話)',
-          lines: [
-            { speaker: 'Agent', en: 'Good morning, Harbor Lettings. How can I assist you with your relocation?', zh: '早安，海港租賃中心。關於您的搬遷有什麼能為您服務的嗎？' },
-            { speaker: 'Tenant', en: 'Hi, I am looking for a two-bedroom flat near the central station, ideally with utilities included.', zh: '嗨，我在找中央車站附近的兩房公寓，最好包含水電瓦斯費。' },
-            { speaker: 'Agent', en: 'We have a newly refurbished unit on King Street at 1,450 pounds per month, and high-speed fibre broadband is ubiquitous across the building.', zh: '我們在國王街有一間翻新戶，每月 1,450 英鎊，且整棟大樓都覆蓋了高速光纖寬頻。' },
-            { speaker: 'Tenant', en: 'That sounds feasible. Could we schedule a viewing for Thursday afternoon at 3:30?', zh: '聽起來很可行。我們可以安排週四下午 3:30 看房嗎？' }
-          ],
-          questions: [
-            { type: 'fill', q: '1. Monthly rent for the King Street apartment: £________ (NUMBER ONLY)', answer: '1450', hint: '聽第 3 句數字：1,450 pounds' },
-            { type: 'fill', q: '2. Day of the week scheduled for viewing: ________', answer: 'Thursday', hint: '聽第 4 句星期幾' },
-            { type: 'mcq', q: '3. What facility is available throughout the entire building?', options: ['Underground parking', 'High-speed fibre broadband', 'A private gymnasium'], answer: 'High-speed fibre broadband', hint: '聽第 3 句：ubiquitous across the building' }
-          ]
-        },
-        {
-          id: 'L_PART2',
-          title: 'IELTS Listening Part 2 · Municipal Micro-Mobility & Cycling Infrastructure (公共政策獨白)',
-          lines: [
-            { speaker: 'Coordinator', en: 'Welcome everyone to the city transport briefing. Over the past two years, electric scooters have proliferated across the downtown core.', zh: '歡迎各位參加城市交通簡報會。過去兩年間，電動滑板車在市中心核心區迅速激增。' },
-            { speaker: 'Coordinator', en: 'While they help alleviate peak-hour traffic congestion, unregulated parking has created detrimental obstacles for pedestrians.', zh: '雖然它們有助於緩解尖峰時段交通壅塞，但缺乏規範的停放卻對行人造成了不利的障礙。' },
-            { speaker: 'Coordinator', en: 'Starting next Monday, riders must park exclusively inside designated geofenced bays, or face an automatic 25-dollar fine.', zh: '從下週一起，騎士必須停放在指定的地理圍欄停車格內，否則將面臨自動 25 美元罰款。' }
-          ],
-          questions: [
-            { type: 'fill', q: '1. Fine imposed for parking outside designated geofenced bays: $________ (NUMBER ONLY)', answer: '25', hint: '聽第 3 句罰款金額' },
-            { type: 'mcq', q: '2. What positive effect have electric scooters brought to the downtown area?', options: ['Eliminated all bus routes', 'Alleviated peak-hour traffic congestion', 'Reduced electricity tariffs'], answer: 'Alleviated peak-hour traffic congestion', hint: '聽第 2 句開頭' }
-          ]
-        },
-        {
-          id: 'L_PART3',
-          title: 'IELTS Listening Part 3 · Academic Tutorial on Behavioural Economics (學術研討對話)',
-          lines: [
-            { speaker: 'Tutor', en: 'Welcome back, Liam. Have you finalized the framework for your dissertation on nudge theory?', zh: '歡迎回來，Liam。你確定好關於「助推理論」論文的架構了嗎？' },
-            { speaker: 'Liam', en: 'Yes, Dr. Evans. I am examining how default options mitigate cognitive overload when consumers choose pension plans.', zh: '是的，Evans 博士。我正在研究當消費者選擇退休金計畫時，預設選項如何減輕認知超載。' },
-            { speaker: 'Tutor', en: 'That is a compelling angle. However, make sure you scrutinize the ethical implications of paternalistic design.', zh: '這是個很有說服力的切入點。不過，務必仔細審查家長式設計的倫理意涵。' },
-            { speaker: 'Liam', en: 'Absolutely. Critics argue that subtle manipulation can be a double-edged sword if transparency is compromised.', zh: '完全同意。批評者認為如果透明度受損，微妙的引導可能會成為一把雙面刃。' }
-          ],
-          questions: [
-            { type: 'fill', q: '1. Specific consumer financial choice investigated by Liam: ________ (TWO WORDS)', answer: 'pension plans', hint: '聽第 2 句結尾：choose ______' },
-            { type: 'fill', q: '2. Aspect of paternalistic design Liam must scrutinize: ________ (TWO WORDS)', answer: 'ethical implications', hint: '聽第 3 句：scrutinize the ______' }
-          ]
-        },
-        {
-          id: 'L_PART4',
-          title: 'IELTS Listening Part 4 · Marine Bioacoustics & Shipping Noise (學術講座獨白)',
-          lines: [
-            { speaker: 'Lecturer', en: 'Today we examine how underwater anthropogenic noise affects cetacean communication across major oceanic shipping lanes.', zh: '今天我們探討人為水下噪音如何影響主要遠洋航道中鯨豚類的溝通。' },
-            { speaker: 'Lecturer', en: 'Low-frequency propeller noise overlaps directly with whale vocalizations, forcing marine mammals to expend extra energy to be heard.', zh: '低頻螺旋槳噪音與鯨魚發聲頻段直接重疊，迫使海洋哺乳動物耗費額外能量才能被聽見。' },
-            { speaker: 'Lecturer', en: 'Fortunately, retrofitting vessels with quieter hull designs has proven to be a feasible solution that reduces acoustic pollution by up to 40 percent.', zh: '幸運的是，為船隻改裝更安靜的船體設計已被證明是可行的解決方案，可減少高達 40% 的聲學污染。' }
-          ],
-          questions: [
-            { type: 'fill', q: '1. Percentage reduction in acoustic pollution achieved by quieter hull designs: ________% (NUMBER ONLY)', answer: '40', hint: '聽第 3 句百分比數字' },
-            { type: 'mcq', q: '2. Which part of commercial ships produces low-frequency noise that overlaps with whale calls?', options: ['Radar antennas', 'Propellers', 'Anchor chains'], answer: 'Propellers', hint: '聽第 2 句：Low-frequency ______ noise' }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'R1',
-          title: 'The Paradox of Choice and Cognitive Overload in Digital Markets',
-          paragraphs: [
-            'In classical economic theory, expanding consumer choice was universally regarded as an unalloyed benefit. Yet contemporary behavioural research reveals that an unprecedented abundance of options frequently induces decision paralysis rather than satisfaction. When digital platforms proliferate with thousands of nearly indistinguishable alternatives, consumers experience acute cognitive fatigue.',
-            'To mitigate this psychological burden, individuals often rely on mental shortcuts or defer decisions altogether. Crucially, post-purchase regret tends to intensify in high-choice environments because the opportunity cost of rejected alternatives remains salient. Retailers who fail to curate their catalogues may inadvertently trigger a detrimental decline in conversion rates.',
-            'Consequently, progressive technology firms are abandoning exhaustive menus in favour of algorithmic curation. By scrutinizing user preferences and presenting three tailored recommendations, platforms alleviate choice anxiety while preserving a sense of autonomy.'
-          ],
-          questions: [
-            { q: '1. Classical economists believed that offering more choices always benefited consumers.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'TRUE', explanation: '第一段首句明確指出：expanding consumer choice was universally regarded as an unalloyed benefit。' },
-            { q: '2. Consumers feel less regret after buying a product when they had hundreds of options to compare.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'FALSE', explanation: '第二段指出 post-purchase regret tends to intensify in high-choice environments（購後後悔感反而會加劇）。' },
-            { q: '3. Algorithmic curation requires users to pay an extra subscription fee.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'NOT GIVEN', explanation: '文章未提及任何額外訂閱費用。' },
-            { q: '4. Presenting three tailored options helps reduce choice anxiety while maintaining user autonomy.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'TRUE', explanation: '第三段末句直接對應：alleviate choice anxiety while preserving a sense of autonomy。' }
-          ]
-        },
-        {
-          id: 'R2',
-          title: 'Biomimicry and Passive Cooling in Sustainable Architecture',
-          paragraphs: [
-            'As rapid urbanization continues to exacerbate the urban heat island effect, architects are increasingly turning to biomimicry—the practice of emulating biological systems to solve human engineering challenges. Conventional air-conditioning systems account for a substantial proportion of global electricity consumption, making passive thermal regulation an urgent priority.',
-            'A celebrated exemplar is the Eastgate Centre in Harare, Zimbabwe, whose ventilation architecture was inspired by self-cooling termite mounds. By utilizing high-thermal-mass masonry and strategic chimney vents, the building expels warm air at night and draws in cool air during the day without mechanical chillers.',
-            'Empirical audits confirm that such nature-inspired structures consume up to 90 percent less energy for ventilation than comparable conventional buildings, proving that ecological resilience is commercially feasible.'
-          ],
-          questions: [
-            { q: '1. Biomimicry involves copying natural biological mechanisms to address engineering problems.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'TRUE', explanation: '第一段明確定義 biomimicry 為 emulating biological systems to solve human engineering challenges。' },
-            { q: '2. The Eastgate Centre relies heavily on mechanical chillers during the summer months.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'FALSE', explanation: '第二段末句指出 without mechanical chillers（完全不使用機械式冷水機組）。' },
-            { q: '3. The architect of the Eastgate Centre won an international prize in 1996.', options: ['TRUE', 'FALSE', 'NOT GIVEN'], answer: 'NOT GIVEN', explanation: '文章未提及獲獎年份或獎項細節。' }
-          ]
-        }
-      ],
-      writing: [
-        {
-          id: 'W1',
-          taskType: 'IELTS Writing Task 2 · 議論文真題 (Discuss Both Views)',
-          title: 'Remote Work vs. Office Presence (遠距辦公與進辦公室的利弊)',
-          prompt: 'Some people believe that allowing employees to work remotely from home brings significant benefits to both workers and companies, while others argue that working in a traditional office environment is essential for productivity and innovation. Discuss both views and give your own opinion. (Write at least 250 words)',
-          modelEssay: `The proliferation of high-speed digital infrastructure has made remote work ubiquitous across knowledge-based industries. While proponents contend that telecommuting enhances work-life balance and operational efficiency, critics argue that physical office presence remains indispensable for collaborative innovation. In my view, a structured hybrid model represents the most feasible compromise.\n\nOn the one hand, permitting employees to work from home can mitigate daily commuting stress and substantially reduce corporate overhead expenses. Free from frequent office interruptions, many professionals report heightened concentration when executing independent analytical tasks. Furthermore, geographically unconstrained recruitment enables firms to access an unprecedented pool of global talent.\n\nOn the other hand, prolonged physical separation can prove to be a double-edged sword. Spontaneous brainstorming sessions and informal mentorship—which are vital catalysts for breakthrough innovation—are difficult to replicate through scheduled video calls. Over time, remote isolation may also erode organizational cohesion and exacerbate miscommunication.\n\nIn conclusion, although remote work offers undeniable autonomy and cost advantages, wholly abandoning physical workspaces risks undermining team synergy. Organizations should therefore adopt flexible hybrid arrangements that preserve both focused individual productivity and face-to-face collaboration.`
-        },
-        {
-          id: 'W2',
-          taskType: 'IELTS Writing Task 2 · 問題解決型真題 (Problem & Solution)',
-          title: 'Urban Traffic Congestion & Private Car Dependency (都市交通壅塞對策)',
-          prompt: 'In many major cities around the world, traffic congestion has reached unprecedented levels. What are the primary causes of this problem, and what measures can governments take to alleviate it? (Write at least 250 words)',
-          modelEssay: `Traffic gridlock has become a ubiquitous challenge in rapidly expanding metropolises worldwide. This essay will examine the underlying drivers of severe congestion—principally inadequate public transit and suburban sprawl—before proposing targeted fiscal and infrastructural remedies.\n\nThe primary catalyst behind worsening congestion is over-reliance on private automobiles, which is often exacerbated by fragmented public transportation networks. When suburban commuters lack reliable rail or bus connections, driving becomes the only feasible option. Moreover, the proliferation of ride-hailing vehicles and e-commerce delivery vans has placed unprecedented strain on existing road capacity.\n\nTo alleviate this bottleneck, municipal authorities must adopt a dual strategy of incentivizing green transit and disincentivizing peak-hour driving. First, implementing congestion pricing zones—as demonstrated successfully in London and Singapore—can immediately deter non-essential car journeys. Second, revenue generated from such tolls should be reinvested into expanding dedicated cycling lanes and high-frequency electric bus corridors.\n\nIn summary, urban congestion stems largely from structural dependence on private cars. By pairing congestion charges with substantial upgrades to public transit infrastructure, governments can effectively mitigate gridlock and foster more sustainable cities.`
-        }
-      ],
-      speaking: [
-        {
-          id: 'S1',
-          p1: [
-            '1. Do you prefer working or studying in a quiet environment or somewhere with background noise?',
-            '2. Have you recently picked up any new habits to manage your time more effectively?'
-          ],
-          p2: {
-            topic: 'Describe a piece of technology or software that significantly improved your productivity.',
-            bullets: [
-              'What the technology or software is',
-              'How you first came across it',
-              'How you integrate it into your daily workflow',
-              'And explain why it has been so beneficial to you'
-            ]
-          },
-          p3: [
-            '1. Do you think heavy reliance on automation is a double-edged sword for modern workers?',
-            '2. How might artificial intelligence reshape traditional career paths over the next decade?'
-          ],
-          sampleAnswer: `Off the top of my head, automated scripting tools and cloud dashboards have completely transformed how I handle repetitive analytical tasks. Previously, manually cross-checking data was tedious and prone to human error, especially when people tried to cut corners under tight deadlines. Discovering automation turned out to be a blessing in disguise—it mitigated cognitive fatigue and freed up hours each week for strategic thinking. Of course, technology is a double-edged sword; if we rely on it blindly without scrutinizing the underlying logic, we risk losing core problem-solving skills.`
-        },
-        {
-          id: 'S2',
-          p1: [
-            '1. What kind of foreign TV series or films do you enjoy watching in your spare time?',
-            '2. Do you think watching English dramas is an effective way to acquire natural expressions?'
-          ],
-          p2: {
-            topic: 'Describe a challenging situation where you had to adapt quickly to an unexpected change.',
-            bullets: [
-              'What the situation was',
-              'Why the unexpected change occurred',
-              'How you responded to keep everything on track',
-              'And explain what you learned from the experience'
-            ]
-          },
-          p3: [
-            '1. Why do some individuals resist organizational change even when it is clearly feasible and beneficial?',
-            '2. What qualities distinguish resilient leaders during periods of unprecedented disruption?'
-          ],
-          sampleAnswer: `A few months ago, a sudden schedule overhaul forced our team to deliver a complex project a full week ahead of deadline. Initially, everyone felt like we were treading on thin ice, and panic could easily have exacerbated the pressure. However, I called a quick briefing to get everyone on the same page, prioritized the mission-critical milestones, and refused to cut corners on quality assurance. Looking back, that high-pressure sprint was a blessing in disguise because it proved how cohesive and adaptable our team could be.`
-        }
-      ],
-      quizPool: [
-        { id: 'Q1', tag: '歷屆雅思閱讀同義替換', question: 'In IELTS Academic Reading, which word is the closest Band 8.0 synonym for "make a problem worse"?', options: ['exacerbate', 'alleviate', 'mitigate', 'scrutinize'], answer: 'exacerbate', explanation: 'exacerbate 意為「使問題/局勢惡化」，是雅思閱讀與寫作最高頻負向動詞；alleviate 與 mitigate 皆為「減輕/緩解」。' },
-        { id: 'Q2', tag: '美劇高頻母語片語 · Suits', question: 'In the legal drama Suits, if a firm refuses to "cut corners" on compliance, what does it mean?', options: ['They refuse to do things cheaply or carelessly by skipping steps', 'They turn at a sharp intersection', 'They reduce office rental costs', 'They fire junior associates'], answer: 'They refuse to do things cheaply or carelessly by skipping steps', explanation: 'cut corners 指「偷工減料、圖省事省略必要步驟」。' },
-        { id: 'Q3', tag: '雅思口說高頻開場 · Friends', question: 'Which natural idiom from Friends is ideal in IELTS Speaking when answering an unexpected question immediately from memory?', options: ['Off the top of my head', 'Call it a day', 'Tread on thin ice', 'Once in a blue moon'], answer: 'Off the top of my head', explanation: 'Off the top of my head 表示「憑直覺、不假思索地說」，極度適合 IELTS Speaking Part 1/3 自然開場。' },
-        { id: 'Q4', tag: '雅思寫作 Task 2 高頻搭配', question: 'Complete the Band 8.0 sentence: "Stringent environmental regulations are essential to ______ the adverse impacts of rapid industrialization."', options: ['mitigate', 'proliferate', 'scrutinize', 'exacerbate'], answer: 'mitigate', explanation: 'mitigate adverse impacts（減輕負面影響）為 IELTS Writing Task 2 黃金搭配詞。' },
-        { id: 'Q5', tag: '美劇職場高頻 · The Office', question: 'Before a major project launch, a manager says: "Let’s have a quick sync to get everyone on the same page." What is the goal?', options: ['Ensure everyone shares the same understanding and agreement', 'Print the report on a single sheet of paper', 'Read the same novel together', 'Postpone the deadline'], answer: 'Ensure everyone shares the same understanding and agreement', explanation: 'on the same page 意為「達成共識、想法一致」。' }
-      ]
-    };
+    // ==================== 2. 狀態管理與跨站共用儲存鍵值 ====================
+    let POP_ITEMS = [...BUILTIN_POP_ITEMS];
+    // 與原本 IELTS 網站共用 LUMINA_NOTEBOOK_V2，實現兩站收藏同步
+    let sharedNotebook = JSON.parse(localStorage.getItem('LUMINA_NOTEBOOK_V2') || '[]');
+    let popQuizStats = JSON.parse(localStorage.getItem('LUMINA_POP_QUIZ_STATS_V1') || '{"solved":0,"correct":0}');
 
-    // ==================== 2. 狀態管理與 Cache API 萬字詞庫載入引擎 ====================
-    let VOCAB_DB = [...FALLBACK_VOCAB];
-    let IELTS_BANK = JSON.parse(JSON.stringify(FALLBACK_IELTS_BANK));
-    let masteredSet = new Set(JSON.parse(localStorage.getItem('LUMINA_MASTERED_V2') || '[]'));
-    let customNotebook = JSON.parse(localStorage.getItem('LUMINA_NOTEBOOK_V2') || '[]');
-    let speakingHistory = JSON.parse(localStorage.getItem('LUMINA_SPEAKING_V2') || '[]');
-    let quizHistoryStats = JSON.parse(localStorage.getItem('LUMINA_QUIZ_STATS_V2') || '{"solved":0,"correct":0}');
+    let activeDramaFilter = 'ALL';
+    let activeSingerFilter = 'ALL';
+    let globalSearchQuery = '';
+    let currentQuizQuestions = [];
+    let quizAnswersState = {};
 
-    let listenIdx = 0, readIdx = 0, writeIdx = 0, spkIdx = 0, spkStage = 'p1';
-    let showListenScript = true;
-    let spkTimerInterval = null, spkSecondsLeft = 120;
-    let currentQuizSet = [], quizAnsweredMap = {};
-    let fcDeckMode = 'all', fcIndex = 0, fcFlipped = false;
+    let fcMode = 'all', fcIdx = 0, fcFlipped = false;
 
-    // 分頁狀態（支援 10,000+ 單字高效渲染）
-    let vocabCurrentPage = 1;
-    const VOCAB_PAGE_SIZE = 50;
-
-    function mergeSafeBank(remoteBank) {
-      if (!remoteBank || typeof remoteBank !== 'object') return;
-      ['listening', 'reading', 'writing', 'speaking', 'quizPool'].forEach(key => {
-        if (Array.isArray(remoteBank[key]) && remoteBank[key].length > 0) {
-          const map = new Map();
-          FALLBACK_IELTS_BANK[key].forEach((item, i) => map.set(item.id || `${key}_${i}`, item));
-          remoteBank[key].forEach((item, i) => map.set(item.id || `remote_${key}_${i}`, item));
-          IELTS_BANK[key] = Array.from(map.values());
-        }
-      });
-    }
-
-    async function loadRemoteDatabases(forceRefresh = false) {
-      const CACHE_NAME = 'lumina-ielts-10k-cache-v1';
+    async function syncRemotePopBank() {
       try {
-        if (!forceRefresh && 'caches' in window) {
-          const cache = await caches.open(CACHE_NAME);
-          const cachedVocab = await cache.match('./vocab.json');
-          const cachedBank = await cache.match('./ielts_bank.json');
-          if (cachedVocab && cachedBank) {
-            const vData = await cachedVocab.json();
-            const bData = await cachedBank.json();
-            if (Array.isArray(vData) && vData.length > 0) VOCAB_DB = vData;
-            mergeSafeBank(bData);
-            updateDashboardStats();
-            return;
-          }
+        const res = await fetch('./pop_culture_bank.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('No remote bank yet');
+        const remote = await res.json();
+        if (Array.isArray(remote) && remote.length > 0) {
+          const map = new Map();
+          BUILTIN_POP_ITEMS.forEach(item => map.set(item.id, item));
+          remote.forEach(item => map.set(item.id, item));
+          POP_ITEMS = Array.from(map.values());
+          localStorage.setItem('LUMINA_POP_BANK_CACHE_V1', JSON.stringify(POP_ITEMS));
         }
-
-        const [vRes, bRes] = await Promise.all([
-          fetch('./vocab.json', { cache: 'no-store' }),
-          fetch('./ielts_bank.json', { cache: 'no-store' })
-        ]);
-
-        if ('caches' in window) {
-          const cache = await caches.open(CACHE_NAME);
-          if (vRes.ok) await cache.put('./vocab.json', vRes.clone());
-          if (bRes.ok) await cache.put('./ielts_bank.json', bRes.clone());
-        }
-
-        if (vRes.ok) {
-          const vData = await vRes.json();
-          if (Array.isArray(vData) && vData.length > 0) VOCAB_DB = vData;
-        }
-        if (bRes.ok) {
-          const bData = await bRes.json();
-          mergeSafeBank(bData);
-        }
-      } catch (err) {
-        console.warn('目前使用內建題庫與保底詞庫:', err.message);
+      } catch (_) {
+        const cached = JSON.parse(localStorage.getItem('LUMINA_POP_BANK_CACHE_V1') || 'null');
+        if (Array.isArray(cached) && cached.length > 0) POP_ITEMS = cached;
       }
-      updateDashboardStats();
+      refreshAllUI();
     }
 
-    async function forceSyncRemoteData() {
-      await loadRemoteDatabases(true);
-      refreshAllViews();
-      alert(`✅ 同步完成！目前總詞庫量：${getCombinedVocab().length.toLocaleString()} 筆單字與片語。`);
-    }
+    function updateTopStats() {
+      const dramas = POP_ITEMS.filter(x => x.category === 'drama').length;
+      const singers = POP_ITEMS.filter(x => x.category === 'singer').length;
+      document.getElementById('statDramaCount').textContent = `${dramas} 則精選`;
+      document.getElementById('statMusicCount').textContent = `${singers} 則金曲`;
+      document.getElementById('statNotebookCount').textContent = `${sharedNotebook.length} 筆收藏`;
 
-    function getCombinedVocab() {
-      const map = new Map();
-      VOCAB_DB.forEach(item => map.set(item.word.toLowerCase(), item));
-      customNotebook.forEach(item => map.set(item.word.toLowerCase(), { ...item, isCustom: true }));
-      return Array.from(map.values());
-    }
-
-    function updateDashboardStats() {
-      const all = getCombinedVocab();
-      const total = all.length;
-      const mastered = masteredSet.size;
-      const pct = total > 0 ? Math.min(100, Math.round((mastered / total) * 100)) : 0;
-
-      document.getElementById('dashTotalVocab').textContent = `${total.toLocaleString()} 單`;
-      document.getElementById('dashMasteredText').textContent = `${mastered} 單 (${pct}%)`;
-      document.getElementById('dashMasteredBar').style.width = `${pct}%`;
-      document.getElementById('dashCustomCount').textContent = `${customNotebook.length} 筆收藏`;
-
-      if (quizHistoryStats.solved > 0) {
-        const acc = Math.round((quizHistoryStats.correct / quizHistoryStats.solved) * 100);
-        document.getElementById('dashQuizAcc').textContent = `${acc}% (${quizHistoryStats.correct}/${quizHistoryStats.solved})`;
-      } else {
-        document.getElementById('dashQuizAcc').textContent = '尚未測驗';
-      }
-
-      // Datalist 僅放前 300 高頻詞避免瀏覽器下拉卡頓
-      document.getElementById('vocabDatalist').innerHTML = all.slice(0, 300).map(
-        v => `<option value="${v.word}">${v.zh}</option>`
-      ).join('');
+      const acc = popQuizStats.solved > 0 ? Math.round((popQuizStats.correct / popQuizStats.solved) * 100) : 0;
+      document.getElementById('statQuizAcc').textContent = `${acc}% (${popQuizStats.correct}/${popQuizStats.solved})`;
+      document.getElementById('statQuizBar').style.width = `${acc}%`;
     }
 
     // ==================== 3. 語音朗讀引擎 (正常 1.0x & 慢速 0.75x) ====================
     function speakText(text, rate = 1.0) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = 'en-US';
-      utter.rate = rate;
-      window.speechSynthesis.speak(utter);
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      u.rate = rate;
+      window.speechSynthesis.speak(u);
     }
 
     function stopSpeech() {
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
     }
 
-    // ==================== 4. 頂部即時查字引擎 ====================
-    async function lookupGlobalWord() {
-      const raw = document.getElementById('globalWordInput').value.trim();
-      if (!raw) return;
-      const banner = document.getElementById('quickLookupBanner');
-      const content = document.getElementById('quickLookupContent');
-      banner.classList.remove('hidden');
-
-      const existing = getCombinedVocab().find(v => v.word.toLowerCase() === raw.toLowerCase());
-      if (existing) {
-        renderQuickLookupCard(existing);
-        return;
-      }
-
-      content.innerHTML = `<span class="font-bold text-indigo-800">⏳ 正在從線上字典檢索 "${raw}"...</span>`;
-      try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(raw)}`);
-        if (!res.ok) throw new Error('Not found');
-        const json = await res.json();
-        const entry = json[0];
-        const meaning = entry.meanings?.[0];
-        const defObj = meaning?.definitions?.[0];
-        renderQuickLookupCard({
-          id: 'api_' + Date.now(),
-          word: entry.word,
-          ipa: entry.phonetic || entry.phonetics?.find(p => p.text)?.text || '',
-          pos: meaning?.partOfSpeech || 'vocab',
-          zh: defObj?.definition || '線上字典收錄詞彙',
-          collocations: `${entry.word} in academic context`,
-          example: defObj?.example || `The term "${entry.word}" is frequently used by native speakers.`,
-          source: 'Online Dictionary',
-          part: 'Reading',
-          freq: true
-        });
-      } catch (_) {
-        renderQuickLookupCard({
-          id: 'manual_' + Date.now(),
-          word: raw,
-          ipa: '',
-          pos: 'phrase',
-          zh: '自訂新增表達（可於單字本編輯中文解釋）',
-          collocations: '',
-          example: `I practice using "${raw}" naturally in IELTS Speaking.`,
-          source: 'Custom Lookup',
-          part: 'Speaking',
-          freq: true
-        });
-      }
-    }
-
-    function renderQuickLookupCard(item) {
-      document.getElementById('quickLookupContent').innerHTML = `
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="font-serif-academy font-bold text-base text-indigo-900">${item.word}</span>
-          <span class="font-mono text-stone-500">${item.ipa || ''}</span>
-          <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold">🔥 ${item.source}</span>
-        </div>
-        <div class="text-stone-800 font-semibold">${item.zh}</div>
-        <div class="text-stone-500 italic">"${item.example}"</div>
-      `;
-      document.getElementById('quickLookupSpeakNormal').onclick = () => speakText(`${item.word}. ${item.example}`, 1.0);
-      document.getElementById('quickLookupSpeakSlow').onclick = () => speakText(`${item.word}. ${item.example}`, 0.75);
-      document.getElementById('quickLookupSaveBtn').onclick = () => saveWordObjToNotebook(item);
-    }
-
-    // ==================== 5. 分頁 1：IELTS 4-Part 真題渲染 ====================
-    function switchIeltsPart(part) {
-      ['listening', 'reading', 'writing', 'speaking'].forEach(p => {
-        document.getElementById(`view-${p}`).classList.toggle('hidden', p !== part);
-        document.getElementById(`part-${p}`).className = p === part
-          ? 'pb-3 whitespace-nowrap part-tab-active'
-          : 'pb-3 whitespace-nowrap text-stone-500 hover:text-indigo-800';
-      });
-    }
-
-    // --- 5.1 Part 1 Listening ---
-    function initListeningSelectors() {
-      const sel = document.getElementById('listenSelect');
-      sel.innerHTML = IELTS_BANK.listening.map((item, idx) => `<option value="${idx}">${item.title}</option>`).join('');
-      renderListeningView();
-    }
-
-    function cycleListeningTopic() {
-      listenIdx = (listenIdx + 1) % IELTS_BANK.listening.length;
-      document.getElementById('listenSelect').value = listenIdx;
-      renderListeningView();
-    }
-
-    function toggleListenScript() {
-      showListenScript = !showListenScript;
-      renderListeningView();
-    }
-
-    function renderListeningView() {
-      listenIdx = Number(document.getElementById('listenSelect').value) || 0;
-      const item = IELTS_BANK.listening[listenIdx] || FALLBACK_IELTS_BANK.listening[0];
-      document.getElementById('listenTitle').textContent = item.title;
-
-      document.getElementById('listenLinesBody').innerHTML = item.lines.map((line, i) => `
-        <tr class="hover:bg-stone-50 transition">
-          <td class="py-3.5 px-3 text-center bg-indigo-50/40">
-            <button onclick="speakText(IELTS_BANK.listening[${listenIdx}].lines[${i}].en, 1.0)"
-                    class="px-3 py-1.5 rounded-lg bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm">
-              🔊 1.0x
-            </button>
-          </td>
-          <td class="py-3.5 px-3 text-center bg-amber-50/40">
-            <button onclick="speakText(IELTS_BANK.listening[${listenIdx}].lines[${i}].en, 0.75)"
-                    class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold shadow-sm">
-              🐢 0.75x
-            </button>
-          </td>
-          <td class="py-3.5 px-4">
-            <div class="font-bold text-xs text-indigo-800">${line.speaker}</div>
-            ${showListenScript
-              ? `<div class="font-medium text-stone-800 mt-1 leading-relaxed">${highlightVocabInText(line.en)}</div>
-                 <div class="text-xs text-stone-500 mt-1">${line.zh}</div>`
-              : `<div class="text-xs italic text-stone-400 mt-1">🙈 [盲聽訓練中 — 請點擊左側 1.0x 或 0.75x 播放語音後回答下方考題]</div>`
-            }
-          </td>
-        </tr>
-      `).join('');
-
-      document.getElementById('listenQuizContainer').innerHTML = item.questions.map((qObj, qi) => {
-        if (qObj.type === 'mcq' && Array.isArray(qObj.options)) {
-          return `
-            <div class="p-4 rounded-xl bg-white border border-stone-200 space-y-2">
-              <div class="font-bold text-stone-900">${qObj.q}</div>
-              <div class="flex flex-wrap gap-2">
-                ${qObj.options.map(opt => `
-                  <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-50 border border-stone-300 cursor-pointer hover:border-indigo-700 text-xs font-semibold">
-                    <input type="radio" name="listenMcq_${qi}" value="${opt}" />
-                    <span>${opt}</span>
-                  </label>
-                `).join('')}
-              </div>
-              <div class="text-[11px] text-stone-400">提示：${qObj.hint || ''}</div>
-            </div>
-          `;
-        }
-        return `
-          <div class="p-4 rounded-xl bg-white border border-stone-200 space-y-2">
-            <div class="font-bold text-stone-900">${qObj.q}</div>
-            <div class="flex flex-wrap items-center gap-2">
-              <input id="listenAns_${qi}" type="text" placeholder="請輸入聽到的關鍵字或數字..."
-                     class="px-3 py-1.5 rounded-lg bg-stone-50 border border-stone-300 text-xs font-bold w-64 focus:outline-none focus:border-indigo-700" />
-              <span class="text-[11px] text-stone-400">提示：${qObj.hint || ''}</span>
-            </div>
-          </div>
-        `;
-      }).join('');
-      document.getElementById('listenQuizFeedback').classList.add('hidden');
-    }
-
-    function playFullListening(rate) {
-      const item = IELTS_BANK.listening[listenIdx];
-      speakText(item.lines.map(l => l.en).join(' '), rate);
-    }
-
-    function gradeListeningQuiz() {
-      const item = IELTS_BANK.listening[listenIdx];
-      let correct = 0;
-      const details = item.questions.map((qObj, qi) => {
-        let userAns = '';
-        if (qObj.type === 'mcq') {
-          const checked = document.querySelector(`input[name="listenMcq_${qi}"]:checked`);
-          userAns = checked ? checked.value.trim() : '';
-        } else {
-          userAns = (document.getElementById(`listenAns_${qi}`)?.value || '').trim();
-        }
-        const isOk = userAns.toLowerCase() === qObj.answer.trim().toLowerCase();
-        if (isOk) correct++;
-        return `<div>${isOk ? '✅' : '❌'} 第 ${qi + 1} 題：你的作答「${userAns || '未作答'}」｜標準答案：<b>${qObj.answer}</b></div>`;
-      }).join('');
-
-      const fb = document.getElementById('listenQuizFeedback');
-      fb.classList.remove('hidden');
-      fb.className = `p-4 rounded-xl text-xs space-y-1.5 border ${correct === item.questions.length ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-amber-50 border-amber-200 text-amber-900'}`;
-      fb.innerHTML = `<div class="font-bold text-sm">📊 聽力真題得分：${correct} / ${item.questions.length}</div>${details}`;
-    }
-
-    // --- 5.2 Part 2 Reading ---
-    function initReadingSelectors() {
-      const sel = document.getElementById('readSelect');
-      sel.innerHTML = IELTS_BANK.reading.map((item, idx) => `<option value="${idx}">${item.title}</option>`).join('');
-      renderReadingView();
-    }
-
-    function cycleReadingPassage() {
-      readIdx = (readIdx + 1) % IELTS_BANK.reading.length;
-      document.getElementById('readSelect').value = readIdx;
-      renderReadingView();
-    }
-
-    // 僅針對精選高頻詞庫 (前 150 個核心高頻詞) 進行文章內文高亮，確保萬字規模下渲染極快
-    function highlightVocabInText(text) {
-      let html = text;
-      const coreHighFreq = getCombinedVocab().filter(v => v.freq && v.word.length >= 5).slice(0, 120)
-        .sort((a, b) => b.word.length - a.word.length);
-      coreHighFreq.forEach(v => {
-        const escaped = v.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(`\\b(${escaped})\\b`, 'gi');
-        html = html.replace(regex, `<mark onclick="inspectReadingWord('${v.word.replace(/'/g, "\\'")}')" class="cursor-pointer bg-amber-200/75 hover:bg-amber-300 px-1 rounded font-semibold text-stone-900 transition">$1</mark>`);
-      });
-      return html;
-    }
-
-    function inspectReadingWord(wordStr) {
-      const found = getCombinedVocab().find(v => v.word.toLowerCase() === wordStr.toLowerCase());
-      if (!found) return;
-      document.getElementById('readWordInspectorBody').innerHTML = `
-        <div class="space-y-1.5">
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="font-serif-academy text-base font-bold text-indigo-900">${found.word}</span>
-              <span class="font-mono text-stone-400 ml-1">${found.ipa || ''}</span>
-            </div>
-            <div class="flex gap-1">
-              <button onclick="speakText('${found.word.replace(/'/g, "\\'")}', 1.0)" class="px-2 py-0.5 rounded bg-indigo-800 text-white font-bold">1.0x</button>
-              <button onclick="speakText('${found.word.replace(/'/g, "\\'")}', 0.75)" class="px-2 py-0.5 rounded bg-amber-600 text-white font-bold">0.75x</button>
-            </div>
-          </div>
-          <div class="font-bold text-stone-800">${found.zh}</div>
-          <div class="text-indigo-700 font-medium">搭配詞：${found.collocations || '-'}</div>
-          <div class="italic text-stone-500">"${found.example}"</div>
-          <button onclick="saveWordByName('${found.word.replace(/'/g, "\\'")}')" class="mt-1 px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold">
-            + 一鍵存入我的自訂單字本
-          </button>
-        </div>
-      `;
-    }
-
-    function renderReadingView() {
-      readIdx = Number(document.getElementById('readSelect').value) || 0;
-      const passage = IELTS_BANK.reading[readIdx];
-      document.getElementById('readTitle').textContent = passage.title;
-      document.getElementById('readPassageBox').innerHTML = passage.paragraphs.map(p => `<p>${highlightVocabInText(p)}</p>`).join('');
-
-      document.getElementById('readQuestionsContainer').innerHTML = passage.questions.map((qObj, qi) => `
-        <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
-          <div class="font-bold text-stone-900 leading-snug">${qObj.q}</div>
-          <div class="flex flex-wrap gap-2">
-            ${qObj.options.map(opt => `
-              <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-stone-300 cursor-pointer hover:border-indigo-700">
-                <input type="radio" name="readQ_${qi}" value="${opt}" />
-                <span class="font-bold">${opt}</span>
-              </label>
-            `).join('')}
-          </div>
-          <div id="readExp_${qi}" class="hidden text-[11px] text-emerald-900 bg-emerald-50 border border-emerald-200 p-2.5 rounded-lg"></div>
-        </div>
-      `).join('');
-      document.getElementById('readScoreBanner').classList.add('hidden');
-    }
-
-    function gradeReadingQuestions() {
-      const passage = IELTS_BANK.reading[readIdx];
-      let score = 0;
-      passage.questions.forEach((qObj, qi) => {
-        const checked = document.querySelector(`input[name="readQ_${qi}"]:checked`);
-        const val = checked ? checked.value : '';
-        const isOk = val === qObj.answer;
-        if (isOk) score++;
-        const expEl = document.getElementById(`readExp_${qi}`);
-        expEl.classList.remove('hidden');
-        expEl.innerHTML = `${isOk ? '✅ 答對！' : `❌ 答錯（你的選擇：${val || '未作答'}，正確答案：<b>${qObj.answer}</b>）`}<br>考官解析：${qObj.explanation}`;
-      });
-      const banner = document.getElementById('readScoreBanner');
-      banner.classList.remove('hidden');
-      banner.className = 'p-3 rounded-xl text-xs font-bold bg-indigo-50 border border-indigo-200 text-indigo-900';
-      banner.textContent = `📊 本篇雅思閱讀真題得分：${score} / ${passage.questions.length} 題`;
-    }
-
-    // --- 5.3 Part 3 Writing ---
-    function initWritingSelectors() {
-      const sel = document.getElementById('writeSelect');
-      sel.innerHTML = IELTS_BANK.writing.map((item, idx) => `<option value="${idx}">${item.title}</option>`).join('');
-      renderWritingView();
-      renderWritingUpgradeMatrix();
-    }
-
-    function cycleWritingPrompt() {
-      writeIdx = (writeIdx + 1) % IELTS_BANK.writing.length;
-      document.getElementById('writeSelect').value = writeIdx;
-      renderWritingView();
-    }
-
-    function renderWritingView() {
-      writeIdx = Number(document.getElementById('writeSelect').value) || 0;
-      const w = IELTS_BANK.writing[writeIdx];
-      document.getElementById('writeTaskTag').textContent = w.taskType;
-      document.getElementById('writeTitle').textContent = w.title;
-      document.getElementById('writePromptBox').textContent = w.prompt;
-      document.getElementById('writeModelEssayBox').innerHTML = `
-        <div class="flex items-center justify-between">
-          <span class="font-bold text-indigo-900">🌟 Band 8.5 考官滿分示範範文：</span>
-          <button onclick="speakText(IELTS_BANK.writing[${writeIdx}].modelEssay, 1.0)" class="px-3 py-1 rounded-lg bg-indigo-800 text-white text-xs font-bold">🔊 朗讀範文</button>
-        </div>
-        <div class="font-serif-academy whitespace-pre-line text-stone-800">${highlightVocabInText(w.modelEssay)}</div>
-      `;
-      analyzeWritingLive();
-    }
-
-    function analyzeWritingLive() {
-      const txt = document.getElementById('writeUserTextarea').value || '';
-      const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
-      const lower = txt.toLowerCase();
-      const matched = getCombinedVocab().filter(v => v.freq && v.word.length >= 5 && lower.includes(v.word.toLowerCase())).slice(0, 20);
-      document.getElementById('writeWordStats').textContent = `字數: ${words} 字 (目標 ≥250) | 高分詞命中: ${matched.length} 個`;
-      document.getElementById('writeDetectedBadges').innerHTML = matched.map(
-        m => `<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">✨ ${m.word}</span>`
-      ).join('');
-    }
-
-    function renderWritingUpgradeMatrix() {
-      const academicWords = getCombinedVocab().filter(v => v.part === 'Writing' || v.freq).slice(0, 15);
-      document.getElementById('writingUpgradeList').innerHTML = academicWords.map(v => `
-        <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-1">
-          <div class="flex items-center justify-between">
-            <span class="font-serif-academy font-bold text-indigo-900 text-sm">${v.word} <span class="font-sans text-[10px] text-rose-600">${v.freq ? '🔥高頻' : ''}</span></span>
-            <div class="flex gap-1">
-              <button onclick="speakText('${v.word.replace(/'/g, "\\'")}', 1.0)" class="px-2 py-0.5 rounded bg-indigo-800 text-white text-[10px] font-bold">1.0x</button>
-              <button onclick="saveWordByName('${v.word.replace(/'/g, "\\'")}')" class="px-2 py-0.5 rounded bg-amber-600 text-white text-[10px] font-bold">+收藏</button>
-            </div>
-          </div>
-          <div class="font-semibold text-stone-800">${v.zh}</div>
-          <div class="text-[11px] text-stone-500">搭配：${v.collocations || '-'}</div>
-        </div>
-      `).join('');
-    }
-
-    // --- 5.4 Part 4 Speaking ---
-    function cycleSpeakingSet() {
-      spkIdx = (spkIdx + 1) % IELTS_BANK.speaking.length;
-      renderSpeakingView();
-    }
-
-    function selectSpeakingStage(stage) {
-      spkStage = stage;
-      ['p1', 'p2', 'p3'].forEach(s => {
-        document.getElementById(`spk-stage-${s}`).className = s === stage
-          ? 'flex-1 py-2 rounded-xl bg-indigo-800 text-white font-bold'
-          : 'flex-1 py-2 rounded-xl bg-stone-100 text-stone-600 font-bold';
-      });
-      renderSpeakingView();
-    }
-
-    function renderSpeakingView() {
-      const set = IELTS_BANK.speaking[spkIdx];
-      const card = document.getElementById('speakingQuestionCard');
-      if (spkStage === 'p1') {
-        card.innerHTML = `
-          <div class="text-xs font-bold text-indigo-800">Part 1 · 日常生活問答 (Examiner Questions)</div>
-          <div class="space-y-2.5 text-xs sm:text-sm font-semibold text-stone-800">
-            ${set.p1.map(q => `<div class="flex items-start justify-between gap-2"><span>${q}</span><button onclick="speakText('${q.replace(/'/g, "\\'")}', 1.0)" class="px-2 py-0.5 rounded bg-indigo-800 text-white text-[11px]">🔊</button></div>`).join('')}
-          </div>
-        `;
-      } else if (spkStage === 'p2') {
-        card.innerHTML = `
-          <div class="text-xs font-bold text-amber-800">Part 2 · 個人陳述提示卡 (Cue Card · 1分鐘準備 / 2分鐘作答)</div>
-          <div class="font-serif-academy font-bold text-sm text-stone-900">${set.p2.topic}</div>
-          <ul class="list-disc pl-5 text-xs space-y-1 text-stone-600">
-            ${set.p2.bullets.map(b => `<li>${b}</li>`).join('')}
-          </ul>
-        `;
-      } else {
-        card.innerHTML = `
-          <div class="text-xs font-bold text-emerald-800">Part 3 · 抽象觀點深度討論 (Two-Way Discussion)</div>
-          <div class="space-y-2.5 text-xs sm:text-sm font-semibold text-stone-800">
-            ${set.p3.map(q => `<div class="flex items-start justify-between gap-2"><span>${q}</span><button onclick="speakText('${q.replace(/'/g, "\\'")}', 1.0)" class="px-2 py-0.5 rounded bg-indigo-800 text-white text-[11px]">🔊</button></div>`).join('')}
-          </div>
-        `;
-      }
-
-      document.getElementById('spkSampleBox').innerHTML = `
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <span class="font-bold text-indigo-900">🌟 Band 8.0 母語者示範回答（融入美劇片語與學術詞）：</span>
-          <div class="flex gap-1.5">
-            <button onclick="speakText(IELTS_BANK.speaking[${spkIdx}].sampleAnswer, 1.0)" class="px-2.5 py-1 rounded bg-indigo-800 text-white text-xs font-bold">🔊 1.0x 原速</button>
-            <button onclick="speakText(IELTS_BANK.speaking[${spkIdx}].sampleAnswer, 0.75)" class="px-2.5 py-1 rounded bg-amber-600 text-white text-xs font-bold">🐢 0.75x 跟讀</button>
-          </div>
-        </div>
-        <div class="font-serif-academy leading-relaxed text-stone-800">${highlightVocabInText(set.sampleAnswer)}</div>
-      `;
-      renderSpeakingHistory();
-    }
-
-    function analyzeSpeakingLive() {
-      const txt = document.getElementById('spkUserAnswerInput').value || '';
-      const lower = txt.toLowerCase();
-      const matched = getCombinedVocab().filter(v => v.freq && v.word.length >= 5 && lower.includes(v.word.toLowerCase())).slice(0, 20);
-      document.getElementById('spkLexicalScore').textContent = `命中高分表達: ${matched.length} 個`;
-      const listEl = document.getElementById('spkDetectedList');
-      if (matched.length === 0) {
-        listEl.innerHTML = `<span class="text-stone-400">尚未偵測到高分詞彙，試著加入如 off the top of my head, double-edged sword, mitigate 等表達！</span>`;
-      } else {
-        listEl.innerHTML = matched.map(m => `
-          <span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">
-            🎯 ${m.word} (${m.source})
-          </span>
-        `).join('');
-      }
-    }
-
-    function saveSpeakingRecord() {
-      const txt = document.getElementById('spkUserAnswerInput').value.trim();
-      if (!txt) return;
-      const matchedCount = getCombinedVocab().filter(v => v.freq && txt.toLowerCase().includes(v.word.toLowerCase())).length;
-      speakingHistory.unshift({
-        date: new Date().toLocaleString('zh-TW', { hour12: false }),
-        stage: spkStage.toUpperCase(),
-        text: txt,
-        badges: matchedCount
-      });
-      speakingHistory = speakingHistory.slice(0, 15);
-      localStorage.setItem('LUMINA_SPEAKING_V2', JSON.stringify(speakingHistory));
-      renderSpeakingHistory();
-    }
-
-    function renderSpeakingHistory() {
-      const box = document.getElementById('spkHistoryList');
-      if (speakingHistory.length === 0) {
-        box.innerHTML = `<div class="text-stone-400">尚無作答紀錄，在上方輸入英文回答後點擊「儲存本次口說作答紀錄」。</div>`;
-        return;
-      }
-      box.innerHTML = speakingHistory.map(h => `
-        <div class="p-3 rounded-xl bg-stone-50 border border-stone-200">
-          <div class="flex justify-between text-[11px] text-stone-400 mb-1">
-            <span>[${h.stage}] ${h.date}</span>
-            <span class="text-emerald-700 font-bold">命中 ${h.badges} 個高分詞</span>
-          </div>
-          <div class="text-stone-700">${h.text}</div>
-        </div>
-      `).join('');
-    }
-
-    function startSpeakingTimer(sec) {
-      stopSpeakingTimer();
-      spkSecondsLeft = sec;
-      updateTimerLabel();
-      spkTimerInterval = setInterval(() => {
-        spkSecondsLeft--;
-        updateTimerLabel();
-        if (spkSecondsLeft <= 0) stopSpeakingTimer();
-      }, 1000);
-    }
-
-    function stopSpeakingTimer() {
-      if (spkTimerInterval) clearInterval(spkTimerInterval);
-      spkTimerInterval = null;
-    }
-
-    function updateTimerLabel() {
-      const m = String(Math.floor(Math.max(0, spkSecondsLeft) / 60)).padStart(2, '0');
-      const s = String(Math.max(0, spkSecondsLeft) % 60).padStart(2, '0');
-      document.getElementById('spkTimerDisplay').textContent = `${m}:${s}`;
-    }
-
-    // ==================== 6. 分頁 2：萬字高頻詞庫雷達 (支援 10,000+ 單字分頁) ====================
-    function resetVocabPageAndRender() {
-      vocabCurrentPage = 1;
-      renderVocabTable();
-    }
-
-    function changeVocabPage(delta) {
-      vocabCurrentPage = Math.max(1, vocabCurrentPage + delta);
-      renderVocabTable();
-    }
-
-    function renderVocabTable() {
-      const q = (document.getElementById('vocabFilterSearch').value || '').trim().toLowerCase();
-      const freqF = document.getElementById('vocabFilterFreq').value;
-      const srcF = document.getElementById('vocabFilterSource').value;
-      const partF = document.getElementById('vocabFilterPart').value;
-
-      const filtered = getCombinedVocab().filter(v => {
-        const matchQ = !q || v.word.toLowerCase().includes(q) || (v.zh || '').toLowerCase().includes(q) || (v.source || '').toLowerCase().includes(q);
-        const matchFreq = freqF === 'all' || (freqF === 'freq' && v.freq);
-        const matchSrc = srcF === 'all' ||
-          (srcF === 'ielts' && (v.source || '').includes('IELTS')) ||
-          (srcF === 'tv' && (v.source || '').includes('TV')) ||
-          (srcF === 'daily' && (v.source || '').includes('Daily'));
-        const matchPart = partF === 'all' || v.part === partF;
-        return matchQ && matchFreq && matchSrc && matchPart;
-      });
-
-      const totalPages = Math.max(1, Math.ceil(filtered.length / VOCAB_PAGE_SIZE));
-      if (vocabCurrentPage > totalPages) vocabCurrentPage = totalPages;
-      const startIdx = (vocabCurrentPage - 1) * VOCAB_PAGE_SIZE;
-      const pageItems = filtered.slice(startIdx, startIdx + VOCAB_PAGE_SIZE);
-
-      document.getElementById('vocabFilterSummary').textContent = `目前篩選結果：共 ${filtered.length.toLocaleString()} 筆單字與美劇表達（標註 🔥 為高頻必考／母語高頻詞）`;
-      document.getElementById('vocabPageInfo').textContent = `第 ${vocabCurrentPage} / ${totalPages} 頁（顯示第 ${filtered.length ? startIdx + 1 : 0} – ${Math.min(filtered.length, startIdx + VOCAB_PAGE_SIZE)} 筆）`;
-
-      document.getElementById('vocabTableBody').innerHTML = pageItems.map(v => {
-        const isMastered = masteredSet.has(v.word.toLowerCase());
-        const inCustom = customNotebook.some(c => c.word.toLowerCase() === v.word.toLowerCase());
-        const safeWord = v.word.replace(/'/g, "\\'");
-        const safeEx = (v.example || '').replace(/'/g, "\\'");
-
-        return `
-          <tr class="hover:bg-stone-50 transition">
-            <td class="py-3 px-3 whitespace-nowrap">
-              ${v.freq
-                ? `<span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-bold">🔥 高頻必考</span>`
-                : `<span class="px-2 py-0.5 rounded-full bg-stone-100 text-stone-500">進階延伸</span>`}
-            </td>
-            <td class="py-3 px-3">
-              <div class="font-serif-academy font-bold text-sm text-indigo-900">${v.word}</div>
-              <div class="text-[11px] font-mono text-stone-400">${v.ipa || ''} ${v.pos ? `(${v.pos})` : ''}</div>
-            </td>
-            <td class="py-3 px-3 whitespace-nowrap">
-              <div class="flex gap-1">
-                <button onclick="speakText('${safeWord}. ${safeEx}', 1.0)" class="px-2 py-1 rounded-lg bg-indigo-800 hover:bg-indigo-700 text-white font-bold">🔊 1.0x</button>
-                <button onclick="speakText('${safeWord}. ${safeEx}', 0.75)" class="px-2 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-bold">🐢 0.75x</button>
-              </div>
-            </td>
-            <td class="py-3 px-3">
-              <div class="font-semibold text-indigo-800">${v.source}</div>
-              <div class="text-[11px] text-stone-400">適用：${v.part}</div>
-            </td>
-            <td class="py-3 px-3">
-              <div class="font-bold text-stone-800">${v.zh}</div>
-              <div class="text-[11px] text-stone-500">${v.collocations || ''}</div>
-            </td>
-            <td class="py-3 px-3 italic text-stone-600 max-w-xs">${v.example || ''}</td>
-            <td class="py-3 px-3 text-right whitespace-nowrap space-x-1">
-              <button onclick="toggleMasteredWord('${safeWord}')" class="px-2.5 py-1 rounded-lg border font-bold ${isMastered ? 'bg-emerald-700 text-white border-emerald-700' : 'border-stone-300 text-stone-600 hover:bg-stone-100'}">
-                ${isMastered ? '✓ 已熟記' : '熟記'}
-              </button>
-              <button onclick="saveWordByName('${safeWord}')" class="px-2.5 py-1 rounded-lg font-bold ${inCustom ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-amber-500 hover:bg-amber-400 text-stone-950'}">
-                ${inCustom ? '★ 已收藏' : '+ 單字本'}
-              </button>
-            </td>
-          </tr>
-        `;
-      }).join('');
-    }
-
-    function toggleMasteredWord(word) {
-      const key = word.toLowerCase();
-      if (masteredSet.has(key)) masteredSet.delete(key);
-      else masteredSet.add(key);
-      localStorage.setItem('LUMINA_MASTERED_V2', JSON.stringify(Array.from(masteredSet)));
-      updateDashboardStats();
-      renderVocabTable();
-    }
-
-    // ==================== 7. 分頁 3：無限動態刷題引擎 ====================
-    function shuffleArray(arr) {
+    // ==================== 4. 多元情境刷題引擎（填空 / 拼寫 / 猜中文 / 盲聽 / 猜出處） ====================
+    function shuffle(arr) {
       const a = [...arr];
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -1482,176 +594,370 @@
       return a;
     }
 
-    function buildDynamicQuestionsFromVocab(pool) {
-      const samplePool = shuffleArray(pool).slice(0, 60);
-      const valid = samplePool.filter(v => v.example && v.example.toLowerCase().includes(v.word.toLowerCase()));
-      const allWords = getCombinedVocab();
-
-      return valid.slice(0, 12).map(v => {
-        const escaped = v.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const maskedSentence = v.example.replace(new RegExp(`\\b${escaped}\\b`, 'i'), '________');
-        const distractors = [];
-        for (let attempt = 0; attempt < 25 && distractors.length < 3; attempt++) {
-          const randItem = allWords[Math.floor(Math.random() * allWords.length)];
-          if (randItem && randItem.word.toLowerCase() !== v.word.toLowerCase() && !distractors.includes(randItem.word)) {
-            distractors.push(randItem.word);
-          }
-        }
-        const options = shuffleArray([v.word, ...distractors]);
-        return {
-          id: 'dyn_' + v.word + '_' + Math.random().toString(36).slice(2, 6),
-          tag: `${v.freq ? '🔥 高頻動態出題' : '萬字庫動態出題'} · ${v.source}`,
-          question: `請選出最適合填入句中空格的高分單字或片語：\n"${maskedSentence}"`,
-          options,
-          answer: v.word,
-          explanation: `正確答案為「${v.word}」(${v.zh})。搭配參考：${v.collocations || v.source}。`
-        };
-      });
+    function filterItemsByQuizSource(sourceVal) {
+      if (sourceVal === 'ALL') return POP_ITEMS;
+      if (sourceVal === 'DRAMA_ALL') return POP_ITEMS.filter(i => i.category === 'drama');
+      if (sourceVal === 'SINGER_ALL') return POP_ITEMS.filter(i => i.category === 'singer');
+      return POP_ITEMS.filter(i => i.work === sourceVal);
     }
 
-    function generateFreshQuiz(resetAnswered = true) {
-      const mode = document.getElementById('quizModeSelect').value;
-      const allVocab = getCombinedVocab();
-      let candidateQuestions = [];
+    function buildSingleQuestion(item, forcedType) {
+      const types = ['cloze_mcq', 'cloze_type', 'guess_zh', 'listening', 'guess_source'];
+      const qType = forcedType === 'mixed' ? types[Math.floor(Math.random() * types.length)] : forcedType;
+      const escaped = item.target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const maskedQuote = item.quote.replace(new RegExp(escaped, 'i'), '________');
 
-      if (mode === 'ielts_real') {
-        candidateQuestions = [...IELTS_BANK.quizPool];
-      } else if (mode === 'freq_only') {
-        candidateQuestions = buildDynamicQuestionsFromVocab(allVocab.filter(v => v.freq));
-      } else if (mode === 'custom_only') {
-        const targetPool = customNotebook.length > 0 ? customNotebook : allVocab;
-        candidateQuestions = buildDynamicQuestionsFromVocab(targetPool);
-      } else {
-        candidateQuestions = [
-          ...IELTS_BANK.quizPool,
-          ...buildDynamicQuestionsFromVocab(allVocab)
-        ];
+      const otherItems = shuffle(POP_ITEMS.filter(x => x.id !== item.id));
+      const tagPrefix = `${item.category === 'drama' ? '🎬 美劇' : '🎵 金曲'} · ${item.work}`;
+
+      if (qType === 'cloze_type') {
+        return {
+          type: 'cloze_type',
+          item,
+          tag: `${tagPrefix} · ⌨️ 拼寫填空挑戰`,
+          prompt: `請根據中文提示，在下方輸入空格中正確的英文片語或單字：\n「${maskedQuote}」\n💡 中文提示：${item.zh}`,
+          answer: item.target,
+          explanation: `完整原句：${item.quote}\n解析：${item.nuance}`
+        };
       }
 
-      currentQuizSet = shuffleArray(candidateQuestions).slice(0, 10);
-      if (resetAnswered) quizAnsweredMap = {};
-      renderQuizList();
+      if (qType === 'guess_zh') {
+        const distractors = otherItems.slice(0, 3).map(x => x.zh);
+        return {
+          type: 'mcq',
+          item,
+          tag: `${tagPrefix} · 🧠 看原句猜道地中文`,
+          prompt: `在以下情境中，劃線表達「${item.target}」最道地的中文意思為何？\n"${item.quote}"`,
+          options: shuffle([item.zh, ...distractors]),
+          answer: item.zh,
+          explanation: `「${item.target}」意為「${item.zh}」。\n${item.nuance}`
+        };
+      }
+
+      if (qType === 'listening') {
+        const distractors = otherItems.slice(0, 3).map(x => x.target);
+        return {
+          type: 'listening',
+          item,
+          tag: `${tagPrefix} · 🎧 盲聽語音辨識挑戰`,
+          prompt: `請先點擊下方「🔊 播放原速」或「🐢 播放慢速」聆聽句子，選出你聽到的核心片語或單字：`,
+          options: shuffle([item.target, ...distractors]),
+          answer: item.target,
+          explanation: `聽力原句：「${item.quote}」\n中文意思：${item.zh}`
+        };
+      }
+
+      if (qType === 'guess_source') {
+        const uniqueWorks = Array.from(new Set(POP_ITEMS.filter(x => x.work !== item.work).map(x => x.work)));
+        const distractors = shuffle(uniqueWorks).slice(0, 3);
+        return {
+          type: 'mcq',
+          item,
+          tag: `🎬/🎵 作品出處配對挑戰`,
+          prompt: `這句經典表達與台詞出自哪一部美劇或哪位西洋歌手？\n「${item.quote}」\n（核心詞彙：${item.target} — ${item.zh}）`,
+          options: shuffle([item.work, ...distractors]),
+          answer: item.work,
+          explanation: `出自【${item.work} (${item.workEn})】— ${item.subTitle}。\n${item.nuance}`
+        };
+      }
+
+      // 預設：cloze_mcq (挖空選擇題)
+      const distractors = otherItems.slice(0, 3).map(x => x.target);
+      return {
+        type: 'mcq',
+        item,
+        tag: `${tagPrefix} · ✍️ 語境挖空選擇題`,
+        prompt: `請選出最適合填入空格的道地英文表達：\n"${maskedQuote}"`,
+        options: shuffle([item.target, ...distractors]),
+        answer: item.target,
+        explanation: `正確答案為「${item.target}」(${item.zh})。\n${item.nuance}`
+      };
     }
 
-    function renderQuizList() {
-      document.getElementById('quizTotalSolvedStat').textContent = `${quizHistoryStats.solved} 題`;
-      updateQuizScoreBar();
+    function generatePopQuiz(resetState = true) {
+      const qType = document.getElementById('quizTypeSelect').value;
+      const srcVal = document.getElementById('quizSourceSelect').value;
+      let pool = filterItemsByQuizSource(srcVal);
+      if (pool.length === 0) pool = POP_ITEMS;
 
-      document.getElementById('quizQuestionsList').innerHTML = currentQuizSet.map((qObj, idx) => {
-        const userPick = quizAnsweredMap[idx];
-        const isAnswered = userPick !== undefined;
-        return `
-          <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 text-[11px] font-bold">第 ${idx + 1} 題 · ${qObj.tag}</span>
-              ${isAnswered ? `<span class="text-xs font-bold ${userPick === qObj.answer ? 'text-emerald-700' : 'text-rose-600'}">${userPick === qObj.answer ? '✅ 答對' : '❌ 答錯'}</span>` : ''}
+      const selected = shuffle(pool).slice(0, 8);
+      currentQuizQuestions = selected.map(item => buildSingleQuestion(item, qType));
+      if (resetState) quizAnswersState = {};
+      renderPopQuiz();
+    }
+
+    function renderPopQuiz() {
+      const answeredCount = Object.keys(quizAnswersState).length;
+      let roundCorrect = 0;
+      Object.entries(quizAnswersState).forEach(([idx, val]) => {
+        if (val.isCorrect) roundCorrect++;
+      });
+      document.getElementById('roundProgressTxt').textContent = `進度：${answeredCount} / ${currentQuizQuestions.length} 題`;
+      document.getElementById('roundScoreTxt').textContent = `答對：${roundCorrect} 題`;
+
+      document.getElementById('popQuizContainer').innerHTML = currentQuizQuestions.map((qObj, idx) => {
+        const state = quizAnswersState[idx];
+        const done = Boolean(state);
+        const safeQuote = qObj.item.quote.replace(/'/g, "\\'");
+
+        let bodyHtml = '';
+        if (qObj.type === 'listening') {
+          bodyHtml += `
+            <div class="flex flex-wrap gap-2">
+              <button onclick="speakText('${safeQuote}', 1.0)" class="px-3.5 py-2 rounded-xl bg-indigo-800 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm">
+                🔊 播放正常語速 (1.0x)
+              </button>
+              <button onclick="speakText('${safeQuote}', 0.75)" class="px-3.5 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold shadow-sm">
+                🐢 播放慢速拆解 (0.75x)
+              </button>
             </div>
-            <div class="font-bold text-xs sm:text-sm text-stone-900 whitespace-pre-line leading-relaxed">${qObj.question}</div>
+          `;
+        }
+
+        if (qObj.type === 'cloze_type') {
+          bodyHtml += `
+            <div class="flex flex-wrap items-center gap-2">
+              <input id="typeAnsInput_${idx}" type="text" ${done ? 'disabled' : ''}
+                     value="${done ? state.userVal : ''}"
+                     onkeydown="if(event.key==='Enter') submitTypedQuizAnswer(${idx})"
+                     placeholder="請用電腦鍵盤拼出英文片語或單字..."
+                     class="px-3.5 py-2 rounded-xl bg-white border border-stone-300 text-xs sm:text-sm font-bold w-72 focus:outline-none focus:border-indigo-700" />
+              ${!done ? `<button onclick="submitTypedQuizAnswer(${idx})" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold">送出答案</button>` : ''}
+            </div>
+          `;
+        } else {
+          bodyHtml += `
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
               ${qObj.options.map(opt => {
-                let btnCls = 'p-3 rounded-xl border text-left font-semibold transition ';
-                if (!isAnswered) {
-                  btnCls += 'bg-white border-stone-300 hover:border-indigo-700 text-stone-800';
+                let cls = 'p-3 rounded-xl border text-left font-semibold transition ';
+                if (!done) {
+                  cls += 'bg-white border-stone-300 hover:border-indigo-700 text-stone-800';
                 } else if (opt === qObj.answer) {
-                  btnCls += 'bg-emerald-50 border-emerald-500 text-emerald-900 font-bold';
-                } else if (opt === userPick) {
-                  btnCls += 'bg-rose-50 border-rose-500 text-rose-900';
+                  cls += 'bg-emerald-50 border-emerald-500 text-emerald-900 font-bold';
+                } else if (opt === state.userVal) {
+                  cls += 'bg-rose-50 border-rose-500 text-rose-900';
                 } else {
-                  btnCls += 'bg-white/60 border-stone-200 text-stone-400';
+                  cls += 'bg-white/60 border-stone-200 text-stone-400';
                 }
-                return `<button onclick="answerQuizQuestion(${idx}, '${opt.replace(/'/g, "\\'")}')" ${isAnswered ? 'disabled' : ''} class="${btnCls}">${opt}</button>`;
+                return `<button onclick="submitMcqQuizAnswer(${idx}, '${opt.replace(/'/g, "\\'")}')" ${done ? 'disabled' : ''} class="${cls}">${opt}</button>`;
               }).join('')}
             </div>
-            ${isAnswered ? `<div class="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-xs text-indigo-950">💡 <b>考點解析：</b>${qObj.explanation}</div>` : ''}
+          `;
+        }
+
+        return `
+          <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 text-[11px] font-bold">第 ${idx + 1} 題 · ${qObj.tag}</span>
+              <div class="flex items-center gap-2">
+                ${done ? `<span class="text-xs font-bold ${state.isCorrect ? 'text-emerald-700' : 'text-rose-600'}">${state.isCorrect ? '✅ 答對！' : `❌ 答錯（正解：${qObj.answer}）`}</span>` : ''}
+                <button onclick="savePopItemToSharedNotebook('${qObj.item.id}')" class="px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-[11px] font-bold">
+                  + 收藏至單字本
+                </button>
+              </div>
+            </div>
+            <div class="font-bold text-xs sm:text-sm text-stone-900 whitespace-pre-line leading-relaxed">${qObj.prompt}</div>
+            ${bodyHtml}
+            ${done ? `
+              <div class="p-3.5 rounded-xl bg-indigo-50 border border-indigo-200 text-xs text-indigo-950 space-y-1.5">
+                <div class="whitespace-pre-line leading-relaxed">💡 <b>文化與語意解析：</b>${qObj.explanation}</div>
+                <div class="flex gap-1.5 pt-1">
+                  <button onclick="speakText('${safeQuote}', 1.0)" class="px-2.5 py-1 rounded bg-indigo-800 text-white font-bold">🔊 朗讀原句 1.0x</button>
+                  <button onclick="speakText('${safeQuote}', 0.75)" class="px-2.5 py-1 rounded bg-amber-600 text-white font-bold">🐢 慢速跟讀 0.75x</button>
+                </div>
+              </div>
+            ` : ''}
           </div>
         `;
       }).join('');
     }
 
-    function answerQuizQuestion(idx, chosen) {
-      if (quizAnsweredMap[idx] !== undefined) return;
-      quizAnsweredMap[idx] = chosen;
-      quizHistoryStats.solved++;
-      if (chosen === currentQuizSet[idx].answer) quizHistoryStats.correct++;
-      localStorage.setItem('LUMINA_QUIZ_STATS_V2', JSON.stringify(quizHistoryStats));
-      updateDashboardStats();
-      renderQuizList();
+    function submitMcqQuizAnswer(idx, chosen) {
+      if (quizAnswersState[idx]) return;
+      const isCorrect = chosen === currentQuizQuestions[idx].answer;
+      quizAnswersState[idx] = { userVal: chosen, isCorrect };
+      recordQuizStat(isCorrect);
+      renderPopQuiz();
     }
 
-    function updateQuizScoreBar() {
-      const answeredKeys = Object.keys(quizAnsweredMap);
-      const total = currentQuizSet.length || 10;
-      let correct = 0;
-      answeredKeys.forEach(k => {
-        if (quizAnsweredMap[k] === currentQuizSet[k].answer) correct++;
+    function submitTypedQuizAnswer(idx) {
+      if (quizAnswersState[idx]) return;
+      const inputEl = document.getElementById(`typeAnsInput_${idx}`);
+      const val = (inputEl?.value || '').trim();
+      if (!val) return;
+      const isCorrect = val.toLowerCase() === currentQuizQuestions[idx].answer.toLowerCase();
+      quizAnswersState[idx] = { userVal: val, isCorrect };
+      recordQuizStat(isCorrect);
+      renderPopQuiz();
+    }
+
+    function recordQuizStat(isCorrect) {
+      popQuizStats.solved++;
+      if (isCorrect) popQuizStats.correct++;
+      localStorage.setItem('LUMINA_POP_QUIZ_STATS_V1', JSON.stringify(popQuizStats));
+      updateTopStats();
+    }
+
+    // ==================== 5. 美劇專區與 9 大歌手專區卡片渲染 ====================
+    function setDramaFilter(val) {
+      activeDramaFilter = val;
+      document.querySelectorAll('#dramaFilterChips button').forEach(btn => {
+        const isMatch = (val === 'ALL' && btn.textContent.includes('全部')) || btn.textContent.includes(val);
+        btn.className = isMatch
+          ? 'px-3 py-1.5 rounded-xl border font-bold filter-chip-active'
+          : 'px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100';
       });
-      document.getElementById('quizProgressStat').textContent = `${answeredKeys.length} / ${total} 題`;
-      const acc = answeredKeys.length ? Math.round((correct / answeredKeys.length) * 100) : 0;
-      document.getElementById('quizAccuracyStat').textContent = `${acc}%`;
+      renderDramaCards();
     }
 
-    // ==================== 8. 分頁 4：自訂單字本 & 3D 記憶卡 ====================
-    function saveWordByName(wordStr) {
-      const found = getCombinedVocab().find(v => v.word.toLowerCase() === wordStr.toLowerCase());
-      if (found) saveWordObjToNotebook(found);
+    function setSingerFilter(val) {
+      activeSingerFilter = val;
+      document.querySelectorAll('#singerFilterChips button').forEach(btn => {
+        const isMatch = (val === 'ALL' && btn.textContent.includes('全部')) || btn.textContent.trim() === val;
+        btn.className = isMatch
+          ? 'px-3 py-1.5 rounded-xl border font-bold filter-chip-active'
+          : 'px-3 py-1.5 rounded-xl border border-stone-300 font-semibold hover:bg-stone-100';
+      });
+      renderSingerCards();
     }
 
-    function saveWordObjToNotebook(obj) {
-      const exists = customNotebook.some(c => c.word.toLowerCase() === obj.word.toLowerCase());
+    function onGlobalSearchInput() {
+      globalSearchQuery = (document.getElementById('globalSearchInput').value || '').trim().toLowerCase();
+      renderDramaCards();
+      renderSingerCards();
+    }
+
+    function renderItemCardHTML(item) {
+      const safeQuote = item.quote.replace(/'/g, "\\'");
+      const safeTarget = item.target.replace(/'/g, "\\'");
+      const isSaved = sharedNotebook.some(c => c.word.toLowerCase() === item.target.toLowerCase());
+
+      return `
+        <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 flex flex-col justify-between space-y-3 hover:border-indigo-300 transition">
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold">
+                ${item.category === 'drama' ? '🎬' : '🎵'} ${item.work} (${item.workEn})
+              </span>
+              <span class="text-[11px] text-stone-400">${item.subTitle}</span>
+            </div>
+
+            <div class="flex items-baseline justify-between gap-2 pt-1">
+              <h3 class="font-serif-academy font-bold text-lg text-indigo-900">${item.target}</h3>
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-lg border border-emerald-200">${item.zh}</span>
+            </div>
+
+            <blockquote class="p-3 rounded-xl bg-white border-l-4 border-amber-500 font-serif-academy text-xs sm:text-sm italic text-stone-800">
+              "${item.quote}"
+            </blockquote>
+
+            <p class="text-xs text-stone-600 leading-relaxed">${item.nuance}</p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-stone-200 text-xs">
+            <div class="flex gap-1.5">
+              <button onclick="speakText('${safeTarget}. ${safeQuote}', 1.0)" class="px-2.5 py-1 rounded-lg bg-indigo-800 hover:bg-indigo-700 text-white font-bold">🔊 1.0x</button>
+              <button onclick="speakText('${safeTarget}. ${safeQuote}', 0.75)" class="px-2.5 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-bold">🐢 0.75x</button>
+            </div>
+            <button onclick="savePopItemToSharedNotebook('${item.id}')" class="px-3 py-1 rounded-lg font-bold ${isSaved ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-emerald-700 hover:bg-emerald-600 text-white'}">
+              ${isSaved ? '★ 已存單字本' : '+ 存入單字本'}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDramaCards() {
+      const list = POP_ITEMS.filter(i => {
+        if (i.category !== 'drama') return false;
+        const matchFilter = activeDramaFilter === 'ALL' || i.work === activeDramaFilter;
+        const matchQ = !globalSearchQuery || i.target.toLowerCase().includes(globalSearchQuery) || i.zh.includes(globalSearchQuery) || i.work.includes(globalSearchQuery);
+        return matchFilter && matchQ;
+      });
+      document.getElementById('dramaCardsGrid').innerHTML = list.map(renderItemCardHTML).join('');
+    }
+
+    function renderSingerCards() {
+      const list = POP_ITEMS.filter(i => {
+        if (i.category !== 'singer') return false;
+        const matchFilter = activeSingerFilter === 'ALL' || i.work === activeSingerFilter;
+        const matchQ = !globalSearchQuery || i.target.toLowerCase().includes(globalSearchQuery) || i.zh.includes(globalSearchQuery) || i.work.toLowerCase().includes(globalSearchQuery);
+        return matchFilter && matchQ;
+      });
+      document.getElementById('singerCardsGrid').innerHTML = list.map(renderItemCardHTML).join('');
+    }
+
+    // ==================== 6. 跨站共用單字本 & 3D 翻轉記憶卡 ====================
+    function savePopItemToSharedNotebook(itemId) {
+      const found = POP_ITEMS.find(x => x.id === itemId);
+      if (!found) return;
+      const exists = sharedNotebook.some(c => c.word.toLowerCase() === found.target.toLowerCase());
       if (!exists) {
-        customNotebook.unshift({ ...obj, id: 'c_' + Date.now() });
-        localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(customNotebook));
+        sharedNotebook.unshift({
+          id: 'pop_' + Date.now(),
+          word: found.target,
+          ipa: '',
+          pos: found.category === 'drama' ? 'TV Idiom' : 'Lyric Phrase',
+          zh: found.zh,
+          collocations: `${found.work} (${found.workEn})`,
+          example: found.quote,
+          source: `${found.category === 'drama' ? 'TV' : 'Song'}: ${found.work}`,
+          part: 'Speaking',
+          freq: true
+        });
+        localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(sharedNotebook));
       }
-      updateDashboardStats();
-      renderVocabTable();
-      renderCustomNotebookList();
+      updateTopStats();
+      renderDramaCards();
+      renderSingerCards();
+      renderSharedNotebookGrid();
     }
 
-    async function autoFillFromDictionary() {
-      const w = document.getElementById('nbWord').value.trim();
-      if (!w) return;
-      try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(w)}`);
-        const json = await res.json();
-        const defObj = json[0].meanings?.[0]?.definitions?.[0];
-        if (defObj?.definition) document.getElementById('nbZh').value = defObj.definition;
-        if (defObj?.example) document.getElementById('nbExample').value = defObj.example;
-      } catch (_) {
-        alert('線上字典暫無此片語詳細條目，請直接手動填寫中文釋義！');
-      }
-    }
-
-    function addCustomWord() {
-      const word = document.getElementById('nbWord').value.trim();
-      const zh = document.getElementById('nbZh').value.trim();
-      const source = document.getElementById('nbSource').value.trim() || '自訂筆記';
-      const example = document.getElementById('nbExample').value.trim() || `I use "${word}" naturally in IELTS Speaking and Writing.`;
-      const freq = document.getElementById('nbFreq').checked;
+    function addCustomPopWord() {
+      const word = document.getElementById('customWordInput').value.trim();
+      const zh = document.getElementById('customZhInput').value.trim();
+      const source = document.getElementById('customSourceInput').value.trim() || '美劇/歌詞筆記';
+      const quote = document.getElementById('customQuoteInput').value.trim() || `I learned "${word}" from ${source}.`;
       if (!word || !zh) {
-        alert('請填寫英文單字/片語與中文釋義！');
+        alert('請輸入英文單字/片語與中文意思！');
         return;
       }
-      saveWordObjToNotebook({ word, ipa: '', pos: 'custom', zh, collocations: source, example, source, part: 'Speaking', freq });
-      document.getElementById('nbWord').value = '';
-      document.getElementById('nbZh').value = '';
-      document.getElementById('nbExample').value = '';
+      sharedNotebook.unshift({
+        id: 'pop_c_' + Date.now(),
+        word,
+        ipa: '',
+        pos: 'custom',
+        zh,
+        collocations: source,
+        example: quote,
+        source,
+        part: 'Speaking',
+        freq: true
+      });
+      localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(sharedNotebook));
+      document.getElementById('customWordInput').value = '';
+      document.getElementById('customZhInput').value = '';
+      document.getElementById('customQuoteInput').value = '';
+      updateTopStats();
+      renderSharedNotebookGrid();
     }
 
-    function removeCustomWord(wordStr) {
-      customNotebook = customNotebook.filter(c => c.word.toLowerCase() !== wordStr.toLowerCase());
-      localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(customNotebook));
-      updateDashboardStats();
-      renderCustomNotebookList();
-      renderVocabTable();
+    function removeSharedWord(wordStr) {
+      sharedNotebook = sharedNotebook.filter(c => c.word.toLowerCase() !== wordStr.toLowerCase());
+      localStorage.setItem('LUMINA_NOTEBOOK_V2', JSON.stringify(sharedNotebook));
+      updateTopStats();
+      renderSharedNotebookGrid();
+      renderDramaCards();
+      renderSingerCards();
     }
 
-    function renderCustomNotebookList() {
-      const box = document.getElementById('customNotebookList');
-      if (customNotebook.length === 0) {
-        box.innerHTML = `<div class="text-stone-400 col-span-full">目前自訂單字本還是空的，你可以在左側新增，或到「萬字高頻詞庫 / 雅思閱讀」點擊「+ 單字本」一鍵收藏！</div>`;
+    function renderSharedNotebookGrid() {
+      const box = document.getElementById('sharedNotebookGrid');
+      if (sharedNotebook.length === 0) {
+        box.innerHTML = `<div class="text-stone-400 col-span-full">目前單字本尚無收藏，在刷題區或美劇/歌手專區點擊「+ 存入單字本」即可加入！</div>`;
         return;
       }
-      box.innerHTML = customNotebook.map(c => {
+      box.innerHTML = sharedNotebook.map(c => {
         const safeW = c.word.replace(/'/g, "\\'");
         const safeEx = (c.example || '').replace(/'/g, "\\'");
         return `
@@ -1659,7 +965,7 @@
             <div>
               <div class="flex items-center justify-between">
                 <span class="font-serif-academy font-bold text-sm text-indigo-900">${c.word}</span>
-                <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-bold">${c.freq ? '🔥 高頻' : c.source}</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold">${c.source}</span>
               </div>
               <div class="font-semibold text-stone-800 mt-1">${c.zh}</div>
               <div class="text-[11px] italic text-stone-500 mt-1">"${c.example}"</div>
@@ -1669,116 +975,107 @@
                 <button onclick="speakText('${safeW}. ${safeEx}', 1.0)" class="px-2 py-0.5 rounded bg-indigo-800 text-white font-bold">1.0x</button>
                 <button onclick="speakText('${safeW}. ${safeEx}', 0.75)" class="px-2 py-0.5 rounded bg-amber-600 text-white font-bold">0.75x</button>
               </div>
-              <button onclick="removeCustomWord('${safeW}')" class="text-rose-600 hover:underline font-semibold">刪除</button>
+              <button onclick="removeSharedWord('${safeW}')" class="text-rose-600 hover:underline font-semibold">刪除</button>
             </div>
           </div>
         `;
       }).join('');
     }
 
-    function exportCustomNotebook() {
-      const blob = new Blob([JSON.stringify(customNotebook, null, 2)], { type: 'application/json' });
+    function exportSharedNotebook() {
+      const blob = new Blob([JSON.stringify(sharedNotebook, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = `lumina_ielts_notebook_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `lumina_shared_notebook_${new Date().toISOString().slice(0, 10)}.json`;
       a.click();
     }
 
-    function importCustomNotebook(ev) {
-      const file = ev.target.files?.[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = e => {
-        try {
-          const imported = JSON.parse(e.target.result);
-          if (Array.isArray(imported)) {
-            imported.forEach(item => { if (item.word) saveWordObjToNotebook(item); });
-            alert(`✅ 成功匯入 ${imported.length} 筆單字！`);
-          }
-        } catch (_) {
-          alert('JSON 格式錯誤');
+    // --- 3D 翻轉記憶卡控制 ---
+    function getFcDeck() {
+      if (fcMode === 'drama') return POP_ITEMS.filter(x => x.category === 'drama');
+      if (fcMode === 'singer') return POP_ITEMS.filter(x => x.category === 'singer');
+      if (fcMode === 'saved') {
+        if (sharedNotebook.length > 0) {
+          return sharedNotebook.map(s => ({
+            id: s.id,
+            category: 'saved',
+            work: s.source,
+            workEn: '',
+            subTitle: '我的單字本',
+            target: s.word,
+            zh: s.zh,
+            quote: s.example,
+            nuance: s.collocations || ''
+          }));
         }
-      };
-      reader.readAsText(file);
+      }
+      return POP_ITEMS;
     }
 
-    function getActiveFlashcardList() {
-      const all = getCombinedVocab();
-      if (fcDeckMode === 'tv') return all.filter(v => (v.source || '').includes('TV'));
-      if (fcDeckMode === 'custom') return customNotebook.length > 0 ? customNotebook : all.slice(0, 100);
-      return all.filter(v => v.freq);
-    }
-
-    function setFlashcardDeck(mode) {
-      fcDeckMode = mode;
-      fcIndex = 0;
+    function setFcMode(m) {
+      fcMode = m;
+      fcIdx = 0;
       fcFlipped = false;
-      ['all', 'tv', 'custom'].forEach(m => {
-        document.getElementById(`deck-${m}`).className = m === mode
+      ['all', 'drama', 'singer', 'saved'].forEach(k => {
+        document.getElementById(`fcmode-${k}`).className = k === m
           ? 'px-2.5 py-1 rounded-lg bg-indigo-800 text-white font-bold'
           : 'px-2.5 py-1 rounded-lg bg-stone-100 text-stone-600 font-bold';
       });
-      renderFlashcard();
+      renderCard();
     }
 
-    function renderFlashcard() {
-      const list = getActiveFlashcardList();
-      if (list.length === 0) return;
-      fcIndex = (fcIndex + list.length) % list.length;
-      const item = list[fcIndex];
-      document.getElementById('flashcardInner').classList.toggle('rotate-y-180', fcFlipped);
-      document.getElementById('fcBadges').innerHTML = `
-        <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-bold">${item.freq ? '🔥 高頻必考' : '延伸詞彙'}</span>
-        <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 font-bold">${item.source}</span>
+    function renderCard() {
+      const deck = getFcDeck();
+      if (deck.length === 0) return;
+      fcIdx = (fcIdx + deck.length) % deck.length;
+      const item = deck[fcIdx];
+      document.getElementById('fcInner').classList.toggle('rotate-y-180', fcFlipped);
+      document.getElementById('fcBadgeRow').innerHTML = `
+        <span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 font-bold">${item.work}</span>
       `;
-      document.getElementById('fcWord').textContent = item.word;
-      document.getElementById('fcIpa').textContent = `${item.ipa || ''} ${item.pos ? `(${item.pos})` : ''}`;
-      document.getElementById('fcZh').textContent = item.zh;
-      document.getElementById('fcColloc').textContent = item.collocations ? `高分搭配：${item.collocations}` : '';
-      document.getElementById('fcExample').textContent = `"${item.example}"`;
-      document.getElementById('fcCounter').textContent = `${fcIndex + 1} / ${list.length.toLocaleString()}`;
+      document.getElementById('fcFrontTerm').textContent = item.target;
+      document.getElementById('fcFrontSub').textContent = item.subTitle || '';
+      document.getElementById('fcBackZh').textContent = item.zh;
+      document.getElementById('fcBackNuance').textContent = item.nuance;
+      document.getElementById('fcBackQuote').textContent = `"${item.quote}"`;
+      document.getElementById('fcIndexLabel').textContent = `${fcIdx + 1} / ${deck.length}`;
     }
 
-    function flipFlashcard() { fcFlipped = !fcFlipped; renderFlashcard(); }
-    function nextFlashcard() { fcFlipped = false; fcIndex++; renderFlashcard(); }
-    function prevFlashcard() { fcFlipped = false; fcIndex--; renderFlashcard(); }
-    function speakCurrentFlashcard(rate) {
-      const item = getActiveFlashcardList()[fcIndex];
-      if (item) speakText(`${item.word}. ${item.example}`, rate);
+    function flipCard() { fcFlipped = !fcFlipped; renderCard(); }
+    function moveCard(d) { fcFlipped = false; fcIdx += d; renderCard(); }
+    function speakCard(rate) {
+      const item = getFcDeck()[fcIdx];
+      if (item) speakText(`${item.target}. ${item.quote}`, rate);
     }
-    function toggleCurrentFlashcardMastered() {
-      const item = getActiveFlashcardList()[fcIndex];
-      if (item) toggleMasteredWord(item.word);
+    function saveCurrentCard() {
+      const item = getFcDeck()[fcIdx];
+      if (item && item.id) savePopItemToSharedNotebook(item.id);
     }
 
-    // ==================== 9. 主分頁切換與初始化 ====================
+    // ==================== 7. 主分頁切換與初始化 ====================
     function switchMainTab(tabKey) {
-      ['ielts4', 'vocab', 'quiz', 'notebook'].forEach(k => {
+      ['quiz', 'dramas', 'singers', 'notebook'].forEach(k => {
         document.getElementById(`panel-${k}`).classList.toggle('hidden', k !== tabKey);
         document.getElementById(`nav-${k}`).className = k === tabKey
           ? 'px-4 py-2.5 rounded-xl font-bold nav-pill-active transition'
           : 'px-4 py-2.5 rounded-xl font-semibold text-stone-600 hover:bg-stone-100 transition';
       });
-      if (tabKey === 'vocab') renderVocabTable();
-      if (tabKey === 'quiz' && currentQuizSet.length === 0) generateFreshQuiz(true);
-      if (tabKey === 'notebook') { renderCustomNotebookList(); renderFlashcard(); }
+      if (tabKey === 'dramas') renderDramaCards();
+      if (tabKey === 'singers') renderSingerCards();
+      if (tabKey === 'notebook') { renderSharedNotebookGrid(); renderCard(); }
     }
 
-    function refreshAllViews() {
-      updateDashboardStats();
-      initListeningSelectors();
-      initReadingSelectors();
-      initWritingSelectors();
-      renderSpeakingView();
-      renderVocabTable();
-      generateFreshQuiz(true);
-      renderCustomNotebookList();
-      renderFlashcard();
+    function refreshAllUI() {
+      updateTopStats();
+      renderDramaCards();
+      renderSingerCards();
+      generatePopQuiz(true);
+      renderSharedNotebookGrid();
+      renderCard();
     }
 
     window.addEventListener('DOMContentLoaded', async () => {
-      await loadRemoteDatabases(false);
-      refreshAllViews();
+      await syncRemotePopBank();
     });
   </script>
 </body>
