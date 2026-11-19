@@ -5,279 +5,6 @@
   "speaking": [],
   "quizPool": [
     {
-      "id": "auto_q_conducive",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "ubiquitous",
-        "exacerbate",
-        "substantiate",
-        "conducive"
-      ],
-      "answer": "conducive",
-      "explanation": "正確答案為「conducive」：有助於...的、有益的"
-    },
-    {
-      "id": "auto_q_scrutinize",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "elephant in the room",
-        "unprecedented",
-        "conducive",
-        "scrutinize"
-      ],
-      "answer": "scrutinize",
-      "explanation": "正確答案為「scrutinize」：仔細審查、嚴格檢視"
-    },
-    {
-      "id": "auto_q_off_the_top_of_my_head",
-      "tag": "每日自動出題 · TV: Friends (六人行)",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "exacerbate",
-        "off the top of my head",
-        "proliferate",
-        "substantiate"
-      ],
-      "answer": "off the top of my head",
-      "explanation": "正確答案為「off the top of my head」：憑直覺/不假思索地說"
-    },
-    {
-      "id": "auto_q_dichotomy",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "unprecedented",
-        "dichotomy",
-        "mitigate",
-        "exacerbate"
-      ],
-      "answer": "dichotomy",
-      "explanation": "正確答案為「dichotomy」：二分法、截然對立"
-    },
-    {
-      "id": "auto_q_mitigate",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "mitigate",
-        "detrimental",
-        "exacerbate",
-        "double-edged sword"
-      ],
-      "answer": "mitigate",
-      "explanation": "正確答案為「mitigate」：減輕、緩和（風險或負面影響）"
-    },
-    {
-      "id": "auto_q_detrimental",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "ubiquitous",
-        "detrimental",
-        "alleviate",
-        "dichotomy"
-      ],
-      "answer": "detrimental",
-      "explanation": "正確答案為「detrimental」：有害的、不利的"
-    },
-    {
-      "id": "auto_q_proliferate",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "dichotomy",
-        "off the top of my head",
-        "mitigate",
-        "proliferate"
-      ],
-      "answer": "proliferate",
-      "explanation": "正確答案為「proliferate」：激增、迅速擴散"
-    },
-    {
-      "id": "auto_q_pragmatic",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "pragmatic",
-        "ubiquitous",
-        "on the same page",
-        "unprecedented"
-      ],
-      "answer": "pragmatic",
-      "explanation": "正確答案為「pragmatic」：務實的、講求實效的"
-    },
-    {
-      "id": "auto_q_double-edged_sword",
-      "tag": "每日自動出題 · TV: Silicon Valley (矽谷群瞎傳)",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "pragmatic",
-        "substantiate",
-        "unprecedented",
-        "double-edged sword"
-      ],
-      "answer": "double-edged sword",
-      "explanation": "正確答案為「double-edged sword」：雙面刃（有利亦有弊）"
-    },
-    {
-      "id": "auto_q_repercussion",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "repercussion",
-        "scrutinize",
-        "elephant in the room",
-        "ubiquitous"
-      ],
-      "answer": "repercussion",
-      "explanation": "正確答案為「repercussion」：深遠影響、惡果"
-    },
-    {
-      "id": "auto_q_elephant_in_the_room",
-      "tag": "每日自動出題 · TV: House of Cards (紙牌屋)",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "scrutinize",
-        "elephant in the room",
-        "ambiguous",
-        "dichotomy"
-      ],
-      "answer": "elephant in the room",
-      "explanation": "正確答案為「elephant in the room」：顯而易見卻人人避談的棘手問題"
-    },
-    {
-      "id": "auto_q_unprecedented",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "alleviate",
-        "unprecedented",
-        "dichotomy",
-        "mitigate"
-      ],
-      "answer": "unprecedented",
-      "explanation": "正確答案為「unprecedented」：史無前例的、空前的"
-    },
-    {
-      "id": "auto_q_alleviate",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "elephant in the room",
-        "alleviate",
-        "ubiquitous",
-        "detrimental"
-      ],
-      "answer": "alleviate",
-      "explanation": "正確答案為「alleviate」：緩解、減輕（痛苦或擁塞）"
-    },
-    {
-      "id": "auto_q_on_the_same_page",
-      "tag": "每日自動出題 · TV: The Office (辦公室瘋雲)",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "alleviate",
-        "a blessing in disguise",
-        "double-edged sword",
-        "on the same page"
-      ],
-      "answer": "on the same page",
-      "explanation": "正確答案為「on the same page」：達成共識、想法一致"
-    },
-    {
-      "id": "auto_q_substantiate",
-      "tag": "每日自動出題 · IELTS Academic",
-      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
-      "options": [
-        "on the same page",
-        "cut corners",
-        "off the top of my head",
-        "substantiate"
-      ],
-      "answer": "substantiate",
-      "explanation": "正確答案為「substantiate」：證實、提供證據支持"
-    },
-    {
-      "id": "web_ielts_202611_1",
-      "tag": "網路雅思官方題型精選",
-      "question": "Based on official IELTS exam guidelines:\n\"Why choose IELTS? Back to Why choose IELTS?Why choose IELTS? What can IELTS do for you Ways to take IELTS Who accepts IELTS?\"\nWhich skill area does this format requirement belong to?",
-      "options": [
-        "IELTS Academic & General Module Format",
-        "Casual Slang Translation Only",
-        "Handwriting Calligraphy Assessment",
-        "Programming Syntax Evaluation"
-      ],
-      "answer": "IELTS Academic & General Module Format",
-      "explanation": "摘自公開雅思官方備考指南：Why choose IELTS? Back to Why choose IELTS?Why choose IELTS? What can IELTS do for you Ways to take IELTS Who accepts IELTS?"
-    },
-    {
-      "id": "web_ielts_202611_2",
-      "tag": "網路雅思官方題型精選",
-      "question": "Based on official IELTS exam guidelines:\n\"Test types Back to Test typesTest types IELTS Academic IELTS General Training IELTS for UKVI\"\nWhich skill area does this format requirement belong to?",
-      "options": [
-        "IELTS Academic & General Module Format",
-        "Casual Slang Translation Only",
-        "Handwriting Calligraphy Assessment",
-        "Programming Syntax Evaluation"
-      ],
-      "answer": "IELTS Academic & General Module Format",
-      "explanation": "摘自公開雅思官方備考指南：Test types Back to Test typesTest types IELTS Academic IELTS General Training IELTS for UKVI"
-    },
-    {
-      "id": "web_ielts_202611_3",
-      "tag": "網路雅思官方題型精選",
-      "question": "Based on official IELTS exam guidelines:\n\"Preparation resources Back to Preparation resourcesPreparation resources IELTS sample test ques... IELTS Trial Test Trust IELTS What to expect on IELT...\"\nWhich skill area does this format requirement belong to?",
-      "options": [
-        "IELTS Academic & General Module Format",
-        "Casual Slang Translation Only",
-        "Handwriting Calligraphy Assessment",
-        "Programming Syntax Evaluation"
-      ],
-      "answer": "IELTS Academic & General Module Format",
-      "explanation": "摘自公開雅思官方備考指南：Preparation resources Back to Preparation resourcesPreparation resources IELTS sample test ques... IELTS Trial Test Trust IELTS What to expect on IELT..."
-    },
-    {
-      "id": "web_ielts_202611_4",
-      "tag": "網路雅思官方題型精選",
-      "question": "Based on official IELTS exam guidelines:\n\"Booking your test Back to Booking your testBooking your test Test centres IELTS One Skill Retake Cancellations, refunds... Access arrangements\"\nWhich skill area does this format requirement belong to?",
-      "options": [
-        "IELTS Academic & General Module Format",
-        "Casual Slang Translation Only",
-        "Handwriting Calligraphy Assessment",
-        "Programming Syntax Evaluation"
-      ],
-      "answer": "IELTS Academic & General Module Format",
-      "explanation": "摘自公開雅思官方備考指南：Booking your test Back to Booking your testBooking your test Test centres IELTS One Skill Retake Cancellations, refunds... Access arrangements"
-    },
-    {
-      "id": "web_ielts_202611_5",
-      "tag": "網路雅思官方題型精選",
-      "question": "Based on official IELTS exam guidelines:\n\"Your IELTS results Back to Your IELTS resultsYour IELTS results IELTS scoring in detail Fast IELTS results Improving your results\"\nWhich skill area does this format requirement belong to?",
-      "options": [
-        "IELTS Academic & General Module Format",
-        "Casual Slang Translation Only",
-        "Handwriting Calligraphy Assessment",
-        "Programming Syntax Evaluation"
-      ],
-      "answer": "IELTS Academic & General Module Format",
-      "explanation": "摘自公開雅思官方備考指南：Your IELTS results Back to Your IELTS resultsYour IELTS results IELTS scoring in detail Fast IELTS results Improving your results"
-    },
-    {
-      "id": "web_ielts_202611_6",
-      "tag": "網路雅思官方題型精選",
-      "question": "Based on official IELTS exam guidelines:\n\"IELTS for organisations Back to IELTS for organisationsIELTS for organisations Why accept IELTS? Sign up to accept IELTS Who accepts IELTS? Test types Writing on Paper IELTS One Skill Retake IELTS scoring Compare IELTS IELTS for your sector Verifying IELTS results\"\nWhich skill area does this format requirement belong to?",
-      "options": [
-        "IELTS Academic & General Module Format",
-        "Casual Slang Translation Only",
-        "Handwriting Calligraphy Assessment",
-        "Programming Syntax Evaluation"
-      ],
-      "answer": "IELTS Academic & General Module Format",
-      "explanation": "摘自公開雅思官方備考指南：IELTS for organisations Back to IELTS for organisationsIELTS for organisations Why accept IELTS? Sign up to accept IELTS Who accepts IELTS? Test types Writing on Paper IELTS One Skill Retake IELTS scoring Compare IELTS IELTS for your sector Verifying IELTS results"
-    },
-    {
       "id": "news_q_disruptions",
       "tag": "每日國際新聞真題語境 (2026-11-19)",
       "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Entire neighbourhoods remain under water as ________ impact schools, roads, hospitals and airports.\"",
@@ -354,6 +81,305 @@
       ],
       "answer": "investigate",
       "explanation": "原句出自國際新聞語料，正確單字為「investigate」。"
+    },
+    {
+      "id": "core_q_ubiquitous",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Smartphones have become ________ in modern urban life, reshaping interpersonal communication.\"",
+      "options": [
+        "scrutinize",
+        "a blessing in disguise",
+        "ubiquitous",
+        "substantiate"
+      ],
+      "answer": "ubiquitous",
+      "explanation": "正確答案為「ubiquitous」(無所不在的、十分普遍的)。高分搭配：ubiquitous presence / become ubiquitous。"
+    },
+    {
+      "id": "core_q_mitigate",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Governments must implement stringent policies to ________ the adverse effects of carbon emissions.\"",
+      "options": [
+        "a blessing in disguise",
+        "mitigate",
+        "read between the lines",
+        "off the top of my head"
+      ],
+      "answer": "mitigate",
+      "explanation": "正確答案為「mitigate」(減輕、緩和（風險或負面影響）)。高分搭配：mitigate the risk / mitigate adverse impacts。"
+    },
+    {
+      "id": "core_q_exacerbate",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Unplanned urban sprawl tends to ________ traffic congestion and air pollution.\"",
+      "options": [
+        "dichotomy",
+        "ambiguous",
+        "exacerbate",
+        "double-edged sword"
+      ],
+      "answer": "exacerbate",
+      "explanation": "正確答案為「exacerbate」(使惡化、加劇)。高分搭配：exacerbate the problem / exacerbate inequality。"
+    },
+    {
+      "id": "core_q_detrimental",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Excessive screen time before bedtime has a ________ impact on sleep architecture.\"",
+      "options": [
+        "ubiquitous",
+        "mitigate",
+        "detrimental",
+        "unprecedented"
+      ],
+      "answer": "detrimental",
+      "explanation": "正確答案為「detrimental」(有害的、不利的)。高分搭配：detrimental effect / detrimental to health。"
+    },
+    {
+      "id": "core_q_proliferate",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Micro-mobility scooters have ________d across major metropolitan areas over the past decade.\"",
+      "options": [
+        "detrimental",
+        "mitigate",
+        "proliferate",
+        "double-edged sword"
+      ],
+      "answer": "proliferate",
+      "explanation": "正確答案為「proliferate」(激增、迅速擴散)。高分搭配：rapidly proliferate / proliferate across。"
+    },
+    {
+      "id": "core_q_unprecedented",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"The global economy is undergoing structural transformation at an ________ pace.\"",
+      "options": [
+        "unprecedented",
+        "alleviate",
+        "proliferate",
+        "pragmatic"
+      ],
+      "answer": "unprecedented",
+      "explanation": "正確答案為「unprecedented」(史無前例的、空前的)。高分搭配：unprecedented scale / unprecedented pace。"
+    },
+    {
+      "id": "core_q_scrutinize",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Peer reviewers meticulously ________ experimental methodology before publication.\"",
+      "options": [
+        "ambiguous",
+        "dichotomy",
+        "repercussion",
+        "scrutinize"
+      ],
+      "answer": "scrutinize",
+      "explanation": "正確答案為「scrutinize」(仔細審查、嚴格檢視)。高分搭配：scrutinize the data / closely scrutinize。"
+    },
+    {
+      "id": "core_q_alleviate",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Expanding dedicated bicycle lanes can significantly ________ peak-hour gridlock.\"",
+      "options": [
+        "substantiate",
+        "a blessing in disguise",
+        "scrutinize",
+        "alleviate"
+      ],
+      "answer": "alleviate",
+      "explanation": "正確答案為「alleviate」(緩解、減輕（痛苦或擁塞）)。高分搭配：alleviate poverty / alleviate congestion。"
+    },
+    {
+      "id": "core_q_substantiate",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Researchers must provide robust empirical data to ________ their theoretical claims.\"",
+      "options": [
+        "substantiate",
+        "ubiquitous",
+        "a blessing in disguise",
+        "double-edged sword"
+      ],
+      "answer": "substantiate",
+      "explanation": "正確答案為「substantiate」(證實、提供證據支持)。高分搭配：substantiate a claim / empirical evidence to substantiate。"
+    },
+    {
+      "id": "core_q_dichotomy",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"There is often a false ________ between economic growth and environmental sustainability.\"",
+      "options": [
+        "a blessing in disguise",
+        "on the same page",
+        "read between the lines",
+        "dichotomy"
+      ],
+      "answer": "dichotomy",
+      "explanation": "正確答案為「dichotomy」(二分法、截然對立)。高分搭配：false dichotomy / stark dichotomy。"
+    },
+    {
+      "id": "core_q_pragmatic",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"A ________ compromise is required to balance fiscal discipline with public welfare.\"",
+      "options": [
+        "proliferate",
+        "repercussion",
+        "off the top of my head",
+        "pragmatic"
+      ],
+      "answer": "pragmatic",
+      "explanation": "正確答案為「pragmatic」(務實的、講求實效的)。高分搭配：pragmatic approach / pragmatic solution。"
+    },
+    {
+      "id": "core_q_conducive",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Quiet, well-lit libraries provide an atmosphere highly ________ to deep concentration.\"",
+      "options": [
+        "mitigate",
+        "exacerbate",
+        "conducive",
+        "repercussion"
+      ],
+      "answer": "conducive",
+      "explanation": "正確答案為「conducive」(有助於...的、有益的)。高分搭配：conducive to learning / conducive environment。"
+    },
+    {
+      "id": "core_q_repercussion",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Deforestation carries far-reaching ecological ________s for global biodiversity.\"",
+      "options": [
+        "exacerbate",
+        "repercussion",
+        "off the top of my head",
+        "scrutinize"
+      ],
+      "answer": "repercussion",
+      "explanation": "正確答案為「repercussion」(深遠影響、惡果)。高分搭配：far-reaching repercussions / serious repercussions。"
+    },
+    {
+      "id": "core_q_ambiguous",
+      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Vague regulatory guidelines often leave companies facing ________ compliance obligations.\"",
+      "options": [
+        "repercussion",
+        "a blessing in disguise",
+        "cut corners",
+        "ambiguous"
+      ],
+      "answer": "ambiguous",
+      "explanation": "正確答案為「ambiguous」(模稜兩可的、含糊不清的)。高分搭配：remain ambiguous / deliberately ambiguous。"
+    },
+    {
+      "id": "core_q_cut_corners",
+      "tag": "🔥 高頻真題語境 · TV: 破產姊妹 / Suits",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"When building mission-critical network infrastructure, engineers can never afford to ________.\"",
+      "options": [
+        "cut corners",
+        "double-edged sword",
+        "ambiguous",
+        "mitigate"
+      ],
+      "answer": "cut corners",
+      "explanation": "正確答案為「cut corners」(偷工減料、圖省事走捷徑)。高分搭配：refuse to cut corners。"
+    },
+    {
+      "id": "core_q_off_the_top_of_my_head",
+      "tag": "🔥 高頻真題語境 · TV: 六人行 (Friends)",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"________, I would say public transport subsidies are the most effective measure.\"",
+      "options": [
+        "cut corners",
+        "off the top of my head",
+        "dichotomy",
+        "proliferate"
+      ],
+      "answer": "off the top of my head",
+      "explanation": "正確答案為「off the top of my head」(憑直覺/不假思索地說)。高分搭配：Speaking Part 1 & Part 3 開頭句。"
+    },
+    {
+      "id": "core_q_on_the_same_page",
+      "tag": "🔥 高頻真題語境 · TV: 六人行 / The Office",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Before launching the rollout, let us make sure all stakeholders are ________.\"",
+      "options": [
+        "ambiguous",
+        "on the same page",
+        "exacerbate",
+        "read between the lines"
+      ],
+      "answer": "on the same page",
+      "explanation": "正確答案為「on the same page」(達成共識、想法一致)。高分搭配：get everyone on the same page。"
+    },
+    {
+      "id": "core_q_double-edged_sword",
+      "tag": "🔥 高頻真題語境 · TV: Silicon Valley (矽谷群瞎傳)",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Artificial intelligence is a ________ that boosts productivity while displacing routine jobs.\"",
+      "options": [
+        "double-edged sword",
+        "ambiguous",
+        "ubiquitous",
+        "repercussion"
+      ],
+      "answer": "double-edged sword",
+      "explanation": "正確答案為「double-edged sword」(雙面刃（有利亦有弊）)。高分搭配：prove to be a double-edged sword。"
+    },
+    {
+      "id": "core_q_a_blessing_in_disguise",
+      "tag": "🔥 高頻真題語境 · TV: 摩登家庭 (Modern Family)",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Missing that flight turned out to be ________ because I met my future partner.\"",
+      "options": [
+        "scrutinize",
+        "dichotomy",
+        "mitigate",
+        "a blessing in disguise"
+      ],
+      "answer": "a blessing in disguise",
+      "explanation": "正確答案為「a blessing in disguise」(塞翁失馬、因禍得福)。高分搭配：turn out to be a blessing in disguise。"
+    },
+    {
+      "id": "core_q_read_between_the_lines",
+      "tag": "🔥 高頻真題語境 · TV: 同路人 (Fellow Travelers)",
+      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"In Washington politics, survival depends on your ability to ________.\"",
+      "options": [
+        "read between the lines",
+        "a blessing in disguise",
+        "scrutinize",
+        "substantiate"
+      ],
+      "answer": "read between the lines",
+      "explanation": "正確答案為「read between the lines」(體會言外之意、聽出弦外之音)。高分搭配：learn to read between the lines。"
+    },
+    {
+      "id": "news_q_neighbourhoods",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Entire ________ remain under water as disruptions impact schools, roads, hospitals and airports.\"",
+      "options": [
+        "prominent",
+        "neighbourhoods",
+        "cognitive",
+        "classical"
+      ],
+      "answer": "neighbourhoods",
+      "explanation": "原句出自國際新聞報導，正確單字為「neighbourhoods」。"
+    },
+    {
+      "id": "news_q_administration",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The Nvidia scandal has spilled over into the Trump ________, which is now under intense scrutiny for how it allowed America's top AI chips to end up in China's hands.\"",
+      "options": [
+        "girlfriend",
+        "ownership",
+        "conservation",
+        "administration"
+      ],
+      "answer": "administration",
+      "explanation": "原句出自國際新聞報導，正確單字為「administration」。"
+    },
+    {
+      "id": "news_q_emergency",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"As the ________ response to the flood ends, aid workers turn to the hard work of rebuilding communities that lost everything. Many of those workers lost everything, too.\"",
+      "options": [
+        "emergency",
+        "controversy",
+        "vulnerable",
+        "attribute"
+      ],
+      "answer": "emergency",
+      "explanation": "原句出自國際新聞報導，正確單字為「emergency」。"
     }
   ]
 }

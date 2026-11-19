@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ts_2",
+    "work": "Taylor Swift",
+    "workEn": "Blank Space",
+    "category": "singer",
+    "ytId": "e-ORhEE9VVg",
+    "startSec": 45,
+    "endSec": 52,
+    "fullSentence": "Got a long list of ex-lovers, they will tell you I am insane, because reputation precedes me.",
+    "clozedTemplate": "Got a long list of [1], they will tell you I am insane, because [2] precedes me.",
+    "blanks": [
+      "ex-lovers",
+      "reputation"
+    ],
+    "listeningTip": "注意 list of 連音成 /lɪs-təv/；reputation 重音在第三音節 /ˌrep.jəˈteɪ.ʃən/。",
+    "sentenceZh": "有一長串前任名單，他們會告訴你我瘋了，因為我的名聲早已不脛而走。",
+    "casualPhrase": "reputation precedes me",
+    "casualExplain": "未見其人先聞其名、名聲在外",
+    "registerQuestion": "《Blank Space》語境中提到「名聲在外」。若要在【雅思寫作 Task 2】表達「品牌或機構的公眾聲譽對長期信任至關重要」，哪個學術句型最精準？",
+    "registerOptions": [
+      "institutional reputation underpins enduring public trust",
+      "famous gossip arrives before the singer walks in",
+      "everyone talks about ex-lovers in magazines",
+      "long lists make people sound insane"
+    ],
+    "academicAnswer": "institutional reputation underpins enduring public trust",
+    "academicSentence": "In the digital economy, institutional reputation underpins enduring public trust and stakeholder loyalty.",
+    "stressGuide": "Got a LONG LIST‿of EX-LOVers, they will TELL you I am inSANE, because repuTAtion preCEDES me.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 3 · Fame, Media & Public Image",
+    "ieltsSpeakingQ": "How does public reputation affect the success of modern companies or public figures?",
+    "ieltsSpeakingModel": "In an era of instant online reviews, an organization's reputation often precedes it, directly determining whether consumers feel confident engaging with its products."
+  }
+]
