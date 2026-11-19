@@ -1,4 +1,4 @@
-# IELTS 7.5+ 雅思全科實戰 · 美劇高頻詞庫 · 動態刷題系統
+# 美劇高頻詞庫 · 動態刷題系統
 
 ## 部署與自動更新步驟
 1. 將本專案檔案上傳至 GitHub Repository，並先在本地執行一次 `python update_english_db.py` 產生初始 `vocab.json` 與 `ielts_bank.json`。
