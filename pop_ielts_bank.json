@@ -4,9 +4,9 @@
     "work": "Taylor Swift",
     "workEn": "Blank Space",
     "category": "singer",
-    "ytId": "e-ORhEE9VVg",
-    "startSec": 45,
-    "endSec": 52,
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 6,
     "fullSentence": "Got a long list of ex-lovers, they will tell you I am insane, because reputation precedes me.",
     "clozedTemplate": "Got a long list of [1], they will tell you I am insane, because [2] precedes me.",
     "blanks": [
@@ -16,8 +16,8 @@
     "listeningTip": "注意 list of 連音成 /lɪs-təv/；reputation 重音在第三音節 /ˌrep.jəˈteɪ.ʃən/。",
     "sentenceZh": "有一長串前任名單，他們會告訴你我瘋了，因為我的名聲早已不脛而走。",
     "casualPhrase": "reputation precedes me",
-    "casualExplain": "未見其人先聞其名、名聲在外",
-    "registerQuestion": "《Blank Space》語境中提到「名聲在外」。若要在【雅思寫作 Task 2】表達「品牌或機構的公眾聲譽對長期信任至關重要」，哪個學術句型最精準？",
+    "casualExplain": "名聲在外、未見其人先聞其名",
+    "registerQuestion": "《Blank Space》語境中提到「名聲在外」。若要在【雅思寫作 Task 2】表達「企業或機構的公眾聲譽對長期信任至關重要」，哪個學術句型最精準？",
     "registerOptions": [
       "institutional reputation underpins enduring public trust",
       "famous gossip arrives before the singer walks in",
@@ -30,5 +30,229 @@
     "ieltsSpeakingPart": "IELTS Speaking Part 3 · Fame, Media & Public Image",
     "ieltsSpeakingQ": "How does public reputation affect the success of modern companies or public figures?",
     "ieltsSpeakingModel": "In an era of instant online reviews, an organization's reputation often precedes it, directly determining whether consumers feel confident engaging with its products."
+  },
+  {
+    "id": "ft_2",
+    "work": "同路人",
+    "workEn": "Fellow Travelers · State Department Secrecy",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 7,
+    "fullSentence": "Never put anything in writing; in this town, every sensitive conversation happens behind closed doors and strictly off the record.",
+    "clozedTemplate": "Never put anything in writing; in this town, every sensitive conversation happens [1] and strictly [2].",
+    "blanks": [
+      "behind closed doors",
+      "off the record"
+    ],
+    "listeningTip": "注意 put anything 連讀成 /pʊ-ˈtɛn.i.θɪŋ/；off the record 中 off 與 the 連讀順暢。",
+    "sentenceZh": "千萬別留下任何白紙黑字的紀錄；在這座政治城市裡，每場敏感對話都在私下閉門進行，且嚴格不公開紀錄。",
+    "casualPhrase": "behind closed doors / off the record",
+    "casualExplain": "私下閉門進行 / 非公開、不可引述",
+    "registerQuestion": "《同路人》中 Hawkins 告誡年輕幕僚重要協商都在 \"behind closed doors and off the record\"。若要在【雅思寫作 Task 2】論述「外交談判有時需要高度保密，以避免過早受到輿論干擾」，哪個學術替換最精準？",
+    "registerOptions": [
+      "conduct confidential deliberations without premature public disclosure",
+      "lock all wooden office doors and turn off tape recorders",
+      "write secret letters inside quiet Washington apartments",
+      "avoid speaking to any newspaper reporters permanently"
+    ],
+    "academicAnswer": "conduct confidential deliberations without premature public disclosure",
+    "academicSentence": "Complex international peace negotiations often require diplomats to conduct confidential deliberations without premature public disclosure.",
+    "stressGuide": "NEVer PUT ANything in WRITing; EVery SENsitive converSAtion HAPpens beHIND CLOSED DOORS and STRICTly OFF the RECord.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 3 · Government Transparency & Privacy",
+    "ieltsSpeakingQ": "Should governments make all political discussions public, or are private negotiations sometimes necessary?",
+    "ieltsSpeakingModel": "While democratic accountability is vital, I believe sensitive diplomatic talks often need to happen behind closed doors initially, as confidential deliberations allow leaders to compromise without political posturing."
+  },
+  {
+    "id": "ft_3",
+    "work": "同路人",
+    "workEn": "Fellow Travelers · Walking a Tightrope",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 7,
+    "fullSentence": "You spend every day walking a tightrope between your conscience and your ambition, terrified of making one false move.",
+    "clozedTemplate": "You spend every day [1] between your conscience and your ambition, terrified of making one [2].",
+    "blanks": [
+      "walking a tightrope",
+      "false move"
+    ],
+    "listeningTip": "注意 walking a tightrope 連讀成 /ˈwɔː.kɪ.ŋə-ˈtaɪt.roʊp/；conscience 發音為 /ˈkɑːn.ʃəns/。",
+    "sentenceZh": "你每天都在良知與政治野心之間走鋼索，戰戰兢兢深怕走錯任何一步。",
+    "casualPhrase": "walking a tightrope / false move",
+    "casualExplain": "如履薄冰走鋼索（在兩難間維持微妙平衡）/ 走錯一步",
+    "registerQuestion": "《同路人》Tim 對 Hawkins 說他每天都在 \"walking a tightrope between conscience and ambition\"。若要在【雅思寫作 Task 2】描述「政府在刺激經濟成長與實施嚴格環保法規之間必須維持微妙平衡」，哪個學術替換最精準？",
+    "registerOptions": [
+      "navigate a precarious equilibrium between competing policy imperatives",
+      "walk carefully across a circus rope high above the ground",
+      "choose personal career ambition over environmental science",
+      "avoid making sudden physical movements in the office"
+    ],
+    "academicAnswer": "navigate a precarious equilibrium between competing policy imperatives",
+    "academicSentence": "Policymakers in developing economies must navigate a precarious equilibrium between competing policy imperatives of rapid industrialization and carbon reduction.",
+    "stressGuide": "You SPEND EVery DAY WALKing‿a TIGHTrope beTWEEN your CONscience and your amBItion, TERrified of MAK-ing ONE FALSE MOVE.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 3 · Ethics & Career Ambition",
+    "ieltsSpeakingQ": "Do you think it is possible to achieve high career success without compromising personal values?",
+    "ieltsSpeakingModel": "It can certainly feel like walking a tightrope in highly competitive industries, yet I believe long-term credibility depends on maintaining that precarious equilibrium without sacrificing core ethical principles."
+  },
+  {
+    "id": "ft_4",
+    "work": "同路人",
+    "workEn": "Fellow Travelers · Strategic Patience",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 7,
+    "fullSentence": "When the political climate turns hostile, you cannot fight head-on; you have to bide your time and pick your battles.",
+    "clozedTemplate": "When the political climate turns hostile, you cannot fight head-on; you have to [1] and [2].",
+    "blanks": [
+      "bide your time",
+      "pick your battles"
+    ],
+    "listeningTip": "注意 fight head-on 連讀成 /faɪt-he-dɑːn/；bide your time 意為「韜光養晦、耐心等待最佳時機」。",
+    "sentenceZh": "當政治氣候變得充滿敵意時，你不能硬碰硬；你必須學會韜光養晦等待時機，並慎選戰場。",
+    "casualPhrase": "bide your time / pick your battles",
+    "casualExplain": "耐心等待時機 / 慎選戰場（集中精力在關鍵爭端）",
+    "registerQuestion": "《同路人》中 Marcus 提醒在逆境中要 \"bide your time and pick your battles\"。若要在【雅思寫作 Task 2】表達「面對有限的公共財政預算，政府必須審慎排定優先順序並等待適當時機推動改革」，哪個學術替換最貼切？",
+    "registerOptions": [
+      "exercise strategic restraint and prioritize high-impact interventions",
+      "wait patiently beside a clock until the battle ends",
+      "fight every minor argument in the parliament building",
+      "postpone all public healthcare funding indefinitely"
+    ],
+    "academicAnswer": "exercise strategic restraint and prioritize high-impact interventions",
+    "academicSentence": "Constrained by fiscal deficits, municipal authorities must exercise strategic restraint and prioritize high-impact interventions.",
+    "stressGuide": "When the poLITical CLIimate TURNS HOStile, you CANnot FIGHT HEAD-ON; you HAVE to BIDE your TIME and PICK your BATtles.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 2 · Patience & Strategic Decision-Making",
+    "ieltsSpeakingQ": "Describe a time when waiting patiently for the right moment helped you solve a problem.",
+    "ieltsSpeakingModel": "During a major network migration with conflicting stakeholder demands, I learned to pick my battles and bide my time until we had empirical performance data, which made consensus effortless."
+  },
+  {
+    "id": "ft_5",
+    "work": "同路人",
+    "workEn": "Fellow Travelers · Senate Investigation",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 7,
+    "fullSentence": "When investigators start digging into your past, you have to cover your tracks and protect the people you love at all costs.",
+    "clozedTemplate": "When investigators start digging into your past, you have to [1] and protect the people you love [2].",
+    "blanks": [
+      "cover your tracks",
+      "at all costs"
+    ],
+    "listeningTip": "注意 digging into 連讀成 /ˈdɪɡ.ɪ.ŋɪn.tuː/；at all costs 中 t 與 all 連讀成 /æ-ɾɔːl-kɑːsts/。",
+    "sentenceZh": "當調查人員開始深挖你的過去時，你必須掩蓋行蹤並竭盡全力、不惜一切代價保護你所愛的人。",
+    "casualPhrase": "cover your tracks / at all costs",
+    "casualExplain": "掩蓋行蹤不留痕跡 / 不惜一切代價",
+    "registerQuestion": "《同路人》面對參議院調查時強調必須保護重要之人 \"at all costs\"。若要在【雅思寫作 Task 2】論述「在數位監控日益普及的時代，民主社會必須全力捍衛公民的基本隱私權」，哪個學術表達最有力？",
+    "registerOptions": [
+      "safeguard fundamental civil liberties as an inviolable priority",
+      "erase footprints in the snow behind government buildings",
+      "pay expensive legal fees at every court hearing",
+      "hide personal documents under the floorboards"
+    ],
+    "academicAnswer": "safeguard fundamental civil liberties as an inviolable priority",
+    "academicSentence": "Even amidst heightened national security concerns, democratic institutions must safeguard fundamental civil liberties as an inviolable priority.",
+    "stressGuide": "When inVESTigators START DIGging‿into your PAST, you HAVE to COV-er your TRACKS and proTECT the PEOple you LOVE at ALL COSTS.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 3 · Digital Privacy & Surveillance",
+    "ieltsSpeakingQ": "How important is it for individuals to protect their personal privacy online nowadays?",
+    "ieltsSpeakingModel": "It is paramount. With algorithms constantly digging into users' browsing histories, individuals must take proactive steps to cover their digital tracks and safeguard their personal privacy."
+  },
+  {
+    "id": "ft_6",
+    "work": "同路人",
+    "workEn": "Fellow Travelers · Moral Courage",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 7,
+    "fullSentence": "Silence only emboldens bullies; sooner or later, you have to stand your ground and speak truth to power.",
+    "clozedTemplate": "Silence only emboldens bullies; sooner or later, you have to [1] and [2].",
+    "blanks": [
+      "stand your ground",
+      "speak truth to power"
+    ],
+    "listeningTip": "注意 emboldens 意為「使大膽、助長」；speak truth to power 為政治與社會學經典片語，意為「向當權者直言進諫」。",
+    "sentenceZh": "沉默只會助長欺凌者的氣焰；遲早有一天，你必須堅守立場，勇敢向當權者說出真相。",
+    "casualPhrase": "stand your ground / speak truth to power",
+    "casualExplain": "堅守立場不退讓 / 向當權者直言真理",
+    "registerQuestion": "《同路人》Tim 決定不再妥協，要 \"stand your ground and speak truth to power\"。若要在【雅思寫作 Task 2】論述「獨立新聞媒體與吹哨者在揭露制度性腐敗與維護社會正義中扮演不可或缺的角色」，哪個表達最學術？",
+    "registerOptions": [
+      "hold entrenched institutions accountable through courageous public scrutiny",
+      "stand firmly on the floor during loud arguments",
+      "shout loudly inside a government power plant",
+      "refuse to listen to any historical speeches"
+    ],
+    "academicAnswer": "hold entrenched institutions accountable through courageous public scrutiny",
+    "academicSentence": "Investigative journalism plays an indispensable role in enabling citizens to hold entrenched institutions accountable through courageous public scrutiny.",
+    "stressGuide": "SIlence ONly emBOLDens BULlies; SOONer or LATer, you HAVE to STAND your GROUND and SPEAK TRUTH to POWer.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 3 · Courage, Justice & Social Change",
+    "ieltsSpeakingQ": "What qualities do you think are most important for people who want to bring positive change to society?",
+    "ieltsSpeakingModel": "Above all, moral courage and resilience—history shows that meaningful reform only happens when principled individuals stand their ground and speak truth to power despite institutional resistance."
+  },
+  {
+    "id": "2bg_2",
+    "work": "破產姊妹",
+    "workEn": "2 Broke Girls · Diner Shift",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 6,
+    "fullSentence": "If you want to survive the night shift at the diner, you have to think on your feet and keep your cool.",
+    "clozedTemplate": "If you want to survive the night shift at the diner, you have to [1] and [2].",
+    "blanks": [
+      "think on your feet",
+      "keep your cool"
+    ],
+    "listeningTip": "注意 think on your 中 think 與 on 連讀成 /θɪŋ-kɑːn/；keep your 連讀成 /kiː-pjɚ/。",
+    "sentenceZh": "如果你想在餐館大夜班生存下來，你必須學會臨機應變並保持冷靜。",
+    "casualPhrase": "think on your feet / keep your cool",
+    "casualExplain": "臨機應變、在壓力下保持冷靜",
+    "registerQuestion": "《破產姊妹》強調服務業必須 \"think on your feet and keep your cool\"。若要在【雅思寫作 Task 2】論述「現代醫療與緊急應變人員須具備高壓下的快速應變能力」，哪個學術替換最精準？",
+    "registerOptions": [
+      "demonstrate cognitive agility and composure under acute pressure",
+      "stand on both shoes while thinking about cold weather",
+      "walk quickly around the restaurant kitchen at night",
+      "keep ice cubes inside the diner freezer"
+    ],
+    "academicAnswer": "demonstrate cognitive agility and composure under acute pressure",
+    "academicSentence": "Frontline emergency personnel must demonstrate cognitive agility and composure under acute pressure during public health crises.",
+    "stressGuide": "If you WANT to surVIVE the NIGHT SHIFT, you HAVE to THINK‿on your FEET and KEEP your COOL.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 2 / Part 3 · Handling Unexpected Situations",
+    "ieltsSpeakingQ": "Describe a job or situation where someone needs to make quick decisions under pressure.",
+    "ieltsSpeakingModel": "Working in network operations during an outage requires you to think on your feet and keep your cool, because demonstrating cognitive agility under acute pressure prevents minor glitches from escalating."
+  },
+  {
+    "id": "fr_2",
+    "work": "六人行",
+    "workEn": "Friends · Joey Doesn't Share Food",
+    "category": "drama",
+    "ytId": "",
+    "startSec": 0,
+    "endSec": 6,
+    "fullSentence": "Everyone knows Joey does not share food, so touching his fries is completely out of the question.",
+    "clozedTemplate": "Everyone knows Joey does not [1], so touching his fries is completely [2].",
+    "blanks": [
+      "share food",
+      "out of the question"
+    ],
+    "listeningTip": "注意 out of the 在美式快速口語中常連讀弱化為 /aʊ-ɾə-ðə/。",
+    "sentenceZh": "大家都知道 Joey 絕不跟別人分食，所以想碰他的薯條是門都沒有、絕不可能的事。",
+    "casualPhrase": "out of the question",
+    "casualExplain": "絕不可能、不在考慮範圍內",
+    "registerQuestion": "《六人行》經典名言衍生情境中提到某事 \"out of the question\"。若要在【雅思寫作 Task 2】表達「在缺乏國際監管的情況下，全面解除人工智慧限制是絕對不可行的」，哪個替換最正式？",
+    "registerOptions": [
+      "categorically unfeasible without robust regulatory oversight",
+      "completely outside the exam question paper",
+      "impossible because nobody wants to share lunch",
+      "removed from the classroom quiz list"
+    ],
+    "academicAnswer": "categorically unfeasible without robust regulatory oversight",
+    "academicSentence": "Unrestricted deployment of autonomous weapon systems remains categorically unfeasible without robust regulatory oversight.",
+    "stressGuide": "EVeryone KNOWS JOey does NOT SHARE FOOD, so TOUCHing his FRIES is comPLETEly OUT‿of the QUEStion.",
+    "ieltsSpeakingPart": "IELTS Speaking Part 1 · Food & Dining Habits",
+    "ieltsSpeakingQ": "Do you prefer sharing dishes family-style or ordering your own individual meal?",
+    "ieltsSpeakingModel": "Normally I enjoy sharing dishes, though when I am starving after a long shift, giving away my favorite dish is pretty much out of the question!"
   }
 ]
