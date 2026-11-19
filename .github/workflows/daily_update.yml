@@ -2,8 +2,8 @@ name: Daily Update 10K IELTS Vocab & Quiz Bank
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天自動執行爬蟲更新
-  workflow_dispatch:     # 支援在 GitHub Actions 網頁手動一鍵執行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,9 +21,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install requests beautifulsoup4
 
-      - name: Run 10K Vocab & IELTS Scraper
+      - name: Run English DB updater
         run: python update_english_db.py
 
       - name: Commit and push updated JSON files
