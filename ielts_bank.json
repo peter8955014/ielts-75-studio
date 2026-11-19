@@ -1,0 +1,203 @@
+{
+  "listening": [],
+  "reading": [],
+  "writing": [],
+  "speaking": [],
+  "quizPool": [
+    {
+      "id": "auto_q_conducive",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "ubiquitous",
+        "exacerbate",
+        "substantiate",
+        "conducive"
+      ],
+      "answer": "conducive",
+      "explanation": "正確答案為「conducive」：有助於...的、有益的"
+    },
+    {
+      "id": "auto_q_scrutinize",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "elephant in the room",
+        "unprecedented",
+        "conducive",
+        "scrutinize"
+      ],
+      "answer": "scrutinize",
+      "explanation": "正確答案為「scrutinize」：仔細審查、嚴格檢視"
+    },
+    {
+      "id": "auto_q_off_the_top_of_my_head",
+      "tag": "每日自動出題 · TV: Friends (六人行)",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "exacerbate",
+        "off the top of my head",
+        "proliferate",
+        "substantiate"
+      ],
+      "answer": "off the top of my head",
+      "explanation": "正確答案為「off the top of my head」：憑直覺/不假思索地說"
+    },
+    {
+      "id": "auto_q_dichotomy",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "unprecedented",
+        "dichotomy",
+        "mitigate",
+        "exacerbate"
+      ],
+      "answer": "dichotomy",
+      "explanation": "正確答案為「dichotomy」：二分法、截然對立"
+    },
+    {
+      "id": "auto_q_mitigate",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "mitigate",
+        "detrimental",
+        "exacerbate",
+        "double-edged sword"
+      ],
+      "answer": "mitigate",
+      "explanation": "正確答案為「mitigate」：減輕、緩和（風險或負面影響）"
+    },
+    {
+      "id": "auto_q_detrimental",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "ubiquitous",
+        "detrimental",
+        "alleviate",
+        "dichotomy"
+      ],
+      "answer": "detrimental",
+      "explanation": "正確答案為「detrimental」：有害的、不利的"
+    },
+    {
+      "id": "auto_q_proliferate",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "dichotomy",
+        "off the top of my head",
+        "mitigate",
+        "proliferate"
+      ],
+      "answer": "proliferate",
+      "explanation": "正確答案為「proliferate」：激增、迅速擴散"
+    },
+    {
+      "id": "auto_q_pragmatic",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "pragmatic",
+        "ubiquitous",
+        "on the same page",
+        "unprecedented"
+      ],
+      "answer": "pragmatic",
+      "explanation": "正確答案為「pragmatic」：務實的、講求實效的"
+    },
+    {
+      "id": "auto_q_double-edged_sword",
+      "tag": "每日自動出題 · TV: Silicon Valley (矽谷群瞎傳)",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "pragmatic",
+        "substantiate",
+        "unprecedented",
+        "double-edged sword"
+      ],
+      "answer": "double-edged sword",
+      "explanation": "正確答案為「double-edged sword」：雙面刃（有利亦有弊）"
+    },
+    {
+      "id": "auto_q_repercussion",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "repercussion",
+        "scrutinize",
+        "elephant in the room",
+        "ubiquitous"
+      ],
+      "answer": "repercussion",
+      "explanation": "正確答案為「repercussion」：深遠影響、惡果"
+    },
+    {
+      "id": "auto_q_elephant_in_the_room",
+      "tag": "每日自動出題 · TV: House of Cards (紙牌屋)",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "scrutinize",
+        "elephant in the room",
+        "ambiguous",
+        "dichotomy"
+      ],
+      "answer": "elephant in the room",
+      "explanation": "正確答案為「elephant in the room」：顯而易見卻人人避談的棘手問題"
+    },
+    {
+      "id": "auto_q_unprecedented",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "alleviate",
+        "unprecedented",
+        "dichotomy",
+        "mitigate"
+      ],
+      "answer": "unprecedented",
+      "explanation": "正確答案為「unprecedented」：史無前例的、空前的"
+    },
+    {
+      "id": "auto_q_alleviate",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "elephant in the room",
+        "alleviate",
+        "ubiquitous",
+        "detrimental"
+      ],
+      "answer": "alleviate",
+      "explanation": "正確答案為「alleviate」：緩解、減輕（痛苦或擁塞）"
+    },
+    {
+      "id": "auto_q_on_the_same_page",
+      "tag": "每日自動出題 · TV: The Office (辦公室瘋雲)",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "alleviate",
+        "a blessing in disguise",
+        "double-edged sword",
+        "on the same page"
+      ],
+      "answer": "on the same page",
+      "explanation": "正確答案為「on the same page」：達成共識、想法一致"
+    },
+    {
+      "id": "auto_q_substantiate",
+      "tag": "每日自動出題 · IELTS Academic",
+      "question": "請選出最適合填入句中空格的單字或片語：\n\"Using '________' appropriately elevates your IELTS Band score.\"",
+      "options": [
+        "on the same page",
+        "cut corners",
+        "off the top of my head",
+        "substantiate"
+      ],
+      "answer": "substantiate",
+      "explanation": "正確答案為「substantiate」：證實、提供證據支持"
+    }
+  ]
+}
