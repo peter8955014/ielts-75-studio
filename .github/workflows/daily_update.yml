@@ -30,5 +30,5 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add vocab.json ielts_bank.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update 10k IELTS & TV vocab database" && git push)
+          git add vocab.json ielts_bank.json pop_ielts_bank.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: daily auto-update IELTS & Pop Culture banks" && git push)
