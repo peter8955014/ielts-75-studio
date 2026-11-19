@@ -15,7 +15,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 }
 
-# 1. 核心 IELTS Band 7.5+ 學術詞與美劇/金曲高頻片語（同步匯入主站萬字詞庫與動態刷題）
+# 1. 核心 IELTS Band 7.5+ 學術詞與美劇/金曲高頻片語
 CORE_SEED_VOCAB = [
     {"id": "core_1", "word": "ubiquitous", "ipa": "/juːˈbɪk.wɪ.təs/", "pos": "adj.", "zh": "無所不在的、十分普遍的", "collocations": "ubiquitous presence / become ubiquitous", "example": "Smartphones have become ubiquitous in modern urban life, reshaping interpersonal communication.", "source": "IELTS 7.5+ Academic", "part": "Reading", "freq": True},
     {"id": "core_2", "word": "mitigate", "ipa": "/ˈmɪt.ɪ.ɡeɪt/", "pos": "v.", "zh": "減輕、緩和（風險或負面影響）", "collocations": "mitigate the risk / mitigate adverse impacts", "example": "Governments must implement stringent policies to mitigate the adverse effects of carbon emissions.", "source": "IELTS 7.5+ Academic", "part": "Writing", "freq": True},
@@ -31,16 +31,163 @@ CORE_SEED_VOCAB = [
     {"id": "core_12", "word": "conducive", "ipa": "/kənˈdjuː.sɪv/", "pos": "adj.", "zh": "有助於...的、有益的", "collocations": "conducive to learning / conducive environment", "example": "Quiet, well-lit libraries provide an atmosphere highly conducive to deep concentration.", "source": "IELTS 7.5+ Academic", "part": "Writing", "freq": True},
     {"id": "core_13", "word": "repercussion", "ipa": "/ˌriː.pəˈkʌʃ.ən/", "pos": "n.", "zh": "深遠影響、惡果", "collocations": "far-reaching repercussions / serious repercussions", "example": "Deforestation carries far-reaching ecological repercussions for global biodiversity.", "source": "IELTS 7.5+ Academic", "part": "Writing", "freq": True},
     {"id": "core_14", "word": "ambiguous", "ipa": "/æmˈbɪɡ.ju.əs/", "pos": "adj.", "zh": "模稜兩可的、含糊不清的", "collocations": "remain ambiguous / deliberately ambiguous", "example": "Vague regulatory guidelines often leave companies facing ambiguous compliance obligations.", "source": "IELTS 7.5+ Academic", "part": "Reading", "freq": True},
-    {"id": "core_15", "word": "think on your feet", "ipa": "/θɪŋk ɑːn jʊr fiːt/", "pos": "idiom", "zh": "臨機應變、反應敏捷", "collocations": "ability to think on your feet", "example": "If you want to survive the night shift at the diner, you have to think on your feet.", "source": "TV: 破產姊妹 (2 Broke Girls)", "part": "Speaking", "freq": True},
-    {"id": "core_16", "word": "learn the ropes", "ipa": "/lɜːrn ðə roʊps/", "pos": "idiom", "zh": "摸熟門道、掌握訣竅", "collocations": "quickly learn the ropes", "example": "Caroline had to start from scratch and learn the ropes of waiting tables.", "source": "TV: 破產姊妹 (2 Broke Girls)", "part": "Speaking", "freq": True},
-    {"id": "core_17", "word": "out of the question", "ipa": "/aʊt əv ðə ˈkwes.tʃən/", "pos": "idiom", "zh": "絕不可能、想都別想", "collocations": "completely out of the question", "example": "Everyone knows Joey does not share food, so touching his fries is out of the question.", "source": "TV: 六人行 (Friends)", "part": "Speaking", "freq": True},
-    {"id": "core_18", "word": "out of proportion", "ipa": "/aʊt əv prəˈpɔːr.ʃən/", "pos": "idiom", "zh": "不成比例、小題大做", "collocations": "blow things out of proportion", "example": "Monica tends to blow small things out of proportion whenever guests make a mess.", "source": "TV: 六人行 (Friends)", "part": "Speaking", "freq": True},
-    {"id": "core_19", "word": "make ends meet", "ipa": "/meɪk endz miːt/", "pos": "idiom", "zh": "維持生計、收支平衡", "collocations": "struggle to make ends meet", "example": "Rising inflation makes it increasingly difficult for low-income families to make ends meet.", "source": "Song: Ariana Grande", "part": "Speaking", "freq": True},
-    {"id": "core_20", "word": "turn a blind eye", "ipa": "/tɜːrn ə blaɪnd aɪ/", "pos": "idiom", "zh": "視而不見、睜一隻眼閉一隻眼", "collocations": "turn a blind eye to", "example": "Authorities can no longer turn a blind eye to illegal industrial waste dumping.", "source": "Song: Sam Smith", "part": "Writing", "freq": True}
+    {"id": "core_15", "word": "behind closed doors", "ipa": "/bɪˈhaɪnd kloʊzd dɔːrz/", "pos": "idiom", "zh": "私下地、秘密地（不公開）", "collocations": "negotiate behind closed doors", "example": "In Washington politics, crucial compromises are frequently brokered behind closed doors.", "source": "TV: 同路人 (Fellow Travelers)", "part": "Reading", "freq": True},
+    {"id": "core_16", "word": "off the record", "ipa": "/ɔːf ðə ˈrek.ɚd/", "pos": "idiom", "zh": "非公開地、不可引述地", "collocations": "speak strictly off the record", "example": "The senior official agreed to brief journalists strictly off the record.", "source": "TV: 同路人 (Fellow Travelers)", "part": "Listening", "freq": True},
+    {"id": "core_17", "word": "bide your time", "ipa": "/baɪd jʊr taɪm/", "pos": "idiom", "zh": "耐心等待時機、韜光養晦", "collocations": "bide one's time until", "example": "When the political climate turns hostile, you have to bide your time and pick your battles.", "source": "TV: 同路人 (Fellow Travelers)", "part": "Speaking", "freq": True},
+    {"id": "core_18", "word": "think on your feet", "ipa": "/θɪŋk ɑːn jʊr fiːt/", "pos": "idiom", "zh": "臨機應變、反應敏捷", "collocations": "ability to think on your feet", "example": "If you want to survive the night shift at the diner, you have to think on your feet.", "source": "TV: 破產姊妹 (2 Broke Girls)", "part": "Speaking", "freq": True},
+    {"id": "core_19", "word": "out of the question", "ipa": "/aʊt əv ðə ˈkwes.tʃən/", "pos": "idiom", "zh": "絕不可能、想都別想", "collocations": "completely out of the question", "example": "Everyone knows Joey does not share food, so touching his fries is out of the question.", "source": "TV: 六人行 (Friends)", "part": "Speaking", "freq": True},
+    {"id": "core_20", "word": "make ends meet", "ipa": "/meɪk endz miːt/", "pos": "idiom", "zh": "維持生計、收支平衡", "collocations": "struggle to make ends meet", "example": "Rising inflation makes it increasingly difficult for low-income families to make ends meet.", "source": "Song: Ariana Grande", "part": "Speaking", "freq": True}
 ]
 
-# 2. 擴充版：破產姊妹 (3題) + 六人行 (3題) + 九位歌手各 2 題 = 24 組三合一雅思題庫
+# 2. 美劇《同路人》擴充對話 + 破產姊妹 + 六人行 + 九位歌手完整題庫
 EXTRA_POP_IELTS_ITEMS = [
+    # ==================== 同路人 (Fellow Travelers) 新增 5 組深度對話 ====================
+    {
+        "id": "ft_2",
+        "work": "同路人",
+        "workEn": "Fellow Travelers · State Department Secrecy",
+        "category": "drama",
+        "ytId": "",
+        "startSec": 0,
+        "endSec": 7,
+        "fullSentence": "Never put anything in writing; in this town, every sensitive conversation happens behind closed doors and strictly off the record.",
+        "clozedTemplate": "Never put anything in writing; in this town, every sensitive conversation happens [1] and strictly [2].",
+        "blanks": ["behind closed doors", "off the record"],
+        "listeningTip": "注意 put anything 連讀成 /pʊ-ˈtɛn.i.θɪŋ/；off the record 中 off 與 the 連讀順暢。",
+        "sentenceZh": "千萬別留下任何白紙黑字的紀錄；在這座政治城市裡，每場敏感對話都在私下閉門進行，且嚴格不公開紀錄。",
+        "casualPhrase": "behind closed doors / off the record",
+        "casualExplain": "私下閉門進行 / 非公開、不可引述",
+        "registerQuestion": "《同路人》中 Hawkins 告誡年輕幕僚重要協商都在 "behind closed doors and off the record"。若要在【雅思寫作 Task 2】論述「外交談判有時需要高度保密，以避免過早受到輿論干擾」，哪個學術替換最精準？",
+        "registerOptions": [
+          "conduct confidential deliberations without premature public disclosure",
+          "lock all wooden office doors and turn off tape recorders",
+          "write secret letters inside quiet Washington apartments",
+          "avoid speaking to any newspaper reporters permanently"
+        ],
+        "academicAnswer": "conduct confidential deliberations without premature public disclosure",
+        "academicSentence": "Complex international peace negotiations often require diplomats to conduct confidential deliberations without premature public disclosure.",
+        "stressGuide": "NEVer PUT ANything in WRITing; EVery SENsitive converSAtion HAPpens beHIND CLOSED DOORS and STRICTly OFF the RECord.",
+        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Government Transparency & Privacy",
+        "ieltsSpeakingQ": "Should governments make all political discussions public, or are private negotiations sometimes necessary?",
+        "ieltsSpeakingModel": "While democratic accountability is vital, I believe sensitive diplomatic talks often need to happen behind closed doors initially, as confidential deliberations allow leaders to compromise without political posturing."
+    },
+    {
+        "id": "ft_3",
+        "work": "同路人",
+        "workEn": "Fellow Travelers · Walking a Tightrope",
+        "category": "drama",
+        "ytId": "",
+        "startSec": 0,
+        "endSec": 7,
+        "fullSentence": "You spend every day walking a tightrope between your conscience and your ambition, terrified of making one false move.",
+        "clozedTemplate": "You spend every day [1] between your conscience and your ambition, terrified of making one [2].",
+        "blanks": ["walking a tightrope", "false move"],
+        "listeningTip": "注意 walking a tightrope 連讀成 /ˈwɔː.kɪ.ŋə-ˈtaɪt.roʊp/；conscience 發音為 /ˈkɑːn.ʃəns/。",
+        "sentenceZh": "你每天都在良知與政治野心之間走鋼索，戰戰兢兢深怕走錯任何一步。",
+        "casualPhrase": "walking a tightrope / false move",
+        "casualExplain": "如履薄冰走鋼索（在兩難間維持微妙平衡）/ 走錯一步",
+        "registerQuestion": "《同路人》Tim 對 Hawkins 說他每天都在 "walking a tightrope between conscience and ambition"。若要在【雅思寫作 Task 2】描述「政府在刺激經濟成長與實施嚴格環保法規之間必須維持微妙平衡」，哪個學術替換最精準？",
+        "registerOptions": [
+          "navigate a precarious equilibrium between competing policy imperatives",
+          "walk carefully across a circus rope high above the ground",
+          "choose personal career ambition over environmental science",
+          "avoid making sudden physical movements in the office"
+        ],
+        "academicAnswer": "navigate a precarious equilibrium between competing policy imperatives",
+        "academicSentence": "Policymakers in developing economies must navigate a precarious equilibrium between competing policy imperatives of rapid industrialization and carbon reduction.",
+        "stressGuide": "You SPEND EVery DAY WALKing‿a TIGHTrope beTWEEN your CONscience and your amBItion, TERrified of MAK-ing ONE FALSE MOVE.",
+        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Ethics & Career Ambition",
+        "ieltsSpeakingQ": "Do you think it is possible to achieve high career success without compromising personal values?",
+        "ieltsSpeakingModel": "It can certainly feel like walking a tightrope in highly competitive industries, yet I believe long-term credibility depends on maintaining that precarious equilibrium without sacrificing core ethical principles."
+    },
+    {
+        "id": "ft_4",
+        "work": "同路人",
+        "workEn": "Fellow Travelers · Strategic Patience",
+        "category": "drama",
+        "ytId": "",
+        "startSec": 0,
+        "endSec": 7,
+        "fullSentence": "When the political climate turns hostile, you cannot fight head-on; you have to bide your time and pick your battles.",
+        "clozedTemplate": "When the political climate turns hostile, you cannot fight head-on; you have to [1] and [2].",
+        "blanks": ["bide your time", "pick your battles"],
+        "listeningTip": "注意 fight head-on 連讀成 /faɪt-he-dɑːn/；bide your time 意為「韜光養晦、耐心等待最佳時機」。",
+        "sentenceZh": "當政治氣候變得充滿敵意時，你不能硬碰硬；你必須學會韜光養晦等待時機，並慎選戰場。",
+        "casualPhrase": "bide your time / pick your battles",
+        "casualExplain": "耐心等待時機 / 慎選戰場（集中精力在關鍵爭端）",
+        "registerQuestion": "《同路人》中 Marcus 提醒在逆境中要 "bide your time and pick your battles"。若要在【雅思寫作 Task 2】表達「面對有限的公共財政預算，政府必須審慎排定優先順序並等待適當時機推動改革」，哪個學術替換最貼切？",
+        "registerOptions": [
+          "exercise strategic restraint and prioritize high-impact interventions",
+          "wait patiently beside a clock until the battle ends",
+          "fight every minor argument in the parliament building",
+          "postpone all public healthcare funding indefinitely"
+        ],
+        "academicAnswer": "exercise strategic restraint and prioritize high-impact interventions",
+        "academicSentence": "Constrained by fiscal deficits, municipal authorities must exercise strategic restraint and prioritize high-impact interventions.",
+        "stressGuide": "When the poLITical CLIimate TURNS HOStile, you CANnot FIGHT HEAD-ON; you HAVE to BIDE your TIME and PICK your BATtles.",
+        "ieltsSpeakingPart": "IELTS Speaking Part 2 · Patience & Strategic Decision-Making",
+        "ieltsSpeakingQ": "Describe a time when waiting patiently for the right moment helped you solve a problem.",
+        "ieltsSpeakingModel": "During a major network migration with conflicting stakeholder demands, I learned to pick my battles and bide my time until we had empirical performance data, which made consensus effortless."
+    },
+    {
+        "id": "ft_5",
+        "work": "同路人",
+        "workEn": "Fellow Travelers · Senate Investigation",
+        "category": "drama",
+        "ytId": "",
+        "startSec": 0,
+        "endSec": 7,
+        "fullSentence": "When investigators start digging into your past, you have to cover your tracks and protect the people you love at all costs.",
+        "clozedTemplate": "When investigators start digging into your past, you have to [1] and protect the people you love [2].",
+        "blanks": ["cover your tracks", "at all costs"],
+        "listeningTip": "注意 digging into 連讀成 /ˈdɪɡ.ɪ.ŋɪn.tuː/；at all costs 中 t 與 all 連讀成 /æ-ɾɔːl-kɑːsts/。",
+        "sentenceZh": "當調查人員開始深挖你的過去時，你必須掩蓋行蹤並竭盡全力、不惜一切代價保護你所愛的人。",
+        "casualPhrase": "cover your tracks / at all costs",
+        "casualExplain": "掩蓋行蹤不留痕跡 / 不惜一切代價",
+        "registerQuestion": "《同路人》面對参議院調查時強調必須保護重要之人 "at all costs"。若要在【雅思寫作 Task 2】論述「在數位監控日益普及的時代，民主社會必須全力捍衛公民的基本隱私權」，哪個學術表達最有力？",
+        "registerOptions": [
+          "safeguard fundamental civil liberties as an inviolable priority",
+          "erase footprints in the snow behind government buildings",
+          "pay expensive legal fees at every court hearing",
+          "hide personal documents under the floorboards"
+        ],
+        "academicAnswer": "safeguard fundamental civil liberties as an inviolable priority",
+        "academicSentence": "Even amidst heightened national security concerns, democratic institutions must safeguard fundamental civil liberties as an inviolable priority.",
+        "stressGuide": "When inVESTigators START DIGging‿into your PAST, you HAVE to COV-er your TRACKS and proTECT the PEOple you LOVE at ALL COSTS.",
+        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Digital Privacy & Surveillance",
+        "ieltsSpeakingQ": "How important is it for individuals to protect their personal privacy online nowadays?",
+        "ieltsSpeakingModel": "It is paramount. With algorithms constantly digging into users' browsing histories, individuals must take proactive steps to cover their digital tracks and safeguard their personal privacy."
+    },
+    {
+        "id": "ft_6",
+        "work": "同路人",
+        "workEn": "Fellow Travelers · Moral Courage",
+        "category": "drama",
+        "ytId": "",
+        "startSec": 0,
+        "endSec": 7,
+        "fullSentence": "Silence only emboldens bullies; sooner or later, you have to stand your ground and speak truth to power.",
+        "clozedTemplate": "Silence only emboldens bullies; sooner or later, you have to [1] and [2].",
+        "blanks": ["stand your ground", "speak truth to power"],
+        "listeningTip": "注意 emboldens 意為「使大膽、助長」；speak truth to power 為政治與社會學經典片語，意為「向當權者直言進諫」。",
+        "sentenceZh": "沉默只會助長欺凌者的氣焰；遲早有一天，你必須堅守立場，勇敢向當權者說出真相。",
+        "casualPhrase": "stand your ground / speak truth to power",
+        "casualExplain": "堅守立場不退讓 / 向當權者直言真理",
+        "registerQuestion": "《同路人》Tim 決定不再妥協，要 "stand your ground and speak truth to power"。若要在【雅思寫作 Task 2】論述「獨立新聞媒體與吹哨者在揭露制度性腐敗與維護社會正義中扮演不可或缺的角色」，哪個表達最學術？",
+        "registerOptions": [
+          "hold entrenched institutions accountable through courageous public scrutiny",
+          "stand firmly on the floor during loud arguments",
+          "shout loudly inside a government power plant",
+          "refuse to listen to any historical speeches"
+        ],
+        "academicAnswer": "hold entrenched institutions accountable through courageous public scrutiny",
+        "academicSentence": "Investigative journalism plays an indispensable role in enabling citizens to hold entrenched institutions accountable through courageous public scrutiny.",
+        "stressGuide": "SIlence ONly emBOLDens BULlies; SOONer or LATer, you HAVE to STAND your GROUND and SPEAK TRUTH to POWer.",
+        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Courage, Justice & Social Change",
+        "ieltsSpeakingQ": "What qualities do you think are most important for people who want to bring positive change to society?",
+        "ieltsSpeakingModel": "Above all, moral courage and resilience—history shows that meaningful reform only happens when principled individuals stand their ground and speak truth to power despite institutional resistance."
+    },
+
     # ==================== 破產姊妹 (2 Broke Girls) ====================
     {
         "id": "2bg_2",
@@ -99,35 +246,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingPart": "IELTS Speaking Part 2 · Learning a New Skill",
         "ieltsSpeakingQ": "Describe a time when you had to learn something completely new from the beginning.",
         "ieltsSpeakingModel": "When I first started writing automated trading scripts, I had to start from scratch and spend weeks learning the ropes of API architecture before executing a single live order."
-    },
-    {
-        "id": "2bg_4",
-        "work": "破產姊妹",
-        "workEn": "2 Broke Girls · Blunt Candor",
-        "category": "drama",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "Max never beats around the bush; she calls a spade a spade even when customers complain.",
-        "clozedTemplate": "Max never [1]; she [2] even when customers complain.",
-        "blanks": ["beats around the bush", "calls a spade a spade"],
-        "listeningTip": "注意 beats around 中 s 與 around 連讀成 /biːt-sə-raʊnd/；calls a spade 連讀成 /kɔːl-zə-speɪd/。",
-        "sentenceZh": "Max 說話從不拐彎抹角；就算客人抱怨，她也是有一說一、直言不諱。",
-        "casualPhrase": "beats around the bush / calls a spade a spade",
-        "casualExplain": "不拐彎抹角、直言不諱",
-        "registerQuestion": "《破產姊妹》Max 習慣 "call a spade a spade"。若要在【雅思寫作 Task 2】論述「政策制定者應以坦率直白的態度面對財政赤字問題」，哪個學術表達最精準？",
-        "registerOptions": [
-          "address structural deficits with uncompromising candor",
-          "dig garden soil using metal spades",
-          "walk in circles around forest bushes",
-          "complain loudly to restaurant customers"
-        ],
-        "academicAnswer": "address structural deficits with uncompromising candor",
-        "academicSentence": "Elected officials must address structural deficits with uncompromising candor rather than relying on euphemistic rhetoric.",
-        "stressGuide": "MAX NEVer BEATS‿aROUND the BUSH; she CALLS‿a SPADE‿a SPADE Even when CUSTomers comPLAIN.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Honesty & Communication Styles",
-        "ieltsSpeakingQ": "Do you think direct communication is always better than polite indirectness?",
-        "ieltsSpeakingModel": "In technical troubleshooting, I appreciate colleagues who never beat around the bush and simply call a spade a spade, though diplomatic tact is certainly vital in cross-cultural negotiations."
     },
 
     # ==================== 六人行 (Friends) ====================
@@ -189,37 +307,8 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingQ": "At what age do you think young people should become financially independent from their parents?",
         "ieltsSpeakingModel": "Ideally right after university graduation; taking that initial leap of faith into the workforce is essential for young adults to stand on their own two feet and achieve true financial autonomy."
     },
-    {
-        "id": "fr_4",
-        "work": "六人行",
-        "workEn": "Friends · Monica's Coaster Rule",
-        "category": "drama",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "Monica tends to blow small things out of proportion whenever someone forgets to use a coaster.",
-        "clozedTemplate": "Monica tends to [1] small things [2] whenever someone forgets to use a coaster.",
-        "blanks": ["blow", "out of proportion"],
-        "listeningTip": "注意 out of 在口語中連讀成 /aʊ-ɾəv/；proportion 重音在第二音節 /prəˈpɔːr.ʃən/。",
-        "sentenceZh": "只要有人忘記用杯墊，Monica 就會把芝麻小事無限放大、小題大做。",
-        "casualPhrase": "blow things out of proportion",
-        "casualExplain": "小題大做、過度渲染或誇大其詞",
-        "registerQuestion": "《六人行》中 Monica 常 "blow small things out of proportion"。若要在【雅思寫作 Task 2】批評「聳動媒體常為了點閱率而過度誇大個別社會事件」，哪個學術動詞最精準？",
-        "registerOptions": [
-          "sensationalize and disproportionately exaggerate isolated incidents",
-          "blow air into large balloons at birthday parties",
-          "measure the exact mathematical ratio of tables",
-          "forget to place coasters under coffee mugs"
-        ],
-        "academicAnswer": "sensationalize and disproportionately exaggerate isolated incidents",
-        "academicSentence": "Algorithm-driven news outlets frequently sensationalize and disproportionately exaggerate isolated incidents to maximize user engagement.",
-        "stressGuide": "MONica TENDS to BLOW SMALL THINGS OUT‿of proPORtion whenEVer SOMEone forGETS to USE a COASTer.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Media & Public Perception",
-        "ieltsSpeakingQ": "Do you think social media makes people worry too much about trivial problems?",
-        "ieltsSpeakingModel": "Definitely. Online echo chambers tend to blow minor misunderstandings completely out of proportion, disproportionately exaggerating issues that could otherwise be resolved calmly."
-    },
 
-    # ==================== Taylor Swift (2 題) ====================
+    # ==================== 9 大西洋歌手代表作 ====================
     {
         "id": "ts_2",
         "work": "Taylor Swift",
@@ -250,37 +339,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingModel": "In an era of instant online reviews, an organization's reputation often precedes it, directly determining whether consumers feel confident engaging with its products."
     },
     {
-        "id": "ts_3",
-        "work": "Taylor Swift",
-        "workEn": "Anti-Hero",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "It is me, hi, I am the problem, it is me, staring directly at the sun instead of facing the music.",
-        "clozedTemplate": "It is me, hi, I am the problem, it is me, staring [1] at the sun instead of [2].",
-        "blanks": ["directly", "facing the music"],
-        "listeningTip": "注意 instead of 連讀成 /ɪnˈste-dəv/；face the music 意為「勇於面對批評或承擔後果」。",
-        "sentenceZh": "是我，嗨，問題就出在我身上，直視著刺眼陽光卻遲遲不敢勇於承擔後果。",
-        "casualPhrase": "facing the music",
-        "casualExplain": "勇於承擔後果、直面嚴厲批評",
-        "registerQuestion": "《Anti-Hero》探討自我反省與「面對現實後果」(face the music)。若要在【雅思寫作 Task 2】表達「企業高層必須為環境污染負起完全的法律與道德責任」，哪個表達最學術？",
-        "registerOptions": [
-          "assume full accountability for adverse environmental outcomes",
-          "listen to loud pop songs in front of an orchestra",
-          "stare directly at the afternoon sunlight",
-          "admit that singers write catchy choruses"
-        ],
-        "academicAnswer": "assume full accountability for adverse environmental outcomes",
-        "academicSentence": "Corporate executives must assume full accountability for adverse environmental outcomes resulting from negligent supply chain practices.",
-        "stressGuide": "I am the PROBlem, it is ME, STARing diRECTly at the SUN inSTEAD‿of FACing the MUsic.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Responsibility & Admitting Mistakes",
-        "ieltsSpeakingQ": "Why do some people find it difficult to admit when they have made a mistake?",
-        "ieltsSpeakingModel": "People often fear losing credibility, yet mature leaders recognize that facing the music early and assuming full accountability is the fastest way to rebuild trust."
-    },
-
-    # ==================== Ariana Grande (2 題) ====================
-    {
         "id": "ag_2",
         "work": "Ariana Grande",
         "workEn": "7 rings",
@@ -291,7 +349,7 @@ EXTRA_POP_IELTS_ITEMS = [
         "fullSentence": "Whoever said money cannot solve your problems must not have had enough money to make ends meet.",
         "clozedTemplate": "Whoever said money cannot [1] your problems must not have had enough money to [2].",
         "blanks": ["solve", "make ends meet"],
-        "listeningTip": "注意 must not have 在美式口語中常弱讀連音為 /mʌst-nɑː-ɾəv/；make ends meet 中 ends 與 meet 連讀順暢。",
+        "listeningTip": "注意 must not have 在美式口語中常弱讀連音為 /mʌst-nɑː-ɾəv/；make ends meet 意為「收支平衡」。",
         "sentenceZh": "不管是誰說金錢解決不了問題，那個人肯定沒體會過連維持基本生計都困難的窘境。",
         "casualPhrase": "make ends meet",
         "casualExplain": "維持基本生計、使收支相抵",
@@ -310,37 +368,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingModel": "Up to a certain threshold, yes—when people struggle just to make ends meet, financial stability drastically reduces anxiety, though beyond basic solvency, happiness depends more on relationships."
     },
     {
-        "id": "ag_3",
-        "work": "Ariana Grande",
-        "workEn": "breathin",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "When anxiety starts clouding your judgment, you just need to keep breathing and take things in stride.",
-        "clozedTemplate": "When anxiety starts clouding your [1], you just need to keep breathing and take things [2].",
-        "blanks": ["judgment", "in stride"],
-        "listeningTip": "注意 take things in stride 意為「大步跨過困難、泰然處之」，things in 連讀成 /θɪŋ-zɪn/。",
-        "sentenceZh": "當焦慮開始蒙蔽你的判斷力時，你只需要保持深呼吸並從容不迫地應對一切。",
-        "casualPhrase": "take things in stride",
-        "casualExplain": "泰然處之、從容應對挫折而不慌亂",
-        "registerQuestion": "Ariana Grande 的《breathin》傳達在焦慮中 "take things in stride"。若要在【雅思寫作 Task 2】描述「在快速變遷的職場中保持心理韌性與冷靜應對波動」，哪個表達最學術？",
-        "registerOptions": [
-          "maintain psychological equilibrium amidst occupational volatility",
-          "take very long walking steps down the street",
-          "breathe heavily during a marathon race",
-          "ignore all medical advice about anxiety"
-        ],
-        "academicAnswer": "maintain psychological equilibrium amidst occupational volatility",
-        "academicSentence": "Mindfulness training equips professionals to maintain psychological equilibrium amidst occupational volatility.",
-        "stressGuide": "When anXIety STARTS CLOUDing your JUDGment, you JUST need to KEEP BREATHing and TAKE THINGS‿in STRIDE.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 1 / Part 2 · Stress Management",
-        "ieltsSpeakingQ": "What do you do to relax when you feel overwhelmed by work or study?",
-        "ieltsSpeakingModel": "Whenever deadlines start clouding my judgment, I step away for a brisk walk to clear my head so I can take challenges in stride and maintain psychological equilibrium."
-    },
-
-    # ==================== Sam Smith (2 題) ====================
-    {
         "id": "ss_2",
         "work": "Sam Smith",
         "workEn": "Too Good at Goodbyes",
@@ -351,7 +378,7 @@ EXTRA_POP_IELTS_ITEMS = [
         "fullSentence": "I am never going to let you close to me, even though you mean the most to me, because I keep my guard up.",
         "clozedTemplate": "I am never going to let you close to me, [1] you mean the most to me, because I keep my [2].",
         "blanks": ["even though", "guard up"],
-        "listeningTip": "注意 let you 連讀常帶有 /tʃ/ 音變成 /le-tʃuː/；keep my guard up 源自拳擊架起雙臂防禦，意為「保持戒心」。",
+        "listeningTip": "注意 let you 連讀常帶有 /tʃ/ 音變成 /le-tʃuː/；keep my guard up 意為「保持戒心」。",
         "sentenceZh": "我絕不會讓你太靠近我，儘管你對我意義重大，因為我總是習慣保持防備戒心。",
         "casualPhrase": "keep my guard up",
         "casualExplain": "保持戒心、建立心理防線",
@@ -370,37 +397,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingModel": "To some extent, yes. Constant news about online scams makes people keep their guard up initially, maintaining heightened vigilance until genuine credibility is established."
     },
     {
-        "id": "ss_3",
-        "work": "Sam Smith",
-        "workEn": "I'm Not the Only One",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "For months she turned a blind eye to the rumors, even though the truth was hiding in plain sight.",
-        "clozedTemplate": "For months she turned a [1] to the rumors, even though the truth was hiding in [2].",
-        "blanks": ["blind eye", "plain sight"],
-        "listeningTip": "注意 turned a blind eye 連讀成 /tɜːrn-də-blaɪn-daɪ/；in plain sight 意為「在眾目睽睽之下、顯而易見」。",
-        "sentenceZh": "好幾個月來她對流言蜚語睜一隻眼閉一隻眼，儘管真相就擺在眼前、顯而易見。",
-        "casualPhrase": "turned a blind eye / in plain sight",
-        "casualExplain": "視而不見、故意忽視 / 顯而易見",
-        "registerQuestion": "《I'm Not the Only One》語境中提到 "turn a blind eye"。若要在【雅思寫作 Task 2】批判「監管機構不能再對企業的環境違規行為視而不見」，哪個學術表達最有力？",
-        "registerOptions": [
-          "deliberately disregard glaring regulatory violations",
-          "close one eye while reading a newspaper",
-          "hide secret rumors inside a plain envelope",
-          "visit an optometrist for vision testing"
-        ],
-        "academicAnswer": "deliberately disregard glaring regulatory violations",
-        "academicSentence": "Environmental watchdogs can no longer afford to deliberately disregard glaring regulatory violations by major industrial polluters.",
-        "stressGuide": "For MONTHS she TURNED‿a BLIND EYE to the RUmors, Even THOUGH the TRUTH was HIDing in PLAIN SIGHT.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Ethics & Accountability",
-        "ieltsSpeakingQ": "What happens when organizations ignore minor problems for too long?",
-        "ieltsSpeakingModel": "When management turns a blind eye to early warning signs that are hiding in plain sight, minor operational flaws inevitably snowball into systemic crises."
-    },
-
-    # ==================== Charlie Puth (2 題) ====================
-    {
         "id": "cp_2",
         "work": "Charlie Puth",
         "workEn": "We Don't Talk Anymore",
@@ -411,7 +407,7 @@ EXTRA_POP_IELTS_ITEMS = [
         "fullSentence": "We do not talk anymore like we used to do, and drifting apart has left us with unfinished business.",
         "clozedTemplate": "We do not talk anymore like we used to do, and [1] has left us with [2].",
         "blanks": ["drifting apart", "unfinished business"],
-        "listeningTip": "注意 used to 在美式口語中常讀成 /juːs-tə/；drifting apart 中 t 與 a 連讀成 /drɪf-tɪ-ŋə-pɑːrt/。",
+        "listeningTip": "注意 used to 在美式口語中常讀成 /juːs-tə/；drifting apart 意為「漸行漸遠」。",
         "sentenceZh": "我們不再像從前那樣無話不談，而彼此漸行漸遠也留下了未了的心結。",
         "casualPhrase": "drifting apart",
         "casualExplain": "（人際關係）漸行漸遠、逐漸疏遠",
@@ -430,67 +426,7 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingModel": "As people relocate for university or demanding careers, differing schedules naturally cause them to drift apart, leading to gradual interpersonal estrangement unless both sides make a conscious effort."
     },
     {
-        "id": "cp_3",
-        "work": "Charlie Puth",
-        "workEn": "See You Again",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "It has been a long day without you my friend, and we have come a long way from where we began.",
-        "clozedTemplate": "It has been a long day [1] you my friend, and we have [2] from where we began.",
-        "blanks": ["without", "come a long way"],
-        "listeningTip": "注意 come a long way 連讀成 /kʌ-mə-lɔːŋ-weɪ/，意為「取得長足進步、走過漫長歷程」。",
-        "sentenceZh": "沒有你在身邊的這段日子漫長無比，而從我們最初的起點算起，我們已經走過了很長一段路、成長了許多。",
-        "casualPhrase": "come a long way",
-        "casualExplain": "取得長足進步、發展成熟許多",
-        "registerQuestion": "《See You Again》經典歌詞 "we've come a long way"。若要在【雅思寫作 Task 2】表達「再生能源技術在過去二十年間已取得顯著的技術突破與發展」，哪個學術表達最精準？",
-        "registerOptions": [
-          "achieved substantial technological milestones over two decades",
-          "walked a very long highway without stopping",
-          "traveled far away from the starting line",
-          "waited a long day for a friend to arrive"
-        ],
-        "academicAnswer": "achieved substantial technological milestones over two decades",
-        "academicSentence": "Photovoltaic solar engineering has achieved substantial technological milestones over two decades, dramatically lowering per-kilowatt generation costs.",
-        "stressGuide": "It has BEEN a LONG DAY withOUT you my FRIEND, and we have COME‿a LONG WAY from WHERE we beGAN.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 2 · Personal Achievement or Progress",
-        "ieltsSpeakingQ": "Describe a skill or project in which you have made significant progress over time.",
-        "ieltsSpeakingModel": "Looking back at my early Python scripts compared to my current automated workflows, I realize I have come a long way and achieved substantial technical milestones through consistent practice."
-    },
-
-    # ==================== Shawn Mendes (2 題) ====================
-    {
         "id": "sm_2",
-        "work": "Shawn Mendes",
-        "workEn": "Stitches",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "Thought that I had been hurt before, but no one has ever left me quite this sore, forcing me to pick up the pieces.",
-        "clozedTemplate": "Thought that I had been [1] before, but no one has ever left me quite this sore, forcing me to [2].",
-        "blanks": ["hurt before", "pick up the pieces"],
-        "listeningTip": "注意 pick up the pieces 中 pick 與 up 連讀成 /pɪ-kʌp/，意為「收拾殘局、在受創後重新振作」。",
-        "sentenceZh": "原以為自己以前受過傷，但從沒有人讓我如此痛徹心扉，逼得我必須重新收拾殘局、振作起來。",
-        "casualPhrase": "pick up the pieces",
-        "casualExplain": "收拾殘局、在重大打擊後重建生活",
-        "registerQuestion": "《Stitches》描繪心碎後必須 "pick up the pieces"。若要在【雅思寫作 Task 2】論述「自然災害過後，政府應投入充足資金協助受災社區重建基礎設施與生活秩序」，哪個替換最學術？",
-        "registerOptions": [
-          "rehabilitate devastated communities and restore socioeconomic stability",
-          "collect broken glass pieces from the living room floor",
-          "stitch torn clothes together with a needle",
-          "recover from minor sore muscles after exercise"
-        ],
-        "academicAnswer": "rehabilitate devastated communities and restore socioeconomic stability",
-        "academicSentence": "Following severe climate-induced flooding, state agencies must allocate emergency funds to rehabilitate devastated communities and restore socioeconomic stability.",
-        "stressGuide": "THOUGHT that I had BEEN HURT beFORE, FORCing me to PICK‿UP the PIECes.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Overcoming Adversity & Resilience",
-        "ieltsSpeakingQ": "How can communities best support individuals who have experienced major setbacks?",
-        "ieltsSpeakingModel": "Accessible mental health services and vocational retraining programs are crucial when people are trying to pick up the pieces and restore stability after an economic or personal crisis."
-    },
-    {
-        "id": "sm_3",
         "work": "Shawn Mendes",
         "workEn": "In My Blood",
         "category": "singer",
@@ -518,39 +454,8 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingQ": "Describe a difficult task or goal that you refused to give up on.",
         "ieltsSpeakingModel": "Preparing for a Band 7.5+ target while working full-time shifts was exhausting, and there were moments I felt like giving up, yet throwing in the towel was never an option for me."
     },
-
-    # ==================== Lauv (2 題) ====================
     {
         "id": "lv_2",
-        "work": "Lauv",
-        "workEn": "Paris in the Rain",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "Anywhere with you feels right, even when torrential rain catches us off guard without an umbrella.",
-        "clozedTemplate": "Anywhere with you feels right, even when [1] rain catches us [2] without an umbrella.",
-        "blanks": ["torrential", "off guard"],
-        "listeningTip": "注意 catches us off guard 連讀成 /kæ-tʃɪ-zə-sɔːf-ɡɑːrd/，意為「讓人措手不及、出其不意」。",
-        "sentenceZh": "只要有你在身邊，無論在哪裡都覺得自在，就算傾盆大雨在沒帶傘時突襲讓我們措手不及也無所謂。",
-        "casualPhrase": "catches us off guard",
-        "casualExplain": "讓人措手不及、在毫無防備時突襲",
-        "registerQuestion": "《Paris in the Rain》情境中提到突如其來的情況 "catches us off guard"。若要在【雅思寫作 Task 2】表達「缺乏預警系統使沿海城市面對極端氣候事件時措手不及」，哪個學術替換最精準？",
-        "registerOptions": [
-          "renders coastal municipalities unprepared for sudden extreme weather contingencies",
-          "forgets to carry folding umbrellas in Paris",
-          "surprises couples walking in romantic rain",
-          "leaves security guards standing outside"
-        ],
-        "academicAnswer": "renders coastal municipalities unprepared for sudden extreme weather contingencies",
-        "academicSentence": "Outdated meteorological infrastructure renders coastal municipalities unprepared for sudden extreme weather contingencies.",
-        "stressGuide": "ANywhere with YOU FEELS RIGHT, Even when torRENtial RAIN CATCHes‿us OFF GUARD.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 1 / Part 2 · Weather & Unplanned Events",
-        "ieltsSpeakingQ": "Have you ever had an outdoor plan ruined or changed by unexpected weather?",
-        "ieltsSpeakingModel": "Yes, during a trip to the mountains, a sudden downpour caught us completely off guard, forcing us to improvise an indoor itinerary that actually turned out to be memorable."
-    },
-    {
-        "id": "lv_3",
         "work": "Lauv",
         "workEn": "Modern Loneliness",
         "category": "singer",
@@ -578,8 +483,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingQ": "Do you think modern communication technology brings people closer together or makes them lonelier?",
         "ieltsSpeakingModel": "It is paradoxical—while messaging apps keep us connected across continents, heavy reliance on superficial online interaction can leave individuals feeling strangely out of touch with their immediate community."
     },
-
-    # ==================== Christopher (2 題) ====================
     {
         "id": "ch_2",
         "work": "Christopher",
@@ -591,7 +494,7 @@ EXTRA_POP_IELTS_ITEMS = [
         "fullSentence": "Every time you walk into the room, my heart skips a beat and I lose my train of thought.",
         "clozedTemplate": "Every time you walk into the room, my heart [1] and I lose my [2].",
         "blanks": ["skips a beat", "train of thought"],
-        "listeningTip": "注意 skips a beat 連讀成 /skɪp-sə-biːt/；train of thought 連讀成 /treɪ-nəv-θɔːt/，意為「思緒脈絡」。",
+        "listeningTip": "注意 skips a beat 連讀成 /skɪp-sə-biːt/；train of thought 連讀成 /treɪ-nəv-θɔːt/。",
         "sentenceZh": "每次你走進房間，我的心就會漏跳一拍，連原本的思緒都瞬間中斷。",
         "casualPhrase": "skips a beat / lose my train of thought",
         "casualExplain": "心頭一震 / 思緒中斷、忘記剛才想到哪",
@@ -610,37 +513,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingModel": "Sudden phone notifications or loud conversations easily make me lose my train of thought, which is why I prefer a quiet environment to maintain analytical continuity."
     },
     {
-        "id": "ch_3",
-        "work": "Christopher",
-        "workEn": "Leap of Faith",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "When you stand at a crossroads, sometimes you have to burn your bridges and take a leap of faith.",
-        "clozedTemplate": "When you stand at a [1], sometimes you have to [2] and take a leap of faith.",
-        "blanks": ["crossroads", "burn your bridges"],
-        "listeningTip": "注意 stand at a 連讀成 /stæn-dæ-ɾə/；burn your bridges 源自軍隊過河後燒毀橋樑以示決心，意為「破釜沉舟（或斷絕退路）」。",
-        "sentenceZh": "當你站在人生的十字路口時，有時候你必須破釜沉舟、不留退路地放手一搏。",
-        "casualPhrase": "at a crossroads / burn your bridges",
-        "casualExplain": "處於人生關鍵抉擇點 / 破釜沉舟、斷絕退路",
-        "registerQuestion": "《Leap of Faith》探討在人生十字路口 "burn your bridges"（不留退路全力投入）。若要在【雅思寫作 Task 2】表達「在職業生涯轉折點做出不可逆轉的重大承諾」，哪個表達最得體？",
-        "registerOptions": [
-          "make an irreversible commitment at a pivotal career juncture",
-          "set wooden bridges on fire across a river",
-          "stand in the middle of a busy traffic intersection",
-          "refuse to speak with former colleagues politely"
-        ],
-        "academicAnswer": "make an irreversible commitment at a pivotal career juncture",
-        "academicSentence": "Relocating abroad for postgraduate research often requires scholars to make an irreversible commitment at a pivotal career juncture.",
-        "stressGuide": "When you STAND‿at‿a CROSSroads, SOMEtimes you HAVE to BURN your BRIDGes and TAKE a LEAP‿of FAITH.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 2 · An Important Decision You Made",
-        "ieltsSpeakingQ": "Describe an important decision you had to make at a turning point in your life.",
-        "ieltsSpeakingModel": "Choosing to specialize in complex network engineering felt like standing at a crossroads; while I knew I should never burn my bridges professionally, taking that leap of faith opened tremendous opportunities."
-    },
-
-    # ==================== Lady Gaga (2 題) ====================
-    {
         "id": "lg_2",
         "work": "Lady Gaga",
         "workEn": "Born This Way",
@@ -651,7 +523,7 @@ EXTRA_POP_IELTS_ITEMS = [
         "fullSentence": "Do not hide yourself in regret; embrace who you are and march to the beat of your own drum.",
         "clozedTemplate": "Do not hide yourself in [1]; embrace who you are and march to the beat of [2].",
         "blanks": ["regret", "your own drum"],
-        "listeningTip": "注意 beat of your 連讀成 /biː-ɾəv-jʊr/；march to the beat of your own drum 意為「按照自己的節奏前進、不盲從」。",
+        "listeningTip": "注意 beat of your 連讀成 /biː-ɾəv-jʊr/；march to the beat of your own drum 意為「走自己的路、不盲從」。",
         "sentenceZh": "不要把自己躲藏在悔恨之中；擁抱真實的自我，按照自己的鼓點與節奏勇敢前行。",
         "casualPhrase": "march to the beat of your own drum",
         "casualExplain": "特立獨行、走自己的路而不盲從大眾",
@@ -669,37 +541,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingQ": "Do you think society today encourages people to be unique or to follow trends?",
         "ieltsSpeakingModel": "Social media algorithms often pressure people to follow fleeting trends, so it takes genuine confidence to march to the beat of your own drum and maintain intellectual autonomy."
     },
-    {
-        "id": "lg_3",
-        "work": "Lady Gaga",
-        "workEn": "Million Reasons",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "You are giving me a million reasons to walk away, yet I only need one good reason to stick it out.",
-        "clozedTemplate": "You are giving me a million reasons to [1], yet I only need one good reason to [2].",
-        "blanks": ["walk away", "stick it out"],
-        "listeningTip": "注意 walk away 連讀成 /wɔː-kə-weɪ/；stick it out 連讀成 /stɪ-kɪ-taʊt/，意為「咬牙堅持到底」。",
-        "sentenceZh": "你給了我一百萬個轉身離開的理由，但我只需要一個好理由就能咬牙堅持下去。",
-        "casualPhrase": "stick it out",
-        "casualExplain": "堅持到底、在艱難處境中撐下去",
-        "registerQuestion": "《Million Reasons》對比放棄與堅持（"stick it out"）。若要在【雅思寫作 Task 2】論述「長期科學研究需要研究人員在面對初期失敗時展現堅韌不拔的毅力」，哪個學術動詞最貼切？",
-        "registerOptions": [
-          "persevere despite protracted experimental setbacks",
-          "glue wooden sticks outside the laboratory",
-          "walk away from difficult university exams",
-          "count a million reasons on a spreadsheet"
-        ],
-        "academicAnswer": "persevere despite protracted experimental setbacks",
-        "academicSentence": "Breakthrough medical discoveries require scientists to persevere despite protracted experimental setbacks and funding uncertainties.",
-        "stressGuide": "You are GIVing me a MILlion REAsons to WALK‿aWAY, yet I ONly NEED ONE GOOD REAson to STICK‿it‿OUT.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 2 · Perseverance & Long-Term Goals",
-        "ieltsSpeakingQ": "Why do some people succeed in achieving long-term goals while others give up?",
-        "ieltsSpeakingModel": "Success usually comes down to intrinsic motivation—when you have a clear underlying purpose, you are willing to stick it out and persevere through inevitable plateaus."
-    },
-
-    # ==================== Billie Eilish (2 題) ====================
     {
         "id": "be_2",
         "work": "Billie Eilish",
@@ -728,35 +569,6 @@ EXTRA_POP_IELTS_ITEMS = [
         "ieltsSpeakingPart": "IELTS Speaking Part 3 · Online Behaviour & Cyberbullying",
         "ieltsSpeakingQ": "Why do some people behave more aggressively online than they do in face-to-face conversations?",
         "ieltsSpeakingModel": "Anonymity lowers social accountability, emboldening trolls to push boundaries and intentionally get under people's skin in ways they would never dare in person."
-    },
-    {
-        "id": "be_3",
-        "work": "Billie Eilish",
-        "workEn": "everything i wanted",
-        "category": "singer",
-        "ytId": "",
-        "startSec": 0,
-        "endSec": 6,
-        "fullSentence": "I had a dream I got everything I wanted, only to realize that fame can be a double-edged sword.",
-        "clozedTemplate": "I had a dream I got everything I [1], only to realize that fame can be a [2].",
-        "blanks": ["wanted", "double-edged sword"],
-        "listeningTip": "注意 everything I wanted 連讀成 /ˈev.ri.θɪŋ-aɪ-ˈwɑːn.tɪd/；double-edged sword 意為「雙面刃」。",
-        "sentenceZh": "我曾夢見自己得到了夢寐以求的一切，卻隨即體認到成名其實是一把雙面刃。",
-        "casualPhrase": "double-edged sword",
-        "casualExplain": "雙面刃（同時帶來巨大利益與沉重代價）",
-        "registerQuestion": "《everything i wanted》反思成名猶如 "double-edged sword"。若要在【雅思寫作 Task 2】開頭段精準表達「全球化或成名是一個兼具顯著優勢與潛在弊端的雙面現象」，哪個學術句型最加分？",
-        "registerOptions": [
-          "a paradoxical phenomenon yielding both substantial benefits and inherent drawbacks",
-          "a medieval metal weapon sharpened on both sides",
-          "a pleasant dream about winning a music award",
-          "getting every single item on a shopping list"
-        ],
-        "academicAnswer": "a paradoxical phenomenon yielding both substantial benefits and inherent drawbacks",
-        "academicSentence": "Rapid algorithmic automation represents a paradoxical phenomenon yielding both substantial benefits and inherent drawbacks for the labor market.",
-        "stressGuide": "I HAD a DREAM I GOT EVerything I WANTed, ONly to REalize that FAME can be a DOUble-EDGED SWORD.",
-        "ieltsSpeakingPart": "IELTS Speaking Part 3 · Fame, Privacy & Success",
-        "ieltsSpeakingQ": "What are the disadvantages of becoming famous at a young age?",
-        "ieltsSpeakingModel": "As Billie Eilish poignantly illustrates, early fame is truly a double-edged sword—it brings financial freedom, yet the relentless public scrutiny and loss of privacy can take a heavy toll on mental health."
     }
 ]
 
@@ -784,8 +596,26 @@ def fetch_tv_subtitle_frequency():
     return tv_words
 
 
+def fetch_real_dictionary_example(word: str):
+    """向免費 Free Dictionary API 抓取真實母語例句，供動態出題使用"""
+    try:
+        url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{requests.utils.quote(word)}"
+        r = requests.get(url, headers=HEADERS, timeout=6)
+        if r.status_code != 200:
+            return None
+        data = r.json()[0]
+        for m in data.get("meanings", []):
+            for d in m.get("definitions", []):
+                ex = (d.get("example") or "").strip()
+                if ex and 35 <= len(ex) <= 220 and word.lower() in ex.lower():
+                    return {"example": ex, "definition": d.get("definition", "")}
+    except Exception:
+        pass
+    return None
+
+
 def build_clean_10k_vocab():
-    """排除前 2,500 個基礎單字，只收錄真正 IELTS Band 7.5+ 與美劇進階詞彙至 10,000 單"""
+    """排除前 2,500 個基礎單字，收錄真正 IELTS Band 7.5+ 與美劇進階詞彙至 10,000 單"""
     vocab_map = {item["word"].lower(): item for item in CORE_SEED_VOCAB}
     tv_freq_map = fetch_tv_subtitle_frequency()
 
@@ -879,17 +709,19 @@ def build_clean_10k_vocab():
 
 
 def update_ielts_quiz_bank(vocab_list):
-    """同步將新增的美劇/金曲語境與每日國際新聞寫入 ielts_bank.json 動態題庫"""
+    """自動從 5 大國際新聞/科普 RSS 與線上字典抓取大量真實語境考題（上限擴充至 300 題）"""
     bank = load_json(BANK_FILE, {"listening": [], "reading": [], "writing": [], "speaking": [], "quizPool": []})
     clean_pool = [
         q for q in bank.get("quizPool", [])
         if not q.get("id", "").startswith("web_ielts_")
         and "elevates your IELTS Band score" not in q.get("question", "")
     ]
+    existing_ids = {q["id"] for q in clean_pool}
 
+    # 1. 核心高頻片語語境題
     for v in CORE_SEED_VOCAB:
         qid = f"core_q_{v['word'].replace(' ', '_')}"
-        if not any(q["id"] == qid for q in clean_pool) and v["word"].lower() in v["example"].lower():
+        if qid not in existing_ids and v["word"].lower() in v["example"].lower():
             masked = re.sub(re.escape(v["word"]), "________", v["example"], count=1, flags=re.IGNORECASE)
             distractors = random.sample([x["word"] for x in CORE_SEED_VOCAB if x["word"] != v["word"]], 3)
             opts = distractors + [v["word"]]
@@ -902,42 +734,78 @@ def update_ielts_quiz_bank(vocab_list):
                 "answer": v["word"],
                 "explanation": f"正確答案為「{v['word']}」({v['zh']})。高分搭配：{v['collocations']}。"
             })
+            existing_ids.add(qid)
 
+    # 2. 每日從高頻詞庫抽樣 15 個單字向 Free Dictionary API 抓取真實母語例句出題
+    high_freq_candidates = [v for v in vocab_list if v.get("freq") and v["word"].isalpha() and len(v["word"]) >= 7]
+    random.shuffle(high_freq_candidates)
+    adv_word_names = [v["word"] for v in high_freq_candidates[:300]]
+
+    dict_added = 0
+    for v in high_freq_candidates[:25]:
+        if dict_added >= 12:
+            break
+        qid = f"dict_q_{v['word'].lower()}"
+        if qid in existing_ids:
+            continue
+        info = fetch_real_dictionary_example(v["word"])
+        if info and len(adv_word_names) >= 10:
+            masked = re.sub(rf"\b{re.escape(v['word'])}\b", "________", info["example"], count=1, flags=re.IGNORECASE)
+            distractors = random.sample([w for w in adv_word_names if w.lower() != v["word"].lower()], 3)
+            opts = distractors + [v["word"]]
+            random.shuffle(opts)
+            clean_pool.append({
+                "id": qid,
+                "tag": f"字典真實例句自動出題 · {v['source']}",
+                "question": f"請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"{masked}\"",
+                "options": opts,
+                "answer": v["word"],
+                "explanation": f"正確答案為「{v['word']}」({v['zh']})。\n英英釋義：{info['definition']}"
+            })
+            existing_ids.add(qid)
+            dict_added += 1
+
+    # 3. 從 5 大國際新聞與科普 RSS 自動抓取真實學術長句出題
     rss_urls = [
         "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
-        "https://feeds.npr.org/1001/rss.xml"
+        "https://feeds.bbci.co.uk/news/world/rss.xml",
+        "https://feeds.npr.org/1001/rss.xml",
+        "https://www.theguardian.com/science/rss",
+        "https://www.sciencedaily.com/rss/top/science.xml"
     ]
-    adv_words = [v["word"] for v in vocab_list if v.get("freq") and len(v["word"]) >= 8][:200]
+    today_str = datetime.utcnow().strftime("%Y-%m-%d")
     for rss in rss_urls:
         try:
             r = requests.get(rss, headers=HEADERS, timeout=10)
             root = ET.fromstring(r.text)
-            for item in root.findall(".//item")[:6]:
+            for item in root.findall(".//item")[:8]:
                 desc = re.sub(r"<[^>]+>", "", item.findtext("description") or "").strip()
-                tokens = re.findall(r"\b[a-z]{9,14}\b", desc)
-                if tokens and 60 <= len(desc) <= 260 and len(adv_words) >= 10:
+                desc = re.sub(r"\s+", " ", desc)
+                tokens = re.findall(r"\b[a-z]{8,14}\b", desc)
+                if tokens and 65 <= len(desc) <= 280 and len(adv_word_names) >= 10:
                     target_w = tokens[0]
-                    masked = re.sub(rf"\b{re.escape(target_w)}\b", "________", desc, count=1)
-                    qid = f"news_q_{target_w.lower()}"
-                    if not any(q["id"] == qid for q in clean_pool):
-                        distractors = random.sample([w for w in adv_words if w.lower() != target_w.lower()], 3)
+                    qid = f"news_q_{target_w.lower()}_{today_str}"
+                    if qid not in existing_ids:
+                        masked = re.sub(rf"\b{re.escape(target_w)}\b", "________", desc, count=1)
+                        distractors = random.sample([w for w in adv_word_names if w.lower() != target_w.lower()], 3)
                         opts = distractors + [target_w]
                         random.shuffle(opts)
                         clean_pool.append({
                             "id": qid,
-                            "tag": f"每日國際新聞真題語境 ({datetime.utcnow().strftime('%Y-%m-%d')})",
-                            "question": f"請選出最適合填入新聞語境空格的高階單字：\n\"{masked}\"",
+                            "tag": f"每日國際新聞/科普語境 ({today_str})",
+                            "question": f"請選出最適合填入國際報導語境空格的高階單字：\n\"{masked}\"",
                             "options": opts,
                             "answer": target_w,
-                            "explanation": f"原句出自國際新聞報導，正確單字為「{target_w}」。"
+                            "explanation": f"原句出自國際新聞/科普報導，正確單字為「{target_w}」。"
                         })
+                        existing_ids.add(qid)
         except Exception:
             continue
 
-    bank["quizPool"] = clean_pool[-100:]
+    bank["quizPool"] = clean_pool[-300:]
     with open(BANK_FILE, "w", encoding="utf-8") as f:
         json.dump(bank, f, ensure_ascii=False, indent=2)
-    print(f"✅ 已更新 {BANK_FILE}，有效題庫共 {len(bank['quizPool'])} 題。")
+    print(f"✅ 已更新 {BANK_FILE}，有效動態題庫已擴充至 {len(bank['quizPool'])} 題！")
 
 
 def update_pop_ielts_bank():
@@ -947,7 +815,7 @@ def update_pop_ielts_bank():
         merged[item["id"]] = item
     with open(POP_BANK_FILE, "w", encoding="utf-8") as f:
         json.dump(list(merged.values()), f, ensure_ascii=False, indent=2)
-    print(f"✅ 已同步更新 {POP_BANK_FILE}，新增擴充題庫共 {len(merged)} 組！")
+    print(f"✅ 已同步更新 {POP_BANK_FILE}，目前收錄 {len(merged)} 組美劇與歌手三合一題庫！")
 
 
 if __name__ == "__main__":
