@@ -198,6 +198,162 @@
       ],
       "answer": "substantiate",
       "explanation": "正確答案為「substantiate」：證實、提供證據支持"
+    },
+    {
+      "id": "web_ielts_202611_1",
+      "tag": "網路雅思官方題型精選",
+      "question": "Based on official IELTS exam guidelines:\n\"Why choose IELTS? Back to Why choose IELTS?Why choose IELTS? What can IELTS do for you Ways to take IELTS Who accepts IELTS?\"\nWhich skill area does this format requirement belong to?",
+      "options": [
+        "IELTS Academic & General Module Format",
+        "Casual Slang Translation Only",
+        "Handwriting Calligraphy Assessment",
+        "Programming Syntax Evaluation"
+      ],
+      "answer": "IELTS Academic & General Module Format",
+      "explanation": "摘自公開雅思官方備考指南：Why choose IELTS? Back to Why choose IELTS?Why choose IELTS? What can IELTS do for you Ways to take IELTS Who accepts IELTS?"
+    },
+    {
+      "id": "web_ielts_202611_2",
+      "tag": "網路雅思官方題型精選",
+      "question": "Based on official IELTS exam guidelines:\n\"Test types Back to Test typesTest types IELTS Academic IELTS General Training IELTS for UKVI\"\nWhich skill area does this format requirement belong to?",
+      "options": [
+        "IELTS Academic & General Module Format",
+        "Casual Slang Translation Only",
+        "Handwriting Calligraphy Assessment",
+        "Programming Syntax Evaluation"
+      ],
+      "answer": "IELTS Academic & General Module Format",
+      "explanation": "摘自公開雅思官方備考指南：Test types Back to Test typesTest types IELTS Academic IELTS General Training IELTS for UKVI"
+    },
+    {
+      "id": "web_ielts_202611_3",
+      "tag": "網路雅思官方題型精選",
+      "question": "Based on official IELTS exam guidelines:\n\"Preparation resources Back to Preparation resourcesPreparation resources IELTS sample test ques... IELTS Trial Test Trust IELTS What to expect on IELT...\"\nWhich skill area does this format requirement belong to?",
+      "options": [
+        "IELTS Academic & General Module Format",
+        "Casual Slang Translation Only",
+        "Handwriting Calligraphy Assessment",
+        "Programming Syntax Evaluation"
+      ],
+      "answer": "IELTS Academic & General Module Format",
+      "explanation": "摘自公開雅思官方備考指南：Preparation resources Back to Preparation resourcesPreparation resources IELTS sample test ques... IELTS Trial Test Trust IELTS What to expect on IELT..."
+    },
+    {
+      "id": "web_ielts_202611_4",
+      "tag": "網路雅思官方題型精選",
+      "question": "Based on official IELTS exam guidelines:\n\"Booking your test Back to Booking your testBooking your test Test centres IELTS One Skill Retake Cancellations, refunds... Access arrangements\"\nWhich skill area does this format requirement belong to?",
+      "options": [
+        "IELTS Academic & General Module Format",
+        "Casual Slang Translation Only",
+        "Handwriting Calligraphy Assessment",
+        "Programming Syntax Evaluation"
+      ],
+      "answer": "IELTS Academic & General Module Format",
+      "explanation": "摘自公開雅思官方備考指南：Booking your test Back to Booking your testBooking your test Test centres IELTS One Skill Retake Cancellations, refunds... Access arrangements"
+    },
+    {
+      "id": "web_ielts_202611_5",
+      "tag": "網路雅思官方題型精選",
+      "question": "Based on official IELTS exam guidelines:\n\"Your IELTS results Back to Your IELTS resultsYour IELTS results IELTS scoring in detail Fast IELTS results Improving your results\"\nWhich skill area does this format requirement belong to?",
+      "options": [
+        "IELTS Academic & General Module Format",
+        "Casual Slang Translation Only",
+        "Handwriting Calligraphy Assessment",
+        "Programming Syntax Evaluation"
+      ],
+      "answer": "IELTS Academic & General Module Format",
+      "explanation": "摘自公開雅思官方備考指南：Your IELTS results Back to Your IELTS resultsYour IELTS results IELTS scoring in detail Fast IELTS results Improving your results"
+    },
+    {
+      "id": "web_ielts_202611_6",
+      "tag": "網路雅思官方題型精選",
+      "question": "Based on official IELTS exam guidelines:\n\"IELTS for organisations Back to IELTS for organisationsIELTS for organisations Why accept IELTS? Sign up to accept IELTS Who accepts IELTS? Test types Writing on Paper IELTS One Skill Retake IELTS scoring Compare IELTS IELTS for your sector Verifying IELTS results\"\nWhich skill area does this format requirement belong to?",
+      "options": [
+        "IELTS Academic & General Module Format",
+        "Casual Slang Translation Only",
+        "Handwriting Calligraphy Assessment",
+        "Programming Syntax Evaluation"
+      ],
+      "answer": "IELTS Academic & General Module Format",
+      "explanation": "摘自公開雅思官方備考指南：IELTS for organisations Back to IELTS for organisationsIELTS for organisations Why accept IELTS? Sign up to accept IELTS Who accepts IELTS? Test types Writing on Paper IELTS One Skill Retake IELTS scoring Compare IELTS IELTS for your sector Verifying IELTS results"
+    },
+    {
+      "id": "news_q_disruptions",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Entire neighbourhoods remain under water as ________ impact schools, roads, hospitals and airports.\"",
+      "options": [
+        "unprecedented",
+        "scrutinize",
+        "detrimental",
+        "disruptions"
+      ],
+      "answer": "disruptions",
+      "explanation": "原句出自國際新聞語料，正確單字為「disruptions」。"
+    },
+    {
+      "id": "news_q_environmental",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The Office for Environmental Protection said Daera had not complied with ________ law requiring it to classify and update Special Protection Areas.\"",
+      "options": [
+        "environmental",
+        "scrutinize",
+        "ubiquitous",
+        "detrimental"
+      ],
+      "answer": "environmental",
+      "explanation": "原句出自國際新聞語料，正確單字為「environmental」。"
+    },
+    {
+      "id": "news_q_journalists",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Enter for a chance to go behind the scenes at HQ, meet our ________ face-to-face and experience public media like never before.\"",
+      "options": [
+        "detrimental",
+        "journalists",
+        "proliferate",
+        "feasible"
+      ],
+      "answer": "journalists",
+      "explanation": "原句出自國際新聞語料，正確單字為「journalists」。"
+    },
+    {
+      "id": "news_q_artificial",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The five-year-old ________ intelligence powerhouse priced its initial public offering at $83 a share, shrugging off growing concern about a possible AI bubble and volatility in tech stocks.\"",
+      "options": [
+        "unprecedented",
+        "mitigate",
+        "artificial",
+        "scrutinize"
+      ],
+      "answer": "artificial",
+      "explanation": "原句出自國際新聞語料，正確單字為「artificial」。"
+    },
+    {
+      "id": "news_q_connected",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"It's been a year since the House passed the Epstein Files Transparency Act, forcing the Justice Department to release millions of files ________ to the convicted sex offender. His victims speak out.\"",
+      "options": [
+        "exacerbate",
+        "ubiquitous",
+        "connected",
+        "feasible"
+      ],
+      "answer": "connected",
+      "explanation": "原句出自國際新聞語料，正確單字為「connected」。"
+    },
+    {
+      "id": "news_q_investigate",
+      "tag": "每日國際新聞真題語境 (2026-11-19)",
+      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Democrats gave the official nod to Hakeem Jeffries to be the next speaker of the House. Meanwhile, Democrats are ramping up their plans to ________ the Trump administration come January.\"",
+      "options": [
+        "investigate",
+        "mitigate",
+        "exacerbate",
+        "unprecedented"
+      ],
+      "answer": "investigate",
+      "explanation": "原句出自國際新聞語料，正確單字為「investigate」。"
     }
   ]
 }
