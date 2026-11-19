@@ -1,9 +1,9 @@
-name: Daily Update IELTS Vocab & Quiz Bank
+name: Daily Update 10K IELTS Vocab & Quiz Bank
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 00:00 (台灣時間 08:00) 自動更新詞庫與題庫
-  workflow_dispatch:     # 支援在 GitHub 網頁手動一鍵觸發更新
+    - cron: '0 0 * * *'  # 每天自動執行爬蟲更新
+  workflow_dispatch:     # 支援在 GitHub Actions 網頁手動一鍵執行
 
 permissions:
   contents: write
@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run English DB updater
+      - name: Run 10K Vocab & IELTS Scraper
         run: python update_english_db.py
 
       - name: Commit and push updated JSON files
@@ -31,4 +31,4 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add vocab.json ielts_bank.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: daily auto-update IELTS vocab & quiz bank" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update 10k IELTS & TV vocab database" && git push)
