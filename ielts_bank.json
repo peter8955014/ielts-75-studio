@@ -822,6 +822,513 @@
       ],
       "answer": "somewhere",
       "explanation": "原句出自國際新聞/科普報導，正確單字為「somewhere」。"
+    },
+    {
+      "id": "dict_q_breakthrough",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Albert Einstein is credited with making some of the greatest breakthroughs in modern physics.\"",
+      "options": [
+        "sacrifices",
+        "breakthrough",
+        "arriving",
+        "overboard"
+      ],
+      "answer": "breakthrough",
+      "explanation": "正確答案為「breakthrough」(n. 突破；[经] 突破, 新发现, 新进展)。\n英英釋義：Any major progress; such as a great innovation or discovery that overcomes a significant obstacle."
+    },
+    {
+      "id": "dict_q_intensify",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"to ________ a photographic negative\"",
+      "options": [
+        "husbands",
+        "intensify",
+        "quarterly",
+        "handing"
+      ],
+      "answer": "intensify",
+      "explanation": "正確答案為「intensify」(vt. 加强；vi. 强化)。\n英英釋義：To render more intense"
+    },
+    {
+      "id": "dict_q_properties",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Matter can have many ________, including color, mass and density.\"",
+      "options": [
+        "ignored",
+        "properties",
+        "crumble",
+        "fragrance"
+      ],
+      "answer": "properties",
+      "explanation": "正確答案為「properties」(n. 性能；道具, 内容（property的复数形式）)。\n英英釋義：An attribute or abstract quality which is characteristic of a class of objects."
+    },
+    {
+      "id": "dict_q_lateral",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Instead of a promotion, I opted for a ________ move to a similar position in the marketing department.\"",
+      "options": [
+        "murdering",
+        "lateral",
+        "traveled",
+        "synthetic"
+      ],
+      "answer": "lateral",
+      "explanation": "正確答案為「lateral」(n. 侧部, 支线, 边音；a. 侧面的, 旁边的)。\n英英釋義：To the side; of or pertaining to the side."
+    },
+    {
+      "id": "dict_q_drowned",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The answers intelligence services seek are often ________ in the flood of information they can now gather.\"",
+      "options": [
+        "allegiance",
+        "constrain",
+        "drowned",
+        "addiction"
+      ],
+      "answer": "drowned",
+      "explanation": "正確答案為「drowned」(v. （使）淹没, （使）溺死( drown的过去式和过去分词 ); 浸透; 浸泡; 压过)。\n英英釋義：(usually passive) To obscure, particularly amid an overwhelming volume of other items."
+    },
+    {
+      "id": "dict_q_sediment",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The Nile delta is composed of ________ that was washed down and deposited at the mouth of the river.\"",
+      "options": [
+        "convenience",
+        "sediment",
+        "addison",
+        "robbers"
+      ],
+      "answer": "sediment",
+      "explanation": "正確答案為「sediment」(n. 沉淀物, 沉积；[化] 沉降物; 沉积物)。\n英英釋義：A collection of small particles, particularly dirt, that precipitates from a river or other body of water."
+    },
+    {
+      "id": "dict_q_periphery",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The suburbs are a city's ________.\"",
+      "options": [
+        "periphery",
+        "despair",
+        "enlighten",
+        "override"
+      ],
+      "answer": "periphery",
+      "explanation": "正確答案為「periphery」(n. 外围, 边缘地区, 圆周；[医] 外周, 周围)。\n英英釋義：The outside boundary, parts or surface of something."
+    },
+    {
+      "id": "dict_q_harmful",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Wear a hat to protect your skin from ________ sunlight.\"",
+      "options": [
+        "precipitate",
+        "arbitrary",
+        "harmful",
+        "maneuver"
+      ],
+      "answer": "harmful",
+      "explanation": "正確答案為「harmful」(a. 有害的, 伤害的)。\n英英釋義：Of a kind likely to be damaging; injurious"
+    },
+    {
+      "id": "dict_q_glacier",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"They warned that the effects of ________ melting on water resources are becoming “increasingly serious” for China.\"",
+      "options": [
+        "municipal",
+        "schmidt",
+        "glacier",
+        "territorial"
+      ],
+      "answer": "glacier",
+      "explanation": "正確答案為「glacier」(n. 冰川)。\n英英釋義：A large body of ice which flows under its own mass, usually downhill."
+    },
+    {
+      "id": "dict_q_reaches",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"When the forest ________ the river, you will be able to rest.\"",
+      "options": [
+        "torturing",
+        "observatory",
+        "reaches",
+        "collide"
+      ],
+      "answer": "reaches",
+      "explanation": "正確答案為「reaches」(n. 河段；流域；（上、中或下）游; （外）围；（远）处; （组织或机构中的）层级)。\n英英釋義：To extend to; to stretch out as far as; to touch by virtue of extent."
+    },
+    {
+      "id": "dict_q_flipped",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Wisconsin had been Democratic for decades, but the Republicans ________ it in 2016.\"",
+      "options": [
+        "tedious",
+        "flipped",
+        "synthetic",
+        "signals"
+      ],
+      "answer": "flipped",
+      "explanation": "正確答案為「flipped」(v. 轻弹( flip的过去式和过去分词 ); 按（开关）; 快速翻转; 急挥)。\n英英釋義：To win a state (or county) won by another party in the preceding elections"
+    },
+    {
+      "id": "dict_q_felicity",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The quotation was rendered with ________.\"",
+      "options": [
+        "avalanche",
+        "spilled",
+        "felicity",
+        "properties"
+      ],
+      "answer": "felicity",
+      "explanation": "正確答案為「felicity」(n. 快乐, 幸福, 幸运)。\n英英釋義：(semiology) Reproduction of a sign with fidelity."
+    },
+    {
+      "id": "dict_q_disgust",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"With an air of ________, she stormed out of the room.\"",
+      "options": [
+        "ticking",
+        "traveled",
+        "aboriginal",
+        "disgust"
+      ],
+      "answer": "disgust",
+      "explanation": "正確答案為「disgust」(n. 厌恶, 嫌恶；vi. 令人厌恶；vt. 使作呕)。\n英英釋義：An intense dislike or loathing someone feels for something bad or nasty."
+    },
+    {
+      "id": "dict_q_complement",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The ________ of the odd numbers is the even numbers, relative to the natural numbers.\"",
+      "options": [
+        "winston",
+        "ubiquitous",
+        "complement",
+        "excuses"
+      ],
+      "answer": "complement",
+      "explanation": "正確答案為「complement」(n. 补足物, 补语, 补数；vt. 补充, 补足；[计] 补码; 反相器; 补数)。\n英英釋義：Given two sets, the set containing one set's elements that are not members of the other set (whether a relative complement or an absolute complement)."
+    },
+    {
+      "id": "news_q_countries_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"African ________ at the UN climate summit in Turkey are demanding more funding from developed nations to help them cope with climate change.\"",
+      "options": [
+        "congratulate",
+        "biography",
+        "ignored",
+        "countries"
+      ],
+      "answer": "countries",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「countries」。"
+    },
+    {
+      "id": "news_q_astonished_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A bird has ________ conservationists by completing a 6,800-mile round trip to Siberia and back.\"",
+      "options": [
+        "flipped",
+        "astonished",
+        "overflow",
+        "worthless"
+      ],
+      "answer": "astonished",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「astonished」。"
+    },
+    {
+      "id": "news_q_relocation_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Survivors reject ________ plans they say ignore their safety, land rights and livelihoods.\"",
+      "options": [
+        "worthless",
+        "relocation",
+        "smoking",
+        "underestimate"
+      ],
+      "answer": "relocation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「relocation」。"
+    },
+    {
+      "id": "news_q_founders_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The AI company behind Claude is about to sell its shares on the US stock market - making its ________ very rich.\"",
+      "options": [
+        "stressed",
+        "childish",
+        "fugitive",
+        "founders"
+      ],
+      "answer": "founders",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「founders」。"
+    },
+    {
+      "id": "news_q_neighbourhoods_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Entire ________ remain under water as disruptions impact schools, roads, hospitals and airports.\"",
+      "options": [
+        "neighbourhoods",
+        "aboriginal",
+        "undergraduate",
+        "directors"
+      ],
+      "answer": "neighbourhoods",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「neighbourhoods」。"
+    },
+    {
+      "id": "news_q_complied_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Office for Environmental Protection said Daera had not ________ with environmental law requiring it to classify and update Special Protection Areas.\"",
+      "options": [
+        "trembling",
+        "constrain",
+        "complied",
+        "carrots"
+      ],
+      "answer": "complied",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「complied」。"
+    },
+    {
+      "id": "news_q_installing_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"People ________ their own solar panels has helped boost the solar share of Pakistan's electricity from 1% to 28%.\"",
+      "options": [
+        "installing",
+        "periphery",
+        "overhaul",
+        "signals"
+      ],
+      "answer": "installing",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「installing」。"
+    },
+    {
+      "id": "news_q_expected_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The scheme is ________ to be approved at Friday's UK-EU summit, with new deals on food trade and carbon emissions also on the table.\"",
+      "options": [
+        "compartment",
+        "crumble",
+        "imitating",
+        "expected"
+      ],
+      "answer": "expected",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「expected」。"
+    },
+    {
+      "id": "news_q_publicly_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Anthropic is the first purely AI company to be ________ listed, creating a test for the entire industry.\"",
+      "options": [
+        "destroying",
+        "imminent",
+        "winners",
+        "publicly"
+      ],
+      "answer": "publicly",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「publicly」。"
+    },
+    {
+      "id": "news_q_unprecedented_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The ________ International Court of Justice verdict concerns a 2017 military crackdown that killed thousands.\"",
+      "options": [
+        "drowned",
+        "bluffing",
+        "brennan",
+        "unprecedented"
+      ],
+      "answer": "unprecedented",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「unprecedented」。"
+    },
+    {
+      "id": "news_q_negotiating_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"European allies of Ukraine say they have a \"united\" ________ position at a summit in Berlin.\"",
+      "options": [
+        "settling",
+        "singular",
+        "biography",
+        "negotiating"
+      ],
+      "answer": "negotiating",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「negotiating」。"
+    },
+    {
+      "id": "news_q_presidents_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"While the ________ have previously met for one-on-one meetings, this is their first trilateral discussion.\"",
+      "options": [
+        "presidents",
+        "precipitate",
+        "textile",
+        "clarify"
+      ],
+      "answer": "presidents",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「presidents」。"
+    },
+    {
+      "id": "news_q_chipmaker_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The probe by California, where the AI ________ has its global headquarters, follows former CEO Jensen Huang's departure.\"",
+      "options": [
+        "husbands",
+        "chipmaker",
+        "panties",
+        "receiving"
+      ],
+      "answer": "chipmaker",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「chipmaker」。"
+    },
+    {
+      "id": "news_q_internet_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Fiona, who became an ________ star after her premature birth in 2017, \"fought until she couldn’t anymore\", the zoo says.\"",
+      "options": [
+        "zombies",
+        "martial",
+        "shipped",
+        "internet"
+      ],
+      "answer": "internet",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「internet」。"
+    },
+    {
+      "id": "news_q_reckless_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The $75,000 reward offered by Chen Jie's family has sparked fears of more ________ climbing attempts.\"",
+      "options": [
+        "compile",
+        "reckless",
+        "directions",
+        "professionals"
+      ],
+      "answer": "reckless",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「reckless」。"
+    },
+    {
+      "id": "news_q_possessing_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Markle, who has denied ________ images of child sex abuse was deemed competent after an evaluation by a court-appointed psychiatrist.\"",
+      "options": [
+        "possessing",
+        "reaching",
+        "territorial",
+        "coconut"
+      ],
+      "answer": "possessing",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「possessing」。"
+    },
+    {
+      "id": "news_q_construction_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A federal judge has twice delayed ________ of Trump's arch. Another is keeping East Potomac Park open. The proposed golf course redesign got mixed feedback from a federal arts panel on Thursday.\"",
+      "options": [
+        "sniffles",
+        "ceramic",
+        "augment",
+        "construction"
+      ],
+      "answer": "construction",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「construction」。"
+    },
+    {
+      "id": "news_q_maintain_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"How do we ________ healthy romantic relationships as we age? Allison Aubrey and Scott Detrow talk about about the science of healthy, later-in-life relationships.\"",
+      "options": [
+        "quarterly",
+        "maintain",
+        "allegiance",
+        "reaches"
+      ],
+      "answer": "maintain",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「maintain」。"
+    },
+    {
+      "id": "news_q_historic_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Scott Colom is now this Southern state's first Black U.S. senator in nearly 150 years. Scholars and Mississippi natives Eddie Glaude and Kiese Laymon discuss the ________ significance of his victory.\"",
+      "options": [
+        "eloquent",
+        "historic",
+        "hallelujah",
+        "snapped"
+      ],
+      "answer": "historic",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「historic」。"
+    },
+    {
+      "id": "news_q_compared_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Some 56% of people cast votes for Democrats in House races, ________ to 42% who voted Republican. That 14-point spread is the widest win for either party in 50 years, since after Watergate.\"",
+      "options": [
+        "compared",
+        "salvation",
+        "projector",
+        "sentenced"
+      ],
+      "answer": "compared",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「compared」。"
+    },
+    {
+      "id": "news_q_security_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The International Court of Justice found that Myanmar ________ forces \"acted with genocidal intent\" against the Rohingya during military operations in the northern Rakhine state in 2017.\"",
+      "options": [
+        "security",
+        "locality",
+        "instincts",
+        "handcuffs"
+      ],
+      "answer": "security",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「security」。"
+    },
+    {
+      "id": "news_q_anniversary_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Yahoo for the loo! November 19 marks the 25th ________ of World Toilet Day. The theme this year: \"Sanitation and Gender Equality: Safe Toilets, Equal Futures.\"\"",
+      "options": [
+        "sluggish",
+        "anniversary",
+        "kindness",
+        "humiliating"
+      ],
+      "answer": "anniversary",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「anniversary」。"
+    },
+    {
+      "id": "news_q_possible_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Despite growing concern over a ________ AI bubble, Anthropic had a record-breaking initial public offering. And, Hakeem Jeffries could become the first Black Speaker of the House.\"",
+      "options": [
+        "complement",
+        "possible",
+        "deceased",
+        "underestimate"
+      ],
+      "answer": "possible",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「possible」。"
+    },
+    {
+      "id": "news_q_incoming_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"As Democrats prepare to take control of the House, ________ majority leader Katherine Clark discusses the party's ambitious agenda and divisions within its ranks.\"",
+      "options": [
+        "stephanie",
+        "incoming",
+        "gracious",
+        "humiliating"
+      ],
+      "answer": "incoming",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「incoming」。"
+    },
+    {
+      "id": "news_q_concerns_2026-11-20",
+      "tag": "每日國際新聞/科普語境 (2026-11-20)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Rep. Gregory Meeks raises ________ about U.S. alliances after Trump's summit with Xi and Putin. He also discusses Chinese espionage amid the Nvidia scandal.\"",
+      "options": [
+        "signals",
+        "aspirin",
+        "concerns",
+        "translated"
+      ],
+      "answer": "concerns",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「concerns」。"
     }
   ]
 }
