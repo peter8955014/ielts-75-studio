@@ -1329,6 +1329,513 @@
       ],
       "answer": "concerns",
       "explanation": "原句出自國際新聞/科普報導，正確單字為「concerns」。"
+    },
+    {
+      "id": "dict_q_necessitate",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The early departure of her plane necessitated her waking up at 4 a.m.\"",
+      "options": [
+        "playground",
+        "necessitate",
+        "editorial",
+        "deliberate"
+      ],
+      "answer": "necessitate",
+      "explanation": "正確答案為「necessitate」(vt. 迫使, 使成为必需, 需要)。\n英英釋義：To make necessary; to require (something) to be brought about."
+    },
+    {
+      "id": "dict_q_puppies",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"I have another two dozen of these ________ to finish before I can go home.\"",
+      "options": [
+        "incoming",
+        "youngest",
+        "seasoned",
+        "puppies"
+      ],
+      "answer": "puppies",
+      "explanation": "正確答案為「puppies」(n. 小狗（puppy的复数）)。\n英英釋義：A (generic) thing; particularly something that is a nuisance; a sucker."
+    },
+    {
+      "id": "dict_q_imperative",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The verbs in sentences like \"Do it!\" and \"Say what you like!\" are in the ________.\"",
+      "options": [
+        "imperative",
+        "butcher",
+        "unpleasant",
+        "filming"
+      ],
+      "answer": "imperative",
+      "explanation": "正確答案為「imperative」(n. 命令, 必要的事, 规则, 祈使语气；a. 命令式的, 急需的, 势在必行的, 强制的)。\n英英釋義：(grammar) The grammatical mood expressing an order (see jussive). In English, the imperative form of a verb is the same as that of the bare infinitive."
+    },
+    {
+      "id": "dict_q_altitude",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"As the ________ increases, the temperature gets lower, so remember to bring warm clothes to the mountains.\"",
+      "options": [
+        "informant",
+        "apprentice",
+        "altitude",
+        "respects"
+      ],
+      "answer": "altitude",
+      "explanation": "正確答案為「altitude」(n. 高度, 海拔, 高处；[电] 高度)。\n英英釋義：The absolute height of a location, usually measured from sea level."
+    },
+    {
+      "id": "dict_q_retrieve",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"to ________ one's character or independence; to retrieve a thrown ball\"",
+      "options": [
+        "massacre",
+        "retrieve",
+        "elected",
+        "quicker"
+      ],
+      "answer": "retrieve",
+      "explanation": "正確答案為「retrieve」(vt. 取回, 挽回, 弥补, 恢复, 补偿, 回忆, 检索；vi. 找回猎物；n. 取回, 恢复, 救险球；[计] 检索)。\n英英釋義：To regain or get back something."
+    },
+    {
+      "id": "dict_q_approved",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Employees' ________ expense claims will be reimbursed by the 4th of the following month.\"",
+      "options": [
+        "elevate",
+        "offices",
+        "approved",
+        "inference"
+      ],
+      "answer": "approved",
+      "explanation": "正確答案為「approved」(a. 被认可的；经过检验的)。\n英英釋義：Having received approval."
+    },
+    {
+      "id": "dict_q_respects",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The mourners paid their last ________ to the deceased poet.\"",
+      "options": [
+        "replaced",
+        "submarine",
+        "respects",
+        "visions"
+      ],
+      "answer": "respects",
+      "explanation": "正確答案為「respects」(n. 敬意, 问候)。\n英英釋義：(always plural) Polite greetings, often offered as condolences after a death."
+    },
+    {
+      "id": "dict_q_applaud",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"After the performance, the audience applauded for five minutes.\"",
+      "options": [
+        "pointing",
+        "applaud",
+        "admired",
+        "manuscript"
+      ],
+      "answer": "applaud",
+      "explanation": "正確答案為「applaud」(v. 拍手喝彩, 称赞, 赞同)。\n英英釋義：To express approval (of something) by clapping the hands."
+    },
+    {
+      "id": "dict_q_respected",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"He was a ________ jurist and his death will be a loss to the profession.\"",
+      "options": [
+        "beatrice",
+        "jackass",
+        "restless",
+        "respected"
+      ],
+      "answer": "respected",
+      "explanation": "正確答案為「respected」(a. 受尊敬的)。\n英英釋義：Deserving of respect; due special honor or appreciation."
+    },
+    {
+      "id": "dict_q_tracked",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"A tank is a ________ vehicle used in the military.\"",
+      "options": [
+        "inference",
+        "barracks",
+        "puppies",
+        "tracked"
+      ],
+      "answer": "tracked",
+      "explanation": "正確答案為「tracked」(a. 有履带的)。\n英英釋義：Mounted on tracks."
+    },
+    {
+      "id": "dict_q_barbecue",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"We cooked our food on the ________.\"",
+      "options": [
+        "represented",
+        "cucumber",
+        "broadway",
+        "barbecue"
+      ],
+      "answer": "barbecue",
+      "explanation": "正確答案為「barbecue」(n. 烤肉；vt. 烤肉, 烧烤)。\n英英釋義：A fireplace or pit for grilling food, typically used outdoors and traditionally employing hot charcoal as the heating medium."
+    },
+    {
+      "id": "dict_q_insulate",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Ceramic can be used to ________ power lines.\"",
+      "options": [
+        "thrilled",
+        "depress",
+        "elastic",
+        "insulate"
+      ],
+      "answer": "insulate",
+      "explanation": "正確答案為「insulate」(vt. 使绝缘, 隔离；[医] 绝缘)。\n英英釋義：To separate a body or material from others, e.g. by non-conductors to prevent the transfer of electricity, heat, etc."
+    },
+    {
+      "id": "news_q_scrutiny_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Hundreds of young birds were also rescued from the fire, which comes as foie gras is under renewed ________ over animal welfare concerns.\"",
+      "options": [
+        "guarding",
+        "scrutiny",
+        "nutrition",
+        "relaxation"
+      ],
+      "answer": "scrutiny",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「scrutiny」。"
+    },
+    {
+      "id": "news_q_government_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The ________ wants more homes to have heat pumps to cut fossil fuel use and drive down energy bills.\"",
+      "options": [
+        "government",
+        "listens",
+        "shepherd",
+        "bruises"
+      ],
+      "answer": "government",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「government」。"
+    },
+    {
+      "id": "news_q_countries_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"African ________ at the UN climate summit in Turkey are demanding more funding from developed nations to help them cope with climate change.\"",
+      "options": [
+        "nostalgia",
+        "butcher",
+        "countries",
+        "existed"
+      ],
+      "answer": "countries",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「countries」。"
+    },
+    {
+      "id": "news_q_astonished_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A bird has ________ conservationists by completing a 6,800-mile round trip to Siberia and back.\"",
+      "options": [
+        "adopted",
+        "astonished",
+        "filming",
+        "flowing"
+      ],
+      "answer": "astonished",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「astonished」。"
+    },
+    {
+      "id": "news_q_relocation_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Survivors reject ________ plans they say ignore their safety, land rights and livelihoods.\"",
+      "options": [
+        "relocation",
+        "confidential",
+        "unanimous",
+        "beatrice"
+      ],
+      "answer": "relocation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「relocation」。"
+    },
+    {
+      "id": "news_q_founders_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The AI company behind Claude is about to sell its shares on the US stock market - making its ________ very rich.\"",
+      "options": [
+        "founders",
+        "marital",
+        "contingency",
+        "turmoil"
+      ],
+      "answer": "founders",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「founders」。"
+    },
+    {
+      "id": "news_q_neighbourhoods_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Entire ________ remain under water as disruptions impact schools, roads, hospitals and airports.\"",
+      "options": [
+        "neighbourhoods",
+        "excuses",
+        "investigated",
+        "screech"
+      ],
+      "answer": "neighbourhoods",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「neighbourhoods」。"
+    },
+    {
+      "id": "news_q_complied_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Office for Environmental Protection said Daera had not ________ with environmental law requiring it to classify and update Special Protection Areas.\"",
+      "options": [
+        "complied",
+        "prescribe",
+        "salesman",
+        "twitter"
+      ],
+      "answer": "complied",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「complied」。"
+    },
+    {
+      "id": "news_q_correction_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Pressures weighed on US markets, with the S&P 500 and the Dow Jones Industrial Average pushed into ________ territory.\"",
+      "options": [
+        "destiny",
+        "snoring",
+        "correction",
+        "marijuana"
+      ],
+      "answer": "correction",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「correction」。"
+    },
+    {
+      "id": "news_q_emissions_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The UK-EU deal agreed on Friday covers British food exports, ________ trading and a youth experience scheme.\"",
+      "options": [
+        "offices",
+        "clarence",
+        "requesting",
+        "emissions"
+      ],
+      "answer": "emissions",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「emissions」。"
+    },
+    {
+      "id": "news_q_producer_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The court has upheld the 2020 beating of the black music ________ as an aggravated circumstance of racism.\"",
+      "options": [
+        "exhaust",
+        "addiction",
+        "transcript",
+        "producer"
+      ],
+      "answer": "producer",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「producer」。"
+    },
+    {
+      "id": "news_q_resident_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The 30-year-old LA ________ was convicted of arson leading to wildfires that killed 12 people and destroyed more than 6,800 buildings.\"",
+      "options": [
+        "resident",
+        "discriminate",
+        "shipping",
+        "particles"
+      ],
+      "answer": "resident",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「resident」。"
+    },
+    {
+      "id": "news_q_comments_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Trump's ________ came as Russia launched \"biggest attacks this year\" against Ukraine.\"",
+      "options": [
+        "comments",
+        "thrilled",
+        "tactical",
+        "flowing"
+      ],
+      "answer": "comments",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「comments」。"
+    },
+    {
+      "id": "news_q_mathematician_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A ________ at Anthropic says he used an AI to prove the famed Riemann hypothesis, though verification will take some time.\"",
+      "options": [
+        "camping",
+        "petroleum",
+        "mathematician",
+        "smashing"
+      ],
+      "answer": "mathematician",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「mathematician」。"
+    },
+    {
+      "id": "news_q_judicial_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A ________ investigation was launched after a complaint was filed last year over \"allegations of a sexual nature\".\"",
+      "options": [
+        "superficial",
+        "judicial",
+        "pickles",
+        "technician"
+      ],
+      "answer": "judicial",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「judicial」。"
+    },
+    {
+      "id": "news_q_troubled_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Plans to shutter the ________ facility date back to 2019, when the city council first voted to close it but delays arose over where to place inmates.\"",
+      "options": [
+        "barracks",
+        "epidemic",
+        "murmuring",
+        "troubled"
+      ],
+      "answer": "troubled",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「troubled」。"
+    },
+    {
+      "id": "news_q_allegation_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Russian embassy in Denmark has denied the ________, which has led to Russia's defence attaché being expelled.\"",
+      "options": [
+        "allowing",
+        "destiny",
+        "discern",
+        "allegation"
+      ],
+      "answer": "allegation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「allegation」。"
+    },
+    {
+      "id": "news_q_president_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The US ________ provided little detail on the potential policy, saying others in his team were hearing about it for the first time.\"",
+      "options": [
+        "dickhead",
+        "president",
+        "designate",
+        "elections"
+      ],
+      "answer": "president",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「president」。"
+    },
+    {
+      "id": "news_q_direction_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"AI stocks have hefty market values and have a much bigger impact on the market's ________. They were responsible for Wall Street's big gains this year and are now behind the big slide for the market.\"",
+      "options": [
+        "flowing",
+        "frustrated",
+        "behaving",
+        "direction"
+      ],
+      "answer": "direction",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「direction」。"
+    },
+    {
+      "id": "news_q_conference_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"President Trump gave a wide-ranging press ________ following his historic trip to Asia where he met with Chinese President Xi and Russian President Putin.\"",
+      "options": [
+        "coaches",
+        "elastic",
+        "massacre",
+        "conference"
+      ],
+      "answer": "conference",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「conference」。"
+    },
+    {
+      "id": "news_q_tsunamis_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Quinault Indian Nation has moved its largest village away from rising seas and ________\"",
+      "options": [
+        "salesman",
+        "tsunamis",
+        "turbulent",
+        "approximate"
+      ],
+      "answer": "tsunamis",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「tsunamis」。"
+    },
+    {
+      "id": "news_q_hazardous_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The giant steel plant in Middletown, Ohio planned to switch away from using coke, a refined form of coal. The switch would have cut ________ air pollution -- and greenhouse gas emissions. But that plan has changed under President Trump\"",
+      "options": [
+        "porcelain",
+        "jasmine",
+        "haircut",
+        "hazardous"
+      ],
+      "answer": "hazardous",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「hazardous」。"
+    },
+    {
+      "id": "news_q_handwritten_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The only known ________ draft of The Reverend Martin Luther King Jr.'s 'I Have a Dream' speech is on display in his hometown. The iconic phrase, however, never made it on the page.\"",
+      "options": [
+        "territorial",
+        "protrude",
+        "neutralize",
+        "handwritten"
+      ],
+      "answer": "handwritten",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「handwritten」。"
+    },
+    {
+      "id": "news_q_preliminary_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A federal judge in Virginia said she will issue a ________ injunction against Trump's arch, going a step further than the D.C. federal judge who temporarily blocked construction earlier this week.\"",
+      "options": [
+        "frustrated",
+        "preliminary",
+        "printing",
+        "refuses"
+      ],
+      "answer": "preliminary",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「preliminary」。"
+    },
+    {
+      "id": "news_q_nationwide_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Less than half of Republicans ________ considered the midterm elections \"free and fair,\" according to new polling.\"",
+      "options": [
+        "nationwide",
+        "exhaust",
+        "smelling",
+        "propulsion"
+      ],
+      "answer": "nationwide",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「nationwide」。"
+    },
+    {
+      "id": "news_q_classical_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Orchestra Noir is back on tour, selling out stages across the country and proving ________ music can be anything you want it to be.\"",
+      "options": [
+        "classical",
+        "zombies",
+        "listens",
+        "epidemic"
+      ],
+      "answer": "classical",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「classical」。"
+    },
+    {
+      "id": "news_q_injection_2026-11-21",
+      "tag": "每日國際新聞/科普語境 (2026-11-21)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The same day Dennes was given lethal ________, Florida carried out a record-breaking 20th execution of the year.\"",
+      "options": [
+        "injection",
+        "scumbag",
+        "particles",
+        "unhealthy"
+      ],
+      "answer": "injection",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「injection」。"
     }
   ]
 }
