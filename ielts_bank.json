@@ -3097,6 +3097,448 @@
       ],
       "answer": "families",
       "explanation": "原句出自國際新聞/科普報導，正確單字為「families」。"
+    },
+    {
+      "id": "dict_q_baggage",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Please put your ________ in the trunk.\"",
+      "options": [
+        "baggage",
+        "interrogate",
+        "meaningless",
+        "solitary"
+      ],
+      "answer": "baggage",
+      "explanation": "正確答案為「baggage」(n. 行李；[经] 行李)。\n英英釋義：(usually uncountable) Luggage; traveling equipment"
+    },
+    {
+      "id": "dict_q_dislike",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Rebecca Black's \"Friday\" video has gained notoriety for being one of the most disliked videos in YouTube history.\"",
+      "options": [
+        "expressed",
+        "refugees",
+        "dislike",
+        "slipping"
+      ],
+      "answer": "dislike",
+      "explanation": "正確答案為「dislike」(n. 嫌恶；vt. 讨厌, 不喜欢)。\n英英釋義：To leave a vote to show disapproval of, or lack of support for, something posted on the Internet."
+    },
+    {
+      "id": "dict_q_eradicate",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Smallpox was globally eradicated in 1980.\"",
+      "options": [
+        "eradicate",
+        "fooling",
+        "buddies",
+        "practicing"
+      ],
+      "answer": "eradicate",
+      "explanation": "正確答案為「eradicate」(vt. 根除, 扑灭, 根绝, 消灭)。\n英英釋義：To destroy completely; to reduce to nothing radically; to put an end to; to extirpate."
+    },
+    {
+      "id": "dict_q_crushed",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"After the corruption scandal, the opposition ________ the ruling party in the elections\"",
+      "options": [
+        "dioxide",
+        "crushed",
+        "notation",
+        "contradict"
+      ],
+      "answer": "crushed",
+      "explanation": "正確答案為「crushed」(a. 压碎的, 倒碎的)。\n英英釋義：To overwhelm by pressure or weight."
+    },
+    {
+      "id": "dict_q_honored",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The freedom fighters will be forever remembered and ________ by the people.\"",
+      "options": [
+        "buddies",
+        "programmed",
+        "honored",
+        "probation"
+      ],
+      "answer": "honored",
+      "explanation": "正確答案為「honored」(a. 已承兑或付款的；受尊敬的)。\n英英釋義：To think of highly, to respect highly; to show respect for; to recognise the importance or spiritual value of"
+    },
+    {
+      "id": "dict_q_teasing",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"________ can be seen as a kind of workplace abuse.\"",
+      "options": [
+        "duchess",
+        "teasing",
+        "greeting",
+        "targets"
+      ],
+      "answer": "teasing",
+      "explanation": "正確答案為「teasing」([医] 针拨开法)。\n英英釋義：The act of teasing; making fun of or making light of."
+    },
+    {
+      "id": "dict_q_replaced",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"I ________ my car with a newer model.\"",
+      "options": [
+        "beautifully",
+        "prolific",
+        "hallelujah",
+        "replaced"
+      ],
+      "answer": "replaced",
+      "explanation": "正確答案為「replaced」(v. 取代；替换；放回（replace的过去分词）)。\n英英釋義：To supply or substitute an equivalent for"
+    },
+    {
+      "id": "dict_q_hallelujah",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"the ________ (chorus) in Handel's \"Messiah\"\"",
+      "options": [
+        "servants",
+        "hallelujah",
+        "stevens",
+        "convenience"
+      ],
+      "answer": "hallelujah",
+      "explanation": "正確答案為「hallelujah」(n. 赞美上帝的颂歌)。\n英英釋義：A song of praise to God; a musical composition based on the word \"Hallelujah\"."
+    },
+    {
+      "id": "news_q_studying_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The mission is ________ an asteroid deliberately knocked off course by a colliding spacecraft.\"",
+      "options": [
+        "detrimental",
+        "studying",
+        "torture",
+        "involves"
+      ],
+      "answer": "studying",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「studying」。"
+    },
+    {
+      "id": "news_q_foreigner_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Muhammad Zeeshan Ali, a former fighter pilot, is the first ________ to join a Chinese crewed space mission.\"",
+      "options": [
+        "foreigner",
+        "buddies",
+        "stationary",
+        "stammering"
+      ],
+      "answer": "foreigner",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「foreigner」。"
+    },
+    {
+      "id": "news_q_inflation_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"India's food ________ is broadening, squeezing household budgets.\"",
+      "options": [
+        "disposition",
+        "psychiatrist",
+        "screech",
+        "inflation"
+      ],
+      "answer": "inflation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「inflation」。"
+    },
+    {
+      "id": "news_q_ministers_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Plaid Cymru ________ rule out mass badger cull as part of new plans to tackle bovine tuberculosis.\"",
+      "options": [
+        "vibrate",
+        "ministers",
+        "neighbours",
+        "involves"
+      ],
+      "answer": "ministers",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「ministers」。"
+    },
+    {
+      "id": "news_q_previous_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The UK Health Security Agency says this year's number of deaths is twice that of the ________ record year.\"",
+      "options": [
+        "commemorate",
+        "fabulous",
+        "previous",
+        "antoine"
+      ],
+      "answer": "previous",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「previous」。"
+    },
+    {
+      "id": "news_q_including_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Two storms, ________ a major Nor'easter on the east coast, are expected to impact millions of people celebrating the holiday with family and friends.\"",
+      "options": [
+        "founded",
+        "loneliness",
+        "including",
+        "miserable"
+      ],
+      "answer": "including",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「including」。"
+    },
+    {
+      "id": "news_q_producing_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Interests of oil-________ countries, a US boycott and a dispute over finance may have torpedoed climate talks.\"",
+      "options": [
+        "morphine",
+        "peoples",
+        "producing",
+        "teaches"
+      ],
+      "answer": "producing",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「producing」。"
+    },
+    {
+      "id": "news_q_minister_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The prime ________ of Australia, which co-hosted COP31, attributed the failure to \"difficult geopolitical times\".\"",
+      "options": [
+        "longest",
+        "teasing",
+        "minister",
+        "fireworks"
+      ],
+      "answer": "minister",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「minister」。"
+    },
+    {
+      "id": "news_q_invasion_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Leaked data reveal how the full-scale ________ of Ukraine has fundamentally changed mortality patterns in Russia.\"",
+      "options": [
+        "persons",
+        "peoples",
+        "overlap",
+        "invasion"
+      ],
+      "answer": "invasion",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「invasion」。"
+    },
+    {
+      "id": "news_q_lawmakers_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Nvidia's share price have fallen 7% as ________ demand answers about President Donald Trump's involvement in Huang's reinstatement.\"",
+      "options": [
+        "lawmakers",
+        "contingency",
+        "rehabilitate",
+        "matthews"
+      ],
+      "answer": "lawmakers",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「lawmakers」。"
+    },
+    {
+      "id": "news_q_deportation_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"His ________ to El Salvador and return to the US became a flash point in the debate over President Donald Trump's immigration agenda.\"",
+      "options": [
+        "deportation",
+        "detrimental",
+        "christians",
+        "insisted"
+      ],
+      "answer": "deportation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「deportation」。"
+    },
+    {
+      "id": "news_q_immigration_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Saurav Das says ________ authorities at Delhi airport told him his passport had been flagged.\"",
+      "options": [
+        "screenplay",
+        "immigration",
+        "overlap",
+        "metabolism"
+      ],
+      "answer": "immigration",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「immigration」。"
+    },
+    {
+      "id": "news_q_arrested_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The FBI ________ Markle on 6 November after a search of a storage unit he had allegedly rented in Los Angeles uncovered the abuse material.\"",
+      "options": [
+        "arrested",
+        "reconcile",
+        "refugees",
+        "cowards"
+      ],
+      "answer": "arrested",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「arrested」。"
+    },
+    {
+      "id": "news_q_testimonies_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A new report has ________ from hundreds of defectors who say they were persecuted because of their faith.\"",
+      "options": [
+        "testimonies",
+        "flatter",
+        "recycling",
+        "compliance"
+      ],
+      "answer": "testimonies",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「testimonies」。"
+    },
+    {
+      "id": "news_q_reportedly_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Naeem Abu Nahel, who had been in the post for two months, is among seven Palestinians ________ killed in Israeli strikes on Tuesday.\"",
+      "options": [
+        "teaches",
+        "officials",
+        "reportedly",
+        "repeated"
+      ],
+      "answer": "reportedly",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「reportedly」。"
+    },
+    {
+      "id": "news_q_attacked_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The network ________ key figures in the ruling DPP, including President Lai and mayoral candidate Shen.\"",
+      "options": [
+        "attacked",
+        "optimism",
+        "baggage",
+        "narcotics"
+      ],
+      "answer": "attacked",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「attacked」。"
+    },
+    {
+      "id": "news_q_industry_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Washington's $9 billion ________ grows more than 70% of the nation's fresh apples. Farmers are being pressed by high costs, tariffs and a strong dollar that diminishes foreign purchasing power.\"",
+      "options": [
+        "inhibit",
+        "longest",
+        "industry",
+        "extinct"
+      ],
+      "answer": "industry",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「industry」。"
+    },
+    {
+      "id": "news_q_officials_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The attacks, if ________ who spoke to NPR are correct, may be the latest example of Iranian cyberattacks against global critical infrastructure during the war with the U.S.\"",
+      "options": [
+        "clatters",
+        "beautifully",
+        "officials",
+        "dominic"
+      ],
+      "answer": "officials",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「officials」。"
+    },
+    {
+      "id": "news_q_investigation_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Albania's Prime Minister Edi Rama has vowed that Kushner's resort project will go ahead as planned. But an ongoing ________ by Albania's state prosecutor into forged land titles could halt the project.\"",
+      "options": [
+        "inhabit",
+        "revealed",
+        "investigation",
+        "videotape"
+      ],
+      "answer": "investigation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「investigation」。"
+    },
+    {
+      "id": "news_q_negotiating_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"President Trump took credit for ________ Jensen Huang's return as CEO of Nvidia. And, Rep. Jimmy Gomez, D-Calif., says his resignation will be effective Dec. 1.\"",
+      "options": [
+        "negotiating",
+        "instrumental",
+        "reciprocal",
+        "subtract"
+      ],
+      "answer": "negotiating",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「negotiating」。"
+    },
+    {
+      "id": "news_q_homeowners_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Some California ________ have spent thousands making their homes safer from wildfires. Yet all that work has barely made a dent in their insurance bills. Should they be getting a bigger break?\"",
+      "options": [
+        "bridges",
+        "homeowners",
+        "encyclopedia",
+        "directors"
+      ],
+      "answer": "homeowners",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「homeowners」。"
+    },
+    {
+      "id": "news_q_fighting_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Doctors are ________ an uphill battle against disinformation about routine vitamin K shots given to newborns in the hospital. It helps prevent a rare but devastating bleeding disorder.\"",
+      "options": [
+        "fighting",
+        "includes",
+        "interrupting",
+        "postpone"
+      ],
+      "answer": "fighting",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「fighting」。"
+    },
+    {
+      "id": "news_q_families_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Threatt Filling Station in Luther, Okla., was the first Black-owned gas station on Route 66. At a time when Black ________ needed the Green Book to find places to stay, eat, use the bathroom, it provided fuel and respite.\"",
+      "options": [
+        "refugees",
+        "trumpet",
+        "families",
+        "meaningless"
+      ],
+      "answer": "families",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「families」。"
+    },
+    {
+      "id": "news_q_diversity_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Some who have worked to promote ________ and inclusion in Silicon Valley say Jensen Huang's reinstatement as Nvidia's CEO sends a message that all that matters is money.\"",
+      "options": [
+        "diversity",
+        "officials",
+        "metabolism",
+        "supportive"
+      ],
+      "answer": "diversity",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「diversity」。"
+    },
+    {
+      "id": "news_q_landmark_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A ________ lawsuit in Congo sees 27 residents accuse a Chinese-owned copper and cobalt mine of poisoning their community and the government of failing to protect them.\"",
+      "options": [
+        "ruthless",
+        "landmark",
+        "stevens",
+        "probation"
+      ],
+      "answer": "landmark",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「landmark」。"
+    },
+    {
+      "id": "news_q_companies_2026-11-25",
+      "tag": "每日國際新聞/科普語境 (2026-11-25)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Investigators say ________ with ties to Donald Trump Jr's investment firm, 1789 Capital, have profited since his father's reelection.\"",
+      "options": [
+        "companies",
+        "maternal",
+        "hissing",
+        "fabulous"
+      ],
+      "answer": "companies",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「companies」。"
     }
   ]
 }
