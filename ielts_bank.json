@@ -5,45 +5,6 @@
   "speaking": [],
   "quizPool": [
     {
-      "id": "news_q_disruptions",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Entire neighbourhoods remain under water as ________ impact schools, roads, hospitals and airports.\"",
-      "options": [
-        "unprecedented",
-        "scrutinize",
-        "detrimental",
-        "disruptions"
-      ],
-      "answer": "disruptions",
-      "explanation": "原句出自國際新聞語料，正確單字為「disruptions」。"
-    },
-    {
-      "id": "news_q_environmental",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The Office for Environmental Protection said Daera had not complied with ________ law requiring it to classify and update Special Protection Areas.\"",
-      "options": [
-        "environmental",
-        "scrutinize",
-        "ubiquitous",
-        "detrimental"
-      ],
-      "answer": "environmental",
-      "explanation": "原句出自國際新聞語料，正確單字為「environmental」。"
-    },
-    {
-      "id": "news_q_journalists",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Enter for a chance to go behind the scenes at HQ, meet our ________ face-to-face and experience public media like never before.\"",
-      "options": [
-        "detrimental",
-        "journalists",
-        "proliferate",
-        "feasible"
-      ],
-      "answer": "journalists",
-      "explanation": "原句出自國際新聞語料，正確單字為「journalists」。"
-    },
-    {
       "id": "news_q_artificial",
       "tag": "每日國際新聞真題語境 (2026-11-19)",
       "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The five-year-old ________ intelligence powerhouse priced its initial public offering at $83 a share, shrugging off growing concern about a possible AI bubble and volatility in tech stocks.\"",
@@ -3539,6 +3500,409 @@
       ],
       "answer": "companies",
       "explanation": "原句出自國際新聞/科普報導，正確單字為「companies」。"
+    },
+    {
+      "id": "dict_q_slippery",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"Oily substances render things ________.\"",
+      "options": [
+        "reciprocal",
+        "reaching",
+        "slippery",
+        "strangely"
+      ],
+      "answer": "slippery",
+      "explanation": "正確答案為「slippery」(a. 滑的, 光滑的, 靠不住的, 圆滑的, 不稳固的；[法] 狡猾的, 不可靠的, 不安定的)。\n英英釋義：Of a surface, having low friction, often due to being covered in a non-viscous liquid, and therefore hard to grip, hard to stand on without falling, etc."
+    },
+    {
+      "id": "dict_q_fixture",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The device is available in both handheld and fixtured models.\"",
+      "options": [
+        "nominal",
+        "seismic",
+        "fixture",
+        "valerie"
+      ],
+      "answer": "fixture",
+      "explanation": "正確答案為「fixture」(n. 固定(状态), 固定物, 设备；[计] 夹具)。\n英英釋義：To furnish with, as, or in a fixture."
+    },
+    {
+      "id": "dict_q_perpetual",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"By means of artificial hybridization, practised for a series of years, he has succeeded in producing a race of carnations which are ________ bloomers.\"",
+      "options": [
+        "perpetual",
+        "prevalent",
+        "delightful",
+        "gradual"
+      ],
+      "answer": "perpetual",
+      "explanation": "正確答案為「perpetual」(a. 永久的, 不断的, 无期限的, 没完没了的, 四季开花的；[经] 永远的, 终身的, 持续的)。\n英英釋義：Flowering throughout the growing season"
+    },
+    {
+      "id": "dict_q_obscure",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"an ________ passage or inscription;    The speaker made obscure references to little-known literary works.\"",
+      "options": [
+        "barricade",
+        "arguments",
+        "obscure",
+        "ballroom"
+      ],
+      "answer": "obscure",
+      "explanation": "正確答案為「obscure」(a. 模糊的, 昏暗的, 难解的, 晦涩的, 偏僻的, 微贱的, 无名的；vt. 使变暗, 隐藏, 使变模糊, 使难解)。\n英英釋義：Difficult to understand."
+    },
+    {
+      "id": "dict_q_conscientious",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"He was a thoughtful and ________ worker.\"",
+      "options": [
+        "conscientious",
+        "nurture",
+        "sincerely",
+        "candidates"
+      ],
+      "answer": "conscientious",
+      "explanation": "正確答案為「conscientious」(a. 有责任心的, 负责的, 本着良心的；[法] 凭良心做的, 有道德感的)。\n英英釋義：Thorough, careful, or vigilant in one’s task performance."
+    },
+    {
+      "id": "news_q_province_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Parts of the Canadian ________ of British Columbia may also be affected by the storms and flooding, which come as millions of people travel for the holiday.\"",
+      "options": [
+        "empress",
+        "sherman",
+        "province",
+        "pesticide"
+      ],
+      "answer": "province",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「province」。"
+    },
+    {
+      "id": "news_q_widespread_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Despite ________ concern from residents ahead of the blast, officials say that lead readings in the area so far have been promising.\"",
+      "options": [
+        "widespread",
+        "gardens",
+        "sleeping",
+        "luminous"
+      ],
+      "answer": "widespread",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「widespread」。"
+    },
+    {
+      "id": "news_q_frequent_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Frosts will become less common and hot summer days more ________ in the UK, the Met Office says.\"",
+      "options": [
+        "ballroom",
+        "kindergarten",
+        "strangely",
+        "frequent"
+      ],
+      "answer": "frequent",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「frequent」。"
+    },
+    {
+      "id": "news_q_affecting_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Changing seasons are ________ wildlife and leading some farmers to grow different crops.\"",
+      "options": [
+        "earrings",
+        "affecting",
+        "collapsed",
+        "attempted"
+      ],
+      "answer": "affecting",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「affecting」。"
+    },
+    {
+      "id": "news_q_constellation_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Starmind ________ aims to be the most cost and energy-efficient way to meet the growing demand for AI computing power.\"",
+      "options": [
+        "purchased",
+        "semester",
+        "melissa",
+        "constellation"
+      ],
+      "answer": "constellation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「constellation」。"
+    },
+    {
+      "id": "news_q_asteroid_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The ________'s surface was transformed after a spacecraft was deliberately crashed into it four years ago\"",
+      "options": [
+        "toilets",
+        "doorstep",
+        "asteroid",
+        "feasible"
+      ],
+      "answer": "asteroid",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「asteroid」。"
+    },
+    {
+      "id": "news_q_currently_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Joshua Kutryk, ________ on his first space mission, is just the fourth astronaut in history to miss the birth of a child while aboard the International Space Station.\"",
+      "options": [
+        "kindergarten",
+        "psychiatry",
+        "currently",
+        "janitor"
+      ],
+      "answer": "currently",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「currently」。"
+    },
+    {
+      "id": "news_q_expected_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Strong winds and heavy rain are ________ to impact celebrations across the USA, with the risk that the famous Macy's Thanksgiving Day parade could be impacted.\"",
+      "options": [
+        "enclosure",
+        "expected",
+        "stammering",
+        "qualities"
+      ],
+      "answer": "expected",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「expected」。"
+    },
+    {
+      "id": "news_q_national_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Pakistan's Muhammad Zeeshan Ali has become the first foreign ________ to board China's Tiangong space station.\"",
+      "options": [
+        "brochure",
+        "dormant",
+        "despise",
+        "national"
+      ],
+      "answer": "national",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「national」。"
+    },
+    {
+      "id": "news_q_foreigner_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Muhammad Zeeshan Ali, a former fighter pilot, is the first ________ to join a Chinese crewed space mission.\"",
+      "options": [
+        "foreigner",
+        "published",
+        "hurricane",
+        "culminate"
+      ],
+      "answer": "foreigner",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「foreigner」。"
+    },
+    {
+      "id": "news_q_partners_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The new levies would hit many of America's biggest trading ________, including China and the EU.\"",
+      "options": [
+        "bizarre",
+        "humiliation",
+        "partners",
+        "nursing"
+      ],
+      "answer": "partners",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「partners」。"
+    },
+    {
+      "id": "news_q_reportedly_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Another 21 are injured after the tanker ________ overturns on a busy ring road in the Egyptian capital.\"",
+      "options": [
+        "gardens",
+        "perpetual",
+        "lifting",
+        "reportedly"
+      ],
+      "answer": "reportedly",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「reportedly」。"
+    },
+    {
+      "id": "news_q_focusing_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Jihadist groups appear to be ________ on local issues rather than global terror. Does it signify a real change?\"",
+      "options": [
+        "telling",
+        "discern",
+        "smelled",
+        "focusing"
+      ],
+      "answer": "focusing",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「focusing」。"
+    },
+    {
+      "id": "news_q_conviction_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Israeli PM says his trial should end after judges said there was little chance of ________ in one of three cases.\"",
+      "options": [
+        "attempted",
+        "volatile",
+        "disappoint",
+        "conviction"
+      ],
+      "answer": "conviction",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「conviction」。"
+    },
+    {
+      "id": "news_q_dominated_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"All three main US indexes were down in early trading, with the tech-________ Nasdaq down almost 4%.\"",
+      "options": [
+        "irrigation",
+        "headaches",
+        "legally",
+        "dominated"
+      ],
+      "answer": "dominated",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「dominated」。"
+    },
+    {
+      "id": "news_q_president_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A review of the US ________'s financial disclosures shows Donald Trump's investment portfolios have regularly traded shares in the tech giant.\"",
+      "options": [
+        "notation",
+        "punching",
+        "president",
+        "overhaul"
+      ],
+      "answer": "president",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「president」。"
+    },
+    {
+      "id": "news_q_administration_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"A federal judge has blocked the Trump ________ from moving to review all local broadcast licenses held by ABC. The stations air in six of the largest U.S. markets.\"",
+      "options": [
+        "explains",
+        "administration",
+        "expulsion",
+        "sincerely"
+      ],
+      "answer": "administration",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「administration」。"
+    },
+    {
+      "id": "news_q_building_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The bakers behind these pop-up pastry drops aren't raking in the profits, but they are ________ a space for people to come together in polarized times.\"",
+      "options": [
+        "building",
+        "irritate",
+        "empress",
+        "nucleus"
+      ],
+      "answer": "building",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「building」。"
+    },
+    {
+      "id": "news_q_senators_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Several Democratic ________ have been signaling this move, saying the party needs to acknowledge the diverse class of incoming freshman that catapulted the party to victory in November.\"",
+      "options": [
+        "regrets",
+        "senators",
+        "contacted",
+        "traverse"
+      ],
+      "answer": "senators",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「senators」。"
+    },
+    {
+      "id": "news_q_settlers_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The first ________ of Liberia were African Americans who brought along the holiday of Thanksgiving — which has evolved to reflect the history and identity of this new nation.\"",
+      "options": [
+        "settlers",
+        "relinquish",
+        "warriors",
+        "handled"
+      ],
+      "answer": "settlers",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「settlers」。"
+    },
+    {
+      "id": "news_q_shoppers_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"59% of U.S. ________ plan to use AI for holiday shopping this weekend, according to the National Retail Federation\"",
+      "options": [
+        "conscientious",
+        "candidates",
+        "shoppers",
+        "drugged"
+      ],
+      "answer": "shoppers",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「shoppers」。"
+    },
+    {
+      "id": "news_q_evacuated_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Authorities have ________ a 5-mile radius to prepare to dispose of thousands of pounds of lead azide. And, after a nearly two-year legal battle, Kilmar Abrego Garcia's has voluntarily left the U.S.\"",
+      "options": [
+        "tentative",
+        "vocation",
+        "clarity",
+        "evacuated"
+      ],
+      "answer": "evacuated",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「evacuated」。"
+    },
+    {
+      "id": "news_q_concerned_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"\"The public is rightly ________,\" says the Republican lawmaker, who wants to know what the FBI and CIA knew about potential national security threats and whether Jensen Huang was warned.\"",
+      "options": [
+        "concerned",
+        "writers",
+        "conscientious",
+        "regrets"
+      ],
+      "answer": "concerned",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「concerned」。"
+    },
+    {
+      "id": "news_q_mountains_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Climbing tall ________ like Kilimanjaro is a study in contrasts — from beating sun to freezing nights, fire and snow.\"",
+      "options": [
+        "handled",
+        "perpetual",
+        "rampant",
+        "mountains"
+      ],
+      "answer": "mountains",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「mountains」。"
+    },
+    {
+      "id": "news_q_problematic_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Constantly buying new things can be ________, says journalist Eric Athas, author of the new book \"Saying No to New.\" Here's how to break the cycle and find joy in what you already have.\"",
+      "options": [
+        "slippery",
+        "problematic",
+        "battlefield",
+        "questioned"
+      ],
+      "answer": "problematic",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「problematic」。"
+    },
+    {
+      "id": "news_q_travelers_2026-11-26",
+      "tag": "每日國際新聞/科普語境 (2026-11-26)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Ariston Cafe opened its doors in 1924 to serve ________ along Route 66 and has dished up classic American road fare ever since.\"",
+      "options": [
+        "published",
+        "travelers",
+        "evacuate",
+        "gardens"
+      ],
+      "answer": "travelers",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「travelers」。"
     }
   ]
 }
