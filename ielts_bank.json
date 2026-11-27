@@ -5,435 +5,6 @@
   "speaking": [],
   "quizPool": [
     {
-      "id": "news_q_artificial",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The five-year-old ________ intelligence powerhouse priced its initial public offering at $83 a share, shrugging off growing concern about a possible AI bubble and volatility in tech stocks.\"",
-      "options": [
-        "unprecedented",
-        "mitigate",
-        "artificial",
-        "scrutinize"
-      ],
-      "answer": "artificial",
-      "explanation": "原句出自國際新聞語料，正確單字為「artificial」。"
-    },
-    {
-      "id": "news_q_connected",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"It's been a year since the House passed the Epstein Files Transparency Act, forcing the Justice Department to release millions of files ________ to the convicted sex offender. His victims speak out.\"",
-      "options": [
-        "exacerbate",
-        "ubiquitous",
-        "connected",
-        "feasible"
-      ],
-      "answer": "connected",
-      "explanation": "原句出自國際新聞語料，正確單字為「connected」。"
-    },
-    {
-      "id": "news_q_investigate",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Democrats gave the official nod to Hakeem Jeffries to be the next speaker of the House. Meanwhile, Democrats are ramping up their plans to ________ the Trump administration come January.\"",
-      "options": [
-        "investigate",
-        "mitigate",
-        "exacerbate",
-        "unprecedented"
-      ],
-      "answer": "investigate",
-      "explanation": "原句出自國際新聞語料，正確單字為「investigate」。"
-    },
-    {
-      "id": "core_q_ubiquitous",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Smartphones have become ________ in modern urban life, reshaping interpersonal communication.\"",
-      "options": [
-        "scrutinize",
-        "a blessing in disguise",
-        "ubiquitous",
-        "substantiate"
-      ],
-      "answer": "ubiquitous",
-      "explanation": "正確答案為「ubiquitous」(無所不在的、十分普遍的)。高分搭配：ubiquitous presence / become ubiquitous。"
-    },
-    {
-      "id": "core_q_mitigate",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Governments must implement stringent policies to ________ the adverse effects of carbon emissions.\"",
-      "options": [
-        "a blessing in disguise",
-        "mitigate",
-        "read between the lines",
-        "off the top of my head"
-      ],
-      "answer": "mitigate",
-      "explanation": "正確答案為「mitigate」(減輕、緩和（風險或負面影響）)。高分搭配：mitigate the risk / mitigate adverse impacts。"
-    },
-    {
-      "id": "core_q_exacerbate",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Unplanned urban sprawl tends to ________ traffic congestion and air pollution.\"",
-      "options": [
-        "dichotomy",
-        "ambiguous",
-        "exacerbate",
-        "double-edged sword"
-      ],
-      "answer": "exacerbate",
-      "explanation": "正確答案為「exacerbate」(使惡化、加劇)。高分搭配：exacerbate the problem / exacerbate inequality。"
-    },
-    {
-      "id": "core_q_detrimental",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Excessive screen time before bedtime has a ________ impact on sleep architecture.\"",
-      "options": [
-        "ubiquitous",
-        "mitigate",
-        "detrimental",
-        "unprecedented"
-      ],
-      "answer": "detrimental",
-      "explanation": "正確答案為「detrimental」(有害的、不利的)。高分搭配：detrimental effect / detrimental to health。"
-    },
-    {
-      "id": "core_q_proliferate",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Micro-mobility scooters have ________d across major metropolitan areas over the past decade.\"",
-      "options": [
-        "detrimental",
-        "mitigate",
-        "proliferate",
-        "double-edged sword"
-      ],
-      "answer": "proliferate",
-      "explanation": "正確答案為「proliferate」(激增、迅速擴散)。高分搭配：rapidly proliferate / proliferate across。"
-    },
-    {
-      "id": "core_q_unprecedented",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"The global economy is undergoing structural transformation at an ________ pace.\"",
-      "options": [
-        "unprecedented",
-        "alleviate",
-        "proliferate",
-        "pragmatic"
-      ],
-      "answer": "unprecedented",
-      "explanation": "正確答案為「unprecedented」(史無前例的、空前的)。高分搭配：unprecedented scale / unprecedented pace。"
-    },
-    {
-      "id": "core_q_scrutinize",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Peer reviewers meticulously ________ experimental methodology before publication.\"",
-      "options": [
-        "ambiguous",
-        "dichotomy",
-        "repercussion",
-        "scrutinize"
-      ],
-      "answer": "scrutinize",
-      "explanation": "正確答案為「scrutinize」(仔細審查、嚴格檢視)。高分搭配：scrutinize the data / closely scrutinize。"
-    },
-    {
-      "id": "core_q_alleviate",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Expanding dedicated bicycle lanes can significantly ________ peak-hour gridlock.\"",
-      "options": [
-        "substantiate",
-        "a blessing in disguise",
-        "scrutinize",
-        "alleviate"
-      ],
-      "answer": "alleviate",
-      "explanation": "正確答案為「alleviate」(緩解、減輕（痛苦或擁塞）)。高分搭配：alleviate poverty / alleviate congestion。"
-    },
-    {
-      "id": "core_q_substantiate",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Researchers must provide robust empirical data to ________ their theoretical claims.\"",
-      "options": [
-        "substantiate",
-        "ubiquitous",
-        "a blessing in disguise",
-        "double-edged sword"
-      ],
-      "answer": "substantiate",
-      "explanation": "正確答案為「substantiate」(證實、提供證據支持)。高分搭配：substantiate a claim / empirical evidence to substantiate。"
-    },
-    {
-      "id": "core_q_dichotomy",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"There is often a false ________ between economic growth and environmental sustainability.\"",
-      "options": [
-        "a blessing in disguise",
-        "on the same page",
-        "read between the lines",
-        "dichotomy"
-      ],
-      "answer": "dichotomy",
-      "explanation": "正確答案為「dichotomy」(二分法、截然對立)。高分搭配：false dichotomy / stark dichotomy。"
-    },
-    {
-      "id": "core_q_pragmatic",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"A ________ compromise is required to balance fiscal discipline with public welfare.\"",
-      "options": [
-        "proliferate",
-        "repercussion",
-        "off the top of my head",
-        "pragmatic"
-      ],
-      "answer": "pragmatic",
-      "explanation": "正確答案為「pragmatic」(務實的、講求實效的)。高分搭配：pragmatic approach / pragmatic solution。"
-    },
-    {
-      "id": "core_q_conducive",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Quiet, well-lit libraries provide an atmosphere highly ________ to deep concentration.\"",
-      "options": [
-        "mitigate",
-        "exacerbate",
-        "conducive",
-        "repercussion"
-      ],
-      "answer": "conducive",
-      "explanation": "正確答案為「conducive」(有助於...的、有益的)。高分搭配：conducive to learning / conducive environment。"
-    },
-    {
-      "id": "core_q_repercussion",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Deforestation carries far-reaching ecological ________s for global biodiversity.\"",
-      "options": [
-        "exacerbate",
-        "repercussion",
-        "off the top of my head",
-        "scrutinize"
-      ],
-      "answer": "repercussion",
-      "explanation": "正確答案為「repercussion」(深遠影響、惡果)。高分搭配：far-reaching repercussions / serious repercussions。"
-    },
-    {
-      "id": "core_q_ambiguous",
-      "tag": "🔥 高頻真題語境 · IELTS 7.5+ Academic",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Vague regulatory guidelines often leave companies facing ________ compliance obligations.\"",
-      "options": [
-        "repercussion",
-        "a blessing in disguise",
-        "cut corners",
-        "ambiguous"
-      ],
-      "answer": "ambiguous",
-      "explanation": "正確答案為「ambiguous」(模稜兩可的、含糊不清的)。高分搭配：remain ambiguous / deliberately ambiguous。"
-    },
-    {
-      "id": "core_q_cut_corners",
-      "tag": "🔥 高頻真題語境 · TV: 破產姊妹 / Suits",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"When building mission-critical network infrastructure, engineers can never afford to ________.\"",
-      "options": [
-        "cut corners",
-        "double-edged sword",
-        "ambiguous",
-        "mitigate"
-      ],
-      "answer": "cut corners",
-      "explanation": "正確答案為「cut corners」(偷工減料、圖省事走捷徑)。高分搭配：refuse to cut corners。"
-    },
-    {
-      "id": "core_q_off_the_top_of_my_head",
-      "tag": "🔥 高頻真題語境 · TV: 六人行 (Friends)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"________, I would say public transport subsidies are the most effective measure.\"",
-      "options": [
-        "cut corners",
-        "off the top of my head",
-        "dichotomy",
-        "proliferate"
-      ],
-      "answer": "off the top of my head",
-      "explanation": "正確答案為「off the top of my head」(憑直覺/不假思索地說)。高分搭配：Speaking Part 1 & Part 3 開頭句。"
-    },
-    {
-      "id": "core_q_on_the_same_page",
-      "tag": "🔥 高頻真題語境 · TV: 六人行 / The Office",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Before launching the rollout, let us make sure all stakeholders are ________.\"",
-      "options": [
-        "ambiguous",
-        "on the same page",
-        "exacerbate",
-        "read between the lines"
-      ],
-      "answer": "on the same page",
-      "explanation": "正確答案為「on the same page」(達成共識、想法一致)。高分搭配：get everyone on the same page。"
-    },
-    {
-      "id": "core_q_double-edged_sword",
-      "tag": "🔥 高頻真題語境 · TV: Silicon Valley (矽谷群瞎傳)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Artificial intelligence is a ________ that boosts productivity while displacing routine jobs.\"",
-      "options": [
-        "double-edged sword",
-        "ambiguous",
-        "ubiquitous",
-        "repercussion"
-      ],
-      "answer": "double-edged sword",
-      "explanation": "正確答案為「double-edged sword」(雙面刃（有利亦有弊）)。高分搭配：prove to be a double-edged sword。"
-    },
-    {
-      "id": "core_q_a_blessing_in_disguise",
-      "tag": "🔥 高頻真題語境 · TV: 摩登家庭 (Modern Family)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Missing that flight turned out to be ________ because I met my future partner.\"",
-      "options": [
-        "scrutinize",
-        "dichotomy",
-        "mitigate",
-        "a blessing in disguise"
-      ],
-      "answer": "a blessing in disguise",
-      "explanation": "正確答案為「a blessing in disguise」(塞翁失馬、因禍得福)。高分搭配：turn out to be a blessing in disguise。"
-    },
-    {
-      "id": "core_q_read_between_the_lines",
-      "tag": "🔥 高頻真題語境 · TV: 同路人 (Fellow Travelers)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"In Washington politics, survival depends on your ability to ________.\"",
-      "options": [
-        "read between the lines",
-        "a blessing in disguise",
-        "scrutinize",
-        "substantiate"
-      ],
-      "answer": "read between the lines",
-      "explanation": "正確答案為「read between the lines」(體會言外之意、聽出弦外之音)。高分搭配：learn to read between the lines。"
-    },
-    {
-      "id": "news_q_neighbourhoods",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"Entire ________ remain under water as disruptions impact schools, roads, hospitals and airports.\"",
-      "options": [
-        "prominent",
-        "neighbourhoods",
-        "cognitive",
-        "classical"
-      ],
-      "answer": "neighbourhoods",
-      "explanation": "原句出自國際新聞報導，正確單字為「neighbourhoods」。"
-    },
-    {
-      "id": "news_q_administration",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"The Nvidia scandal has spilled over into the Trump ________, which is now under intense scrutiny for how it allowed America's top AI chips to end up in China's hands.\"",
-      "options": [
-        "girlfriend",
-        "ownership",
-        "conservation",
-        "administration"
-      ],
-      "answer": "administration",
-      "explanation": "原句出自國際新聞報導，正確單字為「administration」。"
-    },
-    {
-      "id": "news_q_emergency",
-      "tag": "每日國際新聞真題語境 (2026-11-19)",
-      "question": "請選出最適合填入新聞語境空格的高階單字：\n\"As the ________ response to the flood ends, aid workers turn to the hard work of rebuilding communities that lost everything. Many of those workers lost everything, too.\"",
-      "options": [
-        "emergency",
-        "controversy",
-        "vulnerable",
-        "attribute"
-      ],
-      "answer": "emergency",
-      "explanation": "原句出自國際新聞報導，正確單字為「emergency」。"
-    },
-    {
-      "id": "core_q_behind_closed_doors",
-      "tag": "🔥 高頻真題語境 · TV: 同路人 (Fellow Travelers)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"In Washington politics, crucial compromises are frequently brokered ________.\"",
-      "options": [
-        "behind closed doors",
-        "make ends meet",
-        "mitigate",
-        "ambiguous"
-      ],
-      "answer": "behind closed doors",
-      "explanation": "正確答案為「behind closed doors」(私下地、秘密地（不公開）)。高分搭配：negotiate behind closed doors。"
-    },
-    {
-      "id": "core_q_off_the_record",
-      "tag": "🔥 高頻真題語境 · TV: 同路人 (Fellow Travelers)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"The senior official agreed to brief journalists strictly ________.\"",
-      "options": [
-        "out of the question",
-        "repercussion",
-        "mitigate",
-        "off the record"
-      ],
-      "answer": "off the record",
-      "explanation": "正確答案為「off the record」(非公開地、不可引述地)。高分搭配：speak strictly off the record。"
-    },
-    {
-      "id": "core_q_bide_your_time",
-      "tag": "🔥 高頻真題語境 · TV: 同路人 (Fellow Travelers)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"When the political climate turns hostile, you have to ________ and pick your battles.\"",
-      "options": [
-        "off the record",
-        "bide your time",
-        "alleviate",
-        "substantiate"
-      ],
-      "answer": "bide your time",
-      "explanation": "正確答案為「bide your time」(耐心等待時機、韜光養晦)。高分搭配：bide one's time until。"
-    },
-    {
-      "id": "core_q_think_on_your_feet",
-      "tag": "🔥 高頻真題語境 · TV: 破產姊妹 (2 Broke Girls)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"If you want to survive the night shift at the diner, you have to ________.\"",
-      "options": [
-        "out of the question",
-        "scrutinize",
-        "repercussion",
-        "think on your feet"
-      ],
-      "answer": "think on your feet",
-      "explanation": "正確答案為「think on your feet」(臨機應變、反應敏捷)。高分搭配：ability to think on your feet。"
-    },
-    {
-      "id": "core_q_out_of_the_question",
-      "tag": "🔥 高頻真題語境 · TV: 六人行 (Friends)",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Everyone knows Joey does not share food, so touching his fries is ________.\"",
-      "options": [
-        "out of the question",
-        "make ends meet",
-        "proliferate",
-        "scrutinize"
-      ],
-      "answer": "out of the question",
-      "explanation": "正確答案為「out of the question」(絕不可能、想都別想)。高分搭配：completely out of the question。"
-    },
-    {
-      "id": "core_q_make_ends_meet",
-      "tag": "🔥 高頻真題語境 · Song: Ariana Grande",
-      "question": "請選出最適合填入句中空格的高分單字或片語：\n\"Rising inflation makes it increasingly difficult for low-income families to ________.\"",
-      "options": [
-        "ambiguous",
-        "out of the question",
-        "make ends meet",
-        "dichotomy"
-      ],
-      "answer": "make ends meet",
-      "explanation": "正確答案為「make ends meet」(維持生計、收支平衡)。高分搭配：struggle to make ends meet。"
-    },
-    {
-      "id": "dict_q_relinquish",
-      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
-      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The delegations saved the negotiations by relinquishing their incompatible claims to sole jurisdiction\"",
-      "options": [
-        "worthless",
-        "relinquish",
-        "samurai",
-        "ordering"
-      ],
-      "answer": "relinquish",
-      "explanation": "正確答案為「relinquish」(vt. 放弃, 撤回, 停止, 松开, 让与；[法] 让与, 把...交给, 放弃)。\n英英釋義：To accept to give up, withdraw etc."
-    },
-    {
       "id": "dict_q_elastic",
       "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
       "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"running shorts use ________ to eliminate the need for a belt\"",
@@ -3903,6 +3474,435 @@
       ],
       "answer": "travelers",
       "explanation": "原句出自國際新聞/科普報導，正確單字為「travelers」。"
+    },
+    {
+      "id": "dict_q_grumble",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"That whiner is never without a ________ to share.\"",
+      "options": [
+        "grumble",
+        "follows",
+        "shitting",
+        "voucher"
+      ],
+      "answer": "grumble",
+      "explanation": "正確答案為「grumble」(n. 怨言, 满腹牢骚；vi. 抱怨, 发牢骚, 发隆隆声；vt. 抱怨)。\n英英釋義：A surly complaint."
+    },
+    {
+      "id": "dict_q_backward",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"They left without a ________ glance.\"",
+      "options": [
+        "signals",
+        "reserved",
+        "confirmation",
+        "backward"
+      ],
+      "answer": "backward",
+      "explanation": "正確答案為「backward」(adv. 向后地, 相反地；a. 向后的, 相反的；[计] 倒推)。\n英英釋義：(of motion) In the direction towards the back."
+    },
+    {
+      "id": "dict_q_useless",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"This fork has prongs that are bent. It's ________ now.\"",
+      "options": [
+        "contains",
+        "useless",
+        "marching",
+        "renaissance"
+      ],
+      "answer": "useless",
+      "explanation": "正確答案為「useless」(a. 无用的, 无效的, 无益的；[机] 无用, 无价值, 无效)。\n英英釋義：Without use or possibility to be used."
+    },
+    {
+      "id": "dict_q_homework",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"You must do your ________ before you can watch television.\"",
+      "options": [
+        "pissing",
+        "homework",
+        "useless",
+        "cracked"
+      ],
+      "answer": "homework",
+      "explanation": "正確答案為「homework」(n. 家庭作业, 家里做的工作；[经] 家庭作业)。\n英英釋義：Work that is done at home, especially school exercises assigned by a teacher."
+    },
+    {
+      "id": "dict_q_optical",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"A microscope is an ________ instrument.\"",
+      "options": [
+        "optical",
+        "borrowed",
+        "discussing",
+        "intensify"
+      ],
+      "answer": "optical",
+      "explanation": "正確答案為「optical」(a. 眼睛的, 视觉的, 光学的；[机] 光学上的, 光学的)。\n英英釋義：Designed to assist or enhance sight"
+    },
+    {
+      "id": "dict_q_murmuring",
+      "tag": "字典真實例句自動出題 · TV Drama High-Freq (美劇口語)",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"the murmurings of trees in the wind\"",
+      "options": [
+        "complexion",
+        "projector",
+        "existed",
+        "murmuring"
+      ],
+      "answer": "murmuring",
+      "explanation": "正確答案為「murmuring」(n. 抱怨的声音；喃喃的声音)。\n英英釋義：A sound that murmurs."
+    },
+    {
+      "id": "dict_q_interrogate",
+      "tag": "字典真實例句自動出題 · IELTS 7.5+ Academic",
+      "question": "請根據語境選出最適合填入空格的 Band 7.5+ 詞彙：\n\"The police interrogated the suspect at some length before they let him go.\"",
+      "options": [
+        "wretched",
+        "narcotic",
+        "abundance",
+        "interrogate"
+      ],
+      "answer": "interrogate",
+      "explanation": "正確答案為「interrogate」(vt. 质问, 讯问, 审问；vi. 质问, 讯问)。\n英英釋義：To question or quiz, especially in a thorough and/or aggressive manner"
+    },
+    {
+      "id": "news_q_descending_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Massive storms are ________ on both US coasts, with wind gusts, heavy rain, downed trees, and power outages for hundreds of thousands of customers.\"",
+      "options": [
+        "useless",
+        "tattoos",
+        "puppies",
+        "descending"
+      ],
+      "answer": "descending",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「descending」。"
+    },
+    {
+      "id": "news_q_designed_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The islands, being planted in five Glasgow parks, are ________ to encourage wildlife and help clean the water.\"",
+      "options": [
+        "lucrative",
+        "maureen",
+        "designed",
+        "kennedy"
+      ],
+      "answer": "designed",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「designed」。"
+    },
+    {
+      "id": "news_q_unharmed_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Both the man and his dog escaped ________, the police department says.\"",
+      "options": [
+        "unharmed",
+        "permanently",
+        "surpass",
+        "persons"
+      ],
+      "answer": "unharmed",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「unharmed」。"
+    },
+    {
+      "id": "news_q_thousands_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Hundreds of ________ have been affected by storms in the country as the Thanksgiving holiday weekend begins.\"",
+      "options": [
+        "pianist",
+        "thousands",
+        "nostalgia",
+        "casualties"
+      ],
+      "answer": "thousands",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「thousands」。"
+    },
+    {
+      "id": "news_q_administration_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Second judge rules against Trump ________'s plans to lease areas of ocean floor and survey for mining.\"",
+      "options": [
+        "investigations",
+        "administration",
+        "aquatic",
+        "gracious"
+      ],
+      "answer": "administration",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「administration」。"
+    },
+    {
+      "id": "news_q_detected_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Officials say no lead has been ________ in the surrounding area, which continues to be tested following concerns from locals.\"",
+      "options": [
+        "tributary",
+        "detected",
+        "sensors",
+        "examined"
+      ],
+      "answer": "detected",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「detected」。"
+    },
+    {
+      "id": "news_q_constellation_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The Starmind ________ aims to be the most cost and energy-efficient way to meet the growing demand for AI computing power.\"",
+      "options": [
+        "editorial",
+        "advisor",
+        "constellation",
+        "grandchildren"
+      ],
+      "answer": "constellation",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「constellation」。"
+    },
+    {
+      "id": "news_q_province_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Parts of the Canadian ________ of British Columbia may also be affected by the storms and flooding, which come as millions of people travel for the holiday.\"",
+      "options": [
+        "pancakes",
+        "traverse",
+        "explosives",
+        "province"
+      ],
+      "answer": "province",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「province」。"
+    },
+    {
+      "id": "news_q_frequent_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Frosts will become less common and hot summer days more ________ in the UK, the Met Office says.\"",
+      "options": [
+        "masterpiece",
+        "frequent",
+        "associates",
+        "symmetry"
+      ],
+      "answer": "frequent",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「frequent」。"
+    },
+    {
+      "id": "news_q_president_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Ukraine's ________ voices frustration with US and says it is \"strange\" Trump has described Vladimir Putin as a friend.\"",
+      "options": [
+        "grandchildren",
+        "legally",
+        "attempting",
+        "president"
+      ],
+      "answer": "president",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「president」。"
+    },
+    {
+      "id": "news_q_crossings_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Nearly a third of ________ in early 2026 allegedly involved boats or engines from the German man's firm.\"",
+      "options": [
+        "crossings",
+        "guessed",
+        "partisan",
+        "dissertation"
+      ],
+      "answer": "crossings",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「crossings」。"
+    },
+    {
+      "id": "news_q_contesting_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Marvin Reuter is ________ extradition to France, where he could face smuggling, criminal conspiracy and involuntary manslaughter charges.\"",
+      "options": [
+        "thermal",
+        "contesting",
+        "associates",
+        "regrets"
+      ],
+      "answer": "contesting",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「contesting」。"
+    },
+    {
+      "id": "news_q_possible_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The ________ environmental damage is still being assessed by Spain's sea rescue service.\"",
+      "options": [
+        "militant",
+        "confirmation",
+        "responsive",
+        "possible"
+      ],
+      "answer": "possible",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「possible」。"
+    },
+    {
+      "id": "news_q_imprisoned_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Rebecca Taylor had been ________ in New Mexico for multiple theft and burglary charges.\"",
+      "options": [
+        "imprisoned",
+        "underline",
+        "affects",
+        "narcotics"
+      ],
+      "answer": "imprisoned",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「imprisoned」。"
+    },
+    {
+      "id": "news_q_technicians_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The pair were ________ for German company Rheinmetall, according to Italy's foreign ministry.\"",
+      "options": [
+        "technicians",
+        "tributary",
+        "equipped",
+        "projects"
+      ],
+      "answer": "technicians",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「technicians」。"
+    },
+    {
+      "id": "news_q_confessed_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Officials say the man ________ to travelling at speed and clipping the fuel truck as he was overtaking traffic.\"",
+      "options": [
+        "override",
+        "maureen",
+        "fraught",
+        "confessed"
+      ],
+      "answer": "confessed",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「confessed」。"
+    },
+    {
+      "id": "news_q_outbreak_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"As the fast-moving ________ continues to spread in eastern Congo, fighting between rebels and the army is disrupting efforts to contain the spread of the disease.\"",
+      "options": [
+        "gracious",
+        "sediment",
+        "outbreak",
+        "poultry"
+      ],
+      "answer": "outbreak",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「outbreak」。"
+    },
+    {
+      "id": "news_q_reportedly_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Leader Kim Jong Un ________ visited facilities that produce nuclear ingredients and called for building more nuclear weapons to cope with threats from the U.S. and South Korea.\"",
+      "options": [
+        "miranda",
+        "matched",
+        "reportedly",
+        "persons"
+      ],
+      "answer": "reportedly",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「reportedly」。"
+    },
+    {
+      "id": "news_q_flooding_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"The East Coast's weather is a major concern this holiday, as it could lead to coastal ________. And, the judge says the FCC can't punish ABC for satire Trump doesn't like.\"",
+      "options": [
+        "homework",
+        "plantation",
+        "flooding",
+        "signals"
+      ],
+      "answer": "flooding",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「flooding」。"
+    },
+    {
+      "id": "news_q_restaurant_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"At an Albuquerque, N.M., museum, the ________ is just as much of a draw as the exhibitions, with dishes like green chile stew and sweet biscochitos flavored with anise and cinnamon.\"",
+      "options": [
+        "wrestle",
+        "sensors",
+        "discriminate",
+        "restaurant"
+      ],
+      "answer": "restaurant",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「restaurant」。"
+    },
+    {
+      "id": "news_q_cookbook_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"New Orleans Chef Alon Shaya's new ________ shares stories of resilience from World War II, centered around food.\"",
+      "options": [
+        "ceramic",
+        "cookbook",
+        "monologue",
+        "sensors"
+      ],
+      "answer": "cookbook",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「cookbook」。"
+    },
+    {
+      "id": "news_q_welcomes_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"NPR's Leila Fadel ________ culinary historian Michael Twitty into her kitchen for a Thanksgiving cooking session on making Kush, the forerunner to Southern cornbread dressing.\"",
+      "options": [
+        "welcomes",
+        "overhear",
+        "neighbours",
+        "incidentally"
+      ],
+      "answer": "welcomes",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「welcomes」。"
+    },
+    {
+      "id": "news_q_electric_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"LUMA Energy took over the ________ grid five years ago. The court's ruling nullifies its contract, and gives the government a year to find a new operator.\"",
+      "options": [
+        "plantation",
+        "useless",
+        "electric",
+        "programmed"
+      ],
+      "answer": "electric",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「electric」。"
+    },
+    {
+      "id": "news_q_unleashed_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Extreme weather that has ________ strong winds, high tides, heavy rain and floods is expected to impact travel plans of an estimated 81.5 million people as they travel across the United States.\"",
+      "options": [
+        "dissertation",
+        "blaring",
+        "unleashed",
+        "affects"
+      ],
+      "answer": "unleashed",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「unleashed」。"
+    },
+    {
+      "id": "news_q_revealed_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Taylor ________ his battle with Stage 4 metastatic prostate cancer in 2022. He was the guitarist of the 1980s English band Duran Duran, whose pop hits included \"Hungry Like the Wolf\" and \"Rio\".\"",
+      "options": [
+        "frances",
+        "revealed",
+        "override",
+        "marquis"
+      ],
+      "answer": "revealed",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「revealed」。"
+    },
+    {
+      "id": "news_q_similarly_2026-11-27",
+      "tag": "每日國際新聞/科普語境 (2026-11-27)",
+      "question": "請選出最適合填入國際報導語境空格的高階單字：\n\"Men and women appear to be ________ capable of multitasking, but men are more than twice as likely to ignore conversation while juggling multiple activities. Researchers believe this unexpected difference may help explain why women are widely perceived as better multitaskers.\"",
+      "options": [
+        "delightful",
+        "similarly",
+        "locking",
+        "camping"
+      ],
+      "answer": "similarly",
+      "explanation": "原句出自國際新聞/科普報導，正確單字為「similarly」。"
     }
   ]
 }
